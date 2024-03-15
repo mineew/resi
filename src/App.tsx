@@ -8,7 +8,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       <button onClick={handleClick}>Open File Dialog</button>
     </div>
   );

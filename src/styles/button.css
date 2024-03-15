@@ -1,0 +1,23 @@
+button {
+  padding: 6px 12px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--blue-9);
+  border: none;
+  border-radius: 6px;
+}
+
+button:focus,
+button:hover {
+  background-color: var(--blue-10);
+}
+
+button:focus {
+  outline: 2px solid var(--blue-8);
+  outline-offset: 2px;
+}
+
+button:active {
+  filter: brightness(0.92) saturate(1.1);
+}
