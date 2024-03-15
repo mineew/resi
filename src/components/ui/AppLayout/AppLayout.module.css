@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: none;
+  width: 400px;
+  border-right: 1px solid var(--slate-6);
+}
+
+.body {
+  flex: 1;
+  width: 0;
+}
