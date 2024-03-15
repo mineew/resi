@@ -1,16 +1,20 @@
-import openFiles from './utils/openFiles';
+import LoadFilesButton from '@/components/app/LoadFilesButton/LoadFilesButton';
+import AppLayout from '@/components/ui/AppLayout/AppLayout';
+import Sidebar from '@/components/ui/Sidebar/Sidebar';
+
 import './styles/globals.css';
 
 function App() {
-  const handleClick = async () => {
-    const result = await openFiles();
-    console.log(result);
-  };
-
   return (
-    <div style={{ padding: 20 }}>
-      <button onClick={handleClick}>Open File Dialog</button>
-    </div>
+    <AppLayout
+      sidebar={
+        <Sidebar header={<LoadFilesButton />}>
+          <div />
+        </Sidebar>
+      }
+    >
+      <div />
+    </AppLayout>
   );
 }
 
