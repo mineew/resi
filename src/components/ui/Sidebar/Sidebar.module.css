@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header,
+.body {
+  padding: 12px;
+}
+
+.header {
+  flex: none;
+  border-bottom: 1px solid var(--slate-6);
+}
+
+.body {
+  flex: 1;
+  height: 0;
+  overflow: hidden scroll;
+}
