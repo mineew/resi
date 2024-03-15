@@ -1,7 +1,5 @@
-import { Button, MantineProvider } from '@mantine/core';
-import '@mantine/core/styles.css';
-
 import openFiles from './utils/openFiles';
+import './styles/globals.css';
 
 function App() {
   const handleClick = async () => {
@@ -10,9 +8,9 @@ function App() {
   };
 
   return (
-    <MantineProvider>
-      <Button onClick={handleClick}>Open File Dialog</Button>
-    </MantineProvider>
+    <div>
+      <button onClick={handleClick}>Open File Dialog</button>
+    </div>
   );
 }
 
