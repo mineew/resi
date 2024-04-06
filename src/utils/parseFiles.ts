@@ -17,6 +17,8 @@ function parseFiles(files: Record<string, string>): RESIFile[] {
     resiFiles.push({
       name: name.replace('.xls', ''),
       contents,
+      color: '#000000',
+      checked: true,
     });
   }
 

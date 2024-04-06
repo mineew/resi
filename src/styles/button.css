@@ -25,3 +25,21 @@ button:focus {
 button:active {
   filter: brightness(0.92) saturate(1.1);
 }
+
+button.small {
+  padding: 3px 6px;
+  font-size: 0.8rem;
+}
+
+button.danger {
+  background-color: var(--red-9);
+}
+
+button.danger:focus,
+button.danger:hover {
+  background-color: var(--red-10);
+}
+
+button.danger:focus {
+  outline: 2px solid var(--red-8);
+}

@@ -13,6 +13,8 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
@@ -62,6 +64,10 @@ module.exports = {
     'import/resolver': {
       typescript: true,
       node: true,
+    },
+
+    react: {
+      version: 'detect',
     },
   },
 };

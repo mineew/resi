@@ -1,5 +1,6 @@
 @import url('@radix-ui/colors/slate.css');
 @import url('@radix-ui/colors/blue.css');
+@import url('@radix-ui/colors/red.css');
 @import url('./reset.css');
 @import url('./button.css');
 @import url('./icons.css');
