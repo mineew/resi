@@ -1,7 +1,18 @@
 async function openFiles() {
   try {
-    const handles = await window.showOpenFilePicker({ multiple: true });
     const result: Record<string, string> = {};
+    const handles = await window.showOpenFilePicker({
+      excludeAcceptAllOption: true,
+      multiple: true,
+      types: [
+        {
+          description: 'RESI Files',
+          accept: {
+            'application/vnd.ms-excel': ['.xls'],
+          },
+        },
+      ],
+    });
 
     for (const handle of handles) {
       const file = await handle.getFile();

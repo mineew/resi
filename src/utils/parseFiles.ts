@@ -15,7 +15,7 @@ function parseFiles(files: Record<string, string>): RESIFile[] {
       .map((i) => Number(i));
 
     resiFiles.push({
-      name,
+      name: name.replace('.xls', ''),
       contents,
     });
   }
