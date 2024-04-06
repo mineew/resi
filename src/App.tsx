@@ -1,3 +1,4 @@
+import FileChart from '@/components/app/FileChart/FileChart';
 import FileList from '@/components/app/FileList/FileList';
 import LoadFilesButton from '@/components/app/LoadFilesButton/LoadFilesButton';
 import AppLayout from '@/components/ui/AppLayout/AppLayout';
@@ -12,11 +13,9 @@ function App() {
     </Sidebar>
   );
 
-  return (
-    <AppLayout sidebar={sidebar}>
-      <div />
-    </AppLayout>
-  );
+  const body = <FileChart />;
+
+  return <AppLayout sidebar={sidebar}>{body}</AppLayout>;
 }
 
 export default App;
