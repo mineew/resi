@@ -2,7 +2,7 @@ import { FolderOpen } from 'lucide-react';
 import { useCallback } from 'react';
 
 import useStore from '@/store/store';
-import processFiles from '@/utils/processFiles';
+import processFiles from '@/utils/resi-files/processFiles';
 
 import styles from './LoadFilesButton.module.css';
 

@@ -8,7 +8,7 @@ import {
 } from 'recharts';
 
 import useStore from '@/store/store';
-import { smoothFiles } from '@/utils/smoothFiles';
+import { smoothFiles } from '@/utils/stats/smoothFiles';
 
 import convertFilesToChartData from './convertFilesToChartData';
 

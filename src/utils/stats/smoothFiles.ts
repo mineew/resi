@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/store';
+import { type RESIFile } from '@/store/RESIFile';
 
 import { type SmoothDataOptions, smoothData } from './smoothData';
 

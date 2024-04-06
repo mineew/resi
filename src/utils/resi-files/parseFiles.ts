@@ -1,6 +1,8 @@
-import { type RESIFile } from '@/store/store';
+import { type RESIFile } from '@/store/RESIFile';
 
 const HEADER_ROWS = 25;
+const DEFAULT_FILE_COLOR = '#000000';
+const DEFAULT_FILE_CHECKED = true;
 
 function parseFiles(files: Record<string, string>): RESIFile[] {
   const resiFiles: RESIFile[] = [];
@@ -17,8 +19,8 @@ function parseFiles(files: Record<string, string>): RESIFile[] {
     resiFiles.push({
       name: name.replace('.xls', ''),
       contents,
-      color: '#000000',
-      checked: true,
+      color: DEFAULT_FILE_COLOR,
+      checked: DEFAULT_FILE_CHECKED,
     });
   }
 

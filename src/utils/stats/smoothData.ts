@@ -1,7 +1,8 @@
 import { mean, median } from 'simple-statistics';
 
+import splitArrayOnChunks from '@/utils/arrays/splitArrayOnChunks';
+
 import { type FilterOutliersOptions, filterOutliers } from './filterOutliers';
-import splitArrayOnChunks from './splitArrayOnChunks';
 
 interface SmoothDataOptions extends FilterOutliersOptions {
   chunkSize?: number;

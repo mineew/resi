@@ -1,6 +1,7 @@
 async function openFiles() {
   try {
     const result: Record<string, string> = {};
+
     const handles = await window.showOpenFilePicker({
       excludeAcceptAllOption: true,
       multiple: true,
@@ -17,6 +18,7 @@ async function openFiles() {
     for (const handle of handles) {
       const file = await handle.getFile();
       const text = await file.text();
+
       result[file.name] = text;
     }
 

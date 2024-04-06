@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/store';
+import { type RESIFile } from '@/store/RESIFile';
 
 function convertFilesToChartData(files: RESIFile[]) {
   const data: Array<Record<string, number>> = [];

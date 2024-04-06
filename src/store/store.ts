@@ -1,18 +1,6 @@
 import { create } from 'zustand';
 
-interface RESIFile {
-  name: string;
-  contents: number[];
-  color: string;
-  checked: boolean;
-}
-
-interface StoreState {
-  files: RESIFile[];
-  setFiles: (files: RESIFile[]) => void;
-  deleteFile: (idx: number) => void;
-  toggleFile: (idx: number, checked: boolean) => void;
-}
+import { type StoreState } from './StoreState';
 
 const useStore = create<StoreState>((set) => ({
   files: [],
@@ -37,4 +25,3 @@ const useStore = create<StoreState>((set) => ({
 }));
 
 export default useStore;
-export type { RESIFile, StoreState };
