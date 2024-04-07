@@ -2,26 +2,34 @@ import { create } from 'zustand';
 
 import { type StoreState } from './StoreState';
 
-const useStore = create<StoreState>((set) => ({
+const useStore = create<StoreState>((set, get) => ({
   files: [],
 
   setFiles: (files) => set({ files }),
 
-  deleteFile: (idx) =>
-    set((state) => {
-      const newFiles = [...state.files];
-      newFiles.splice(idx, 1);
+  deleteFile: (idx) => {
+    const files = get().files;
+    const newFiles = [...files];
+    newFiles.splice(idx, 1);
 
-      return { ...state, files: newFiles };
-    }),
+    set({ files: newFiles });
+  },
 
-  toggleFile: (idx, checked) =>
-    set((state) => {
-      const newFiles = [...state.files];
-      newFiles[idx].checked = checked;
+  toggleFile: (idx, checked) => {
+    const files = get().files;
+    const newFiles = [...files];
+    newFiles[idx].checked = checked;
 
-      return { ...state, files: newFiles };
-    }),
+    set({ files: newFiles });
+  },
+
+  changeFileColor: (idx, color) => {
+    const files = get().files;
+    const newFiles = [...files];
+    newFiles[idx].color = color;
+
+    set({ files: newFiles });
+  },
 }));
 
 export default useStore;

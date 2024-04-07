@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import { Trash2 } from 'lucide-react';
 import { useId } from 'react';
 
+import ColorPicker from '@/components/ui/ColorPicker/ColorPicker';
+
 import styles from './FileList.module.css';
 
 interface FileListItemProps {
@@ -18,14 +20,16 @@ function FileListItem(props: FileListItemProps) {
 
   return (
     <li className={styles.item}>
-      <div className={styles.title}>
-        <div
-          className={styles['color-box']}
-          style={{ backgroundColor: color }}
-        />
+      <ColorPicker>
+        <div className={styles.title}>
+          <div
+            className={styles['color-box']}
+            style={{ backgroundColor: color }}
+          />
 
-        {name}
-      </div>
+          {name}
+        </div>
+      </ColorPicker>
 
       <div className={styles.toolbar}>
         <div className={styles.checkbox}>

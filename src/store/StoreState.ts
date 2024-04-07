@@ -5,6 +5,7 @@ interface StoreState {
   setFiles: (files: RESIFile[]) => void;
   deleteFile: (idx: number) => void;
   toggleFile: (idx: number, checked: boolean) => void;
+  changeFileColor: (idx: number, color: string) => void;
 }
 
 export type { StoreState };
