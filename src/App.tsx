@@ -4,7 +4,7 @@ import LoadFilesButton from '@/components/app/LoadFilesButton/LoadFilesButton';
 import AppLayout from '@/components/ui/AppLayout/AppLayout';
 import Sidebar from '@/components/ui/Sidebar/Sidebar';
 
-import './styles/globals.css';
+import './styles/index.css';
 
 function App() {
   const sidebar = (

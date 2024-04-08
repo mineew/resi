@@ -1,0 +1,10 @@
+/* Variables */
+@import url('./variables/colors.css');
+
+/* Globals */
+@import url('./globals/reset.css');
+@import url('./globals/globals.css');
+
+/* Components */
+@import url('./components/icons.css');
+@import url('./components/button.css');
