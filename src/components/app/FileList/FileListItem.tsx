@@ -1,7 +1,7 @@
-import classNames from 'classnames';
 import { Trash2 } from 'lucide-react';
 import { useId } from 'react';
 
+import Button from '@/components/ui/Button/Button';
 import ColorPicker from '@/components/ui/ColorPicker/ColorPicker';
 
 import styles from './FileList.module.css';
@@ -45,14 +45,10 @@ function FileListItem(props: FileListItemProps) {
           <label htmlFor={`${id}-checkbox`}>Отображать на графике</label>
         </div>
 
-        <button
-          className={classNames('small', 'danger')}
-          type="button"
-          onClick={onDelete}
-        >
+        <Button theme="danger" size="small" onClick={onDelete}>
           <Trash2 />
           Удалить
-        </button>
+        </Button>
       </div>
     </li>
   );

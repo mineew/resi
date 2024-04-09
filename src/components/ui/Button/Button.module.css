@@ -1,0 +1,62 @@
+.button {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 6px;
+}
+
+.button:focus,
+.button:hover {
+  background-color: var(--active-background-color);
+}
+
+.button:focus {
+  outline: 2px solid var(--background-color);
+  outline-offset: 2px;
+}
+
+.button:active {
+  filter: brightness(0.92) saturate(1.1);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--slate-8);
+  filter: none;
+}
+
+/* --- Primary -------------------------------------------------------------- */
+.button.primary {
+  --background-color: var(--blue-9);
+  --active-background-color: var(--blue-10);
+}
+
+/* --- Danger --------------------------------------------------------------- */
+.button.danger {
+  --background-color: var(--red-9);
+  --active-background-color: var(--red-10);
+}
+
+/* --- Variants ------------------------------------------------------------- */
+
+.button.default {
+  padding: 6px 12px;
+}
+
+.button.small {
+  padding: 3px 6px;
+  font-size: 0.9rem;
+}
+
+.button.full-width {
+  width: 100%;
+}
+
+.button.center {
+  justify-content: center;
+}

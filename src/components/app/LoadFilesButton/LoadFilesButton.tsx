@@ -1,10 +1,9 @@
 import { FolderOpen } from 'lucide-react';
 import { useCallback } from 'react';
 
+import Button from '@/components/ui/Button/Button';
 import useStore from '@/store/store';
 import processFiles from '@/utils/resi-files/processFiles';
-
-import styles from './LoadFilesButton.module.css';
 
 function LoadFilesButton() {
   const setFiles = useStore((store) => store.setFiles);
@@ -16,10 +15,10 @@ function LoadFilesButton() {
   }, [setFiles]);
 
   return (
-    <button className={styles.button} onClick={handleClick}>
+    <Button onClick={handleClick} fullWidth center>
       <FolderOpen />
       Загрузить RESI файлы
-    </button>
+    </Button>
   );
 }
 

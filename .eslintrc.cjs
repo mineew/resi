@@ -61,6 +61,15 @@ module.exports = {
     ],
   },
 
+  overrides: [
+    {
+      files: ['src/**/*.stories.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+  ],
+
   settings: {
     'import/resolver': {
       typescript: true,
