@@ -1,8 +1,8 @@
 import FileChart from '@/components/app/FileChart/FileChart';
 import FileList from '@/components/app/FileList/FileList';
 import LoadFilesButton from '@/components/app/LoadFilesButton/LoadFilesButton';
-import AppLayout from '@/components/ui/AppLayout/AppLayout';
-import Sidebar from '@/components/ui/Sidebar/Sidebar';
+import AppLayout from '@/components/layout/AppLayout/AppLayout';
+import Sidebar from '@/components/layout/Sidebar/Sidebar';
 
 import './styles/index.css';
 
