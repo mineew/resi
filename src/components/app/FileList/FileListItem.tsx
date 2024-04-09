@@ -11,16 +11,19 @@ interface FileListItemProps {
   color: string;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
+  onColorChange: (color: string) => void;
   onDelete: () => void;
 }
 
 function FileListItem(props: FileListItemProps) {
-  const { name, color, checked, onCheckedChange, onDelete } = props;
+  const { name, color, checked, onCheckedChange, onColorChange, onDelete } =
+    props;
+
   const id = useId();
 
   return (
     <li className={styles.item}>
-      <ColorPicker>
+      <ColorPicker value={color} onChange={onColorChange}>
         <div className={styles.title}>
           <div
             className={styles['color-box']}

@@ -7,6 +7,7 @@ function FileList() {
   const files = useStore((store) => store.files);
   const deleteFile = useStore((store) => store.deleteFile);
   const toggleFile = useStore((store) => store.toggleFile);
+  const changeFileColor = useStore((store) => store.changeFileColor);
 
   return (
     <ul className={styles.list}>
@@ -16,8 +17,9 @@ function FileList() {
           name={file.name}
           color={file.color}
           checked={file.checked}
-          onDelete={() => deleteFile(i)}
           onCheckedChange={(checked) => toggleFile(i, checked)}
+          onColorChange={(color) => changeFileColor(i, color)}
+          onDelete={() => deleteFile(i)}
         />
       ))}
     </ul>
