@@ -11,11 +11,13 @@
 }
 
 .button:focus,
-.button:hover {
+.button:hover,
+.button[data-state='open'] {
   background-color: var(--active-background-color);
 }
 
-.button:focus {
+.button:focus,
+.button[data-state='open'] {
   outline: 2px solid var(--background-color);
   outline-offset: 2px;
 }

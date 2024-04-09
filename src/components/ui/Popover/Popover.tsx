@@ -15,7 +15,7 @@ function Popover(props: PopoverProps) {
     <Radix.Root>
       <Radix.Trigger asChild>{trigger}</Radix.Trigger>
 
-      <Radix.Portal forceMount>
+      <Radix.Portal>
         <Radix.Content
           className={styles.content}
           side="bottom"
