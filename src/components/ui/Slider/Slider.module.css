@@ -1,0 +1,47 @@
+.root {
+  --track-size: 3px;
+  --thumb-size: 16px;
+  --color: var(--blue-9);
+  --active-color: var(--blue-11);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--thumb-size);
+  user-select: none;
+}
+
+.track,
+.range {
+  height: var(--track-size);
+  border-radius: 9999px;
+}
+
+.track {
+  position: relative;
+  flex: 1;
+  box-shadow: 0 0 0 1px var(--color);
+}
+
+.range {
+  position: absolute;
+  background-color: var(--color);
+}
+
+.thumb {
+  display: block;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--color);
+  border-radius: 100%;
+  transition: background-color 0.15s;
+}
+
+.thumb:hover {
+  background-color: var(--active-color);
+}
+
+.thumb:focus {
+  outline: 2px solid var(--color);
+  outline-offset: 2px;
+}
