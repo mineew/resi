@@ -39,6 +39,7 @@ function FileChart() {
             key={`${file.name}-${i}`}
             dataKey={file.name}
             stroke={file.color}
+            strokeWidth={file.strokeWidth}
             unit="RESI"
             dot={false}
             isAnimationActive={false}

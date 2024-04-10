@@ -2,6 +2,7 @@ import { type RESIFile } from '@/store/RESIFile';
 
 const HEADER_ROWS = 25;
 const DEFAULT_FILE_COLOR = '#000000';
+const DEFAULT_FILE_STROKE_WIDTH = 1;
 const DEFAULT_FILE_CHECKED = true;
 
 function parseFiles(files: Record<string, string>): RESIFile[] {
@@ -20,6 +21,7 @@ function parseFiles(files: Record<string, string>): RESIFile[] {
       name: name.replace('.xls', ''),
       contents,
       color: DEFAULT_FILE_COLOR,
+      strokeWidth: DEFAULT_FILE_STROKE_WIDTH,
       checked: DEFAULT_FILE_CHECKED,
     });
   }

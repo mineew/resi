@@ -1,0 +1,59 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.item:hover,
+.item.active {
+  background-color: var(--slate-4);
+}
+
+.title {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s;
+}
+
+.title:hover,
+.item.active .title {
+  transform: scale(1.1);
+}
+
+.color-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-button {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.item:hover .delete-button,
+.item.active .delete-button {
+  opacity: 1;
+}

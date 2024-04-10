@@ -7,10 +7,18 @@ const useStore = create<StoreState>((set, get) => ({
 
   setFiles: (files) => set({ files }),
 
-  deleteFile: (idx) => {
+  changeFileColor: (idx, color) => {
     const files = get().files;
     const newFiles = [...files];
-    newFiles.splice(idx, 1);
+    newFiles[idx].color = color;
+
+    set({ files: newFiles });
+  },
+
+  changeFileStrokeWidth: (idx, width) => {
+    const files = get().files;
+    const newFiles = [...files];
+    newFiles[idx].strokeWidth = width;
 
     set({ files: newFiles });
   },
@@ -23,10 +31,10 @@ const useStore = create<StoreState>((set, get) => ({
     set({ files: newFiles });
   },
 
-  changeFileColor: (idx, color) => {
+  deleteFile: (idx) => {
     const files = get().files;
     const newFiles = [...files];
-    newFiles[idx].color = color;
+    newFiles.splice(idx, 1);
 
     set({ files: newFiles });
   },
