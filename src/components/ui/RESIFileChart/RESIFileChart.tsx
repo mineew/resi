@@ -7,14 +7,21 @@ import {
   YAxis,
 } from 'recharts';
 
-import useStore from '@/store/store';
+import { type RESIFile } from '@/store/RESIFile';
+import { type SmoothDataOptions } from '@/utils/stats/smoothData';
 import { smoothFiles } from '@/utils/stats/smoothFiles';
 
 import convertFilesToChartData from './convertFilesToChartData';
 
-function FileChart() {
-  const files = useStore((store) => store.files.filter((f) => f.checked));
-  const smoothed = smoothFiles(files, { chunkSize: 250 });
+interface RESIFileChartProps {
+  files: RESIFile[];
+  smoothDataOptions?: SmoothDataOptions;
+}
+
+function RESIFileChart(props: RESIFileChartProps) {
+  const { files, smoothDataOptions = { chunkSize: 250 } } = props;
+
+  const smoothed = smoothFiles(files, smoothDataOptions);
   const data = convertFilesToChartData(smoothed);
 
   return (
@@ -40,6 +47,7 @@ function FileChart() {
             dataKey={file.name}
             stroke={file.color}
             strokeWidth={file.strokeWidth}
+            type="monotone"
             unit="RESI"
             dot={false}
             isAnimationActive={false}
@@ -50,4 +58,4 @@ function FileChart() {
   );
 }
 
-export default FileChart;
+export default RESIFileChart;

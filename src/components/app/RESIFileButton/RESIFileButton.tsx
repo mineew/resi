@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button/Button';
 import useStore from '@/store/store';
 import processFiles from '@/utils/resi-files/processFiles';
 
-function LoadFilesButton() {
+function RESIFileButton() {
   const setFiles = useStore((store) => store.setFiles);
 
   const handleClick = useCallback(() => {
@@ -22,4 +22,4 @@ function LoadFilesButton() {
   );
 }
 
-export default LoadFilesButton;
+export default RESIFileButton;

@@ -1,21 +1,34 @@
-import FileChart from '@/components/app/FileChart/FileChart';
-import LoadFilesButton from '@/components/app/LoadFilesButton/LoadFilesButton';
-import RESIFileList from '@/components/app/RESIFileList/RESIFileList';
+import { lazy } from 'react';
+
 import AppLayout from '@/components/layout/AppLayout/AppLayout';
 import Sidebar from '@/components/layout/Sidebar/Sidebar';
 
 import './styles/index.css';
 
+const RESIFileButton = lazy(
+  () => import('@/components/app/RESIFileButton/RESIFileButton'),
+);
+
+const RESIFileList = lazy(
+  () => import('@/components/app/RESIFileList/RESIFileList'),
+);
+
+const RESIFileChart = lazy(
+  () => import('@/components/app/RESIFileChart/RESIFileChart'),
+);
+
 function App() {
-  const sidebar = (
-    <Sidebar header={<LoadFilesButton />}>
-      <RESIFileList />
-    </Sidebar>
+  return (
+    <AppLayout
+      sidebar={
+        <Sidebar header={<RESIFileButton />}>
+          <RESIFileList />
+        </Sidebar>
+      }
+    >
+      <RESIFileChart />
+    </AppLayout>
   );
-
-  const body = <FileChart />;
-
-  return <AppLayout sidebar={sidebar}>{body}</AppLayout>;
 }
 
 export default App;
