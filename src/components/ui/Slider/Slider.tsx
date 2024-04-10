@@ -1,18 +1,34 @@
 import * as Radix from '@radix-ui/react-slider';
-import { useCallback, useMemo } from 'react';
+import classNames from 'classnames';
+import { useCallback, useId, useMemo } from 'react';
 
 import styles from './Slider.module.css';
 
 interface SliderProps {
+  id?: string;
   min?: number;
   max?: number;
   step?: number;
+  label?: string;
   value: number;
   onValueChange: (value: number) => void;
+  size?: 'default' | 'small';
 }
 
 function Slider(props: SliderProps) {
-  const { min = 1, max = 10, step = 1, value, onValueChange } = props;
+  const {
+    id: providedId,
+    min = 1,
+    max = 10,
+    step = 1,
+    label = '',
+    value,
+    onValueChange,
+    size = 'default',
+  } = props;
+
+  const defaultId = useId();
+  const id = providedId || defaultId;
 
   const sliderValue = useMemo(() => {
     return [value];
@@ -26,20 +42,30 @@ function Slider(props: SliderProps) {
   );
 
   return (
-    <Radix.Root
-      className={styles.root}
-      min={min}
-      max={max}
-      step={step}
-      value={sliderValue}
-      onValueChange={handleSliderChange}
-    >
-      <Radix.Track className={styles.track}>
-        <Radix.Range className={styles.range} />
-      </Radix.Track>
+    <div className={classNames(styles.wrapper, styles[size])}>
+      {label && (
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+      )}
 
-      <Radix.Thumb className={styles.thumb} />
-    </Radix.Root>
+      <Radix.Root
+        className={styles.root}
+        min={min}
+        max={max}
+        step={step}
+        value={sliderValue}
+        onValueChange={handleSliderChange}
+      >
+        <Radix.Track className={styles.track}>
+          <Radix.Range className={styles.range} />
+        </Radix.Track>
+
+        <Radix.Thumb asChild>
+          <button className={styles.thumb} id={id} type="button" />
+        </Radix.Thumb>
+      </Radix.Root>
+    </div>
   );
 }
 

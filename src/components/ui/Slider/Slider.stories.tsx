@@ -3,12 +3,17 @@ import { useState } from 'react';
 
 import Slider from './Slider';
 
-export const Default: StoryFn<typeof Slider> = () => {
+export const Default: StoryFn<typeof Slider> = ({ size }) => {
   const [value, setValue] = useState(0);
 
   return (
     <div style={{ padding: 20, width: 400 }}>
-      <Slider value={value} onValueChange={setValue} />
+      <Slider
+        label="Change Stroke Width"
+        value={value}
+        onValueChange={setValue}
+        size={size}
+      />
     </div>
   );
 };
@@ -16,4 +21,7 @@ export const Default: StoryFn<typeof Slider> = () => {
 export default {
   title: 'Components/UI/Slider',
   component: Slider,
+  args: {
+    size: 'default',
+  },
 } as Meta<typeof Slider>;
