@@ -22,23 +22,35 @@ function RESIFileChart(props: RESIFileChartProps) {
   const { files, smoothDataOptions = { chunkSize: 250 } } = props;
 
   const smoothed = smoothFiles(files, smoothDataOptions);
-  const data = convertFilesToChartData(smoothed);
+  const data = convertFilesToChartData(smoothed, smoothDataOptions.chunkSize);
 
   return (
     <ResponsiveContainer>
       <LineChart
         data={data}
-        margin={{ top: 60, right: 60, left: 10, bottom: 60 }}
+        margin={{ top: 60, right: 50, left: 20, bottom: 0 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
 
-        <YAxis />
+        <YAxis
+          tickCount={20}
+          label={{
+            value: '[RESI]',
+            position: 'insideLeft',
+            angle: -90,
+          }}
+        />
 
         <XAxis
           dataKey="x"
           type="number"
           domain={['auto', 'auto']}
-          tickCount={10}
+          tickCount={20}
+          label={{
+            value: '[mm]',
+            position: 'center',
+          }}
+          height={70}
         />
 
         {files.map((file, i) => (
