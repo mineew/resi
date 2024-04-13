@@ -6,25 +6,21 @@
 
 .root {
   position: relative;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid var(--slate-12);
   border-radius: 4px;
   outline: none;
-  transition:
-    background-color 0.15s,
-    border-color 0.15s,
-    outline-color 0.15s;
+  transition: background-color 0.15s linear;
 }
 
 .root:focus {
-  outline: 2px solid var(--slate-12);
+  outline: 1px solid var(--slate-12);
   outline-offset: 2px;
 }
 
 .root[data-state='checked'] {
-  background-color: var(--blue-9);
-  border-color: var(--blue-9);
-  outline-color: var(--blue-9);
+  background-color: var(--slate-12);
 }
 
 .indicator {
@@ -41,12 +37,13 @@
   transition:
     opacity 0.15s,
     transform 0.15s;
-  transform: translate(-50%, -50%);
-  will-change: opacity;
+  transform: translate(-50%, -50%) scale(0);
+  will-change: opacity, transform;
 }
 
 .indicator[data-state='checked'] .icon {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .label {
@@ -57,13 +54,13 @@
 /* --- Default Size --------------------------------------------------------- */
 
 .wrapper.default .root {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .wrapper.default .icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 /* --- Small Size ----------------------------------------------------------- */

@@ -3,7 +3,7 @@
   gap: 6px;
   align-items: center;
   justify-content: flex-start;
-  color: #fff;
+  color: var(--slate-1);
   cursor: pointer;
   background-color: var(--background-color);
   border: none;
@@ -11,14 +11,8 @@
 }
 
 .button:focus,
-.button:hover,
 .button[data-state='open'] {
-  background-color: var(--active-background-color);
-}
-
-.button:focus,
-.button[data-state='open'] {
-  outline: 2px solid var(--background-color);
+  outline: 1px solid var(--background-color);
   outline-offset: 2px;
 }
 
@@ -34,14 +28,12 @@
 
 /* --- Primary -------------------------------------------------------------- */
 .button.primary {
-  --background-color: var(--blue-9);
-  --active-background-color: var(--blue-10);
+  --background-color: var(--slate-12);
 }
 
 /* --- Danger --------------------------------------------------------------- */
 .button.danger {
   --background-color: var(--red-9);
-  --active-background-color: var(--red-10);
 }
 
 /* --- Variants ------------------------------------------------------------- */

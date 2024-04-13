@@ -9,8 +9,8 @@ function Block({ title }: { title: string }) {
         padding: 20,
         borderRadius: 16,
         height: '100%',
-        backgroundColor: 'var(--slate-2)',
-        border: '2px dashed var(--slate-3)',
+        backgroundColor: 'var(--slate-3)',
+        border: '2px dashed var(--slate-6)',
       }}
     >
       {title}

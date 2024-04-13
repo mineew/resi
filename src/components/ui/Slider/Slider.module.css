@@ -10,8 +10,8 @@
 }
 
 .root {
-  --color: var(--blue-9);
-  --active-color: var(--blue-11);
+  --color: var(--slate-12);
+  --active-color: var(--slate-12);
 
   position: relative;
   display: flex;
@@ -52,7 +52,7 @@
 }
 
 .thumb:focus {
-  outline: 2px solid var(--color);
+  outline: 1px solid var(--color);
   outline-offset: 2px;
 }
 
@@ -60,14 +60,14 @@
 
 .wrapper.default .root {
   --track-size: 4px;
-  --thumb-size: 20px;
+  --thumb-size: 16px;
 }
 
 /* --- Small Size ----------------------------------------------------------- */
 
 .wrapper.small .root {
   --track-size: 3px;
-  --thumb-size: 16px;
+  --thumb-size: 14px;
 }
 
 .wrapper.small .label {

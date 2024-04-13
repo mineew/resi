@@ -1,0 +1,53 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.item {
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--slate-12);
+  border-radius: 100%;
+  outline: none;
+  transition: border-width 0.15s linear;
+}
+
+.item:focus {
+  outline: 1px solid var(--slate-12);
+  outline-offset: 2px;
+}
+
+.item[data-state='checked'] {
+  border-width: 5px;
+}
+
+.label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- Default Size --------------------------------------------------------- */
+
+.root.default .item {
+  width: 18px;
+  height: 18px;
+}
+
+/* --- Small Size ----------------------------------------------------------- */
+
+.root.small .item {
+  width: 16px;
+  height: 16px;
+}
+
+.root.small .label {
+  font-size: 0.9rem;
+}
