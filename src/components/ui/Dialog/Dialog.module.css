@@ -1,47 +1,104 @@
 .overlay {
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(12px);
-  animation: overlay 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: overlay 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .content {
   position: fixed;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 800px;
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid var(--slate-6);
+  border-radius: 8px;
+  outline: none;
+  box-shadow:
+    0 10px 15px -3px var(--slate-4),
+    0 4px 6px -4px var(--slate-4);
+  transform: translate(-50%, 20px);
   animation: content 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* .title {
+:global(.dark) .content {
+  background-color: var(--slate-4);
+  box-shadow: none;
+}
+
+.title {
+  padding-right: 34px;
+  margin-bottom: 3px;
 }
 
 .description {
+  margin-bottom: 12px;
+  color: var(--slate-11);
+}
+
+.title,
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .close {
-} */
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 0;
+  color: var(--slate-1);
+  cursor: pointer;
+  background-color: var(--slate-12);
+  border: none;
+  border-radius: 100%;
+  transition: background-color 0.15s;
+}
+
+.close:focus {
+  outline: 2px solid var(--slate-12);
+  outline-offset: 2px;
+}
+
+.close:hover {
+  background-color: var(--slate-11);
+}
+
+.close:active {
+  background-color: var(--slate-10);
+}
+
+@media (width <= 860px) {
+  .content {
+    width: 90vw;
+  }
+}
 
 @keyframes overlay {
   from {
-    /* opacity: 0; */
     backdrop-filter: blur(0);
   }
 
   to {
-    /* opacity: 1; */
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(3px);
   }
 }
 
 @keyframes content {
   from {
     opacity: 0;
-    transform: translate(-50%, -48%) scale(0.96);
+    transform: translate(-50%, 40px) scale(0.8);
   }
 
   to {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, 20px) scale(1);
   }
 }
