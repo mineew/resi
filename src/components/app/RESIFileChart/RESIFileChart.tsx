@@ -1,4 +1,4 @@
-import RESIFileChartView from '@/components/ui/RESIFileChart/RESIFileChart';
+import RESIFileChartView from '@/components/service/RESIFileChart/RESIFileChart';
 import useStore from '@/store/store';
 
 function RESIFileChart() {

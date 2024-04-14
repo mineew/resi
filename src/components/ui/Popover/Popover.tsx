@@ -5,15 +5,16 @@ import styles from './Popover.module.css';
 
 interface PopoverProps {
   trigger: JSX.Element;
-  children: ReactNode;
+  open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  children: ReactNode;
 }
 
 function Popover(props: PopoverProps) {
-  const { trigger, children, onOpenChange } = props;
+  const { trigger, open, onOpenChange, children } = props;
 
   return (
-    <Radix.Root onOpenChange={onOpenChange}>
+    <Radix.Root open={open} onOpenChange={onOpenChange}>
       <Radix.Trigger asChild>{trigger}</Radix.Trigger>
 
       <Radix.Portal>

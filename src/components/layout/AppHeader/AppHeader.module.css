@@ -1,0 +1,7 @@
+.wrapper {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: var(--slate-2);
+}

@@ -38,6 +38,10 @@ export const Default: StoryFn<typeof RESIFileChart> = () => {
 };
 
 export default {
-  title: 'Components/UI/RESIFileChart',
+  title: 'Components/Service/RESIFileChart',
   component: RESIFileChart,
+  argTypes: {
+    files: { table: { disable: true } },
+    smoothDataOptions: { table: { disable: true } },
+  },
 } as Meta<typeof RESIFileChart>;

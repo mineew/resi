@@ -1,6 +1,6 @@
 import { type Meta, type StoryFn } from '@storybook/react';
 
-import Sidebar from './Sidebar';
+import AppHeader from './AppHeader';
 
 function Block({ title }: { title: string }) {
   return (
@@ -18,17 +18,21 @@ function Block({ title }: { title: string }) {
   );
 }
 
-export const Default: StoryFn<typeof Sidebar> = () => {
+export const Default: StoryFn<typeof AppHeader> = () => {
   return (
     <div style={{ height: '100vh' }}>
-      <Sidebar header={<Block title="Header" />}>
-        <Block title="Content" />
-      </Sidebar>
+      <AppHeader>
+        <Block title="Child 1" />
+        <Block title="Child 2" />
+      </AppHeader>
     </div>
   );
 };
 
 export default {
-  title: 'Components/Layout/Sidebar',
-  component: Sidebar,
-} as Meta<typeof Sidebar>;
+  title: 'Components/Layout/AppHeader',
+  component: AppHeader,
+  argTypes: {
+    children: { table: { disable: true } },
+  },
+} as Meta<typeof AppHeader>;

@@ -21,6 +21,11 @@ export const Default: StoryFn<typeof Checkbox> = ({ label, size }) => {
 export default {
   title: 'Components/UI/Checkbox',
   component: Checkbox,
+  argTypes: {
+    id: { table: { disable: true } },
+    checked: { table: { disable: true } },
+    onCheckedChange: { table: { disable: true } },
+  },
   args: {
     label: 'Checkbox Label',
     size: 'default',

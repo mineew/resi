@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import { Trash2 } from 'lucide-react';
 import { useState } from 'react';
 
+import RESIFileSettings from '@/components/service/RESIFileSettings/RESIFileSettings';
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
-import RESIFileSettings from '@/components/ui/RESIFileSettings/RESIFileSettings';
 import { type RESIFile } from '@/store/RESIFile';
 
 import styles from './RESIFileList.module.css';

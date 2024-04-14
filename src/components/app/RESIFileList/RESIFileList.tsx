@@ -1,4 +1,4 @@
-import RESIFileListView from '@/components/ui/RESIFileList/RESIFileList';
+import RESIFileListView from '@/components/service/RESIFileList/RESIFileList';
 import useStore from '@/store/store';
 
 function RESIFileList() {

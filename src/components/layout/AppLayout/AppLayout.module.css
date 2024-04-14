@@ -4,13 +4,34 @@
   overflow: hidden;
 }
 
-.sidebar {
+.left,
+.right {
   flex: none;
+}
+
+.left {
   width: 400px;
   border-right: 1px solid var(--slate-6);
 }
 
+.right {
+  width: 300px;
+  border-left: 1px solid var(--slate-6);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 0;
+}
+
+.header {
+  flex: none;
+  border-bottom: 1px solid var(--slate-6);
+}
+
 .body {
   flex: 1;
-  width: 0;
+  height: 0;
 }

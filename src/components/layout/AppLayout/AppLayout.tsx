@@ -3,17 +3,25 @@ import { type ReactNode } from 'react';
 import styles from './AppLayout.module.css';
 
 interface AppLayoutProps {
-  sidebar: ReactNode;
-  children: ReactNode;
+  left: ReactNode;
+  header: ReactNode;
+  body: ReactNode;
+  right: ReactNode;
 }
 
 function AppLayout(props: AppLayoutProps) {
-  const { sidebar, children } = props;
+  const { left, header, body, right } = props;
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.sidebar}>{sidebar}</div>
-      <div className={styles.body}>{children}</div>
+      <div className={styles.left}>{left}</div>
+
+      <div className={styles.content}>
+        <div className={styles.header}>{header}</div>
+        <div className={styles.body}>{body}</div>
+      </div>
+
+      <div className={styles.right}>{right}</div>
     </div>
   );
 }

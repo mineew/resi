@@ -23,9 +23,12 @@ function Block({ title }: { title: string }) {
 export const Default: StoryFn<typeof AppLayout> = () => {
   return (
     <div style={{ height: '100vh' }}>
-      <AppLayout sidebar={<Block title="Sidebar" />}>
-        <Block title="Content" />
-      </AppLayout>
+      <AppLayout
+        left={<Block title="Left" />}
+        header={<Block title="Header" />}
+        body={<Block title="Body" />}
+        right={<Block title="Right" />}
+      />
     </div>
   );
 };
@@ -33,4 +36,10 @@ export const Default: StoryFn<typeof AppLayout> = () => {
 export default {
   title: 'Components/Layout/AppLayout',
   component: AppLayout,
+  argTypes: {
+    left: { table: { disable: true } },
+    header: { table: { disable: true } },
+    body: { table: { disable: true } },
+    right: { table: { disable: true } },
+  },
 } as Meta<typeof AppLayout>;

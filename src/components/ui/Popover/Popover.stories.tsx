@@ -17,4 +17,10 @@ export const Default: StoryFn<typeof Popover> = () => {
 export default {
   title: 'Components/UI/Popover',
   component: Popover,
+  argTypes: {
+    trigger: { table: { disable: true } },
+    open: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
+    children: { table: { disable: true } },
+  },
 } as Meta<typeof Popover>;

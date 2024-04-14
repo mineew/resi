@@ -33,6 +33,11 @@ export const Default: StoryFn<typeof RadioGroup> = ({ label, size }) => {
 export default {
   title: 'Components/UI/RadioGroup',
   component: RadioGroup,
+  argTypes: {
+    items: { table: { disable: true } },
+    value: { table: { disable: true } },
+    onValueChange: { table: { disable: true } },
+  },
   args: {
     label: 'Threshold',
     size: 'default',

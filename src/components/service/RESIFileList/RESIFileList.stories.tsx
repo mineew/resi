@@ -48,6 +48,13 @@ export const Default: StoryFn<typeof RESIFileList> = ({
 };
 
 export default {
-  title: 'Components/UI/RESIFileList',
+  title: 'Components/Service/RESIFileList',
   component: RESIFileList,
+  argTypes: {
+    files: { table: { disable: true } },
+    onChangeFileColor: { table: { disable: true } },
+    onChangeFileStrokeWidth: { table: { disable: true } },
+    onChangeFileChecked: { table: { disable: true } },
+    onDeleteFile: { table: { disable: true } },
+  },
 } as Meta<typeof RESIFileList>;
