@@ -8,7 +8,6 @@
   position: fixed;
   top: 0;
   left: 50%;
-  padding: 24px;
   background-color: #fff;
   border: 1px solid var(--slate-6);
   border-radius: 8px;
@@ -25,30 +24,27 @@
   box-shadow: none;
 }
 
+.header,
+.body {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--slate-6);
+}
+
 .title {
-  padding-right: 34px;
-  margin-bottom: 3px;
-}
-
-.description {
-  color: var(--slate-11);
-}
-
-.title,
-.description {
+  flex: 1;
+  width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.body {
-  margin-top: 24px;
+  white-space: nowrap;
 }
 
 .close {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  display: block;
   display: flex;
   align-items: center;
   justify-content: center;

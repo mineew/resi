@@ -7,17 +7,18 @@ import styles from './Dialog.module.css';
 
 interface DialogProps {
   trigger: JSX.Element;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
   title: string;
-  description?: string;
   children: ReactNode;
   size?: '400' | '600';
 }
 
 function Dialog(props: DialogProps) {
-  const { trigger, title, description, children, size = '400' } = props;
+  const { trigger, open, onOpenChange, title, children, size = '400' } = props;
 
   return (
-    <Radix.Root>
+    <Radix.Root open={open} onOpenChange={onOpenChange}>
       <Radix.Trigger asChild>{trigger}</Radix.Trigger>
 
       <Radix.Portal>
@@ -26,21 +27,17 @@ function Dialog(props: DialogProps) {
         <Radix.Content
           className={classNames(styles.content, styles[`size-${size}`])}
         >
-          <Radix.Title className={styles.title}>{title}</Radix.Title>
+          <div className={styles.header}>
+            <Radix.Title className={styles.title}>{title}</Radix.Title>
 
-          {description && (
-            <Radix.Description className={styles.description}>
-              {description}
-            </Radix.Description>
-          )}
+            <Radix.Close asChild>
+              <button className={styles.close} type="button">
+                <X />
+              </button>
+            </Radix.Close>
+          </div>
 
           <div className={styles.body}>{children}</div>
-
-          <Radix.Close asChild>
-            <button className={styles.close} type="button">
-              <X />
-            </button>
-          </Radix.Close>
         </Radix.Content>
       </Radix.Portal>
     </Radix.Root>

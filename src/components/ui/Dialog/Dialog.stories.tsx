@@ -4,16 +4,11 @@ import Button from '@/components/ui/Button/Button';
 
 import Dialog from './Dialog';
 
-export const Default: StoryFn<typeof Dialog> = ({
-  title,
-  description,
-  size,
-}) => {
+export const Default: StoryFn<typeof Dialog> = ({ title, size }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
         title={title}
-        description={description}
         trigger={<Button>Dialog Trigger</Button>}
         size={size}
       >
@@ -26,9 +21,14 @@ export const Default: StoryFn<typeof Dialog> = ({
 export default {
   title: 'Components/UI/Dialog',
   component: Dialog,
+  argTypes: {
+    trigger: { table: { disable: true } },
+    open: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
+    children: { table: { disable: true } },
+  },
   args: {
     title: 'Dialog Title',
-    description: 'Dialog Description',
-    size: '400',
+    size: '600',
   },
 } as Meta<typeof Dialog>;
