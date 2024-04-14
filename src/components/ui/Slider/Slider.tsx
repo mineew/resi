@@ -10,6 +10,7 @@ interface SliderProps {
   max?: number;
   step?: number;
   label?: string;
+  hasBoldLabel?: boolean;
   value: number;
   onValueChange: (value: number) => void;
   size?: 'default' | 'small';
@@ -22,6 +23,7 @@ function Slider(props: SliderProps) {
     max = 10,
     step = 1,
     label = '',
+    hasBoldLabel = false,
     value,
     onValueChange,
     size = 'default',
@@ -44,7 +46,12 @@ function Slider(props: SliderProps) {
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
       {label && (
-        <label className={styles.label} htmlFor={id}>
+        <label
+          className={classNames(styles.label, {
+            [styles.bold]: hasBoldLabel,
+          })}
+          htmlFor={id}
+        >
           {label}
         </label>
       )}

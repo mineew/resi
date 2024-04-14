@@ -23,7 +23,10 @@ function RadioGroup(props: RadioGroupProps) {
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
       {label && (
-        <label className={styles.label} htmlFor={firstItemId}>
+        <label
+          className={classNames(styles.label, styles.bold)}
+          htmlFor={firstItemId}
+        >
           {label}
         </label>
       )}

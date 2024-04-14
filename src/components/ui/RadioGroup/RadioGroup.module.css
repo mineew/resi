@@ -40,6 +40,10 @@
   user-select: none;
 }
 
+.bold {
+  font-weight: 500;
+}
+
 /* --- Default Size --------------------------------------------------------- */
 
 .wrapper.default .item {
