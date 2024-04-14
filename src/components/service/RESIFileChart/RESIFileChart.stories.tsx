@@ -11,21 +11,21 @@ const files: RESIFile[] = [
     color: '#FF0000',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(15000).fill(null).map(() => getRandomInt(0, 200)),
+    contents: new Array(10).fill(null).map(() => getRandomInt(0, 200)),
   },
   {
     name: 'File-2',
     color: '#00FF00',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(15000).fill(null).map(() => getRandomInt(0, 300)),
+    contents: new Array(10).fill(null).map(() => getRandomInt(0, 300)),
   },
   {
     name: 'File-3',
     color: '#0000FF',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(15000).fill(null).map(() => getRandomInt(0, 400)),
+    contents: new Array(10).fill(null).map(() => getRandomInt(0, 400)),
   },
 ];
 
@@ -42,6 +42,6 @@ export default {
   component: RESIFileChart,
   argTypes: {
     files: { table: { disable: true } },
-    smoothDataOptions: { table: { disable: true } },
+    scale: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileChart>;

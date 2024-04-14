@@ -8,21 +8,17 @@ import {
 } from 'recharts';
 
 import { type RESIFile } from '@/store/types/RESIFile';
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
-import smoothFiles from '@/utils/stats/smoothFiles';
 
 import convertFilesToChartData from './convertFilesToChartData';
 
 interface RESIFileChartProps {
   files: RESIFile[];
-  smoothDataOptions?: SmoothDataOptions;
+  scale?: number;
 }
 
 function RESIFileChart(props: RESIFileChartProps) {
-  const { files, smoothDataOptions = { chunkSize: 250 } } = props;
-
-  const smoothed = smoothFiles(files, smoothDataOptions);
-  const data = convertFilesToChartData(smoothed, smoothDataOptions.chunkSize);
+  const { files, scale } = props;
+  const data = convertFilesToChartData(files, scale);
 
   return (
     <ResponsiveContainer>

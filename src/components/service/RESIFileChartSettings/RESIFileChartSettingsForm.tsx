@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button/Button';
 import RadioGroup from '@/components/ui/RadioGroup/RadioGroup';
 import Slider from '@/components/ui/Slider/Slider';
 import {
-  DEFAULT_SMOOTH_DATA_OPTIONS,
+  DEFAULT_SMOOTH_DATA_OPTIONS as DEFAULT_VALUES,
   type SmoothDataOptions,
 } from '@/store/types/SmoothDataOptions';
 
@@ -21,7 +21,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
   const { defaultValues, onSubmit } = props;
 
   const { control, handleSubmit } = useForm<SmoothDataOptions>({
-    defaultValues: { ...DEFAULT_SMOOTH_DATA_OPTIONS, ...defaultValues },
+    defaultValues: { ...DEFAULT_VALUES, ...defaultValues },
   });
 
   return (
@@ -33,7 +33,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <Slider
             label="Порог Z-Score"
             hasBoldLabel
-            value={field.value || DEFAULT_SMOOTH_DATA_OPTIONS.zScoreThreshold}
+            value={field.value || DEFAULT_VALUES.zScoreThreshold}
             onValueChange={field.onChange}
             min={1}
           />
@@ -50,7 +50,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
               { label: 'Среднее значение', value: 'mean' },
               { label: 'Медиана', value: 'median' },
             ]}
-            value={field.value || DEFAULT_SMOOTH_DATA_OPTIONS.zScoreMeanMethod}
+            value={field.value || DEFAULT_VALUES.zScoreMeanMethod}
             onValueChange={field.onChange}
           />
         )}
@@ -63,7 +63,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <Slider
             label="Окно сглаживания"
             hasBoldLabel
-            value={field.value || DEFAULT_SMOOTH_DATA_OPTIONS.chunkSize}
+            value={field.value || DEFAULT_VALUES.chunkSize}
             onValueChange={(value) => {
               if (value !== 1 && value !== 1000) {
                 field.onChange(value - 1);
@@ -88,9 +88,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
               { label: 'Среднее значение', value: 'mean' },
               { label: 'Медиана', value: 'median' },
             ]}
-            value={
-              field.value || DEFAULT_SMOOTH_DATA_OPTIONS.chunkAggregateMethod
-            }
+            value={field.value || DEFAULT_VALUES.chunkAggregateMethod}
             onValueChange={field.onChange}
           />
         )}

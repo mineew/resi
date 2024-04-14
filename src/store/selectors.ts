@@ -1,3 +1,5 @@
+import smoothFiles from '@/utils/stats/smoothFiles';
+
 import { type StoreState } from './types/StoreState';
 
 const files = (state: StoreState) => state.files;
@@ -14,6 +16,14 @@ const checkedFiles = (state: StoreState) => {
   return state.files.filter((f) => f.checked);
 };
 
+const smoothedFiles = (state: StoreState) => {
+  return smoothFiles(checkedFiles(state), state.smoothDataOptions);
+};
+
+const smoothChunkSize = (state: StoreState) => {
+  return state.smoothDataOptions.chunkSize;
+};
+
 export {
   files,
   setFiles,
@@ -24,4 +34,6 @@ export {
   smoothDataOptions,
   setSmoothDataOptions,
   checkedFiles,
+  smoothedFiles,
+  smoothChunkSize,
 };
