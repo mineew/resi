@@ -1,4 +1,5 @@
 import * as Radix from '@radix-ui/react-dialog';
+import classNames from 'classnames';
 import { X } from 'lucide-react';
 import { type ReactNode } from 'react';
 
@@ -9,10 +10,11 @@ interface DialogProps {
   title: string;
   description?: string;
   children: ReactNode;
+  size?: '400' | '600';
 }
 
 function Dialog(props: DialogProps) {
-  const { trigger, title, description, children } = props;
+  const { trigger, title, description, children, size = '400' } = props;
 
   return (
     <Radix.Root>
@@ -21,7 +23,9 @@ function Dialog(props: DialogProps) {
       <Radix.Portal>
         <Radix.Overlay className={styles.overlay} />
 
-        <Radix.Content className={styles.content}>
+        <Radix.Content
+          className={classNames(styles.content, styles[`size-${size}`])}
+        >
           <Radix.Title className={styles.title}>{title}</Radix.Title>
 
           {description && (

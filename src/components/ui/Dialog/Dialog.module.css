@@ -8,7 +8,6 @@
   position: fixed;
   top: 0;
   left: 50%;
-  width: 800px;
   padding: 24px;
   background-color: #fff;
   border: 1px solid var(--slate-6);
@@ -75,12 +74,6 @@
   background-color: var(--slate-10);
 }
 
-@media (width <= 860px) {
-  .content {
-    width: 90vw;
-  }
-}
-
 @keyframes overlay {
   from {
     backdrop-filter: blur(0);
@@ -100,5 +93,27 @@
   to {
     opacity: 1;
     transform: translate(-50%, 20px) scale(1);
+  }
+}
+
+/* Sizes -------------------------------------------------------------------- */
+
+.content.size-400 {
+  width: 400px;
+}
+
+@media (width <= 460px) {
+  .content.size-400 {
+    width: 90vw;
+  }
+}
+
+.content.size-600 {
+  width: 600px;
+}
+
+@media (width <= 660px) {
+  .content.size-600 {
+    width: 90vw;
   }
 }
