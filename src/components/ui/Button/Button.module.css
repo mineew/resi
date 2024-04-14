@@ -3,15 +3,33 @@
   gap: 6px;
   align-items: center;
   justify-content: flex-start;
-  color: var(--slate-1);
   cursor: pointer;
-  background-color: var(--background-color);
   border: none;
   border-radius: 6px;
 }
 
+.button.filled {
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
+.button.outlined {
+  color: var(--outlined-color);
+  background-color: transparent;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.button:hover {
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
 .button:focus,
 .button[data-state='open'] {
+  color: var(--color);
+  background-color: var(--background-color);
   outline: 1px solid var(--background-color);
   outline-offset: 2px;
 }
@@ -21,6 +39,7 @@
 }
 
 .button:disabled {
+  color: var(--slate-2);
   cursor: not-allowed;
   background-color: var(--slate-8);
   filter: none;
@@ -29,11 +48,15 @@
 /* --- Primary -------------------------------------------------------------- */
 .button.primary {
   --background-color: var(--slate-12);
+  --color: var(--slate-1);
+  --outlined-color: var(--slate-12);
 }
 
 /* --- Danger --------------------------------------------------------------- */
 .button.danger {
   --background-color: var(--red-9);
+  --color: var(--red-1);
+  --outlined-color: var(--red-12);
 }
 
 /* --- Variants ------------------------------------------------------------- */

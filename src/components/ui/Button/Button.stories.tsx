@@ -7,6 +7,7 @@ export const Default: StoryFn<typeof Button> = ({
   size,
   fullWidth,
   center,
+  outlined,
   disabled,
 }) => {
   return (
@@ -16,6 +17,7 @@ export const Default: StoryFn<typeof Button> = ({
         size={size}
         fullWidth={fullWidth}
         center={center}
+        outlined={outlined}
         disabled={disabled}
       >
         Click me
@@ -32,6 +34,7 @@ export default {
     size: 'default',
     fullWidth: false,
     center: false,
+    outlined: false,
     disabled: false,
   },
 } as Meta<typeof Button>;

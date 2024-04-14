@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button/Button';
 function RESIFileChartSettings() {
   return (
     <RESIFileChartSettingsView onChange={() => undefined}>
-      <Button>
+      <Button outlined>
         <Settings /> Настройки графика
       </Button>
     </RESIFileChartSettingsView>
