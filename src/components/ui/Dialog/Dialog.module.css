@@ -31,7 +31,6 @@
 }
 
 .description {
-  margin-bottom: 12px;
   color: var(--slate-11);
 }
 
@@ -39,6 +38,10 @@
 .description {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.body {
+  margin-top: 24px;
 }
 
 .close {

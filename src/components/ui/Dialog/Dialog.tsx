@@ -34,7 +34,7 @@ function Dialog(props: DialogProps) {
             </Radix.Description>
           )}
 
-          {children}
+          <div className={styles.body}>{children}</div>
 
           <Radix.Close asChild>
             <button className={styles.close} type="button">
