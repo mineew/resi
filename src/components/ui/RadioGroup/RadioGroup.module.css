@@ -1,3 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .root {
   display: flex;
   flex-direction: column;
@@ -36,18 +42,18 @@
 
 /* --- Default Size --------------------------------------------------------- */
 
-.root.default .item {
+.wrapper.default .item {
   width: 18px;
   height: 18px;
 }
 
 /* --- Small Size ----------------------------------------------------------- */
 
-.root.small .item {
+.wrapper.small .item {
   width: 16px;
   height: 16px;
 }
 
-.root.small .label {
+.wrapper.small .label {
   font-size: 0.9rem;
 }
