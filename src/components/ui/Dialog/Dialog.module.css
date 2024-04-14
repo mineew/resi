@@ -61,7 +61,7 @@
 }
 
 .close:focus {
-  outline: 2px solid var(--slate-12);
+  outline: 1px solid var(--slate-12);
   outline-offset: 2px;
 }
 
