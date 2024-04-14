@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/RESIFile';
+import { type RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileList.module.css';
 import RESIFileListItem from './RESIFileListItem';

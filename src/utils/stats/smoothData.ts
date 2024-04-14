@@ -1,13 +1,9 @@
 import { mean, median } from 'simple-statistics';
 
+import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
 import splitArrayOnChunks from '@/utils/arrays/splitArrayOnChunks';
 
-import { type FilterOutliersOptions, filterOutliers } from './filterOutliers';
-
-interface SmoothDataOptions extends FilterOutliersOptions {
-  chunkSize?: number;
-  chunkAggregateMethod?: 'mean' | 'median';
-}
+import { filterOutliers } from './filterOutliers';
 
 function smoothData(data: number[], options: SmoothDataOptions = {}) {
   const { chunkSize = 100, chunkAggregateMethod = 'mean' } = options;
@@ -26,5 +22,4 @@ function smoothData(data: number[], options: SmoothDataOptions = {}) {
   return result;
 }
 
-export { smoothData };
-export type { SmoothDataOptions };
+export default smoothData;

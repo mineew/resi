@@ -7,9 +7,9 @@ import {
   YAxis,
 } from 'recharts';
 
-import { type RESIFile } from '@/store/RESIFile';
-import { type SmoothDataOptions } from '@/utils/stats/smoothData';
-import { smoothFiles } from '@/utils/stats/smoothFiles';
+import { type RESIFile } from '@/store/types/RESIFile';
+import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import smoothFiles from '@/utils/stats/smoothFiles';
 
 import convertFilesToChartData from './convertFilesToChartData';
 

@@ -1,6 +1,6 @@
 import { type Meta, type StoryFn } from '@storybook/react';
 
-import { type RESIFile } from '@/store/RESIFile';
+import { type RESIFile } from '@/store/types/RESIFile';
 import getRandomInt from '@/utils/misc/getRandomInt';
 
 import RESIFileChart from './RESIFileChart';

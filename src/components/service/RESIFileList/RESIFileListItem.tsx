@@ -5,7 +5,7 @@ import { useState } from 'react';
 import RESIFileSettings from '@/components/service/RESIFileSettings/RESIFileSettings';
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
-import { type RESIFile } from '@/store/RESIFile';
+import { type RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileList.module.css';
 

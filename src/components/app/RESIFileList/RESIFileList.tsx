@@ -1,14 +1,13 @@
 import RESIFileListView from '@/components/service/RESIFileList/RESIFileList';
+import * as selectors from '@/store/selectors';
 import useStore from '@/store/store';
 
 function RESIFileList() {
-  const files = useStore((store) => store.files);
-  const changeFileColor = useStore((store) => store.changeFileColor);
-  const changeFileStrokeWidth = useStore(
-    (store) => store.changeFileStrokeWidth,
-  );
-  const toggleFile = useStore((store) => store.toggleFile);
-  const deleteFile = useStore((store) => store.deleteFile);
+  const files = useStore(selectors.files);
+  const changeFileColor = useStore(selectors.changeFileColor);
+  const changeFileStrokeWidth = useStore(selectors.changeFileStrokeWidth);
+  const toggleFile = useStore(selectors.toggleFile);
+  const deleteFile = useStore(selectors.deleteFile);
 
   return (
     <RESIFileListView

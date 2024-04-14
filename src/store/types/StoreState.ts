@@ -1,4 +1,5 @@
 import { type RESIFile } from './RESIFile';
+import { type SmoothDataOptions } from './SmoothDataOptions';
 
 interface StoreState {
   files: RESIFile[];
@@ -7,6 +8,9 @@ interface StoreState {
   changeFileStrokeWidth: (idx: number, width: number) => void;
   toggleFile: (idx: number, checked: boolean) => void;
   deleteFile: (idx: number) => void;
+
+  smoothDataOptions: SmoothDataOptions;
+  setSmoothDataOptions: (options: SmoothDataOptions) => void;
 }
 
 export type { StoreState };

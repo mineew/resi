@@ -1,10 +1,10 @@
 import { create } from 'zustand';
 
-import { type StoreState } from './StoreState';
+import { DEFAULT_SMOOTH_DATA_OPTIONS } from './types/SmoothDataOptions';
+import { type StoreState } from './types/StoreState';
 
 const useStore = create<StoreState>((set, get) => ({
   files: [],
-
   setFiles: (files) => set({ files }),
 
   changeFileColor: (idx, color) => {
@@ -38,6 +38,9 @@ const useStore = create<StoreState>((set, get) => ({
 
     set({ files: newFiles });
   },
+
+  smoothDataOptions: DEFAULT_SMOOTH_DATA_OPTIONS,
+  setSmoothDataOptions: (smoothDataOptions) => set({ smoothDataOptions }),
 }));
 
 export default useStore;

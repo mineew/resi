@@ -1,11 +1,8 @@
 import { mean, median, standardDeviation, zScore } from 'simple-statistics';
 
-interface FilterOutliersOptions {
-  zScoreThreshold?: number;
-  zScoreMeanMethod?: 'mean' | 'median';
-}
+import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
 
-function filterOutliers(data: number[], options: FilterOutliersOptions = {}) {
+function filterOutliers(data: number[], options: SmoothDataOptions = {}) {
   const { zScoreThreshold = 3, zScoreMeanMethod = 'mean' } = options;
 
   const m = zScoreMeanMethod === 'mean' ? mean(data) : median(data);
@@ -24,4 +21,3 @@ function filterOutliers(data: number[], options: FilterOutliersOptions = {}) {
 }
 
 export { filterOutliers };
-export type { FilterOutliersOptions };
