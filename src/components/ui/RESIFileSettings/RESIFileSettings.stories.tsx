@@ -34,4 +34,13 @@ export const Default: StoryFn<typeof RESIFileSettings> = () => {
 export default {
   title: 'Components/UI/RESIFileSettings',
   component: RESIFileSettings,
+  argTypes: {
+    color: { table: { disable: true } },
+    onChangeColor: { table: { disable: true } },
+    colorDebounceWait: { table: { disable: true } },
+    strokeWidth: { table: { disable: true } },
+    onChangeStrokeWidth: { table: { disable: true } },
+    children: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
+  },
 } as Meta<typeof RESIFileSettings>;

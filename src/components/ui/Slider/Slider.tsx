@@ -6,26 +6,28 @@ import styles from './Slider.module.css';
 
 interface SliderProps {
   id?: string;
-  min?: number;
-  max?: number;
-  step?: number;
   label?: string;
   hasBoldLabel?: boolean;
   value: number;
   onValueChange: (value: number) => void;
+  shouldDisplayValue?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
   size?: 'default' | 'small';
 }
 
 function Slider(props: SliderProps) {
   const {
     id: providedId,
-    min = 1,
-    max = 10,
-    step = 1,
     label = '',
     hasBoldLabel = false,
     value,
     onValueChange,
+    shouldDisplayValue = true,
+    min = 0,
+    max = 10,
+    step = 1,
     size = 'default',
   } = props;
 
@@ -43,17 +45,26 @@ function Slider(props: SliderProps) {
     [onValueChange],
   );
 
+  const labelElement = (
+    <label
+      className={classNames(styles.label, {
+        [styles.bold]: hasBoldLabel,
+      })}
+      htmlFor={id}
+    >
+      {label}
+    </label>
+  );
+
+  const valueElement = <div className={styles.value}>{value}</div>;
+
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
-      {label && (
-        <label
-          className={classNames(styles.label, {
-            [styles.bold]: hasBoldLabel,
-          })}
-          htmlFor={id}
-        >
-          {label}
-        </label>
+      {(!!label || shouldDisplayValue) && (
+        <div className={styles['label-wrapper']}>
+          {!!label && labelElement}
+          {shouldDisplayValue && valueElement}
+        </div>
       )}
 
       <Radix.Root

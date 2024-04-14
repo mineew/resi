@@ -42,6 +42,7 @@ function RESIFileSettings(props: RESIFileSettingsProps) {
           value={strokeWidth}
           onValueChange={onChangeStrokeWidth}
           size="small"
+          min={1}
         />
       </div>
     </Popover>
