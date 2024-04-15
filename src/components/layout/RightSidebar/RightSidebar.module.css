@@ -1,0 +1,6 @@
+.wrapper {
+  height: 100%;
+  padding: 12px;
+  overflow: hidden scroll;
+  background-color: var(--slate-2);
+}
