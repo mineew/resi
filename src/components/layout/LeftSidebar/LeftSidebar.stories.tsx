@@ -21,10 +21,9 @@ function Block({ title }: { title: string }) {
 export const Default: StoryFn<typeof LeftSidebar> = () => {
   return (
     <div style={{ height: '100vh' }}>
-      <LeftSidebar
-        header={<Block title="Header" />}
-        body={<Block title="Content" />}
-      />
+      <LeftSidebar header={<Block title="Header" />}>
+        <Block title="Content" />
+      </LeftSidebar>
     </div>
   );
 };
@@ -34,6 +33,6 @@ export default {
   component: LeftSidebar,
   argTypes: {
     header: { table: { disable: true } },
-    body: { table: { disable: true } },
+    children: { table: { disable: true } },
   },
 } as Meta<typeof LeftSidebar>;

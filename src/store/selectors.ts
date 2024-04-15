@@ -1,3 +1,4 @@
+import calculateFileDifferences from '@/utils/stats/calculateFileDifferences';
 import smoothFiles from '@/utils/stats/smoothFiles';
 
 import { type StoreState } from './types/StoreState';
@@ -13,15 +14,22 @@ const smoothDataOptions = (state: StoreState) => state.smoothDataOptions;
 const setSmoothDataOptions = (state: StoreState) => state.setSmoothDataOptions;
 
 const checkedFiles = (state: StoreState) => {
-  return state.files.filter((f) => f.checked);
+  return files(state).filter((f) => f.checked);
 };
 
 const smoothedFiles = (state: StoreState) => {
-  return smoothFiles(checkedFiles(state), state.smoothDataOptions);
+  return smoothFiles(checkedFiles(state), smoothDataOptions(state));
 };
 
 const smoothChunkSize = (state: StoreState) => {
-  return state.smoothDataOptions.chunkSize;
+  return smoothDataOptions(state).chunkSize;
+};
+
+const fileDiffs = (state: StoreState) => {
+  return calculateFileDifferences(
+    smoothedFiles(state),
+    smoothDataOptions(state),
+  );
 };
 
 export {
@@ -36,4 +44,5 @@ export {
   checkedFiles,
   smoothedFiles,
   smoothChunkSize,
+  fileDiffs,
 };

@@ -3,6 +3,7 @@ interface SmoothDataOptions {
   zScoreMeanMethod?: 'mean' | 'median';
   chunkSize?: number;
   chunkAggregateMethod?: 'mean' | 'median';
+  differenceMeanMethod?: 'mean' | 'median';
 }
 
 const DEFAULT_SMOOTH_DATA_OPTIONS: Required<SmoothDataOptions> = {
@@ -10,6 +11,7 @@ const DEFAULT_SMOOTH_DATA_OPTIONS: Required<SmoothDataOptions> = {
   zScoreMeanMethod: 'mean',
   chunkSize: 250,
   chunkAggregateMethod: 'mean',
+  differenceMeanMethod: 'mean',
 };
 
 export { DEFAULT_SMOOTH_DATA_OPTIONS };

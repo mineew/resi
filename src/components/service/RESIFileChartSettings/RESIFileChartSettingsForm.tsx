@@ -3,7 +3,9 @@
 import { Controller, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
-import RadioGroup from '@/components/ui/RadioGroup/RadioGroup';
+import RadioGroup, {
+  type RadioGroupItem,
+} from '@/components/ui/RadioGroup/RadioGroup';
 import Slider from '@/components/ui/Slider/Slider';
 import {
   DEFAULT_SMOOTH_DATA_OPTIONS as DEFAULT_VALUES,
@@ -23,6 +25,11 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
   const { control, handleSubmit } = useForm<SmoothDataOptions>({
     defaultValues: { ...DEFAULT_VALUES, ...defaultValues },
   });
+
+  const meanOptions: RadioGroupItem[] = [
+    { label: 'Среднее значение', value: 'mean' },
+    { label: 'Медиана', value: 'median' },
+  ];
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -46,10 +53,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
         render={({ field }) => (
           <RadioGroup
             label="Мера среднего в расчетах Z-Score"
-            items={[
-              { label: 'Среднее значение', value: 'mean' },
-              { label: 'Медиана', value: 'median' },
-            ]}
+            items={meanOptions}
             value={field.value || DEFAULT_VALUES.zScoreMeanMethod}
             onValueChange={field.onChange}
           />
@@ -84,11 +88,21 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
         render={({ field }) => (
           <RadioGroup
             label="Мера среднего в расчетах сглаживания"
-            items={[
-              { label: 'Среднее значение', value: 'mean' },
-              { label: 'Медиана', value: 'median' },
-            ]}
+            items={meanOptions}
             value={field.value || DEFAULT_VALUES.chunkAggregateMethod}
+            onValueChange={field.onChange}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="differenceMeanMethod"
+        render={({ field }) => (
+          <RadioGroup
+            label="Мера среднего в расчетах разницы"
+            items={meanOptions}
+            value={field.value || DEFAULT_VALUES.differenceMeanMethod}
             onValueChange={field.onChange}
           />
         )}
