@@ -11,7 +11,7 @@ interface DialogProps {
   onOpenChange?: (open: boolean) => void;
   title: string;
   children: ReactNode;
-  size?: '400' | '600';
+  size?: '400' | '600' | '800';
 }
 
 function Dialog(props: DialogProps) {

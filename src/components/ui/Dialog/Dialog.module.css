@@ -116,3 +116,13 @@
     width: 90vw;
   }
 }
+
+.content.size-800 {
+  width: 800px;
+}
+
+@media (width <= 860px) {
+  .content.size-800 {
+    width: 90vw;
+  }
+}
