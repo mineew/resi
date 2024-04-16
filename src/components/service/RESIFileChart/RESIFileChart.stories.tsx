@@ -2,6 +2,7 @@ import { type Meta, type StoryFn } from '@storybook/react';
 
 import { type RESIFile } from '@/store/types/RESIFile';
 import getRandomInt from '@/utils/misc/getRandomInt';
+import smoothFiles from '@/utils/stats/smoothFiles';
 
 import RESIFileChart from './RESIFileChart';
 
@@ -11,28 +12,33 @@ const files: RESIFile[] = [
     color: '#FF0000',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(10).fill(null).map(() => getRandomInt(0, 200)),
+    contents: new Array(50000).fill(null).map(() => getRandomInt(0, 200)),
   },
   {
     name: 'File-2',
     color: '#00FF00',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(10).fill(null).map(() => getRandomInt(0, 300)),
+    contents: new Array(50000).fill(null).map(() => getRandomInt(0, 300)),
   },
   {
     name: 'File-3',
     color: '#0000FF',
     strokeWidth: 1,
     checked: true,
-    contents: new Array(10).fill(null).map(() => getRandomInt(0, 400)),
+    contents: new Array(50000).fill(null).map(() => getRandomInt(0, 400)),
   },
 ];
 
 export const Default: StoryFn<typeof RESIFileChart> = () => {
+  const chunkSize = 500;
+
   return (
     <div style={{ padding: 20, height: '100vh' }}>
-      <RESIFileChart files={files} />
+      <RESIFileChart
+        files={smoothFiles(files, { chunkSize })}
+        scale={chunkSize}
+      />
     </div>
   );
 };

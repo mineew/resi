@@ -36,23 +36,34 @@ const files: RESIFile[] = [
   },
 ];
 
-const diffs: RESIFileDiff[] = [
-  {
-    fileA: files[1],
-    fileB: files[0],
-    diff: 12.2314343224234,
-  },
-  {
-    fileA: files[2],
-    fileB: files[1],
-    diff: -5.6781317234,
-  },
-  {
-    fileA: files[3],
-    fileB: files[2],
-    diff: 10,
-  },
-];
+const diff1: RESIFileDiff = {
+  fileA: files[1],
+  fileB: files[0],
+  diff: 12.2314343224234,
+  totalDiff: 12.2314343224234,
+  distance: 345.123433,
+  totalDistance: 345.123433,
+};
+
+const diff2: RESIFileDiff = {
+  fileA: files[2],
+  fileB: files[1],
+  diff: -5.6781317234,
+  totalDiff: diff1.diff + -5.6781317234,
+  distance: 653.12343,
+  totalDistance: diff1.distance + 653.12343,
+};
+
+const diff3: RESIFileDiff = {
+  fileA: files[3],
+  fileB: files[2],
+  diff: 10,
+  totalDiff: diff2.diff + 10,
+  distance: 987.892813233,
+  totalDistance: diff2.distance + 987.892813233,
+};
+
+const diffs: RESIFileDiff[] = [diff1, diff2, diff3];
 
 export const Default: StoryFn<typeof RESIFileDiffList> = () => {
   return (

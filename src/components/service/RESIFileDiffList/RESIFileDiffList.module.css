@@ -17,11 +17,27 @@
   background-color: var(--slate-4);
 }
 
-.title {
+.title,
+.diff,
+.distance {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.title,
+.diff {
   margin-bottom: 8px;
+}
+
+.title {
   font-weight: 500;
 }
 
 .red {
   color: var(--red-9);
+}
+
+.gray {
+  color: var(--slate-9);
 }

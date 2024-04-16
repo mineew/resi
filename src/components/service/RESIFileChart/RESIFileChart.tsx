@@ -30,22 +30,15 @@ function RESIFileChart(props: RESIFileChartProps) {
 
         <YAxis
           tickCount={20}
-          label={{
-            value: '[RESI]',
-            position: 'insideLeft',
-            angle: -90,
-          }}
+          label={{ value: 'RESI', position: 'insideLeft', angle: -90 }}
         />
 
         <XAxis
           dataKey="x"
           type="number"
-          domain={['auto', 'auto']}
           tickCount={20}
-          label={{
-            value: '[mm]',
-            position: 'center',
-          }}
+          domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
+          label={{ value: 'см', position: 'center' }}
           height={70}
         />
 
