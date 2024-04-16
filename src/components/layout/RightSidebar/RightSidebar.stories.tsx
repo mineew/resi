@@ -21,7 +21,7 @@ function Block({ title }: { title: string }) {
 export const Default: StoryFn<typeof RightSidebar> = () => {
   return (
     <div style={{ height: '100vh' }}>
-      <RightSidebar>
+      <RightSidebar footer={<Block title="Footer" />}>
         <Block title="Content" />
       </RightSidebar>
     </div>
@@ -33,5 +33,6 @@ export default {
   component: RightSidebar,
   argTypes: {
     children: { table: { disable: true } },
+    footer: { table: { disable: true } },
   },
 } as Meta<typeof RightSidebar>;

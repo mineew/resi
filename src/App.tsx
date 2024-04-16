@@ -31,7 +31,7 @@ function App() {
   const body = <RESIFileChart />;
 
   const rightSidebar = (
-    <RightSidebar>
+    <RightSidebar footer="Footer">
       <RESIFileDiffList />
     </RightSidebar>
   );
