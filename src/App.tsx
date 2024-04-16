@@ -15,6 +15,10 @@ const RESIFileChart = lazy(
   () => import('@/components/app/RESIFileChart/RESIFileChart'),
 );
 
+const RESIFileDiffChart = lazy(
+  () => import('@/components/app/RESIFileDiffChart/RESIFileDiffChart'),
+);
+
 function App() {
   const leftSidebar = (
     <LeftSidebar header={<RESIFileButton />}>
@@ -31,7 +35,7 @@ function App() {
   const body = <RESIFileChart />;
 
   const rightSidebar = (
-    <RightSidebar footer="Footer">
+    <RightSidebar footer={<RESIFileDiffChart />}>
       <RESIFileDiffList />
     </RightSidebar>
   );
