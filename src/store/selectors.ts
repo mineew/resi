@@ -5,6 +5,7 @@ import { type StoreState } from './types/StoreState';
 
 const files = (state: StoreState) => state.files;
 const setFiles = (state: StoreState) => state.setFiles;
+const addFiles = (state: StoreState) => state.addFiles;
 const changeFileColor = (state: StoreState) => state.changeFileColor;
 const changeFileStrokeWidth = (state: StoreState) =>
   state.changeFileStrokeWidth;
@@ -35,6 +36,7 @@ const fileDiffs = (state: StoreState) => {
 export {
   files,
   setFiles,
+  addFiles,
   changeFileColor,
   changeFileStrokeWidth,
   toggleFile,

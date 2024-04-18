@@ -1,4 +1,4 @@
-import { FolderOpen } from 'lucide-react';
+import { FilePlus2, FolderOpen } from 'lucide-react';
 import { useCallback } from 'react';
 
 import Button from '@/components/ui/Button/Button';
@@ -7,18 +7,19 @@ import useStore from '@/store/store';
 import processFiles from '@/utils/resi-files/processFiles';
 
 function RESIFileButton() {
-  const setFiles = useStore(selectors.setFiles);
+  const files = useStore(selectors.files);
+  const addFiles = useStore(selectors.addFiles);
 
   const handleClick = useCallback(() => {
     processFiles()
-      .then(setFiles)
-      .catch(() => setFiles([]));
-  }, [setFiles]);
+      .then(addFiles)
+      .catch(() => addFiles([]));
+  }, [addFiles]);
 
   return (
     <Button onClick={handleClick} fullWidth center>
-      <FolderOpen />
-      Загрузить RESI файлы
+      {files.length ? <FilePlus2 /> : <FolderOpen />}
+      {files.length ? 'Добавить RESI файлы' : 'Загрузить RESI файлы'}
     </Button>
   );
 }

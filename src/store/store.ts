@@ -7,6 +7,25 @@ const useStore = create<StoreState>((set, get) => ({
   files: [],
   setFiles: (files) => set({ files }),
 
+  addFiles: (files) => {
+    const storedFiles = get().files;
+    const newFiles = [...storedFiles];
+
+    for (const file of files) {
+      const storedFile = newFiles.find((f) => f.name == file.name);
+
+      if (storedFile) {
+        storedFile.contents = file.contents;
+      } else {
+        newFiles.push(file);
+      }
+    }
+
+    newFiles.sort((a, b) => a.name.localeCompare(b.name));
+
+    set({ files: newFiles });
+  },
+
   changeFileColor: (idx, color) => {
     const files = get().files;
     const newFiles = [...files];

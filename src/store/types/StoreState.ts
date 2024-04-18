@@ -4,6 +4,8 @@ import { type SmoothDataOptions } from './SmoothDataOptions';
 interface StoreState {
   files: RESIFile[];
   setFiles: (files: RESIFile[]) => void;
+  addFiles: (files: RESIFile[]) => void;
+
   changeFileColor: (idx: number, color: string) => void;
   changeFileStrokeWidth: (idx: number, width: number) => void;
   toggleFile: (idx: number, checked: boolean) => void;
