@@ -48,14 +48,14 @@ function RESIFileListItem(props: RESIFileListItemProps) {
               style={{ backgroundColor: file.color }}
             />
 
-            {file.name}
+            <div className={styles['title-text']}>{file.name}</div>
           </div>
         </div>
       </RESIFileSettings>
 
       <div className={styles.toolbar}>
         <Checkbox
-          label="Отображать на графике"
+          label="Отображать"
           checked={file.checked}
           onCheckedChange={onChangeChecked}
           size="small"
@@ -65,6 +65,7 @@ function RESIFileListItem(props: RESIFileListItemProps) {
           className={styles['delete-button']}
           theme="danger"
           size="small"
+          outlined
           onClick={onDelete}
         >
           <Trash2 />
