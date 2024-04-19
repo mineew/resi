@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react';
 
+import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
+
 import styles from './LeftSidebar.module.css';
 
 interface LeftSidebarProps {
@@ -13,7 +15,7 @@ function LeftSidebar(props: LeftSidebarProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>{header}</div>
-      <div className={styles.body}>{children}</div>
+      <ScrollArea className={styles.body}>{children}</ScrollArea>
     </div>
   );
 }

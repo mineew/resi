@@ -13,7 +13,6 @@
 .body {
   flex: 1;
   height: 0;
-  overflow: hidden scroll;
 }
 
 .footer {

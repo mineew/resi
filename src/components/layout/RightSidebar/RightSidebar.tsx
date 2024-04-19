@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react';
 
+import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
+
 import styles from './RightSidebar.module.css';
 
 interface RightSidebarProps {
@@ -12,7 +14,7 @@ function RightSidebar(props: RightSidebarProps) {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.body}>{children}</div>
+      <ScrollArea className={styles.body}>{children}</ScrollArea>
       <div className={styles.footer}>{footer}</div>
     </div>
   );
