@@ -1,12 +1,10 @@
 import { lazy } from 'react';
 
-import RESIFileButton from '@/components/app/RESIFileButton/RESIFileButton';
 import RESIFileChartSettings from '@/components/app/RESIFileChartSettings/RESIFileChartSettings';
 import RESIFileDiffList from '@/components/app/RESIFileDiffList/RESIFileDiffList';
-import RESIFileList from '@/components/app/RESIFileList/RESIFileList';
+import RESIFileListPanel from '@/components/app/RESIFileListPanel/RESIFileListPanel';
 import AppHeader from '@/components/layout/AppHeader/AppHeader';
 import AppLayout from '@/components/layout/AppLayout/AppLayout';
-import LeftSidebar from '@/components/layout/LeftSidebar/LeftSidebar';
 import RightSidebar from '@/components/layout/RightSidebar/RightSidebar';
 
 import './styles/index.css';
@@ -20,12 +18,6 @@ const RESIFileDiffChart = lazy(
 );
 
 function App() {
-  const leftSidebar = (
-    <LeftSidebar header={<RESIFileButton />}>
-      <RESIFileList />
-    </LeftSidebar>
-  );
-
   const header = (
     <AppHeader>
       <RESIFileChartSettings />
@@ -42,7 +34,7 @@ function App() {
 
   return (
     <AppLayout
-      left={leftSidebar}
+      left={<RESIFileListPanel />}
       header={header}
       body={body}
       right={rightSidebar}

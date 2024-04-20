@@ -1,32 +1,15 @@
 import { type Meta, type StoryFn } from '@storybook/react';
 
 import { type RESIFile } from '@/store/types/RESIFile';
+import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
+import getRandomArray from '@/utils/misc/getRandomArray';
 
 import RESIFileList from './RESIFileList';
 
-const files: RESIFile[] = [
-  {
-    name: 'File-1',
-    checked: true,
-    color: '#000000',
-    strokeWidth: 1,
-    contents: [1, 2, 3],
-  },
-  {
-    name: 'File-2',
-    checked: false,
-    color: '#FF0000',
-    strokeWidth: 2,
-    contents: [4, 5, 6],
-  },
-  {
-    name: 'File-3',
-    checked: true,
-    color: '#0000FF',
-    strokeWidth: 3,
-    contents: [7, 8, 9],
-  },
-];
+const files: RESIFile[] = getRandomArray(
+  (idx) => createRandomRESIFile(`File-${idx + 1}`),
+  5,
+);
 
 export const Default: StoryFn<typeof RESIFileList> = ({
   onChangeFileColor,
@@ -48,7 +31,7 @@ export const Default: StoryFn<typeof RESIFileList> = ({
 };
 
 export default {
-  title: 'Components/Service/RESIFileList',
+  title: 'Components/Service/RESI File List/RESIFileList',
   component: RESIFileList,
   argTypes: {
     files: { table: { disable: true } },

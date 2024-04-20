@@ -26,6 +26,24 @@ const useStore = create<StoreState>((set, get) => ({
     set({ files: newFiles });
   },
 
+  deleteAllFiles: () => {
+    set({ files: [] });
+  },
+
+  checkAllFiles: () => {
+    const files = get().files;
+    const newFiles = files.map((file) => ({ ...file, checked: true }));
+
+    set({ files: newFiles });
+  },
+
+  uncheckAllFiles: () => {
+    const files = get().files;
+    const newFiles = files.map((file) => ({ ...file, checked: false }));
+
+    set({ files: newFiles });
+  },
+
   changeFileColor: (idx, color) => {
     const files = get().files;
     const newFiles = [...files];

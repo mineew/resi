@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 12px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.body .icon {
+  width: 60px;
+  height: 60px;
+  color: var(--slate-11);
+}
+
+.description {
+  color: var(--slate-11);
+  text-align: center;
+}

@@ -11,6 +11,7 @@
 
 .left {
   width: 300px;
+  background-color: var(--slate-2);
   border-right: 1px solid var(--slate-6);
 }
 

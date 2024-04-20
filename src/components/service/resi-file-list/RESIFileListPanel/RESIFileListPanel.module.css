@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  background-color: var(--slate-2);
 }
 
 .header,
@@ -11,12 +10,19 @@
   padding: 12px;
 }
 
-.header {
-  flex: none;
-  border-bottom: 1px solid var(--slate-6);
-}
-
 .body {
   flex: 1;
   height: 0;
+}
+
+.header {
+  display: flex;
+  flex: none;
+  gap: 6px;
+  align-items: center;
+  border-bottom: 1px solid var(--slate-6);
+}
+
+.add-files-button {
+  flex: 1;
 }

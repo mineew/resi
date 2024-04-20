@@ -32,7 +32,7 @@ export const Default: StoryFn<typeof RESIFileSettings> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESIFileSettings',
+  title: 'Components/Service/RESI File List/RESIFileSettings',
   component: RESIFileSettings,
   argTypes: {
     color: { table: { disable: true } },
