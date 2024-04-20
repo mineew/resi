@@ -11,6 +11,7 @@ interface SliderProps {
   value: number;
   onValueChange: (value: number) => void;
   shouldDisplayValue?: boolean;
+  valueFormatter?: (value: number) => string;
   min?: number;
   max?: number;
   step?: number;
@@ -25,6 +26,7 @@ function Slider(props: SliderProps) {
     value,
     onValueChange,
     shouldDisplayValue = true,
+    valueFormatter = (value) => value.toString(),
     min = 0,
     max = 10,
     step = 1,
@@ -56,7 +58,9 @@ function Slider(props: SliderProps) {
     </label>
   );
 
-  const valueElement = <div className={styles.value}>{value}</div>;
+  const valueElement = (
+    <div className={styles.value}>{valueFormatter(value)}</div>
+  );
 
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
