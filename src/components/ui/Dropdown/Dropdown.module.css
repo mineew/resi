@@ -1,0 +1,94 @@
+button.trigger.default {
+  padding: 6px;
+}
+
+.trigger-icon {
+  transition: transform 0.15s;
+}
+
+.trigger[data-state='open'] .trigger-icon {
+  transform: rotate(180deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: var(--radix-dropdown-menu-trigger-width);
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid var(--slate-6);
+  border-radius: 6px;
+  outline: none;
+  box-shadow:
+    0 10px 15px -3px var(--slate-4),
+    0 4px 6px -4px var(--slate-4);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.content[data-state='open'] {
+  animation-name: slide;
+}
+
+:global(.dark) .content {
+  background-color: var(--slate-4);
+  box-shadow: none;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--slate-6);
+}
+
+.item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 12px;
+  color: var(--slate-12);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 6px;
+  outline: none;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.item[data-highlighted] {
+  color: var(--slate-1);
+  background-color: var(--slate-12);
+}
+
+.item.danger {
+  color: var(--red-12);
+}
+
+.item.item.danger[data-highlighted] {
+  color: var(--red-1);
+  background-color: var(--red-9);
+}
+
+.item[data-disabled] {
+  color: var(--slate-8);
+  cursor: not-allowed;
+}
+
+.item svg {
+  width: 1em;
+  height: 1em;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

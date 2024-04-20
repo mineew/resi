@@ -66,6 +66,7 @@ module.exports = {
       files: ['src/**/*.stories.tsx'],
       rules: {
         'react/prop-types': 'off',
+        'import/group-exports': 'off',
       },
     },
   ],
