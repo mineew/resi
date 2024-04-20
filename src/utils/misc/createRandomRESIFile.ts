@@ -5,13 +5,35 @@ import getRandomBoolean from './getRandomBoolean';
 import getRandomHEXColor from './getRandomHEXColor';
 import getRandomInt from './getRandomInt';
 
-function createRandomRESIFile(name: string): RESIFile {
+interface CreateRandomRESIFileOptions {
+  contentsLength?: number;
+  contentsItemMin?: number;
+  contentsItemMax?: number;
+  color?: string;
+  strokeWidth?: number;
+}
+
+function createRandomRESIFile(
+  name: string,
+  options: CreateRandomRESIFileOptions = {},
+): RESIFile {
+  const {
+    contentsLength,
+    contentsItemMin = 50,
+    contentsItemMax = 150,
+    color,
+    strokeWidth,
+  } = options;
+
   return {
     name,
     checked: getRandomBoolean(),
-    color: getRandomHEXColor(),
-    strokeWidth: getRandomInt(1, 3),
-    contents: getRandomArray(() => getRandomInt(50, 150)),
+    color: color ?? getRandomHEXColor(),
+    strokeWidth: strokeWidth ?? getRandomInt(1, 3),
+    contents: getRandomArray(
+      () => getRandomInt(contentsItemMin, contentsItemMax),
+      contentsLength,
+    ),
   };
 }
 
