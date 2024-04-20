@@ -46,7 +46,7 @@ function RESIFileChart(props: RESIFileChartProps) {
           <Line
             key={`${file.name}-${i}`}
             dataKey={file.name}
-            stroke={file.color}
+            stroke={file.color || 'var(--slate-12)'}
             strokeWidth={file.strokeWidth}
             type="monotone"
             unit="RESI"

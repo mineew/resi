@@ -1,7 +1,7 @@
 import { type RESIFile } from '@/store/types/RESIFile';
 
 const HEADER_ROWS = 25;
-const DEFAULT_FILE_COLOR = '#1c2024';
+const DEFAULT_FILE_COLOR = '';
 const DEFAULT_FILE_STROKE_WIDTH = 1;
 const DEFAULT_FILE_CHECKED = true;
 

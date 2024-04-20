@@ -44,6 +44,8 @@
 .color-indicator {
   width: 18px;
   height: 18px;
+  color: var(--slate-12);
+  background-color: var(--slate-12);
   border-radius: 100%;
 }
 
