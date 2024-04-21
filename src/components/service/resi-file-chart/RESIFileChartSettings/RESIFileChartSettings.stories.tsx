@@ -17,7 +17,7 @@ export const Default: StoryFn<typeof RESIFileChartSettings> = ({
 };
 
 export default {
-  title: 'Components/Service/RESIFileChartSettings',
+  title: 'Components/Service/RESI File Chart/RESIFileChartSettings',
   component: RESIFileChartSettings,
   argTypes: {
     values: { table: { disable: true } },

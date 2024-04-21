@@ -42,6 +42,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
             hasBoldLabel
             value={field.value || DEFAULT_VALUES.zScoreThreshold}
             onValueChange={field.onChange}
+            valueFormatter={(value) => `${value} SD`}
             min={1}
           />
         )}
@@ -75,9 +76,16 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
                 field.onChange(value);
               }
             }}
+            valueFormatter={(value) => {
+              if (value === 1) {
+                return '0 мм';
+              }
+
+              return `${value / 100} мм`;
+            }}
             min={1}
             max={1000}
-            step={50}
+            step={100}
           />
         )}
       />

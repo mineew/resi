@@ -1,0 +1,16 @@
+import { type Meta, type StoryFn } from '@storybook/react';
+
+import RESIFileChartEmpty from './RESIFileChartEmpty';
+
+export const Default: StoryFn<typeof RESIFileChartEmpty> = () => {
+  return (
+    <div style={{ height: '100vh' }}>
+      <RESIFileChartEmpty />
+    </div>
+  );
+};
+
+export default {
+  title: 'Components/Service/RESI File Chart/RESIFileChartEmpty',
+  component: RESIFileChartEmpty,
+} as Meta<typeof RESIFileChartEmpty>;

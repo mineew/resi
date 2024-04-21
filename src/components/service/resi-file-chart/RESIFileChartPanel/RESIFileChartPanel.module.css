@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  flex: none;
+  padding: 12px 36px;
+}
+
+.chart {
+  flex: 1;
+  height: 0;
+}

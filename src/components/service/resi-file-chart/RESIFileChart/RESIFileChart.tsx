@@ -24,13 +24,19 @@ function RESIFileChart(props: RESIFileChartProps) {
     <ResponsiveContainer>
       <LineChart
         data={data}
-        margin={{ top: 60, right: 50, left: 20, bottom: 0 }}
+        margin={{ top: 20, right: 40, left: 20, bottom: 0 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid stroke="var(--slate-6)" strokeDasharray="3 3" />
 
         <YAxis
           tickCount={20}
-          label={{ value: 'RESI', position: 'insideLeft', angle: -90 }}
+          label={{
+            value: 'RESI',
+            position: 'insideLeft',
+            angle: -90,
+            fill: 'var(--slate-12)',
+          }}
+          stroke="var(--slate-12)"
         />
 
         <XAxis
@@ -38,8 +44,13 @@ function RESIFileChart(props: RESIFileChartProps) {
           type="number"
           tickCount={20}
           domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
-          label={{ value: 'см', position: 'center' }}
+          label={{
+            value: 'см',
+            position: 'center',
+            fill: 'var(--slate-12)',
+          }}
           height={70}
+          stroke="var(--slate-12)"
         />
 
         {files.map((file, i) => (

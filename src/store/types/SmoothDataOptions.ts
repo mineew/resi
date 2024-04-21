@@ -9,7 +9,7 @@ interface SmoothDataOptions {
 const DEFAULT_SMOOTH_DATA_OPTIONS: Required<SmoothDataOptions> = {
   zScoreThreshold: 3,
   zScoreMeanMethod: 'mean',
-  chunkSize: 250,
+  chunkSize: 300,
   chunkAggregateMethod: 'mean',
   differenceMeanMethod: 'mean',
 };

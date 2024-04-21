@@ -25,7 +25,6 @@ export const Default: StoryFn<typeof AppLayout> = () => {
     <div style={{ height: '100vh' }}>
       <AppLayout
         left={<Block title="Left" />}
-        header={<Block title="Header" />}
         body={<Block title="Body" />}
         right={<Block title="Right" />}
       />
@@ -38,7 +37,6 @@ export default {
   component: AppLayout,
   argTypes: {
     left: { table: { disable: true } },
-    header: { table: { disable: true } },
     body: { table: { disable: true } },
     right: { table: { disable: true } },
   },
