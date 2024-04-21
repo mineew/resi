@@ -17,26 +17,23 @@ const changeFileStrokeWidth = (state: StoreState) =>
 const toggleFile = (state: StoreState) => state.toggleFile;
 const deleteFile = (state: StoreState) => state.deleteFile;
 
-const smoothDataOptions = (state: StoreState) => state.smoothDataOptions;
-const setSmoothDataOptions = (state: StoreState) => state.setSmoothDataOptions;
+const settings = (state: StoreState) => state.settings;
+const setSettings = (state: StoreState) => state.setSettings;
 
 const checkedFiles = (state: StoreState) => {
   return files(state).filter((f) => f.checked);
 };
 
 const smoothedFiles = (state: StoreState) => {
-  return smoothFiles(checkedFiles(state), smoothDataOptions(state));
+  return smoothFiles(checkedFiles(state), settings(state));
 };
 
 const smoothChunkSize = (state: StoreState) => {
-  return smoothDataOptions(state).chunkSize;
+  return settings(state).chunkSize;
 };
 
 const fileDiffs = (state: StoreState) => {
-  return calculateFileDifferences(
-    smoothedFiles(state),
-    smoothDataOptions(state),
-  );
+  return calculateFileDifferences(smoothedFiles(state), settings(state));
 };
 
 export {
@@ -50,8 +47,8 @@ export {
   changeFileStrokeWidth,
   toggleFile,
   deleteFile,
-  smoothDataOptions,
-  setSmoothDataOptions,
+  settings,
+  setSettings,
   checkedFiles,
   smoothedFiles,
   smoothChunkSize,

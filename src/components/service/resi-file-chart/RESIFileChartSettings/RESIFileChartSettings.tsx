@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react';
 
 import Dialog from '@/components/ui/Dialog/Dialog';
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import { type Settings } from '@/store/types/Settings';
 
 import RESIFileChartSettingsForm from './RESIFileChartSettingsForm';
 
 interface RESIFileChartSettingsProps {
-  values?: SmoothDataOptions;
-  onChange: (values: SmoothDataOptions) => void;
+  values?: Settings;
+  onChange: (values: Settings) => void;
   children: JSX.Element;
 }
 
@@ -16,7 +16,7 @@ function RESIFileChartSettings(props: RESIFileChartSettingsProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleChange = useCallback(
-    (values: SmoothDataOptions) => {
+    (values: Settings) => {
       setDialogOpen(false);
       onChange(values);
     },

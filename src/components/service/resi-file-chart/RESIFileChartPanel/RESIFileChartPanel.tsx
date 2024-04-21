@@ -1,19 +1,19 @@
-import { Settings } from 'lucide-react';
+import { Settings as SettingsIcon } from 'lucide-react';
 
 import RESIFileChart from '@/components/service/resi-file-chart/RESIFileChart/RESIFileChart';
 import RESIFileChartEmpty from '@/components/service/resi-file-chart/RESIFileChartEmpty/RESIFileChartEmpty';
 import RESIFileChartSettings from '@/components/service/resi-file-chart/RESIFileChartSettings/RESIFileChartSettings';
 import Button from '@/components/ui/Button/Button';
 import { type RESIFile } from '@/store/types/RESIFile';
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import { type Settings } from '@/store/types/Settings';
 
 import styles from './RESIFileChartPanel.module.css';
 
 interface RESIFileChartPanelProps {
   files: RESIFile[];
   chartScale?: number;
-  settings?: SmoothDataOptions;
-  onChangeSettings: (settings: SmoothDataOptions) => void;
+  settings?: Settings;
+  onChangeSettings: (settings: Settings) => void;
 }
 
 function RESIFileChartPanel(props: RESIFileChartPanelProps) {
@@ -28,7 +28,7 @@ function RESIFileChartPanel(props: RESIFileChartPanelProps) {
       <div className={styles.toolbar}>
         <RESIFileChartSettings values={settings} onChange={onChangeSettings}>
           <Button outlined>
-            <Settings /> Настройки графика
+            <SettingsIcon /> Настройки графика
           </Button>
         </RESIFileChartSettings>
       </div>

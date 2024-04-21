@@ -1,13 +1,13 @@
 import { mean, median } from 'simple-statistics';
 
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import { type Settings } from '@/store/types/Settings';
 
 function calculateDataDifference(
   a: number[],
   b: number[],
-  options: SmoothDataOptions = {},
+  settings: Settings = {},
 ) {
-  const { differenceMeanMethod = 'mean' } = options;
+  const { differenceMeanMethod = 'mean' } = settings;
   const diffs: number[] = [];
   const length = Math.max(a.length, b.length);
 

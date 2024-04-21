@@ -5,8 +5,8 @@ import useStore from '@/store/store';
 function RESIFileChartPanel() {
   const smoothedFiles = useStore(selectors.smoothedFiles);
   const chartScale = useStore(selectors.smoothChunkSize);
-  const settings = useStore(selectors.smoothDataOptions);
-  const setSettings = useStore(selectors.setSmoothDataOptions);
+  const settings = useStore(selectors.settings);
+  const setSettings = useStore(selectors.setSettings);
 
   return (
     <RESIFileChartPanelView

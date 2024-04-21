@@ -7,23 +7,20 @@ import RadioGroup, {
   type RadioGroupItem,
 } from '@/components/ui/RadioGroup/RadioGroup';
 import Slider from '@/components/ui/Slider/Slider';
-import {
-  DEFAULT_SMOOTH_DATA_OPTIONS as DEFAULT_VALUES,
-  type SmoothDataOptions,
-} from '@/store/types/SmoothDataOptions';
+import { DEFAULT_SETTINGS, type Settings } from '@/store/types/Settings';
 
 import styles from './RESIFileChartSettings.module.css';
 
 interface RESIFileChartSettingsFormProps {
-  defaultValues?: SmoothDataOptions;
-  onSubmit: (values: SmoothDataOptions) => void;
+  defaultValues?: Settings;
+  onSubmit: (values: Settings) => void;
 }
 
 function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
   const { defaultValues, onSubmit } = props;
 
-  const { control, handleSubmit } = useForm<SmoothDataOptions>({
-    defaultValues: { ...DEFAULT_VALUES, ...defaultValues },
+  const { control, handleSubmit } = useForm<Settings>({
+    defaultValues: { ...DEFAULT_SETTINGS, ...defaultValues },
   });
 
   const meanOptions: RadioGroupItem[] = [
@@ -40,7 +37,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <Slider
             label="Порог Z-Score"
             hasBoldLabel
-            value={field.value || DEFAULT_VALUES.zScoreThreshold}
+            value={field.value || DEFAULT_SETTINGS.zScoreThreshold}
             onValueChange={field.onChange}
             valueFormatter={(value) => `${value} SD`}
             min={1}
@@ -55,7 +52,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <RadioGroup
             label="Мера среднего в расчетах Z-Score"
             items={meanOptions}
-            value={field.value || DEFAULT_VALUES.zScoreMeanMethod}
+            value={field.value || DEFAULT_SETTINGS.zScoreMeanMethod}
             onValueChange={field.onChange}
           />
         )}
@@ -68,7 +65,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <Slider
             label="Окно сглаживания"
             hasBoldLabel
-            value={field.value || DEFAULT_VALUES.chunkSize}
+            value={field.value || DEFAULT_SETTINGS.chunkSize}
             onValueChange={(value) => {
               if (value !== 1 && value !== 1000) {
                 field.onChange(value - 1);
@@ -97,7 +94,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <RadioGroup
             label="Мера среднего в расчетах сглаживания"
             items={meanOptions}
-            value={field.value || DEFAULT_VALUES.chunkAggregateMethod}
+            value={field.value || DEFAULT_SETTINGS.chunkAggregateMethod}
             onValueChange={field.onChange}
           />
         )}
@@ -110,7 +107,7 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
           <RadioGroup
             label="Мера среднего в расчетах разницы"
             items={meanOptions}
-            value={field.value || DEFAULT_VALUES.differenceMeanMethod}
+            value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
             onValueChange={field.onChange}
           />
         )}

@@ -1,9 +1,12 @@
 import { mean, median, standardDeviation, zScore } from 'simple-statistics';
 
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import { DEFAULT_SETTINGS, type Settings } from '@/store/types/Settings';
 
-function filterOutliers(data: number[], options: SmoothDataOptions = {}) {
-  const { zScoreThreshold = 3, zScoreMeanMethod = 'mean' } = options;
+function filterOutliers(data: number[], settings: Settings = {}) {
+  const {
+    zScoreThreshold = DEFAULT_SETTINGS.zScoreThreshold,
+    zScoreMeanMethod = DEFAULT_SETTINGS.zScoreMeanMethod,
+  } = settings;
 
   const m = zScoreMeanMethod === 'mean' ? mean(data) : median(data);
   const std = standardDeviation(data);

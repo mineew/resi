@@ -1,4 +1,4 @@
-interface SmoothDataOptions {
+interface Settings {
   zScoreThreshold?: number;
   zScoreMeanMethod?: 'mean' | 'median';
   chunkSize?: number;
@@ -6,7 +6,7 @@ interface SmoothDataOptions {
   differenceMeanMethod?: 'mean' | 'median';
 }
 
-const DEFAULT_SMOOTH_DATA_OPTIONS: Required<SmoothDataOptions> = {
+const DEFAULT_SETTINGS: Required<Settings> = {
   zScoreThreshold: 3,
   zScoreMeanMethod: 'mean',
   chunkSize: 300,
@@ -14,5 +14,5 @@ const DEFAULT_SMOOTH_DATA_OPTIONS: Required<SmoothDataOptions> = {
   differenceMeanMethod: 'mean',
 };
 
-export { DEFAULT_SMOOTH_DATA_OPTIONS };
-export type { SmoothDataOptions };
+export { DEFAULT_SETTINGS };
+export type { Settings };

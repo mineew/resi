@@ -1,20 +1,17 @@
 import { type RESIFile } from '@/store/types/RESIFile';
-import { type SmoothDataOptions } from '@/store/types/SmoothDataOptions';
+import { type Settings } from '@/store/types/Settings';
 
 import smoothData from './smoothData';
 
-function smoothFile(file: RESIFile, options?: SmoothDataOptions): RESIFile {
+function smoothFile(file: RESIFile, settings?: Settings): RESIFile {
   return {
     ...file,
-    contents: smoothData(file.contents, options),
+    contents: smoothData(file.contents, settings),
   };
 }
 
-function smoothFiles(
-  files: RESIFile[],
-  options?: SmoothDataOptions,
-): RESIFile[] {
-  return files.map((f) => smoothFile(f, options));
+function smoothFiles(files: RESIFile[], settings?: Settings): RESIFile[] {
+  return files.map((f) => smoothFile(f, settings));
 }
 
 export default smoothFiles;
