@@ -3,6 +3,7 @@
 import { Controller, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
+import Checkbox from '@/components/ui/Checkbox/Checkbox';
 import RadioGroup, {
   type RadioGroupItem,
 } from '@/components/ui/RadioGroup/RadioGroup';
@@ -109,6 +110,19 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
             onValueChange={field.onChange}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="takeNegativeDiffs"
+        render={({ field }) => (
+          <Checkbox
+            label="Учитывать отрицательные разности"
+            hasBoldLabel
+            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeDiffs}
+            onCheckedChange={field.onChange}
           />
         )}
       />

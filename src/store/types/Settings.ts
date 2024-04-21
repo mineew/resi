@@ -4,6 +4,7 @@ interface Settings {
   chunkSize?: number;
   chunkAggregateMethod?: 'mean' | 'median';
   differenceMeanMethod?: 'mean' | 'median';
+  takeNegativeDiffs?: boolean;
 }
 
 const DEFAULT_SETTINGS: Required<Settings> = {
@@ -12,6 +13,7 @@ const DEFAULT_SETTINGS: Required<Settings> = {
   chunkSize: 300,
   chunkAggregateMethod: 'mean',
   differenceMeanMethod: 'mean',
+  takeNegativeDiffs: true,
 };
 
 export { DEFAULT_SETTINGS };

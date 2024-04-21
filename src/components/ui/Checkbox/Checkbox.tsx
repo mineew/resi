@@ -8,6 +8,7 @@ import styles from './Checkbox.module.css';
 interface CheckboxProps {
   id?: string;
   label: string;
+  hasBoldLabel?: boolean;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
   size?: 'default' | 'small';
@@ -17,6 +18,7 @@ function Checkbox(props: CheckboxProps) {
   const {
     id: providedId,
     label,
+    hasBoldLabel = false,
     checked,
     onCheckedChange,
     size = 'default',
@@ -38,7 +40,12 @@ function Checkbox(props: CheckboxProps) {
         </Radix.Indicator>
       </Radix.Root>
 
-      <label className={styles.label} htmlFor={id}>
+      <label
+        className={classNames(styles.label, {
+          [styles.bold]: hasBoldLabel,
+        })}
+        htmlFor={id}
+      >
         {label}
       </label>
     </div>
