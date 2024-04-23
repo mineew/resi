@@ -6,6 +6,7 @@ export const Default: StoryFn<typeof Input> = ({
   label,
   placeholder,
   rightElement,
+  invalid,
   disabled,
 }) => {
   return (
@@ -14,6 +15,7 @@ export const Default: StoryFn<typeof Input> = ({
         label={label}
         placeholder={placeholder}
         rightElement={rightElement}
+        invalid={invalid}
         disabled={disabled}
       />
     </div>
@@ -32,6 +34,7 @@ export default {
     label: 'Input Label',
     placeholder: 'Input Placeholder',
     rightElement: 'right',
+    invalid: false,
     disabled: false,
   },
 } as Meta<typeof Input>;

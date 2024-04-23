@@ -12,6 +12,7 @@ import styles from './Input.module.css';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   rightElement?: ReactNode;
+  invalid?: boolean;
 }
 
 function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
@@ -22,6 +23,7 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
     disabled,
     label,
     rightElement,
+    invalid = false,
     ...otherProps
   } = props;
 
@@ -38,6 +40,7 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
 
       <div
         className={classNames(styles['input-wrapper'], {
+          [styles.invalid]: invalid,
           [styles.disabled]: disabled,
         })}
       >
@@ -47,6 +50,7 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
           id={id}
           type={type}
           disabled={disabled}
+          aria-invalid={invalid}
           {...otherProps}
         />
 

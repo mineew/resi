@@ -47,6 +47,23 @@
   background-color: var(--slate-12);
 }
 
+/* --- Invalid State -------------------------------------------------------- */
+
+.input-wrapper.invalid {
+  border-color: var(--red-9);
+  outline-color: var(--red-9);
+}
+
+.input-wrapper.invalid:focus-within {
+  box-shadow: 0 0 0 1px var(--red-9);
+}
+
+.input-wrapper.invalid .right {
+  background-color: var(--red-9);
+}
+
+/* --- Disabled State ------------------------------------------------------- */
+
 .input-wrapper.disabled,
 .input-wrapper.disabled .right,
 .input:disabled {
