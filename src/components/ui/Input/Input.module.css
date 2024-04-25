@@ -47,19 +47,28 @@
   background-color: var(--slate-12);
 }
 
+.help {
+  margin-top: -2px;
+  font-size: 0.85rem;
+}
+
 /* --- Invalid State -------------------------------------------------------- */
 
-.input-wrapper.invalid {
+.wrapper.invalid .input-wrapper {
   border-color: var(--red-9);
   outline-color: var(--red-9);
 }
 
-.input-wrapper.invalid:focus-within {
+.wrapper.invalid .input-wrapper:focus-within {
   box-shadow: 0 0 0 1px var(--red-9);
 }
 
-.input-wrapper.invalid .right {
+.wrapper.invalid .right {
   background-color: var(--red-9);
+}
+
+.wrapper.invalid .help {
+  color: var(--red-9);
 }
 
 /* --- Disabled State ------------------------------------------------------- */

@@ -6,6 +6,7 @@ export const Default: StoryFn<typeof Input> = ({
   label,
   placeholder,
   rightElement,
+  help,
   invalid,
   disabled,
 }) => {
@@ -15,6 +16,7 @@ export const Default: StoryFn<typeof Input> = ({
         label={label}
         placeholder={placeholder}
         rightElement={rightElement}
+        help={help}
         invalid={invalid}
         disabled={disabled}
       />
@@ -34,6 +36,7 @@ export default {
     label: 'Input Label',
     placeholder: 'Input Placeholder',
     rightElement: 'right',
+    help: 'Input Help Text',
     invalid: false,
     disabled: false,
   },

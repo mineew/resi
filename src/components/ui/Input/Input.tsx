@@ -12,6 +12,7 @@ import styles from './Input.module.css';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   rightElement?: ReactNode;
+  help?: string;
   invalid?: boolean;
 }
 
@@ -23,6 +24,7 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
     disabled,
     label,
     rightElement,
+    help,
     invalid = false,
     ...otherProps
   } = props;
@@ -31,7 +33,11 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
   const id = providedId || defaultId;
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={classNames(styles.wrapper, {
+        [styles.invalid]: invalid,
+      })}
+    >
       {label && (
         <label className={styles.label} htmlFor={id}>
           {label}
@@ -40,7 +46,6 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
 
       <div
         className={classNames(styles['input-wrapper'], {
-          [styles.invalid]: invalid,
           [styles.disabled]: disabled,
         })}
       >
@@ -56,6 +61,8 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
 
         {rightElement && <div className={styles.right}>{rightElement}</div>}
       </div>
+
+      {help && <div className={styles.help}>{help}</div>}
     </div>
   );
 }
