@@ -36,6 +36,7 @@ function RESIFileListPanel(props: RESIFileListPanelProps) {
 
   const allFilesChecked = !files.some((f) => !f.checked);
   const allFilesUnchecked = !files.some((f) => f.checked);
+  const checkedFiles = files.filter((f) => f.checked);
 
   const dropdownItems: Array<DropdownItem | 'separator'> = [
     {
@@ -82,14 +83,28 @@ function RESIFileListPanel(props: RESIFileListPanelProps) {
       </div>
 
       <ScrollArea className={styles.body}>
-        <RESIFileList
-          files={files}
-          onChangeFileColor={onChangeFileColor}
-          onChangeFileStrokeWidth={onChangeFileStrokeWidth}
-          onChangeFileChecked={onChangeFileChecked}
-          onDeleteFile={onDeleteFile}
-        />
+        <div className={styles['list-wrapper']}>
+          <RESIFileList
+            files={files}
+            onChangeFileColor={onChangeFileColor}
+            onChangeFileStrokeWidth={onChangeFileStrokeWidth}
+            onChangeFileChecked={onChangeFileChecked}
+            onDeleteFile={onDeleteFile}
+          />
+        </div>
       </ScrollArea>
+
+      <div className={styles.footer}>
+        <div className={styles['footer-row']}>
+          <div>Всего:</div>
+          <div>{files.length}</div>
+        </div>
+
+        <div className={styles['footer-row']}>
+          <div>Выбрано:</div>
+          <div>{checkedFiles.length}</div>
+        </div>
+      </div>
     </div>
   );
 }
