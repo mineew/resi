@@ -7,6 +7,7 @@
     "storybook": "storybook dev -p 6006",
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "vitest",
     "lint": "run-s lint:eslint lint:css",
     "lint:eslint": "eslint . --cache",
     "lint:css": "stylelint \"**/*.css\" --cache",
@@ -73,6 +74,7 @@
     "stylelint-config-recess-order": "5.0.1",
     "stylelint-config-standard": "36.0.0",
     "typescript": "5.4.5",
-    "vite": "5.2.10"
+    "vite": "5.2.10",
+    "vitest": "1.5.2"
   }
 }
