@@ -1,0 +1,64 @@
+.wrapper {
+  user-select: none;
+}
+
+.grid {
+  stroke: var(--slate-6);
+  stroke-dasharray: 6;
+}
+
+.axis line {
+  stroke: var(--slate-12);
+}
+
+.axis text {
+  fill: var(--slate-12);
+}
+
+.data-line {
+  stroke: var(--slate-12);
+}
+
+.reference-area path {
+  fill: var(--red-3);
+}
+
+.reference-line {
+  pointer-events: none;
+}
+
+.resize-line line {
+  cursor: ew-resize;
+  stroke: transparent;
+  stroke-width: 16px;
+}
+
+.reference-line line {
+  stroke: var(--red-9);
+  transition: stroke-width 0.25s;
+}
+
+.resize-line:hover + .reference-line line {
+  stroke-width: 2px;
+}
+
+.tooltip {
+  display: none;
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid var(--slate-6);
+  border-radius: 6px;
+}
+
+:global(.dark) .tooltip {
+  background-color: var(--slate-4);
+  box-shadow: none;
+}
+
+.wrapper.tooltip-visible .tooltip {
+  display: block;
+}
+
+.wrapper :global(.recharts-active-dot) {
+  display: none;
+}

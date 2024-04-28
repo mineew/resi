@@ -1,4 +1,5 @@
 import { type Meta, type StoryFn } from '@storybook/react';
+import { useState } from 'react';
 
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 import getRandomArray from '@/utils/misc/getRandomArray';
@@ -19,6 +20,8 @@ const files = getRandomArray(
 );
 
 export const Default: StoryFn<typeof RESIFileChart> = () => {
+  const [offsetLeft, setOffsetLeft] = useState(60);
+  const [offsetRight, setOffsetRight] = useState(420);
   const chunkSize = 500;
 
   return (
@@ -26,6 +29,10 @@ export const Default: StoryFn<typeof RESIFileChart> = () => {
       <RESIFileChart
         files={smoothFiles(files, { chunkSize })}
         scale={chunkSize}
+        offsetLeft={offsetLeft}
+        onChangeOffsetLeft={setOffsetLeft}
+        offsetRight={offsetRight}
+        onChangeOffsetRight={setOffsetRight}
       />
     </div>
   );
@@ -37,5 +44,10 @@ export default {
   argTypes: {
     files: { table: { disable: true } },
     scale: { table: { disable: true } },
+    offsetGap: { table: { disable: true } },
+    offsetLeft: { table: { disable: true } },
+    onChangeOffsetLeft: { table: { disable: true } },
+    offsetRight: { table: { disable: true } },
+    onChangeOffsetRight: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileChart>;
