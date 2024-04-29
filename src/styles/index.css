@@ -7,3 +7,4 @@
 
 /* Components */
 @import url('./components/icons.css');
+@import url('../../node_modules/katex/dist/katex.css');
