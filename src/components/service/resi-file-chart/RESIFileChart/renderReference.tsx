@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { type MouseEventHandler } from 'react';
 import { ReferenceArea, ReferenceLine } from 'recharts';
 
@@ -44,13 +45,16 @@ function renderReference(options: RenderReferenceOptions) {
       />
 
       <ReferenceLine
-        className={styles['resize-line']}
+        className={classNames(styles['resize-line'], styles[side])}
         x={offset}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       />
 
-      <ReferenceLine className={styles['reference-line']} x={offset} />
+      <ReferenceLine
+        className={classNames(styles['reference-line'], styles[side])}
+        x={offset}
+      />
     </>
   );
 }

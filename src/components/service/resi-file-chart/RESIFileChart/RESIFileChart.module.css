@@ -27,18 +27,42 @@
   pointer-events: none;
 }
 
+.reference-line line {
+  stroke: var(--red-9);
+  transition: stroke-width 0.25s;
+}
+
 .resize-line line {
   cursor: ew-resize;
   stroke: transparent;
   stroke-width: 16px;
 }
 
-.reference-line line {
-  stroke: var(--red-9);
-  transition: stroke-width 0.25s;
+.resize-line:hover + .reference-line line {
+  stroke-width: 2px;
 }
 
-.resize-line:hover + .reference-line line {
+.wrapper.dragging-left .resize-line.right line {
+  cursor: default;
+}
+
+.wrapper.dragging-left .reference-line.right line {
+  stroke-width: 1px;
+}
+
+.wrapper.dragging-left .reference-line.left line {
+  stroke-width: 2px;
+}
+
+.wrapper.dragging-right .resize-line.left line {
+  cursor: default;
+}
+
+.wrapper.dragging-right .reference-line.left line {
+  stroke-width: 1px;
+}
+
+.wrapper.dragging-right .reference-line.right line {
   stroke-width: 2px;
 }
 

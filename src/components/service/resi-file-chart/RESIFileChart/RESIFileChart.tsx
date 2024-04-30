@@ -38,6 +38,7 @@ function RESIFileChart(props: RESIFileChartProps) {
   } = props;
 
   const {
+    offsetDrag,
     tooltipIsActive,
     tooltipIsVisible,
     tooltipContent,
@@ -61,6 +62,8 @@ function RESIFileChart(props: RESIFileChartProps) {
   return (
     <ResponsiveContainer
       className={classNames(styles.wrapper, {
+        [styles['dragging-left']]: offsetDrag === 'left',
+        [styles['dragging-right']]: offsetDrag === 'right',
         [styles['tooltip-visible']]: tooltipIsVisible,
       })}
     >

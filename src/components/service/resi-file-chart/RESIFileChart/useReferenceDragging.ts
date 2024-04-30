@@ -95,6 +95,7 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
   );
 
   return {
+    offsetDrag,
     tooltipIsActive,
     tooltipIsVisible,
     tooltipContent,
