@@ -29,40 +29,46 @@
 
 .reference-line line {
   stroke: var(--red-9);
-  transition: stroke-width 0.25s;
 }
 
 .resize-line line {
-  cursor: ew-resize;
   stroke: transparent;
+}
+
+.wrapper.interactive .reference-line line {
+  transition: stroke-width 0.25s;
+}
+
+.wrapper.interactive .resize-line line {
+  cursor: ew-resize;
   stroke-width: 16px;
 }
 
-.resize-line:hover + .reference-line line {
+.wrapper.interactive .resize-line:hover + .reference-line line {
   stroke-width: 2px;
 }
 
-.wrapper.dragging-left .resize-line.right line {
+.wrapper.interactive.dragging-left .resize-line.right line {
   cursor: default;
 }
 
-.wrapper.dragging-left .reference-line.right line {
+.wrapper.interactive.dragging-left .reference-line.right line {
   stroke-width: 1px;
 }
 
-.wrapper.dragging-left .reference-line.left line {
+.wrapper.interactive.dragging-left .reference-line.left line {
   stroke-width: 2px;
 }
 
-.wrapper.dragging-right .resize-line.left line {
+.wrapper.interactive.dragging-right .resize-line.left line {
   cursor: default;
 }
 
-.wrapper.dragging-right .reference-line.left line {
+.wrapper.interactive.dragging-right .reference-line.left line {
   stroke-width: 1px;
 }
 
-.wrapper.dragging-right .reference-line.right line {
+.wrapper.interactive.dragging-right .reference-line.right line {
   stroke-width: 2px;
 }
 

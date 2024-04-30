@@ -24,17 +24,19 @@ interface RESIFileChartProps {
   onChangeOffsetLeft?: (offset: number) => void;
   offsetRight?: number;
   onChangeOffsetRight?: (offset: number) => void;
+  interactive?: boolean;
 }
 
 function RESIFileChart(props: RESIFileChartProps) {
   const {
     files,
     scale,
-    offsetGap = 1,
+    offsetGap,
     offsetLeft,
     onChangeOffsetLeft,
     offsetRight,
     onChangeOffsetRight,
+    interactive,
   } = props;
 
   const {
@@ -49,6 +51,7 @@ function RESIFileChart(props: RESIFileChartProps) {
     handleChartMouseUp,
     handleChartMouseMove,
   } = useReferenceDragging({
+    interactive,
     gap: offsetGap,
     offsetLeft,
     onChangeOffsetLeft,
@@ -62,6 +65,7 @@ function RESIFileChart(props: RESIFileChartProps) {
   return (
     <ResponsiveContainer
       className={classNames(styles.wrapper, {
+        [styles.interactive]: interactive,
         [styles['dragging-left']]: offsetDrag === 'left',
         [styles['dragging-right']]: offsetDrag === 'right',
         [styles['tooltip-visible']]: tooltipIsVisible,

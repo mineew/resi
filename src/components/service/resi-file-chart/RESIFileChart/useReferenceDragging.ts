@@ -8,7 +8,8 @@ interface ChartMouseMoveEvent {
 }
 
 interface UseReferenceDraggingOptions {
-  gap: number;
+  interactive?: boolean;
+  gap?: number;
   offsetLeft?: number;
   onChangeOffsetLeft?: (offset: number) => void;
   offsetRight?: number;
@@ -17,7 +18,8 @@ interface UseReferenceDraggingOptions {
 
 function useReferenceDragging(options: UseReferenceDraggingOptions) {
   const {
-    gap,
+    interactive = false,
+    gap = 1,
     offsetLeft: offsetLeftMM,
     onChangeOffsetLeft,
     offsetRight: offsetRightMM,
@@ -94,17 +96,32 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
     ],
   );
 
+  if (interactive) {
+    return {
+      offsetDrag,
+      tooltipIsActive,
+      tooltipIsVisible,
+      tooltipContent,
+      handleEnterOffsetLeft,
+      handleEnterOffsetRight,
+      handleLeaveOffset,
+      handleChartMouseDown,
+      handleChartMouseUp,
+      handleChartMouseMove,
+    };
+  }
+
   return {
-    offsetDrag,
-    tooltipIsActive,
-    tooltipIsVisible,
-    tooltipContent,
-    handleEnterOffsetLeft,
-    handleEnterOffsetRight,
-    handleLeaveOffset,
-    handleChartMouseDown,
-    handleChartMouseUp,
-    handleChartMouseMove,
+    offsetDrag: null,
+    tooltipIsActive: false,
+    tooltipIsVisible: false,
+    tooltipContent: 0,
+    handleEnterOffsetLeft: undefined,
+    handleEnterOffsetRight: undefined,
+    handleLeaveOffset: undefined,
+    handleChartMouseDown: undefined,
+    handleChartMouseUp: undefined,
+    handleChartMouseMove: undefined,
   };
 }
 

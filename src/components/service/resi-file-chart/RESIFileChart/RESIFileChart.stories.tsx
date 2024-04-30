@@ -19,7 +19,7 @@ const files = getRandomArray(
   3,
 );
 
-export const Default: StoryFn<typeof RESIFileChart> = () => {
+export const Default: StoryFn<typeof RESIFileChart> = ({ interactive }) => {
   const [offsetLeft, setOffsetLeft] = useState(60);
   const [offsetRight, setOffsetRight] = useState(420);
   const offsetGap = 3;
@@ -36,6 +36,7 @@ export const Default: StoryFn<typeof RESIFileChart> = () => {
         onChangeOffsetLeft={setOffsetLeft}
         offsetRight={offsetRight}
         onChangeOffsetRight={setOffsetRight}
+        interactive={interactive}
       />
     </div>
   );
@@ -52,5 +53,8 @@ export default {
     onChangeOffsetLeft: { table: { disable: true } },
     offsetRight: { table: { disable: true } },
     onChangeOffsetRight: { table: { disable: true } },
+  },
+  args: {
+    interactive: true,
   },
 } as Meta<typeof RESIFileChart>;
