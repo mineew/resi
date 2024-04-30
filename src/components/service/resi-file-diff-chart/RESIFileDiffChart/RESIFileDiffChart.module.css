@@ -40,3 +40,7 @@
 .data-line path {
   stroke: var(--slate-12);
 }
+
+.zero-reference line {
+  stroke: var(--slate-9);
+}

@@ -3,6 +3,7 @@ import {
   CartesianGrid,
   ComposedChart,
   Line,
+  ReferenceLine,
   ResponsiveContainer,
   Scatter,
   XAxis,
@@ -21,7 +22,7 @@ interface RESIFileDiffChartProps {
 
 function RESIFileDiffChart(props: RESIFileDiffChartProps) {
   const { diffs } = props;
-  const data = convertDiffsToChartData(diffs);
+  const { data, minY } = convertDiffsToChartData(diffs);
   const { regression, regressionLine } = convertDiffsToLinearRegression(diffs);
 
   return (
@@ -48,8 +49,13 @@ function RESIFileDiffChart(props: RESIFileDiffChartProps) {
               dataKey="x"
               type="number"
               label={{ value: 'см', position: 'center' }}
+              tickFormatter={(value) => (value ? value + '' : '')}
               height={70}
             />
+
+            {minY < 0 && (
+              <ReferenceLine className={styles['zero-reference']} y={0} />
+            )}
 
             <YAxis
               className={styles.axis}
