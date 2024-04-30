@@ -32,6 +32,7 @@ export default {
     id: { table: { disable: true } },
     value: { table: { disable: true } },
     onValueChange: { table: { disable: true } },
+    valueFormatter: { table: { disable: true } },
     min: { table: { disable: true } },
     max: { table: { disable: true } },
     step: { table: { disable: true } },

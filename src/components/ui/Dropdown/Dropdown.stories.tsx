@@ -10,7 +10,7 @@ const items: Array<DropdownItem | 'separator'> = [
   {
     id: 'clear',
     icon: <Trash2 />,
-    label: 'Очистить',
+    label: 'Clear',
     onClick: action('clear'),
     danger: true,
   },
@@ -18,14 +18,14 @@ const items: Array<DropdownItem | 'separator'> = [
   {
     id: 'select-all',
     icon: <CopyCheck />,
-    label: 'Выбрать все',
+    label: 'Select All',
     onClick: action('select-all'),
     disabled: true,
   },
   {
     id: 'unselect-all',
     icon: <CopyX />,
-    label: 'Отключить все',
+    label: 'Reset All',
     onClick: action('unselect-all'),
   },
 ];

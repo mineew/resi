@@ -23,6 +23,7 @@ export default {
   component: Checkbox,
   argTypes: {
     id: { table: { disable: true } },
+    hasBoldLabel: { table: { disable: true } },
     checked: { table: { disable: true } },
     onCheckedChange: { table: { disable: true } },
   },
