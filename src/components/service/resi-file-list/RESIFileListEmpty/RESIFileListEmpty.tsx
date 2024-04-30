@@ -1,8 +1,7 @@
 import { FolderOpen, Inbox } from 'lucide-react';
 
 import Button from '@/components/ui/Button/Button';
-
-import styles from './RESIFileListEmpty.module.css';
+import EmptyState from '@/components/ui/EmptyState/EmptyState';
 
 interface RESIFileListEmptyProps {
   onAddFiles: () => void;
@@ -12,20 +11,14 @@ function RESIFileListEmpty(props: RESIFileListEmptyProps) {
   const { onAddFiles } = props;
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.body}>
-        <Inbox className={styles.icon} strokeWidth={1} />
+    <EmptyState icon={<Inbox />}>
+      <Button onClick={onAddFiles}>
+        <FolderOpen />
+        Открыть RESI файлы
+      </Button>
 
-        <Button onClick={onAddFiles}>
-          <FolderOpen />
-          Открыть RESI файлы
-        </Button>
-
-        <div className={styles.description}>
-          Файлы прибора резистографа, расширение *.xls
-        </div>
-      </div>
-    </div>
+      <p>Файлы прибора резистографа, расширение *.xls</p>
+    </EmptyState>
   );
 }
 

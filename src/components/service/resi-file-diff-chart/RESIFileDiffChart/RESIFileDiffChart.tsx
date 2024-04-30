@@ -40,7 +40,7 @@ function RESIFileDiffChart(props: RESIFileDiffChartProps) {
 
       <div className={styles['chart']}>
         <ResponsiveContainer>
-          <ComposedChart>
+          <ComposedChart margin={{ top: 10, right: 40, left: 20, bottom: 0 }}>
             <CartesianGrid className={styles.grid} />
 
             <XAxis

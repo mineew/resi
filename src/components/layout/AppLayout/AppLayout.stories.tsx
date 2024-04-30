@@ -24,9 +24,10 @@ export const Default: StoryFn<typeof AppLayout> = () => {
   return (
     <div style={{ height: '100vh' }}>
       <AppLayout
-        left={<Block title="Left" />}
-        body={<Block title="Body" />}
-        right={<Block title="Right" />}
+        fileList={<Block title="File List" />}
+        fileChart={<Block title="File Chart" />}
+        diffChart={<Block title="File Diff Chart" />}
+        growthChart={<Block title="File Growth Chart" />}
       />
     </div>
   );
@@ -36,8 +37,9 @@ export default {
   title: 'Components/Layout/AppLayout',
   component: AppLayout,
   argTypes: {
-    left: { table: { disable: true } },
-    body: { table: { disable: true } },
-    right: { table: { disable: true } },
+    fileList: { table: { disable: true } },
+    fileChart: { table: { disable: true } },
+    diffChart: { table: { disable: true } },
+    growthChart: { table: { disable: true } },
   },
 } as Meta<typeof AppLayout>;

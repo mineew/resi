@@ -1,4 +1,5 @@
 import { Settings as SettingsIcon } from 'lucide-react';
+import { useCallback } from 'react';
 
 import RESIFileChart from '@/components/service/resi-file-chart/RESIFileChart/RESIFileChart';
 import RESIFileChartEmpty from '@/components/service/resi-file-chart/RESIFileChartEmpty/RESIFileChartEmpty';
@@ -19,6 +20,16 @@ interface RESIFileChartPanelProps {
 function RESIFileChartPanel(props: RESIFileChartPanelProps) {
   const { files, chartScale, settings, onChangeSettings } = props;
 
+  const handleChangeOffsetLeft = useCallback(
+    (offsetLeft: number) => onChangeSettings({ ...settings, offsetLeft }),
+    [settings, onChangeSettings],
+  );
+
+  const handleChangeOffsetRight = useCallback(
+    (offsetRight: number) => onChangeSettings({ ...settings, offsetRight }),
+    [settings, onChangeSettings],
+  );
+
   if (!files.length) {
     return <RESIFileChartEmpty />;
   }
@@ -34,7 +45,15 @@ function RESIFileChartPanel(props: RESIFileChartPanelProps) {
       </div>
 
       <div className={styles.chart}>
-        <RESIFileChart files={files} scale={chartScale} />
+        <RESIFileChart
+          files={files}
+          scale={chartScale}
+          offsetLeft={settings?.offsetLeft}
+          onChangeOffsetLeft={handleChangeOffsetLeft}
+          offsetRight={settings?.offsetRight}
+          onChangeOffsetRight={handleChangeOffsetRight}
+          interactive
+        />
       </div>
     </div>
   );

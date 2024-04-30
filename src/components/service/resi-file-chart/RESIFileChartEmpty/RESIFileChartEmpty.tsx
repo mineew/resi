@@ -1,18 +1,12 @@
 import { LineChart } from 'lucide-react';
 
-import styles from './RESIFileChartEmpty.module.css';
+import EmptyState from '@/components/ui/EmptyState/EmptyState';
 
 function RESIFileChartEmpty() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.body}>
-        <LineChart className={styles.icon} strokeWidth={1} />
-
-        <div className={styles.description}>
-          Недостаточно данных для построения графика. Откройте RESI файлы
-        </div>
-      </div>
-    </div>
+    <EmptyState icon={<LineChart />}>
+      <p>Нет данных для построения графика</p>
+    </EmptyState>
   );
 }
 

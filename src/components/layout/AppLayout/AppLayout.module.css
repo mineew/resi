@@ -4,23 +4,37 @@
   overflow: hidden;
 }
 
-.left,
-.right {
+.file-list {
   flex: none;
-}
-
-.left {
   width: 300px;
-  background-color: var(--slate-2);
   border-right: 1px solid var(--slate-6);
 }
 
-.right {
-  width: 300px;
-  border-left: 1px solid var(--slate-6);
+.charts {
+  display: flex;
+  flex: 1;
+  background-color: #fff;
 }
 
-.body {
+:global(.dark) .charts {
+  background-color: var(--slate-1);
+}
+
+.file-chart {
+  flex: 5;
+  border-right: 1px solid var(--slate-6);
+}
+
+.derived-charts {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+}
+
+.derived-charts > div {
   flex: 1;
-  height: 100%;
+}
+
+.derived-charts > div:first-child {
+  border-bottom: 1px solid var(--slate-6);
 }
