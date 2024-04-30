@@ -1,4 +1,3 @@
-import katext from 'katex';
 import {
   CartesianGrid,
   ComposedChart,
@@ -10,6 +9,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import Formula from '@/components/ui/Formula/Formula';
 import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
 
 import styles from './RESIFileDiffChart.module.css';
@@ -29,14 +29,7 @@ function RESIFileDiffChart(props: RESIFileDiffChartProps) {
     <div className={styles['chart-wrapper']}>
       <div className={styles['chart-title']}>
         <h2>Износ сверла</h2>
-
-        <div
-          className={styles.regression}
-          dangerouslySetInnerHTML={{
-            // eslint-disable-next-line import/no-named-as-default-member
-            __html: katext.renderToString(regression.string),
-          }}
-        />
+        <Formula a={regression.equation[0]} b={regression.equation[1]} />
       </div>
 
       <div className={styles['chart']}>
