@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { type RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileList.module.css';
@@ -11,7 +13,7 @@ interface RESIFileListProps {
   onDeleteFile: (idx: number) => void;
 }
 
-function RESIFileList(props: RESIFileListProps) {
+const RESIFileList = memo((props: RESIFileListProps) => {
   const {
     files,
     onChangeFileColor,
@@ -26,14 +28,17 @@ function RESIFileList(props: RESIFileListProps) {
         <RESIFileListItem
           key={`${file.name}-${idx}`}
           file={file}
-          onChangeColor={onChangeFileColor.bind(null, idx)}
-          onChangeStrokeWidth={onChangeFileStrokeWidth.bind(null, idx)}
-          onChangeChecked={onChangeFileChecked.bind(null, idx)}
-          onDelete={onDeleteFile.bind(null, idx)}
+          idx={idx}
+          onChangeColor={onChangeFileColor}
+          onChangeStrokeWidth={onChangeFileStrokeWidth}
+          onChangeChecked={onChangeFileChecked}
+          onDelete={onDeleteFile}
         />
       ))}
     </ul>
   );
-}
+});
+
+RESIFileList.displayName = 'RESIFileList';
 
 export default RESIFileList;

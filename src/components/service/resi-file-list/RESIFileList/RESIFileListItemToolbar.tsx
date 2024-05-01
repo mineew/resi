@@ -1,26 +1,32 @@
 import { Trash2 } from 'lucide-react';
+import { memo } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
-import { type RESIFile } from '@/store/types/RESIFile';
+import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
 import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemToolbarProps {
-  file: RESIFile;
+  checked: boolean;
   onChangeChecked: (checked: boolean) => void;
   onDelete: () => void;
 }
 
-function RESIFileListItemToolbar(props: RESIFileListItemToolbarProps) {
-  const { file, onChangeChecked, onDelete } = props;
+const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
+  const { checked: defaultChecked, onChangeChecked, onDelete } = props;
+
+  const [checked, setChecked] = useDebouncedState(
+    defaultChecked,
+    onChangeChecked,
+  );
 
   return (
     <div className={styles.toolbar}>
       <Checkbox
         label="Отображать"
-        checked={file.checked}
-        onCheckedChange={onChangeChecked}
+        checked={checked}
+        onCheckedChange={setChecked}
         size="small"
       />
 
@@ -37,6 +43,8 @@ function RESIFileListItemToolbar(props: RESIFileListItemToolbarProps) {
       </Button>
     </div>
   );
-}
+});
+
+RESIFileListItemToolbar.displayName = 'RESIFileListItemToolbar';
 
 export default RESIFileListItemToolbar;

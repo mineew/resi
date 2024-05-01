@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { DEFAULT_SETTINGS } from './types/Settings';
 import { type StoreState } from './types/StoreState';
 
-const useStore = create<StoreState>((set, get) => ({
+const useStore = create<StoreState>()((set, get) => ({
   files: [],
   setFiles: (files) => set({ files }),
 
@@ -47,7 +47,7 @@ const useStore = create<StoreState>((set, get) => ({
   changeFileColor: (idx, color) => {
     const files = get().files;
     const newFiles = [...files];
-    newFiles[idx].color = color;
+    newFiles[idx] = { ...newFiles[idx], color };
 
     set({ files: newFiles });
   },
@@ -55,7 +55,7 @@ const useStore = create<StoreState>((set, get) => ({
   changeFileStrokeWidth: (idx, width) => {
     const files = get().files;
     const newFiles = [...files];
-    newFiles[idx].strokeWidth = width;
+    newFiles[idx] = { ...newFiles[idx], strokeWidth: width };
 
     set({ files: newFiles });
   },
@@ -63,7 +63,7 @@ const useStore = create<StoreState>((set, get) => ({
   toggleFile: (idx, checked) => {
     const files = get().files;
     const newFiles = [...files];
-    newFiles[idx].checked = checked;
+    newFiles[idx] = { ...newFiles[idx], checked };
 
     set({ files: newFiles });
   },
@@ -78,6 +78,10 @@ const useStore = create<StoreState>((set, get) => ({
 
   settings: DEFAULT_SETTINGS,
   setSettings: (settings) => set({ settings }),
+  setOffsetLeft: (offsetLeft) =>
+    set((state) => ({ settings: { ...state.settings, offsetLeft } })),
+  setOffsetRight: (offsetRight) =>
+    set((state) => ({ settings: { ...state.settings, offsetRight } })),
 }));
 
 export default useStore;

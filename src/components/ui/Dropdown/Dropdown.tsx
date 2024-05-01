@@ -27,10 +27,7 @@ function Dropdown(props: DropdownProps) {
     <Radix.Root>
       <Radix.Trigger asChild>
         {trigger || (
-          <Button
-            className={classNames(styles.trigger, styles.default)}
-            outlined
-          >
+          <Button className={styles.trigger} icon outlined>
             <ChevronDown className={styles['trigger-icon']} />
           </Button>
         )}

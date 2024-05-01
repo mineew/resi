@@ -1,17 +1,16 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
+import AppSettingsForm from '@/components/service/app-settings/AppSettingsForm/AppSettingsForm';
 import Dialog from '@/components/ui/Dialog/Dialog';
 import { type Settings } from '@/store/types/Settings';
 
-import RESIFileChartSettingsForm from './RESIFileChartSettingsForm';
-
-interface RESIFileChartSettingsProps {
+interface AppSettingsProps {
   values?: Settings;
   onChange: (values: Settings) => void;
   children: JSX.Element;
 }
 
-function RESIFileChartSettings(props: RESIFileChartSettingsProps) {
+const AppSettings = memo((props: AppSettingsProps) => {
   const { values = {}, onChange, children } = props;
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -32,13 +31,12 @@ function RESIFileChartSettings(props: RESIFileChartSettingsProps) {
       size="400"
     >
       {dialogOpen ? (
-        <RESIFileChartSettingsForm
-          defaultValues={values}
-          onSubmit={handleChange}
-        />
+        <AppSettingsForm defaultValues={values} onSubmit={handleChange} />
       ) : null}
     </Dialog>
   );
-}
+});
 
-export default RESIFileChartSettings;
+AppSettings.displayName = 'AppSettings';
+
+export default AppSettings;

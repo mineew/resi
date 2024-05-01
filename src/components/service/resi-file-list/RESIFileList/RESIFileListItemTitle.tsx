@@ -1,23 +1,33 @@
+import { memo } from 'react';
+
 import RESIFileSettings from '@/components/service/resi-file-list/RESIFileSettings/RESIFileSettings';
-import { type RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemTitleProps {
-  file: RESIFile;
+  color: string;
+  name: string;
+  strokeWidth: number;
   onChangeColor: (color: string) => void;
   onChangeStrokeWidth: (width: number) => void;
   onChangeActive: (active: boolean) => void;
 }
 
-function RESIFileListItemTitle(props: RESIFileListItemTitleProps) {
-  const { file, onChangeColor, onChangeStrokeWidth, onChangeActive } = props;
+const RESIFileListItemTitle = memo((props: RESIFileListItemTitleProps) => {
+  const {
+    color,
+    name,
+    strokeWidth,
+    onChangeColor,
+    onChangeStrokeWidth,
+    onChangeActive,
+  } = props;
 
   return (
     <RESIFileSettings
-      color={file.color}
+      color={color}
       onChangeColor={onChangeColor}
-      strokeWidth={file.strokeWidth}
+      strokeWidth={strokeWidth}
       onChangeStrokeWidth={onChangeStrokeWidth}
       onOpenChange={onChangeActive}
     >
@@ -25,15 +35,17 @@ function RESIFileListItemTitle(props: RESIFileListItemTitleProps) {
         <div
           className={styles['color-indicator']}
           style={{
-            color: file.color,
-            backgroundColor: file.color,
+            color: color,
+            backgroundColor: color,
           }}
         />
 
-        <div className={styles['title-text']}>{file.name}</div>
+        <div className={styles['title-text']}>{name}</div>
       </button>
     </RESIFileSettings>
   );
-}
+});
+
+RESIFileListItemTitle.displayName = 'RESIFileListItemTitle';
 
 export default RESIFileListItemTitle;

@@ -1,19 +1,23 @@
 import { mean, median } from 'simple-statistics';
 
-import { type Settings } from '@/store/types/Settings';
-
 function calculateDataDifference(
   a: number[],
   b: number[],
-  settings: Settings = {},
+  differenceMeanMethod: 'mean' | 'median' = 'mean',
+  takeNegativeDiffs = true,
 ) {
-  const { differenceMeanMethod = 'mean' } = settings;
   const diffs: number[] = [];
   const length = Math.max(a.length, b.length);
 
   for (let i = 0; i < length; i += 1) {
     if (a[i] !== undefined && b[i] !== undefined) {
-      diffs.push(a[i] - b[i]);
+      const diff = a[i] - b[i];
+
+      if (diff < 0 && !takeNegativeDiffs) {
+        diffs.push(0);
+      } else {
+        diffs.push(diff);
+      }
     }
   }
 

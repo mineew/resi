@@ -1,4 +1,5 @@
 import { CopyCheck, CopyX, FilePlus2, Trash2 } from 'lucide-react';
+import { type ReactNode, memo } from 'react';
 
 import RESIFileList from '@/components/service/resi-file-list/RESIFileList/RESIFileList';
 import RESIFileListEmpty from '@/components/service/resi-file-list/RESIFileListEmpty/RESIFileListEmpty';
@@ -19,9 +20,10 @@ interface RESIFileListPanelProps {
   onChangeFileStrokeWidth: (idx: number, width: number) => void;
   onChangeFileChecked: (idx: number, checked: boolean) => void;
   onDeleteFile: (idx: number) => void;
+  appSettings?: ReactNode;
 }
 
-function RESIFileListPanel(props: RESIFileListPanelProps) {
+const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const {
     files,
     onAddFiles,
@@ -32,6 +34,7 @@ function RESIFileListPanel(props: RESIFileListPanelProps) {
     onChangeFileStrokeWidth,
     onChangeFileChecked,
     onDeleteFile,
+    appSettings,
   } = props;
 
   const allFilesChecked = !files.some((f) => !f.checked);
@@ -76,10 +79,12 @@ function RESIFileListPanel(props: RESIFileListPanelProps) {
           center
         >
           <FilePlus2 />
-          Добавить RESI файлы
+          Добавить файлы
         </Button>
 
         <Dropdown items={dropdownItems} />
+
+        {appSettings}
       </div>
 
       <ScrollArea className={styles.body}>
@@ -107,6 +112,8 @@ function RESIFileListPanel(props: RESIFileListPanelProps) {
       </div>
     </div>
   );
-}
+});
+
+RESIFileListPanel.displayName = 'RESIFileListPanel';
 
 export default RESIFileListPanel;

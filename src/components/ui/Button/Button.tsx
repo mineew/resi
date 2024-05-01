@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   center?: boolean;
   outlined?: boolean;
+  icon?: boolean;
 }
 
 function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
@@ -18,6 +19,7 @@ function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
     fullWidth = false,
     center = false,
     outlined = false,
+    icon = false,
     className,
     type = 'button',
     ...otherProps
@@ -36,6 +38,7 @@ function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
           [styles.center]: center,
           [styles.filled]: !outlined,
           [styles.outlined]: outlined,
+          [styles.icon]: icon,
         },
       )}
       type={type}

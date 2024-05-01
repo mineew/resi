@@ -20,9 +20,8 @@ const files = getRandomArray(
 );
 
 export const Default: StoryFn<typeof RESIFileDiffChart> = () => {
-  const chunkSize = 500;
-  const smoothedFiles = smoothFiles(files, { chunkSize });
-  const diffs = calculateFileDifferences(smoothedFiles, { chunkSize });
+  const smoothedFiles = smoothFiles(files);
+  const diffs = calculateFileDifferences(smoothedFiles);
 
   return (
     <div style={{ padding: 20, height: '100vh' }}>

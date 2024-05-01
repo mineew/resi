@@ -1,8 +1,9 @@
 import { ScatterChart } from 'lucide-react';
+import { memo } from 'react';
 
 import EmptyState from '@/components/ui/EmptyState/EmptyState';
 
-function RESIFileDiffChartEmpty() {
+const RESIFileDiffChartEmpty = memo(() => {
   return (
     <EmptyState icon={<ScatterChart />}>
       <p>
@@ -10,6 +11,8 @@ function RESIFileDiffChartEmpty() {
       </p>
     </EmptyState>
   );
-}
+});
+
+RESIFileDiffChartEmpty.displayName = 'RESIFileDiffChartEmpty';
 
 export default RESIFileDiffChartEmpty;

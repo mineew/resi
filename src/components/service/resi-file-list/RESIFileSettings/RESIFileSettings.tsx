@@ -1,35 +1,37 @@
+import { memo } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { useDebouncedCallback } from 'use-debounce';
 
 import Popover from '@/components/ui/Popover/Popover';
 import Slider from '@/components/ui/Slider/Slider';
+import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
 import styles from './RESIFileSettings.module.css';
 
 interface RESIFileSettingsProps {
   color: string;
   onChangeColor: (color: string) => void;
-  colorDebounceWait?: number;
   strokeWidth: number;
   onChangeStrokeWidth: (width: number) => void;
   children: JSX.Element;
   onOpenChange?: (open: boolean) => void;
 }
 
-function RESIFileSettings(props: RESIFileSettingsProps) {
+const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
   const {
     color,
     onChangeColor,
-    colorDebounceWait = 300,
-    strokeWidth,
+    strokeWidth: defaultStrokeWidth,
     onChangeStrokeWidth,
     children,
     onOpenChange,
   } = props;
 
-  const handleChangeColor = useDebouncedCallback(
-    onChangeColor,
-    colorDebounceWait,
+  const handleChangeColor = useDebouncedCallback(onChangeColor, 300);
+
+  const [strokeWidth, setStrokeWidth] = useDebouncedState(
+    defaultStrokeWidth,
+    onChangeStrokeWidth,
   );
 
   return (
@@ -40,13 +42,15 @@ function RESIFileSettings(props: RESIFileSettingsProps) {
         <Slider
           label="Толщина линии"
           value={strokeWidth}
-          onValueChange={onChangeStrokeWidth}
+          onValueChange={setStrokeWidth}
           size="small"
           min={1}
         />
       </div>
     </Popover>
   );
-}
+});
+
+RESIFileSettings.displayName = 'RESIFileSettings';
 
 export default RESIFileSettings;

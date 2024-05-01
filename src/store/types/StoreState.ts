@@ -17,6 +17,8 @@ interface StoreState {
 
   settings: Settings;
   setSettings: (settings: Settings) => void;
+  setOffsetLeft: (offsetLeft: number) => void;
+  setOffsetRight: (offsetRight: number) => void;
 }
 
 export type { StoreState };

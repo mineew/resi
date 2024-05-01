@@ -37,7 +37,6 @@ export default {
   argTypes: {
     color: { table: { disable: true } },
     onChangeColor: { table: { disable: true } },
-    colorDebounceWait: { table: { disable: true } },
     strokeWidth: { table: { disable: true } },
     onChangeStrokeWidth: { table: { disable: true } },
     children: { table: { disable: true } },

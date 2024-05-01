@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 
+import { memo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
@@ -10,14 +11,14 @@ import RadioGroup, {
 import Slider from '@/components/ui/Slider/Slider';
 import { DEFAULT_SETTINGS, type Settings } from '@/store/types/Settings';
 
-import styles from './RESIFileChartSettings.module.css';
+import styles from './AppSettingsForm.module.css';
 
-interface RESIFileChartSettingsFormProps {
+interface AppSettingsFormProps {
   defaultValues?: Settings;
   onSubmit: (values: Settings) => void;
 }
 
-function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
+const AppSettingsForm = memo((props: AppSettingsFormProps) => {
   const { defaultValues, onSubmit } = props;
 
   const { control, handleSubmit } = useForm<Settings>({
@@ -132,6 +133,8 @@ function RESIFileChartSettingsForm(props: RESIFileChartSettingsFormProps) {
       </div>
     </form>
   );
-}
+});
 
-export default RESIFileChartSettingsForm;
+AppSettingsForm.displayName = 'AppSettingsForm';
+
+export default AppSettingsForm;

@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { memo } from 'react';
 import {
   CartesianGrid,
   Line,
@@ -27,7 +28,7 @@ interface RESIFileChartProps {
   interactive?: boolean;
 }
 
-function RESIFileChart(props: RESIFileChartProps) {
+const RESIFileChart = memo((props: RESIFileChartProps) => {
   const {
     files,
     scale,
@@ -138,6 +139,8 @@ function RESIFileChart(props: RESIFileChartProps) {
       </LineChart>
     </ResponsiveContainer>
   );
-}
+});
+
+RESIFileChart.displayName = 'RESIFileChart';
 
 export default RESIFileChart;

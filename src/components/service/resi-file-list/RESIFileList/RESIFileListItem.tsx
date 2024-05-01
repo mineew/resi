@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import { type RESIFile } from '@/store/types/RESIFile';
 
@@ -9,15 +9,17 @@ import RESIFileListItemToolbar from './RESIFileListItemToolbar';
 
 interface RESIFileListItemProps {
   file: RESIFile;
-  onChangeColor: (color: string) => void;
-  onChangeStrokeWidth: (width: number) => void;
-  onChangeChecked: (checked: boolean) => void;
-  onDelete: () => void;
+  idx: number;
+  onChangeColor: (idx: number, color: string) => void;
+  onChangeStrokeWidth: (idx: number, width: number) => void;
+  onChangeChecked: (idx: number, checked: boolean) => void;
+  onDelete: (idx: number) => void;
 }
 
-function RESIFileListItem(props: RESIFileListItemProps) {
+const RESIFileListItem = memo((props: RESIFileListItemProps) => {
   const {
     file,
+    idx,
     onChangeColor,
     onChangeStrokeWidth,
     onChangeChecked,
@@ -26,6 +28,23 @@ function RESIFileListItem(props: RESIFileListItemProps) {
 
   const [active, setActive] = useState(false);
 
+  const handleChangeColor = useCallback(
+    (color: string) => onChangeColor(idx, color),
+    [idx, onChangeColor],
+  );
+
+  const handleChangeStrokeWidth = useCallback(
+    (width: number) => onChangeStrokeWidth(idx, width),
+    [idx, onChangeStrokeWidth],
+  );
+
+  const handleChangeChecked = useCallback(
+    (checked: boolean) => onChangeChecked(idx, checked),
+    [idx, onChangeChecked],
+  );
+
+  const handleDelete = useCallback(() => onDelete(idx), [idx, onDelete]);
+
   return (
     <li
       className={classNames(styles.item, {
@@ -33,19 +52,23 @@ function RESIFileListItem(props: RESIFileListItemProps) {
       })}
     >
       <RESIFileListItemTitle
-        file={file}
-        onChangeColor={onChangeColor}
-        onChangeStrokeWidth={onChangeStrokeWidth}
+        color={file.color}
+        name={file.name}
+        strokeWidth={file.strokeWidth}
+        onChangeColor={handleChangeColor}
+        onChangeStrokeWidth={handleChangeStrokeWidth}
         onChangeActive={setActive}
       />
 
       <RESIFileListItemToolbar
-        file={file}
-        onChangeChecked={onChangeChecked}
-        onDelete={onDelete}
+        checked={file.checked}
+        onChangeChecked={handleChangeChecked}
+        onDelete={handleDelete}
       />
     </li>
   );
-}
+});
+
+RESIFileListItem.displayName = 'RESIFileListItem';
 
 export default RESIFileListItem;

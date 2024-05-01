@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
   CartesianGrid,
   ComposedChart,
@@ -20,7 +21,7 @@ interface RESIFileDiffChartProps {
   diffs: RESIFileDiff[];
 }
 
-function RESIFileDiffChart(props: RESIFileDiffChartProps) {
+const RESIFileDiffChart = memo((props: RESIFileDiffChartProps) => {
   const { diffs } = props;
   const { data, minY } = convertDiffsToChartData(diffs);
   const { regression, regressionLine } = convertDiffsToLinearRegression(diffs);
@@ -75,6 +76,8 @@ function RESIFileDiffChart(props: RESIFileDiffChartProps) {
       </div>
     </div>
   );
-}
+});
+
+RESIFileDiffChart.displayName = 'RESIFileDiffChart';
 
 export default RESIFileDiffChart;

@@ -22,16 +22,13 @@ const files = getRandomArray(
 export const Default: StoryFn<typeof RESIFileChart> = ({ interactive }) => {
   const [offsetLeft, setOffsetLeft] = useState(60);
   const [offsetRight, setOffsetRight] = useState(420);
-  const offsetGap = 3;
-
-  const chunkSize = 500;
 
   return (
     <div style={{ padding: 20, height: '100vh' }}>
       <RESIFileChart
-        files={smoothFiles(files, { chunkSize })}
-        scale={chunkSize}
-        offsetGap={offsetGap}
+        files={smoothFiles(files)}
+        scale={300}
+        offsetGap={1}
         offsetLeft={offsetLeft}
         onChangeOffsetLeft={setOffsetLeft}
         offsetRight={offsetRight}

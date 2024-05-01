@@ -1,20 +1,22 @@
 import { useCallback } from 'react';
 
+import AppSettings from '@/components/app/AppSettings/AppSettings';
 import RESIFileListPanelView from '@/components/service/resi-file-list/RESIFileListPanel/RESIFileListPanel';
-import * as selectors from '@/store/selectors';
 import useStore from '@/store/store';
 import processFiles from '@/utils/resi-files/processFiles';
 
 function RESIFileListPanel() {
-  const files = useStore(selectors.files);
-  const addFiles = useStore(selectors.addFiles);
-  const deleteAllFiles = useStore(selectors.deleteAllFiles);
-  const checkAllFiles = useStore(selectors.checkAllFiles);
-  const uncheckAllFiles = useStore(selectors.uncheckAllFiles);
-  const changeFileColor = useStore(selectors.changeFileColor);
-  const changeFileStrokeWidth = useStore(selectors.changeFileStrokeWidth);
-  const toggleFile = useStore(selectors.toggleFile);
-  const deleteFile = useStore(selectors.deleteFile);
+  const files = useStore((state) => state.files);
+  const addFiles = useStore((state) => state.addFiles);
+  const deleteAllFiles = useStore((state) => state.deleteAllFiles);
+  const checkAllFiles = useStore((state) => state.checkAllFiles);
+  const uncheckAllFiles = useStore((state) => state.uncheckAllFiles);
+  const changeFileColor = useStore((state) => state.changeFileColor);
+  const changeFileStrokeWidth = useStore(
+    (state) => state.changeFileStrokeWidth,
+  );
+  const toggleFile = useStore((state) => state.toggleFile);
+  const deleteFile = useStore((state) => state.deleteFile);
 
   const handleAddFiles = useCallback(() => {
     processFiles()
@@ -35,6 +37,8 @@ function RESIFileListPanel() {
       onChangeFileStrokeWidth={changeFileStrokeWidth}
       onChangeFileChecked={toggleFile}
       onDeleteFile={deleteFile}
+      //
+      appSettings={<AppSettings />}
     />
   );
 }

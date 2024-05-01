@@ -1,4 +1,5 @@
 import { FolderOpen, Inbox } from 'lucide-react';
+import { memo } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 import EmptyState from '@/components/ui/EmptyState/EmptyState';
@@ -7,7 +8,7 @@ interface RESIFileListEmptyProps {
   onAddFiles: () => void;
 }
 
-function RESIFileListEmpty(props: RESIFileListEmptyProps) {
+const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
   const { onAddFiles } = props;
 
   return (
@@ -20,6 +21,8 @@ function RESIFileListEmpty(props: RESIFileListEmptyProps) {
       <p>Файлы прибора резистографа, расширение *.xls</p>
     </EmptyState>
   );
-}
+});
+
+RESIFileListEmpty.displayName = 'RESIFileListEmpty';
 
 export default RESIFileListEmpty;

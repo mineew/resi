@@ -65,9 +65,17 @@
   padding: 6px 12px;
 }
 
+.button.default.icon {
+  padding: 6px;
+}
+
 .button.small {
   padding: 3px 6px;
   font-size: 0.9rem;
+}
+
+.button.small.icon {
+  padding: 3px;
 }
 
 .button.full-width {

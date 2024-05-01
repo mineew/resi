@@ -58,5 +58,6 @@ export default {
     onChangeFileStrokeWidth: { table: { disable: true } },
     onChangeFileChecked: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
+    appSettings: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileListPanel>;

@@ -37,4 +37,7 @@ export default {
     outlined: false,
     disabled: false,
   },
+  argTypes: {
+    icon: { table: { disable: true } },
+  },
 } as Meta<typeof Button>;
