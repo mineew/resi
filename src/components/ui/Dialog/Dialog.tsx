@@ -25,7 +25,11 @@ function Dialog(props: DialogProps) {
         <Radix.Overlay className={styles.overlay} />
 
         <Radix.Content
-          className={classNames(styles.content, styles[`size-${size}`])}
+          className={classNames(
+            styles.content,
+            styles[`size-${size}`],
+            'shadow',
+          )}
         >
           <div className={styles.header}>
             <Radix.Title className={styles.title}>{title}</Radix.Title>

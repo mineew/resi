@@ -1,6 +1,8 @@
 /* Slate */
 @import url('@radix-ui/colors/slate.css');
+@import url('@radix-ui/colors/slate-alpha.css');
 @import url('@radix-ui/colors/slate-dark.css');
+@import url('@radix-ui/colors/slate-dark-alpha.css');
 
 /* Red */
 @import url('@radix-ui/colors/red.css');

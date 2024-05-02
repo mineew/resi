@@ -1,0 +1,9 @@
+.shadow {
+  box-shadow:
+    0 10px 15px -3px var(--slate-a4),
+    0 4px 6px -4px var(--slate-a4);
+}
+
+.dark .shadow {
+  box-shadow: none;
+}

@@ -35,7 +35,7 @@ function Dropdown(props: DropdownProps) {
 
       <Radix.Portal>
         <Radix.Content
-          className={styles.content}
+          className={classNames(styles.content, 'shadow')}
           side="bottom"
           sideOffset={6}
           align="start"

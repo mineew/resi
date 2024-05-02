@@ -4,9 +4,6 @@
   border: 1px solid var(--slate-6);
   border-radius: 6px;
   outline: none;
-  box-shadow:
-    0 10px 15px -3px var(--slate-4),
-    0 4px 6px -4px var(--slate-4);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
@@ -18,7 +15,6 @@
 
 :global(.dark) .content {
   background-color: var(--slate-4);
-  box-shadow: none;
 }
 
 @keyframes slide {

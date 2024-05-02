@@ -1,4 +1,5 @@
 import * as Radix from '@radix-ui/react-popover';
+import classNames from 'classnames';
 import { type ReactNode } from 'react';
 
 import styles from './Popover.module.css';
@@ -19,7 +20,7 @@ function Popover(props: PopoverProps) {
 
       <Radix.Portal>
         <Radix.Content
-          className={styles.content}
+          className={classNames(styles.content, 'shadow')}
           side="bottom"
           sideOffset={6}
           align="start"

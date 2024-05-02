@@ -96,7 +96,6 @@
 
 :global(.dark) .tooltip {
   background-color: var(--slate-4);
-  box-shadow: none;
 }
 
 .wrapper.tooltip-visible .tooltip {
