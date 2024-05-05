@@ -6,6 +6,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      globals: true,
       coverage: {
         enabled: true,
         reporter: ['html'],

@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import splitArrayOnChunks from './splitArrayOnChunks';
 
 describe('@/utils/splitArrayOnChunks', () => {
