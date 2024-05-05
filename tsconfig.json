@@ -22,7 +22,7 @@
 
     /* Added to vite's confing */
     "esModuleInterop": true,
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     /* Path aliases */
     "baseUrl": ".",
