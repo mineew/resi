@@ -23,7 +23,7 @@ interface RESIFileDiffChartProps {
 
 const RESIFileDiffChart = memo((props: RESIFileDiffChartProps) => {
   const { diffs } = props;
-  const { data, minY } = convertDiffsToChartData(diffs);
+  const { data } = convertDiffsToChartData(diffs);
   const { regression, regressionLine } = convertDiffsToLinearRegression(diffs);
 
   return (
@@ -47,16 +47,14 @@ const RESIFileDiffChart = memo((props: RESIFileDiffChartProps) => {
               height={70}
             />
 
-            {minY < 0 && (
-              <ReferenceLine className={styles['zero-reference']} y={0} />
-            )}
-
             <YAxis
               className={styles.axis}
               dataKey="y"
               type="number"
               label={{ value: 'RESI', position: 'insideLeft', angle: -90 }}
             />
+
+            <ReferenceLine className={styles['zero-reference']} y={0} />
 
             <Scatter
               className={styles.scatter}
