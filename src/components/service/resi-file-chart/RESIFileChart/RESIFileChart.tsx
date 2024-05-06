@@ -11,6 +11,7 @@ import {
 } from 'recharts';
 
 import { type RESIFile } from '@/store/types/RESIFile';
+import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
 import styles from './RESIFileChart.module.css';
 import convertFilesToChartData from './convertFilesToChartData';
@@ -33,12 +34,24 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     files,
     scale,
     offsetGap,
-    offsetLeft,
+    offsetLeft: defaultOffsetLeft = 0,
     onChangeOffsetLeft,
-    offsetRight,
+    offsetRight: defaultOffsetRight = 0,
     onChangeOffsetRight,
     interactive,
   } = props;
+
+  const [offsetLeft, setOffsetLeft] = useDebouncedState(
+    defaultOffsetLeft,
+    onChangeOffsetLeft,
+    500,
+  );
+
+  const [offsetRight, setOffsetRight] = useDebouncedState(
+    defaultOffsetRight,
+    onChangeOffsetRight,
+    500,
+  );
 
   const {
     offsetDrag,
@@ -55,9 +68,9 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     interactive,
     gap: offsetGap,
     offsetLeft,
-    onChangeOffsetLeft,
+    onChangeOffsetLeft: setOffsetLeft,
     offsetRight,
-    onChangeOffsetRight,
+    onChangeOffsetRight: setOffsetRight,
   });
 
   const { data, maxX, maxY } = convertFilesToChartData(files, scale);
