@@ -7,6 +7,7 @@ import useSmoothedFiles from './useSmoothedFiles';
 
 function useFileDifferences() {
   const smoothedFiles = useSmoothedFiles('checked');
+  const chunkSize = useStore((state) => state.settings.chunkSize);
   const differenceMeanMethod = useStore(
     (state) => state.settings.differenceMeanMethod,
   );
@@ -17,10 +18,11 @@ function useFileDifferences() {
   const fileDifferences = useMemo(() => {
     return calculateFileDifferences(
       smoothedFiles,
+      chunkSize,
       differenceMeanMethod,
       takeNegativeDiffs,
     );
-  }, [smoothedFiles, differenceMeanMethod, takeNegativeDiffs]);
+  }, [smoothedFiles, chunkSize, differenceMeanMethod, takeNegativeDiffs]);
 
   return fileDifferences;
 }

@@ -4,9 +4,9 @@ import calculateDataDifference from '@/utils/stats/calculateDataDifference';
 
 function calculateFileDifferences(
   files: RESIFile[],
+  chunkSize = 300,
   differenceMeanMethod?: 'mean' | 'median',
   takeNegativeDiffs?: boolean,
-  chunkSize = 300,
 ): RESIFileDiff[] {
   const diffs: RESIFileDiff[] = [];
 
