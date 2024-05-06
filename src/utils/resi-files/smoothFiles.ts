@@ -1,6 +1,5 @@
 import { type RESIFile } from '@/store/types/RESIFile';
-
-import smoothData from './smoothData';
+import smoothData from '@/utils/stats/smoothData';
 
 function smoothFiles(
   files: RESIFile[],

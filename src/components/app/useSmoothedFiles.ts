@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import useStore from '@/store/store';
-import smoothFiles from '@/utils/stats/smoothFiles';
+import smoothFiles from '@/utils/resi-files/smoothFiles';
 
 import useFiles from './useFiles';
 

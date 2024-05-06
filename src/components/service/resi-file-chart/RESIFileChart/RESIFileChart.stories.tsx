@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 import getRandomArray from '@/utils/misc/getRandomArray';
-import smoothFiles from '@/utils/stats/smoothFiles';
+import smoothFiles from '@/utils/resi-files/smoothFiles';
 
 import RESIFileChart from './RESIFileChart';
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import useStore from '@/store/store';
-import calculateFileDifferences from '@/utils/stats/calculateFileDifferences';
+import calculateFileDifferences from '@/utils/resi-files/calculateFileDifferences';
 
 import useSmoothedFiles from './useSmoothedFiles';
 

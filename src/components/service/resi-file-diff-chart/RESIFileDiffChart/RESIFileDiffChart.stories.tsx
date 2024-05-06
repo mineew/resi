@@ -2,8 +2,8 @@ import { type Meta, type StoryFn } from '@storybook/react';
 
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 import getRandomArray from '@/utils/misc/getRandomArray';
-import calculateFileDifferences from '@/utils/stats/calculateFileDifferences';
-import smoothFiles from '@/utils/stats/smoothFiles';
+import calculateFileDifferences from '@/utils/resi-files/calculateFileDifferences';
+import smoothFiles from '@/utils/resi-files/smoothFiles';
 
 import RESIFileDiffChart from './RESIFileDiffChart';
 
