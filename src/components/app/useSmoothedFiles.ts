@@ -1,12 +1,10 @@
 import { useMemo } from 'react';
 
 import useStore from '@/store/store';
+import { type RESIFile } from '@/store/types/RESIFile';
 import smoothFiles from '@/utils/resi-files/smoothFiles';
 
-import useFiles from './useFiles';
-
-function useSmoothedFiles(type?: 'all' | 'checked') {
-  const files = useFiles(type);
+function useSmoothedFiles(files: RESIFile[]) {
   const zScoreThreshold = useStore((state) => state.settings.zScoreThreshold);
   const zScoreMeanMethod = useStore((state) => state.settings.zScoreMeanMethod);
   const chunkSize = useStore((state) => state.settings.chunkSize);

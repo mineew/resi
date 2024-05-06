@@ -1,10 +1,12 @@
+import useFiles from '@/components/app/useFiles';
 import useSmoothedFiles from '@/components/app/useSmoothedFiles';
 import RESIFileChart from '@/components/service/resi-file-chart/RESIFileChart/RESIFileChart';
 import RESIFileChartEmpty from '@/components/service/resi-file-chart/RESIFileChartEmpty/RESIFileChartEmpty';
 import useStore from '@/store/store';
 
 function RESIFileChartPanel() {
-  const smoothedFiles = useSmoothedFiles('checked');
+  const files = useFiles('checked');
+  const smoothedFiles = useSmoothedFiles(files);
   const chunkSize = useStore((state) => state.settings.chunkSize);
   const offsetLeft = useStore((state) => state.settings.offsetLeft);
   const offsetRight = useStore((state) => state.settings.offsetRight);
