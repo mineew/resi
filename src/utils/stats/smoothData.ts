@@ -2,7 +2,7 @@ import { mean, median } from 'simple-statistics';
 
 import splitArrayOnChunks from '@/utils/arrays/splitArrayOnChunks';
 
-import { filterOutliers } from './filterOutliers';
+import filterOutliers from './filterOutliers';
 
 function smoothData(
   data: number[],

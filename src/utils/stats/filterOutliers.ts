@@ -10,14 +10,22 @@ function filterOutliers(
   const scores = data.map((x) => zScore(x, m, std));
 
   return data
-    .map((x, i) => {
-      if (scores[i] <= -zScoreThreshold || scores[i] >= zScoreThreshold) {
-        return null;
-      }
-
-      return x;
-    })
-    .filter((x) => x !== null) as number[];
+    .map(filterZScores(scores, zScoreThreshold))
+    .filter(filterNotNull) as number[];
 }
 
-export { filterOutliers };
+function filterZScores(scores: number[], threshold: number) {
+  return (x: number, i: number) => {
+    if (scores[i] <= -threshold || scores[i] >= threshold) {
+      return null;
+    }
+
+    return x;
+  };
+}
+
+function filterNotNull(x: number | null) {
+  return x !== null;
+}
+
+export default filterOutliers;
