@@ -14,13 +14,20 @@ const RESIFileDiffChartPanel = lazy(
     import('@/components/app/RESIFileDiffChartPanel/RESIFileDiffChartPanel'),
 );
 
+const RESIFileGrowthChartPanel = lazy(
+  () =>
+    import(
+      '@/components/app/RESIFileGrowthChartPanel/RESIFileGrowthChartPanel'
+    ),
+);
+
 function App() {
   return (
     <AppLayout
       fileList={<RESIFileListPanel />}
       fileChart={<RESIFileChartPanel />}
       diffChart={<RESIFileDiffChartPanel />}
-      growthChart={<div />}
+      growthChart={<RESIFileGrowthChartPanel />}
     />
   );
 }

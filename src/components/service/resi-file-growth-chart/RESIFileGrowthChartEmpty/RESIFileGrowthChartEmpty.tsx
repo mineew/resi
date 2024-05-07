@@ -7,7 +7,7 @@ const RESIFileGrowthChartEmpty = memo(() => {
   return (
     <EmptyState icon={<ScatterChart />}>
       <p>
-        Минимум 2 резистограммы необходимы для построения графика зависимости
+        Минимум 1 резистограмма необходима для построения графика зависимости
       </p>
     </EmptyState>
   );
