@@ -107,7 +107,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="differenceMeanMethod"
         render={({ field }) => (
           <RadioGroup
-            label="Мера среднего в расчетах разницы"
+            label="Мера среднего в расчетах разности"
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
             onValueChange={field.onChange}
@@ -123,6 +123,32 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             label="Учитывать отрицательные разности"
             hasBoldLabel
             checked={field.value ?? DEFAULT_SETTINGS.takeNegativeDiffs}
+            onCheckedChange={field.onChange}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="growthMeanMethod"
+        render={({ field }) => (
+          <RadioGroup
+            label="Мера среднего в расчетах роста"
+            items={meanOptions}
+            value={field.value || DEFAULT_SETTINGS.growthMeanMethod}
+            onValueChange={field.onChange}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="takeNegativeGrowth"
+        render={({ field }) => (
+          <Checkbox
+            label="Учитывать отрицательный рост (спад)"
+            hasBoldLabel
+            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeGrowth}
             onCheckedChange={field.onChange}
           />
         )}

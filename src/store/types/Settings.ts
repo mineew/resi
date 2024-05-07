@@ -4,9 +4,11 @@ interface Settings {
   chunkSize?: number;
   chunkAggregateMethod?: 'mean' | 'median';
   differenceMeanMethod?: 'mean' | 'median';
+  takeNegativeDiffs?: boolean;
+  growthMeanMethod?: 'mean' | 'median';
+  takeNegativeGrowth?: boolean;
   offsetLeft?: number;
   offsetRight?: number;
-  takeNegativeDiffs?: boolean;
 }
 
 const DEFAULT_SETTINGS: Required<Settings> = {
@@ -15,9 +17,11 @@ const DEFAULT_SETTINGS: Required<Settings> = {
   chunkSize: 300,
   chunkAggregateMethod: 'mean',
   differenceMeanMethod: 'mean',
+  takeNegativeDiffs: false,
+  growthMeanMethod: 'mean',
+  takeNegativeGrowth: false,
   offsetLeft: 20,
   offsetRight: 200,
-  takeNegativeDiffs: true,
 };
 
 export { DEFAULT_SETTINGS };

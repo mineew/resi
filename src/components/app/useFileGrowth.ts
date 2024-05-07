@@ -13,21 +13,29 @@ function useFileGrowth() {
   const smoothedFiles = useSmoothedFiles(croppedFiles);
 
   const chunkSize = useStore((state) => state.settings.chunkSize);
-  const differenceMeanMethod = useStore(
-    (state) => state.settings.differenceMeanMethod,
-  );
+  const growthMeanMethod = useStore((state) => state.settings.growthMeanMethod);
   const takeNegativeDiffs = useStore(
     (state) => state.settings.takeNegativeDiffs,
+  );
+  const takeNegativeGrowth = useStore(
+    (state) => state.settings.takeNegativeGrowth,
   );
 
   const growth = useMemo(() => {
     return calculateFileGrowth(
       smoothedFiles,
       chunkSize,
-      differenceMeanMethod,
+      growthMeanMethod,
       takeNegativeDiffs,
+      takeNegativeGrowth,
     );
-  }, [smoothedFiles, chunkSize, differenceMeanMethod, takeNegativeDiffs]);
+  }, [
+    smoothedFiles,
+    chunkSize,
+    growthMeanMethod,
+    takeNegativeDiffs,
+    takeNegativeGrowth,
+  ]);
 
   return growth;
 }

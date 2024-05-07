@@ -6,8 +6,9 @@ import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 function calculateFileGrowth(
   files: RESIFile[],
   chunkSize = 300,
-  differenceMeanMethod: 'mean' | 'median' = 'mean',
-  takeNegativeDiffs?: boolean,
+  growthMeanMethod: 'mean' | 'median' = 'mean',
+  takeNegativeDiffs = false,
+  takeNegativeGrowth = false,
 ): RESIFileGrowth[] {
   const distanceGrowthMap: Record<string, number[]> = {};
 
@@ -32,19 +33,38 @@ function calculateFileGrowth(
     }
   }
 
-  const growth: RESIFileGrowth[] = [];
-
-  for (const distance of Object.keys(distanceGrowthMap)) {
-    growth.push({
-      distance: Number(distance),
-      growth:
-        differenceMeanMethod === 'mean'
-          ? mean(distanceGrowthMap[distance])
-          : median(distanceGrowthMap[distance]),
-    });
+  const distances = Object.keys(distanceGrowthMap);
+  if (!distances.length) {
+    return [];
   }
 
-  return growth;
+  const growthArray: RESIFileGrowth[] = [
+    {
+      distance: Number(distances[0]),
+      growth:
+        growthMeanMethod === 'mean'
+          ? mean(distanceGrowthMap[distances[0]])
+          : median(distanceGrowthMap[distances[0]]),
+    },
+  ];
+
+  for (let i = 1; i < distances.length; i += 1) {
+    const distance = Number(distances[i]);
+    const growth =
+      growthMeanMethod === 'mean'
+        ? mean(distanceGrowthMap[distance])
+        : median(distanceGrowthMap[distance]);
+
+    const prevGrowth = growthArray[growthArray.length - 1];
+
+    if (!takeNegativeGrowth && prevGrowth.growth > growth) {
+      continue;
+    }
+
+    growthArray.push({ distance, growth });
+  }
+
+  return growthArray;
 }
 
 export default calculateFileGrowth;

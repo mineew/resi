@@ -4,7 +4,7 @@ function calculateDataDifference(
   a: number[],
   b: number[],
   differenceMeanMethod: 'mean' | 'median' = 'mean',
-  takeNegativeDiffs = true,
+  takeNegativeDiffs = false,
 ) {
   const diffs: number[] = [];
   const length = Math.max(a.length, b.length);
