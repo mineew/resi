@@ -15,6 +15,7 @@ function RESIFileChartPanel() {
   const offsetRight = useStore((state) => state.settings.offsetRight);
   const setOffsetLeft = useStore((state) => state.setOffsetLeft);
   const setOffsetRight = useStore((state) => state.setOffsetRight);
+  const offsetGap = useStore((state) => state.settings.offsetGap);
 
   if (!smoothedFiles.length) {
     return <RESIFileChartEmpty />;
@@ -25,7 +26,7 @@ function RESIFileChartPanel() {
       files={smoothedFiles}
       scale={chunkSize}
       shouldRenderScale={renderChunksOnChart}
-      offsetGap={1}
+      offsetGap={offsetGap}
       offsetLeft={offsetLeft}
       onChangeOffsetLeft={setOffsetLeft}
       offsetRight={offsetRight}

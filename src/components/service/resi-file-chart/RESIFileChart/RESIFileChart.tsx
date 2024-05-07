@@ -69,7 +69,7 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     handleChartMouseMove,
   } = useReferenceDragging({
     interactive,
-    gap: offsetGap,
+    gap: offsetGap ? offsetGap / 10 : undefined,
     offsetLeft,
     onChangeOffsetLeft: setOffsetLeft,
     offsetRight,

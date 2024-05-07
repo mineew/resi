@@ -10,6 +10,7 @@ interface Settings {
   takeNegativeGrowth?: boolean;
   offsetLeft?: number;
   offsetRight?: number;
+  offsetGap?: number;
 }
 
 const DEFAULT_SETTINGS: Required<Settings> = {
@@ -24,6 +25,7 @@ const DEFAULT_SETTINGS: Required<Settings> = {
   takeNegativeGrowth: false,
   offsetLeft: 20,
   offsetRight: 200,
+  offsetGap: 10,
 };
 
 export { DEFAULT_SETTINGS };
