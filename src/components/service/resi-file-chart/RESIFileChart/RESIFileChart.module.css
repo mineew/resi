@@ -33,6 +33,10 @@
   stroke: var(--slate-12);
 }
 
+.scale-line line {
+  stroke: var(--green-9);
+}
+
 .reference-area path {
   fill: var(--red-3);
 }

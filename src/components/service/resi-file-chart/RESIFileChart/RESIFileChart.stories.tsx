@@ -19,15 +19,19 @@ const files = getRandomArray(
   3,
 );
 
-export const Default: StoryFn<typeof RESIFileChart> = ({ interactive }) => {
+export const Default: StoryFn<typeof RESIFileChart> = ({
+  shouldRenderScale,
+  interactive,
+}) => {
   const [offsetLeft, setOffsetLeft] = useState(60);
   const [offsetRight, setOffsetRight] = useState(420);
 
   return (
     <div style={{ padding: 20, height: '100vh' }}>
       <RESIFileChart
-        files={smoothFiles(files)}
-        scale={300}
+        files={smoothFiles(files, 3, 'mean', 1000)}
+        scale={1000}
+        shouldRenderScale={shouldRenderScale}
         offsetGap={1}
         offsetLeft={offsetLeft}
         onChangeOffsetLeft={setOffsetLeft}
@@ -52,6 +56,7 @@ export default {
     onChangeOffsetRight: { table: { disable: true } },
   },
   args: {
+    shouldRenderScale: false,
     interactive: true,
   },
 } as Meta<typeof RESIFileChart>;

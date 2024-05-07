@@ -3,6 +3,7 @@ interface Settings {
   zScoreMeanMethod?: 'mean' | 'median';
   chunkSize?: number;
   chunkAggregateMethod?: 'mean' | 'median';
+  renderChunksOnChart?: boolean;
   differenceMeanMethod?: 'mean' | 'median';
   takeNegativeDiffs?: boolean;
   growthMeanMethod?: 'mean' | 'median';
@@ -16,6 +17,7 @@ const DEFAULT_SETTINGS: Required<Settings> = {
   zScoreMeanMethod: 'mean',
   chunkSize: 300,
   chunkAggregateMethod: 'mean',
+  renderChunksOnChart: false,
   differenceMeanMethod: 'mean',
   takeNegativeDiffs: false,
   growthMeanMethod: 'mean',

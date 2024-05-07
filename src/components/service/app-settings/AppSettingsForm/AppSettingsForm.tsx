@@ -69,7 +69,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             hasBoldLabel
             value={field.value || DEFAULT_SETTINGS.chunkSize}
             onValueChange={(value) => {
-              if (value !== 1 && value !== 1000) {
+              if (value !== 1 && value !== 3000) {
                 field.onChange(value - 1);
               } else {
                 field.onChange(value);
@@ -83,7 +83,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
               return `${value / 100} мм`;
             }}
             min={1}
-            max={1000}
+            max={3000}
             step={100}
           />
         )}
@@ -98,6 +98,19 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.chunkAggregateMethod}
             onValueChange={field.onChange}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="renderChunksOnChart"
+        render={({ field }) => (
+          <Checkbox
+            label="Отобразить окно на графике"
+            hasBoldLabel
+            checked={field.value ?? DEFAULT_SETTINGS.renderChunksOnChart}
+            onCheckedChange={field.onChange}
           />
         )}
       />

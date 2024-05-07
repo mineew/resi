@@ -7,3 +7,7 @@
 /* Red */
 @import url('@radix-ui/colors/red.css');
 @import url('@radix-ui/colors/red-dark.css');
+
+/* Green */
+@import url('@radix-ui/colors/green.css');
+@import url('@radix-ui/colors/green-dark.css');

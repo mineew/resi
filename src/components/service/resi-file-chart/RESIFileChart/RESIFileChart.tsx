@@ -16,11 +16,13 @@ import useDebouncedState from '@/utils/hooks/useDebouncedState';
 import styles from './RESIFileChart.module.css';
 import convertFilesToChartData from './convertFilesToChartData';
 import renderReference from './renderReference';
+import renderScaleReference from './renderScaleReference';
 import useReferenceDragging from './useReferenceDragging';
 
 interface RESIFileChartProps {
   files: RESIFile[];
   scale?: number;
+  shouldRenderScale?: boolean;
   offsetGap?: number;
   offsetLeft?: number;
   onChangeOffsetLeft?: (offset: number) => void;
@@ -33,6 +35,7 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
   const {
     files,
     scale,
+    shouldRenderScale,
     offsetGap,
     offsetLeft: defaultOffsetLeft = 0,
     onChangeOffsetLeft,
@@ -112,6 +115,8 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
             label={{ value: 'см', position: 'center' }}
             height={70}
           />
+
+          {shouldRenderScale && renderScaleReference({ scale, maxX })}
 
           {renderReference({
             offset: offsetLeft,
