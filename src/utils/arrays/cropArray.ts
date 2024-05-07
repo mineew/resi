@@ -5,7 +5,7 @@ function cropArray<T>(array: T[], offsetLeft?: number, offsetRight?: number) {
     cropped = cropped.slice(offsetLeft);
   }
 
-  if (offsetRight) {
+  if (offsetRight && offsetRight < array.length) {
     cropped = cropped.slice(0, -(array.length - offsetRight - 1));
   }
 
