@@ -5,6 +5,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
+import InputNumber from '@/components/ui/InputNumber/InputNumber';
 import RadioGroup, {
   type RadioGroupItem,
 } from '@/components/ui/RadioGroup/RadioGroup';
@@ -21,7 +22,8 @@ interface AppSettingsFormProps {
 const AppSettingsForm = memo((props: AppSettingsFormProps) => {
   const { defaultValues, onSubmit } = props;
 
-  const { control, handleSubmit } = useForm<Settings>({
+  const { control, watch, formState, handleSubmit } = useForm<Settings>({
+    mode: 'onChange',
     defaultValues: { ...DEFAULT_SETTINGS, ...defaultValues },
   });
 
@@ -29,6 +31,10 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
     { label: 'Среднее значение', value: 'mean' },
     { label: 'Медиана', value: 'median' },
   ];
+
+  const offsetLeft = watch('offsetLeft');
+  const offsetRight = watch('offsetRight');
+  const offsetGap = watch('offsetGap');
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -167,8 +173,62 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         )}
       />
 
+      <Controller
+        control={control}
+        name="offsetLeft"
+        rules={{
+          validate: (value) => {
+            if (!offsetRight || !offsetGap || !value) {
+              return;
+            }
+
+            if (value > offsetRight - offsetGap) {
+              return `Не более ${offsetRight - offsetGap} мм`;
+            }
+          },
+        }}
+        render={({ field }) => (
+          <InputNumber
+            label="Смещение слева"
+            typedValue={field.value}
+            onValueChange={field.onChange}
+            invalid={!!formState.errors.offsetLeft}
+            help={formState.errors.offsetLeft?.message}
+            rightElement="мм"
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="offsetRight"
+        rules={{
+          validate: (value) => {
+            if (!offsetLeft || !offsetGap || !value) {
+              return;
+            }
+
+            if (value < offsetLeft + offsetGap) {
+              return `Не менее ${offsetLeft + offsetGap} мм`;
+            }
+          },
+        }}
+        render={({ field }) => (
+          <InputNumber
+            label="Смещение справа"
+            typedValue={field.value}
+            onValueChange={field.onChange}
+            invalid={!!formState.errors.offsetRight}
+            help={formState.errors.offsetRight?.message}
+            rightElement="мм"
+          />
+        )}
+      />
+
       <div>
-        <Button type="submit">Сохранить</Button>
+        <Button type="submit" disabled={!formState.isValid}>
+          Сохранить
+        </Button>
       </div>
     </form>
   );
