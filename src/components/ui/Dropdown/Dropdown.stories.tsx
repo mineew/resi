@@ -33,7 +33,11 @@ const items: Array<DropdownItem | 'separator'> = [
 export const Default: StoryFn<typeof Dropdown> = () => {
   return (
     <div style={{ padding: 20 }}>
-      <Dropdown trigger={<Button>Dropdown Trigger</Button>} items={items} />
+      <Dropdown
+        tooltip="Dropdown Trigger Tooltip"
+        trigger={<Button>Dropdown Trigger</Button>}
+        items={items}
+      />
     </div>
   );
 };
@@ -41,7 +45,7 @@ export const Default: StoryFn<typeof Dropdown> = () => {
 export const DefaultTrigger: StoryFn<typeof Dropdown> = () => {
   return (
     <div style={{ padding: 20 }}>
-      <Dropdown items={items} />
+      <Dropdown tooltip="More Options" items={items} />
     </div>
   );
 };
@@ -52,5 +56,6 @@ export default {
   argTypes: {
     trigger: { table: { disable: true } },
     items: { table: { disable: true } },
+    tooltip: { table: { disable: true } },
   },
 } as Meta<typeof Dropdown>;

@@ -1,12 +1,15 @@
 import * as Radix from '@radix-ui/react-dialog';
 import classNames from 'classnames';
 import { X } from 'lucide-react';
-import { type ReactNode } from 'react';
+import { type ReactNode, useCallback } from 'react';
+
+import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 import styles from './Dialog.module.css';
 
 interface DialogProps {
   trigger: JSX.Element;
+  tooltip?: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
   title: string;
@@ -15,11 +18,34 @@ interface DialogProps {
 }
 
 function Dialog(props: DialogProps) {
-  const { trigger, open, onOpenChange, title, children, size = '400' } = props;
+  const {
+    trigger,
+    tooltip,
+    open,
+    onOpenChange,
+    title,
+    children,
+    size = '400',
+  } = props;
+
+  const triggerElement = <Radix.Trigger asChild>{trigger}</Radix.Trigger>;
+
+  const handleCloseAutoFocus = useCallback(
+    (e: Event) => {
+      if (tooltip) {
+        e.preventDefault();
+      }
+    },
+    [tooltip],
+  );
 
   return (
     <Radix.Root open={open} onOpenChange={onOpenChange}>
-      <Radix.Trigger asChild>{trigger}</Radix.Trigger>
+      {tooltip ? (
+        <Tooltip title={tooltip}>{triggerElement}</Tooltip>
+      ) : (
+        triggerElement
+      )}
 
       <Radix.Portal>
         <Radix.Overlay className={styles.overlay} />
@@ -30,6 +56,7 @@ function Dialog(props: DialogProps) {
             styles[`size-${size}`],
             'shadow',
           )}
+          onCloseAutoFocus={handleCloseAutoFocus}
         >
           <div className={styles.header}>
             <Radix.Title className={styles.title}>{title}</Radix.Title>

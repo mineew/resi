@@ -23,6 +23,7 @@ export default {
   component: Dialog,
   argTypes: {
     trigger: { table: { disable: true } },
+    tooltip: { table: { disable: true } },
     open: { table: { disable: true } },
     onOpenChange: { table: { disable: true } },
     children: { table: { disable: true } },

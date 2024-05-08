@@ -82,7 +82,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
           Добавить файлы
         </Button>
 
-        <Dropdown items={dropdownItems} />
+        <Dropdown tooltip="Больше операций с файлами" items={dropdownItems} />
 
         {appSettings}
       </div>

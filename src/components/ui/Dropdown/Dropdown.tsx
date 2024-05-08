@@ -1,8 +1,10 @@
 import * as Radix from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 import { ChevronDown } from 'lucide-react';
+import { useCallback } from 'react';
 
 import Button from '@/components/ui/Button/Button';
+import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 import styles from './Dropdown.module.css';
 
@@ -18,20 +20,38 @@ interface DropdownItem {
 interface DropdownProps {
   items: Array<DropdownItem | 'separator'>;
   trigger?: JSX.Element;
+  tooltip?: string;
 }
 
 function Dropdown(props: DropdownProps) {
-  const { items, trigger } = props;
+  const { items, trigger, tooltip } = props;
+
+  const defaultTriggerButton = (
+    <Button className={styles.trigger} icon outlined>
+      <ChevronDown className={styles['trigger-icon']} />
+    </Button>
+  );
+
+  const triggerElement = (
+    <Radix.Trigger asChild>{trigger || defaultTriggerButton}</Radix.Trigger>
+  );
+
+  const handleCloseAutoFocus = useCallback(
+    (e: Event) => {
+      if (tooltip) {
+        e.preventDefault();
+      }
+    },
+    [tooltip],
+  );
 
   return (
     <Radix.Root>
-      <Radix.Trigger asChild>
-        {trigger || (
-          <Button className={styles.trigger} icon outlined>
-            <ChevronDown className={styles['trigger-icon']} />
-          </Button>
-        )}
-      </Radix.Trigger>
+      {tooltip ? (
+        <Tooltip title={tooltip}>{triggerElement}</Tooltip>
+      ) : (
+        triggerElement
+      )}
 
       <Radix.Portal>
         <Radix.Content
@@ -39,6 +59,7 @@ function Dropdown(props: DropdownProps) {
           side="bottom"
           sideOffset={6}
           align="start"
+          onCloseAutoFocus={handleCloseAutoFocus}
         >
           {items.map((item, idx) => {
             if (item === 'separator') {

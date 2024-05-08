@@ -25,6 +25,7 @@ const AppSettings = memo((props: AppSettingsProps) => {
   return (
     <Dialog
       trigger={children}
+      tooltip="Настройки"
       open={dialogOpen}
       onOpenChange={setDialogOpen}
       title="Настройки графика"
