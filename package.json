@@ -20,7 +20,8 @@
     "format": "prettier --write \"**/*.(t|j)s?(x)\"",
     "format:check": "prettier --check \"**/*.(t|j)s?(x)\"",
     "clear": "rimraf dist coverage",
-    "clear:cache": "rimraf .eslintcache .stylelintcache",
+    "clear:lint:cache": "rimraf .eslintcache .stylelintcache",
+    "clear:app:cache": "rimraf node_modules/.cache node_modules/.vite",
     "deps:update": "ncu -ui"
   },
   "dependencies": {
