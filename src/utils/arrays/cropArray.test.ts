@@ -31,17 +31,12 @@ describe('@/utils/arrays/cropArray', () => {
     expect(cropped).toStrictEqual([3]);
   });
 
-  it('should return an empty array if the left offset is too large', () => {
+  it('should handle corner cases', () => {
     const array = [1, 2, 3, 4, 5];
 
-    const cropped = cropArray(array, 20);
-    expect(cropped).toStrictEqual([]);
-  });
-
-  it('should return an array as is if the right offset is too large', () => {
-    const array = [1, 2, 3, 4, 5];
-
-    const cropped = cropArray(array, 0, 6);
-    expect(cropped).toStrictEqual(array);
+    expect(cropArray(array, 6)).toStrictEqual([]);
+    expect(cropArray(array, 0, 6)).toStrictEqual(array);
+    expect(cropArray(array, -1)).toStrictEqual(array);
+    expect(cropArray(array, 0, -10)).toStrictEqual(array);
   });
 });

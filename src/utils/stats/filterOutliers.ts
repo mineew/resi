@@ -5,6 +5,10 @@ function filterOutliers(
   zScoreThreshold = 3,
   zScoreMeanMethod: 'mean' | 'median' = 'mean',
 ) {
+  if (!data.length) {
+    return [];
+  }
+
   const m = zScoreMeanMethod === 'mean' ? mean(data) : median(data);
   const std = standardDeviation(data);
   const scores = data.map((x) => zScore(x, m, std));
@@ -16,7 +20,7 @@ function filterOutliers(
 
 function filterZScores(scores: number[], threshold: number) {
   return (x: number, i: number) => {
-    if (scores[i] <= -threshold || scores[i] >= threshold) {
+    if (Math.abs(scores[i]) >= Math.abs(threshold)) {
       return null;
     }
 

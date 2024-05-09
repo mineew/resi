@@ -7,4 +7,13 @@ describe('@/utils/arrays/splitArrayOnChunks', () => {
 
     expect(chunks).toStrictEqual([[1, 2], [3, 4], [5]]);
   });
+
+  it('should handle corner cases', () => {
+    const array = [1, 2, 3, 4, 5];
+
+    expect(splitArrayOnChunks(array, NaN)).toStrictEqual([]);
+    expect(splitArrayOnChunks(array, -1)).toStrictEqual([]);
+    expect(splitArrayOnChunks(array, 0)).toStrictEqual([]);
+    expect(splitArrayOnChunks(array, 100)).toStrictEqual([array]);
+  });
 });

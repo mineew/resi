@@ -1,11 +1,11 @@
 function cropArray<T>(array: T[], offsetLeft?: number, offsetRight?: number) {
   let cropped = array;
 
-  if (offsetLeft) {
+  if (offsetLeft && offsetLeft > 0) {
     cropped = cropped.slice(offsetLeft);
   }
 
-  if (offsetRight && offsetRight < array.length) {
+  if (offsetRight && offsetRight > 0 && offsetRight < array.length) {
     cropped = cropped.slice(0, -(array.length - offsetRight - 1));
   }
 
