@@ -33,7 +33,7 @@
   stroke: var(--slate-12);
 }
 
-.scale-line line {
+.step-line line {
   stroke: var(--green-9);
 }
 

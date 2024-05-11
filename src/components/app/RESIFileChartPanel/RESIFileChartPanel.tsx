@@ -24,8 +24,8 @@ function RESIFileChartPanel() {
   return (
     <RESIFileChart
       files={smoothedFiles}
-      scale={chunkSize}
-      shouldRenderScale={renderChunksOnChart}
+      chunkSize={chunkSize}
+      shouldRenderChunkSize={renderChunksOnChart}
       offsetGap={offsetGap}
       offsetLeft={offsetLeft}
       onChangeOffsetLeft={setOffsetLeft}

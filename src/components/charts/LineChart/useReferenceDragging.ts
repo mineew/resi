@@ -20,14 +20,11 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
   const {
     interactive = false,
     gap = 1,
-    offsetLeft: offsetLeftMM,
+    offsetLeft,
     onChangeOffsetLeft,
-    offsetRight: offsetRightMM,
+    offsetRight,
     onChangeOffsetRight,
   } = options;
-
-  const offsetLeft = offsetLeftMM ? offsetLeftMM / 10 : undefined;
-  const offsetRight = offsetRightMM ? offsetRightMM / 10 : undefined;
 
   const {
     tooltipContent,
@@ -66,21 +63,21 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
 
       if (offsetDrag === 'left') {
         if (offsetRight !== undefined && x > offsetRight - gap) {
-          onChangeOffsetLeft?.((offsetRight - gap) * 10);
+          onChangeOffsetLeft?.(offsetRight - gap);
           disableTooltip();
         } else {
-          onChangeOffsetLeft?.(x * 10);
-          enableTooltip(x * 10);
+          onChangeOffsetLeft?.(x);
+          enableTooltip(x);
         }
       }
 
       if (offsetDrag === 'right') {
         if (offsetLeft !== undefined && x < offsetLeft + gap) {
-          onChangeOffsetRight?.((offsetLeft + gap) * 10);
+          onChangeOffsetRight?.(offsetLeft + gap);
           disableTooltip();
         } else {
-          onChangeOffsetRight?.(x * 10);
-          enableTooltip(x * 10);
+          onChangeOffsetRight?.(x);
+          enableTooltip(x);
         }
       }
     },

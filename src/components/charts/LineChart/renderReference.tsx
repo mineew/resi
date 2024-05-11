@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { type MouseEventHandler } from 'react';
 import { ReferenceArea, ReferenceLine } from 'recharts';
 
-import styles from './RESIFileChart.module.css';
+import styles from './LineChart.module.css';
 
 /**
  * Chart components do not render when wrapped in custom components
@@ -18,17 +18,9 @@ interface RenderReferenceOptions {
 }
 
 function renderReference(options: RenderReferenceOptions) {
-  const {
-    offset: offsetMM,
-    side,
-    chartDomain,
-    onMouseEnter,
-    onMouseLeave,
-  } = options;
+  const { offset, side, chartDomain, onMouseEnter, onMouseLeave } = options;
+  if (!offset) return null;
 
-  if (!offsetMM) return null;
-
-  const offset = offsetMM / 10;
   const [minX, minY, maxX, maxY] = chartDomain;
   const referenceOverflow = 100;
 
