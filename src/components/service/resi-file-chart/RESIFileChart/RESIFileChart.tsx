@@ -68,7 +68,9 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
       offsetRight={offsetRight / 10}
       onChangeOffsetRight={handleChangeOffsetRight}
       tooltipFormatter={formatTooltip}
-      step={shouldRenderChunkSize ? chunkSize / 1000 : undefined}
+      step={
+        shouldRenderChunkSize && chunkSize > 1 ? chunkSize / 1000 : undefined
+      }
       interactive={interactive}
     />
   );

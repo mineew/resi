@@ -21,7 +21,7 @@ function renderStepReferences(options: RenderStepReferencesOptions) {
 
   const references: number[] = [];
 
-  for (let i = step; i < maxX + step; i += step) {
+  for (let i = step; i < maxX + step * 100; i += step) {
     references.push(i);
   }
 
