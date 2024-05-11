@@ -1,25 +1,10 @@
-import { lazy } from 'react';
-
+import RESIFileChartPanel from '@/components/app/RESIFileChartPanel/RESIFileChartPanel';
+import RESIFileDiffChartPanel from '@/components/app/RESIFileDiffChartPanel/RESIFileDiffChartPanel';
+import RESIFileGrowthChartPanel from '@/components/app/RESIFileGrowthChartPanel/RESIFileGrowthChartPanel';
 import RESIFileListPanel from '@/components/app/RESIFileListPanel/RESIFileListPanel';
 import AppLayout from '@/components/layout/AppLayout/AppLayout';
 
 import './styles/index.css';
-
-const RESIFileChartPanel = lazy(
-  () => import('@/components/app/RESIFileChartPanel/RESIFileChartPanel'),
-);
-
-const RESIFileDiffChartPanel = lazy(
-  () =>
-    import('@/components/app/RESIFileDiffChartPanel/RESIFileDiffChartPanel'),
-);
-
-const RESIFileGrowthChartPanel = lazy(
-  () =>
-    import(
-      '@/components/app/RESIFileGrowthChartPanel/RESIFileGrowthChartPanel'
-    ),
-);
 
 function App() {
   return (

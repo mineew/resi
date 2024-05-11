@@ -24,6 +24,20 @@ export default defineConfig({
 
           return 'assets/[name]-[hash][extname]';
         },
+
+        manualChunks: (id) => {
+          if (id.includes('recharts')) {
+            return 'recharts';
+          }
+
+          if (id.includes('katex')) {
+            return 'katex';
+          }
+
+          if (id.includes('node_modules')) {
+            return 'vendors';
+          }
+        },
       },
     },
   },
