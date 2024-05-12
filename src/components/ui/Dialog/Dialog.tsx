@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { X } from 'lucide-react';
 import { type ReactNode, useCallback } from 'react';
 
+import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 import styles from './Dialog.module.css';
@@ -14,7 +15,9 @@ interface DialogProps {
   onOpenChange?: (open: boolean) => void;
   title: string;
   children: ReactNode;
+  footer?: ReactNode;
   size?: '400' | '600' | '800';
+  scrollable?: boolean;
 }
 
 function Dialog(props: DialogProps) {
@@ -25,7 +28,9 @@ function Dialog(props: DialogProps) {
     onOpenChange,
     title,
     children,
+    footer,
     size = '400',
+    scrollable = false,
   } = props;
 
   const triggerElement = <Radix.Trigger asChild>{trigger}</Radix.Trigger>;
@@ -54,6 +59,7 @@ function Dialog(props: DialogProps) {
           className={classNames(
             styles.content,
             styles[`size-${size}`],
+            { [styles.scrollable]: scrollable },
             'shadow',
           )}
           onCloseAutoFocus={handleCloseAutoFocus}
@@ -68,7 +74,9 @@ function Dialog(props: DialogProps) {
             </Radix.Close>
           </div>
 
-          <div className={styles.body}>{children}</div>
+          <ScrollArea className={styles.body}>{children}</ScrollArea>
+
+          {footer && <div className={styles.footer}>{footer}</div>}
         </Radix.Content>
       </Radix.Portal>
     </Radix.Root>

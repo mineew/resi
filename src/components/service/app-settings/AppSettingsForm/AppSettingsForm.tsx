@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 
 import { memo } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 
-import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
 import InputNumber from '@/components/ui/InputNumber/InputNumber';
 import RadioGroup, {
@@ -15,17 +14,14 @@ import { DEFAULT_SETTINGS, type Settings } from '@/store/types/Settings';
 import styles from './AppSettingsForm.module.css';
 
 interface AppSettingsFormProps {
-  defaultValues?: Settings;
   onSubmit: (values: Settings) => void;
 }
 
 const AppSettingsForm = memo((props: AppSettingsFormProps) => {
-  const { defaultValues, onSubmit } = props;
+  const { onSubmit } = props;
 
-  const { control, watch, formState, handleSubmit } = useForm<Settings>({
-    mode: 'onChange',
-    defaultValues: { ...DEFAULT_SETTINGS, ...defaultValues },
-  });
+  const { control, watch, formState, handleSubmit } =
+    useFormContext<Settings>();
 
   const meanOptions: RadioGroupItem[] = [
     { label: 'Среднее значение', value: 'mean' },
@@ -37,7 +33,11 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
   const offsetGap = watch('offsetGap');
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      id="app-settings-form"
+      className={styles.form}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Controller
         control={control}
         name="zScoreThreshold"
@@ -224,12 +224,6 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
           />
         )}
       />
-
-      <div>
-        <Button type="submit" disabled={!formState.isValid}>
-          Сохранить
-        </Button>
-      </div>
     </form>
   );
 });
