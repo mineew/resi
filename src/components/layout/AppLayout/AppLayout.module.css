@@ -22,6 +22,7 @@
 }
 
 .file-chart {
+  position: relative;
   flex: 5;
   border-right: 1px solid var(--slate-6);
 }
