@@ -17,7 +17,7 @@ describe('@/utils/arrays/cropArray', () => {
     const notCropped = cropArray(array, 0, 0);
     expect(notCropped).toStrictEqual(array);
 
-    const cropped = cropArray(array, 0, 2);
+    const cropped = cropArray(array, 0, 3);
     expect(cropped).toStrictEqual([1, 2, 3]);
   });
 
@@ -27,7 +27,7 @@ describe('@/utils/arrays/cropArray', () => {
     const notCropped = cropArray(array, 0, 0);
     expect(notCropped).toStrictEqual(array);
 
-    const cropped = cropArray(array, 2, 2);
+    const cropped = cropArray(array, 2, 3);
     expect(cropped).toStrictEqual([3]);
   });
 
