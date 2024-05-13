@@ -4,12 +4,13 @@ import classNames from 'classnames';
 import styles from './Tooltip.module.css';
 
 interface TooltipProps {
+  className?: string;
   title: string;
   children: JSX.Element;
 }
 
 function Tooltip(props: TooltipProps) {
-  const { title, children } = props;
+  const { className, title, children } = props;
 
   return (
     <Radix.Provider
@@ -24,7 +25,7 @@ function Tooltip(props: TooltipProps) {
 
         <Radix.Portal>
           <Radix.Content
-            className={classNames(styles.content, 'shadow')}
+            className={classNames(className, styles.content, 'shadow')}
             side="bottom"
             sideOffset={6}
             align="center"

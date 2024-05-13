@@ -18,6 +18,7 @@ export default {
   title: 'Components/UI/Tooltip',
   component: Tooltip,
   argTypes: {
+    className: { table: { disable: true } },
     title: { table: { disable: true } },
     children: { table: { disable: true } },
   },
