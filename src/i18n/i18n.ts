@@ -1,0 +1,25 @@
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
+
+import i18n from 'i18next';
+import languageDetector from 'i18next-browser-languagedetector';
+import resourcesToBackend from 'i18next-resources-to-backend';
+import { initReactI18next } from 'react-i18next';
+
+const importTranslation = (language: string) =>
+  import(`./locales/${language}.json`);
+
+void i18n
+  .use(resourcesToBackend(importTranslation))
+  .use(languageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'en',
+    debug: import.meta.env.DEV,
+
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18n;

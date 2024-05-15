@@ -1,6 +1,8 @@
 import { type Preview } from '@storybook/react';
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import '../src/i18n/i18n';
 import '../src/styles/index.css';
 
 const preview: Preview = {
@@ -21,12 +23,26 @@ const preview: Preview = {
 
   globalTypes: {
     theme: {
+      name: 'Theme',
       defaultValue: 'light',
       toolbar: {
         icon: 'paintbrush',
         items: [
           { value: 'light', title: 'Light', right: '🌞' },
           { value: 'dark', title: 'Dark', right: '🌚' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+
+    locale: {
+      name: 'Locale',
+      defaultValue: 'en',
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: 'en', right: '🇺🇸', title: 'English' },
+          { value: 'ru', right: '🇷🇺', title: 'Русский' },
         ],
         dynamicTitle: true,
       },
@@ -44,6 +60,17 @@ const preview: Preview = {
           document.documentElement.classList.remove('dark');
         }
       }, [theme]);
+
+      return <Story />;
+    },
+
+    (Story, context) => {
+      const { i18n } = useTranslation();
+      const locale = context.globals.locale;
+
+      useEffect(() => {
+        i18n.changeLanguage(locale);
+      }, [locale]);
 
       return <Story />;
     },

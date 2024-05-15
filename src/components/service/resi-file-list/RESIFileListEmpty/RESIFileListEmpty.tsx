@@ -1,5 +1,6 @@
 import { FolderOpen, Inbox } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';
 import EmptyState from '@/components/ui/EmptyState/EmptyState';
@@ -10,12 +11,13 @@ interface RESIFileListEmptyProps {
 
 const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
   const { onAddFiles } = props;
+  const { t } = useTranslation();
 
   return (
     <EmptyState icon={<Inbox />}>
       <Button onClick={onAddFiles}>
         <FolderOpen />
-        Открыть RESI файлы
+        {t('RESI_FILE_LIST.OPEN_RESI_FILES')}
       </Button>
 
       <p>Файлы прибора резистографа, расширение *.xls</p>

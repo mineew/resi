@@ -4,6 +4,7 @@ import RESIFileGrowthChartPanel from '@/components/app/RESIFileGrowthChartPanel/
 import RESIFileListPanel from '@/components/app/RESIFileListPanel/RESIFileListPanel';
 import ThemeButton from '@/components/app/ThemeButton/ThemeButton';
 import AppLayout from '@/components/layout/AppLayout/AppLayout';
+import '@/i18n/i18n';
 
 import './styles/index.css';
 

@@ -10,8 +10,15 @@ export default defineConfig({
 
     rollupOptions: {
       output: {
-        chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
+
+        chunkFileNames: ({ facadeModuleId }) => {
+          if (facadeModuleId?.includes('i18n/locales')) {
+            return 'assets/locales/[name]-[hash].js';
+          }
+
+          return 'assets/js/[name]-[hash].js';
+        },
 
         assetFileNames: ({ name }) => {
           if (/\.css$/.test(name ?? '')) {
@@ -32,6 +39,10 @@ export default defineConfig({
 
           if (id.includes('katex')) {
             return 'katex';
+          }
+
+          if (id.includes('i18next')) {
+            return 'i18next';
           }
 
           if (id.includes('node_modules')) {
