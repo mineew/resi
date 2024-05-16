@@ -19,8 +19,8 @@ function Tooltip(props: TooltipProps) {
       disableHoverableContent
     >
       <Radix.Root>
-        <Radix.Trigger className={styles.trigger} tabIndex={-1}>
-          {children}
+        <Radix.Trigger className={styles.trigger} asChild>
+          <div>{children}</div>
         </Radix.Trigger>
 
         <Radix.Portal>
