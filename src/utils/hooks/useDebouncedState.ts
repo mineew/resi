@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 function useDebouncedState<T>(
@@ -7,17 +7,25 @@ function useDebouncedState<T>(
   wait = 300,
 ) {
   const [state, setState] = useState<T>(defaultValue);
+  const called = useRef(false);
   const [stateDebounced] = useDebounce(state, wait);
 
   useEffect(() => {
     setState(defaultValue);
   }, [defaultValue]);
 
-  useEffect(() => {
-    notify?.(stateDebounced);
-  }, [stateDebounced, notify]);
+  const changeState = useCallback((value: T) => {
+    setState(value);
+    called.current = true;
+  }, []);
 
-  return [state, setState] as const;
+  useEffect(() => {
+    if (called.current) {
+      notify?.(stateDebounced);
+    }
+  }, [notify, stateDebounced]);
+
+  return [state, changeState] as const;
 }
 
 export default useDebouncedState;
