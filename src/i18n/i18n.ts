@@ -17,6 +17,12 @@ void i18n
     fallbackLng: 'en',
     debug: import.meta.env.DEV,
 
+    detection: {
+      convertDetectedLanguage: (lng) => {
+        return lng.split('-')[0] || lng;
+      },
+    },
+
     interpolation: {
       escapeValue: false,
     },
