@@ -1,4 +1,5 @@
 import { type Meta, type StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import RESIFileListEmpty from './RESIFileListEmpty';
 
@@ -23,5 +24,8 @@ export default {
   component: RESIFileListEmpty,
   argTypes: {
     onAddFiles: { table: { disable: true } },
+  },
+  args: {
+    onAddFiles: fn(),
   },
 } as Meta<typeof RESIFileListEmpty>;

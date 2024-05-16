@@ -1,4 +1,5 @@
 import { type Meta, type StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { Settings } from 'lucide-react';
 
 import Button from '@/components/ui/Button/Button';
@@ -24,5 +25,8 @@ export default {
     values: { table: { disable: true } },
     onChange: { table: { disable: true } },
     children: { table: { disable: true } },
+  },
+  args: {
+    onChange: fn(),
   },
 } as Meta<typeof AppSettings>;

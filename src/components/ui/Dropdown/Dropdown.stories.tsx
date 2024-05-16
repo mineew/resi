@@ -1,5 +1,5 @@
-import { action } from '@storybook/addon-actions';
 import { type Meta, type StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { CopyCheck, CopyX, Trash2 } from 'lucide-react';
 
 import Button from '@/components/ui/Button/Button';
@@ -11,7 +11,7 @@ const items: Array<DropdownItem | 'separator'> = [
     id: 'clear',
     icon: <Trash2 />,
     label: 'Clear',
-    onClick: action('clear'),
+    onClick: fn(),
     danger: true,
   },
   'separator',
@@ -19,14 +19,14 @@ const items: Array<DropdownItem | 'separator'> = [
     id: 'select-all',
     icon: <CopyCheck />,
     label: 'Select All',
-    onClick: action('select-all'),
+    onClick: fn(),
     disabled: true,
   },
   {
     id: 'unselect-all',
     icon: <CopyX />,
     label: 'Reset All',
-    onClick: action('unselect-all'),
+    onClick: fn(),
   },
 ];
 

@@ -1,4 +1,5 @@
 import { type Meta, type StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import { type RESIFile } from '@/store/types/RESIFile';
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
@@ -59,5 +60,15 @@ export default {
     onChangeFileChecked: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
     appSettings: { table: { disable: true } },
+  },
+  args: {
+    onAddFiles: fn(),
+    onDeleteAllFiles: fn(),
+    onSelectAllFiles: fn(),
+    onUnselectAllFiles: fn(),
+    onChangeFileColor: fn(),
+    onChangeFileStrokeWidth: fn(),
+    onChangeFileChecked: fn(),
+    onDeleteFile: fn(),
   },
 } as Meta<typeof RESIFileListPanel>;
