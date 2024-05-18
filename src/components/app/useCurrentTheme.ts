@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { type Theme } from './Theme';
-import getSystemTheme from './getSystemTheme';
-import { getThemeFromLS, saveThemeToLS } from './storeThemeToLS';
+import { type Theme } from '@/components/service/app-settings/ThemeButton/Theme';
 
 function useCurrentTheme() {
   const [theme, setTheme] = useState<Theme>(
@@ -53,6 +51,26 @@ function useCurrentTheme() {
   }, [theme]);
 
   return { theme, toggleTheme };
+}
+
+function getSystemTheme(): Theme {
+  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+
+  return 'light';
+}
+
+function getThemeFromLS(): Theme | undefined {
+  const theme = window.localStorage?.getItem('theme');
+
+  if (theme === 'light' || theme === 'dark') {
+    return theme;
+  }
+}
+
+function saveThemeToLS(theme: Theme) {
+  window.localStorage?.setItem('theme', theme);
 }
 
 export default useCurrentTheme;
