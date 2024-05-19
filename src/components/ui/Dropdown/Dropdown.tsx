@@ -14,20 +14,23 @@ interface DropdownItem {
   label: string;
   onClick: () => void;
   danger?: boolean;
+  selected?: boolean;
   disabled?: boolean;
 }
 
 interface DropdownProps {
   items: Array<DropdownItem | 'separator'>;
-  trigger?: JSX.Element;
+  defaultTriggerTitle?: string;
   tooltip?: string;
+  trigger?: JSX.Element;
 }
 
 function Dropdown(props: DropdownProps) {
-  const { items, trigger, tooltip } = props;
+  const { items, defaultTriggerTitle, tooltip, trigger } = props;
 
   const defaultTriggerButton = (
     <Button className={styles.trigger} icon outlined>
+      {defaultTriggerTitle}
       <ChevronDown className={styles['trigger-icon']} />
     </Button>
   );
@@ -75,6 +78,7 @@ function Dropdown(props: DropdownProps) {
               <Radix.Item
                 className={classNames(styles.item, {
                   [styles.danger]: item.danger,
+                  [styles.selected]: item.selected,
                 })}
                 key={item.id}
                 onSelect={item.onClick}

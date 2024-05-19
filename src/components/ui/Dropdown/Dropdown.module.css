@@ -49,7 +49,16 @@
     color 0.15s;
 }
 
-.item[data-highlighted] {
+.item.selected {
+  background-color: var(--slate-4);
+}
+
+:global(.dark) .item.selected {
+  background-color: var(--slate-7);
+}
+
+.item[data-highlighted],
+:global(.dark) .item[data-highlighted] {
   color: var(--slate-1);
   background-color: var(--slate-12);
 }
@@ -58,7 +67,16 @@
   color: var(--red-12);
 }
 
-.item.item.danger[data-highlighted] {
+.item.danger.selected {
+  background-color: var(--red-4);
+}
+
+:global(.dark) .item.danger.selected {
+  background-color: var(--red-6);
+}
+
+.item.danger[data-highlighted],
+:global(.dark) .item.danger[data-highlighted] {
   color: var(--red-1);
   background-color: var(--red-9);
 }

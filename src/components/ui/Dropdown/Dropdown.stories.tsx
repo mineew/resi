@@ -1,6 +1,7 @@
 import { type Meta, type StoryFn } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { CopyCheck, CopyX, Trash2 } from 'lucide-react';
+import { useState } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 
@@ -50,12 +51,48 @@ export const DefaultTrigger: StoryFn<typeof Dropdown> = () => {
   );
 };
 
+export const SelectedItem: StoryFn<typeof Dropdown> = () => {
+  const [selectedItem, setSelectedItem] = useState('item-1');
+
+  const items: DropdownItem[] = [
+    {
+      id: 'item-1',
+      label: 'Item 1',
+      onClick: () => setSelectedItem('item-1'),
+      selected: selectedItem === 'item-1',
+    },
+    {
+      id: 'item-2',
+      label: 'Item 2',
+      onClick: () => setSelectedItem('item-2'),
+      selected: selectedItem === 'item-2',
+      danger: true,
+    },
+    {
+      id: 'item-3',
+      label: 'Item 3',
+      onClick: () => setSelectedItem('item-3'),
+      selected: selectedItem === 'item-3',
+    },
+  ];
+
+  return (
+    <div style={{ padding: 20 }}>
+      <Dropdown
+        items={items}
+        defaultTriggerTitle={items.find((i) => i.selected)?.label}
+      />
+    </div>
+  );
+};
+
 export default {
   title: 'Components/UI/Dropdown',
   component: Dropdown,
   argTypes: {
-    trigger: { table: { disable: true } },
     items: { table: { disable: true } },
+    defaultTriggerTitle: { table: { disable: true } },
     tooltip: { table: { disable: true } },
+    trigger: { table: { disable: true } },
   },
 } as Meta<typeof Dropdown>;
