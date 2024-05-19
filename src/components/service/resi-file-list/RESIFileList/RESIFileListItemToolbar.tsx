@@ -1,5 +1,6 @@
 import { Trash2 } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
@@ -15,6 +16,7 @@ interface RESIFileListItemToolbarProps {
 
 const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
   const { checked: defaultChecked, onChangeChecked, onDelete } = props;
+  const { t } = useTranslation();
 
   const [checked, setChecked] = useDebouncedState(
     defaultChecked,
@@ -24,7 +26,7 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
   return (
     <div className={styles.toolbar}>
       <Checkbox
-        label="Отображать"
+        label={t('RESI_FILE_LIST.ITEM_IS_ACTIVE')}
         checked={checked}
         onCheckedChange={setChecked}
         size="small"
@@ -39,7 +41,7 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
         tabIndex={-1}
       >
         <Trash2 />
-        Удалить
+        {t('RESI_FILE_LIST.DELETE_ITEM')}
       </Button>
     </div>
   );

@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { HexColorPicker } from 'react-colorful';
+import { useTranslation } from 'react-i18next';
 import { useDebouncedCallback } from 'use-debounce';
 
 import Popover from '@/components/ui/Popover/Popover';
@@ -27,6 +28,8 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
     onOpenChange,
   } = props;
 
+  const { t } = useTranslation();
+
   const handleChangeColor = useDebouncedCallback(onChangeColor, 300);
 
   const [strokeWidth, setStrokeWidth] = useDebouncedState(
@@ -40,7 +43,7 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
         <HexColorPicker color={color} onChange={handleChangeColor} />
 
         <Slider
-          label="Толщина линии"
+          label={t('RESI_FILE_LIST.ITEM_STROKE_WIDTH')}
           value={strokeWidth}
           onValueChange={setStrokeWidth}
           size="small"

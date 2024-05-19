@@ -1,5 +1,6 @@
 import { CopyCheck, CopyX, FilePlus2, Trash2 } from 'lucide-react';
 import { type ReactNode, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import RESIFileList from '@/components/service/resi-file-list/RESIFileList/RESIFileList';
 import RESIFileListEmpty from '@/components/service/resi-file-list/RESIFileListEmpty/RESIFileListEmpty';
@@ -37,6 +38,8 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     appSettings,
   } = props;
 
+  const { t } = useTranslation();
+
   const allFilesChecked = !files.some((f) => !f.checked);
   const allFilesUnchecked = !files.some((f) => f.checked);
   const checkedFiles = files.filter((f) => f.checked);
@@ -45,7 +48,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     {
       id: 'clear',
       icon: <Trash2 />,
-      label: 'Очистить',
+      label: t('RESI_FILE_LIST.CLEAR_FILES'),
       onClick: onDeleteAllFiles,
       danger: true,
     },
@@ -53,14 +56,14 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     {
       id: 'select-all',
       icon: <CopyCheck />,
-      label: 'Выбрать все',
+      label: t('RESI_FILE_LIST.ENABLE_ALL_FILES'),
       onClick: onSelectAllFiles,
       disabled: allFilesChecked,
     },
     {
       id: 'unselect-all',
       icon: <CopyX />,
-      label: 'Отключить все',
+      label: t('RESI_FILE_LIST.DISABLE_ALL_FILES'),
       onClick: onUnselectAllFiles,
       disabled: allFilesUnchecked,
     },
@@ -79,10 +82,13 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
           center
         >
           <FilePlus2 />
-          Добавить файлы
+          {t('RESI_FILE_LIST.ADD_FILES')}
         </Button>
 
-        <Dropdown tooltip="Больше операций с файлами" items={dropdownItems} />
+        <Dropdown
+          tooltip={t('RESI_FILE_LIST.MORE_FILE_OPERATIONS')}
+          items={dropdownItems}
+        />
 
         {appSettings}
       </div>
@@ -101,12 +107,12 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
 
       <div className={styles.footer}>
         <div className={styles['footer-row']}>
-          <div>Всего:</div>
+          <div>{t('RESI_FILE_LIST.TOTAL_FILES')}:</div>
           <div>{files.length}</div>
         </div>
 
         <div className={styles['footer-row']}>
-          <div>Выбрано:</div>
+          <div>{t('RESI_FILE_LIST.ACTIVE_FILES')}:</div>
           <div>{checkedFiles.length}</div>
         </div>
       </div>

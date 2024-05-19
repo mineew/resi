@@ -17,10 +17,10 @@ const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
     <EmptyState icon={<Inbox />}>
       <Button onClick={onAddFiles}>
         <FolderOpen />
-        {t('RESI_FILE_LIST.OPEN_RESI_FILES')}
+        {t('RESI_FILE_LIST.OPEN_FILES')}
       </Button>
 
-      <p>Файлы прибора резистографа, расширение *.xls</p>
+      <p>{t('RESI_FILE_LIST.OPEN_FILES_DESCRIPTION')}</p>
     </EmptyState>
   );
 });

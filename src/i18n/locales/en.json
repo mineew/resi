@@ -1,5 +1,16 @@
 {
   "RESI_FILE_LIST": {
-    "OPEN_RESI_FILES": "Open RESI files"
+    "OPEN_FILES": "Open RESI files",
+    "OPEN_FILES_DESCRIPTION": "Resistograph instrument files, extension *.xls",
+    "ADD_FILES": "Add RESI files",
+    "MORE_FILE_OPERATIONS": "More file operations",
+    "CLEAR_FILES": "Clear",
+    "ENABLE_ALL_FILES": "Enable all",
+    "DISABLE_ALL_FILES": "Disable all",
+    "TOTAL_FILES": "Total",
+    "ACTIVE_FILES": "Active",
+    "ITEM_IS_ACTIVE": "Active",
+    "DELETE_ITEM": "Delete",
+    "ITEM_STROKE_WIDTH": "Stroke width"
   }
 }
