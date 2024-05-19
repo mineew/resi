@@ -1,4 +1,5 @@
 import { Moon, Sun } from 'lucide-react';
+import { memo } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
@@ -11,7 +12,7 @@ interface ThemeButtonProps {
   onToggleTheme: () => void;
 }
 
-function ThemeButton(props: ThemeButtonProps) {
+const ThemeButton = memo((props: ThemeButtonProps) => {
   const { theme, onToggleTheme } = props;
 
   return (
@@ -26,6 +27,8 @@ function ThemeButton(props: ThemeButtonProps) {
       </Button>
     </Tooltip>
   );
-}
+});
+
+ThemeButton.displayName = 'ThemeButton';
 
 export default ThemeButton;
