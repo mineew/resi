@@ -1,5 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import AppSettingsForm from '@/components/service/app-settings/AppSettingsForm/AppSettingsForm';
 import Button from '@/components/ui/Button/Button';
@@ -14,6 +15,7 @@ interface AppSettingsProps {
 
 const AppSettings = memo((props: AppSettingsProps) => {
   const { values = {}, onChange, children } = props;
+  const { t } = useTranslation();
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const methods = useForm<Settings>({
@@ -42,8 +44,8 @@ const AppSettings = memo((props: AppSettingsProps) => {
   return (
     <FormProvider {...methods}>
       <Dialog
-        title="Настройки графика"
-        tooltip="Настройки"
+        title={t('APP_SETTINGS.TITLE')}
+        tooltip={t('APP_SETTINGS.TOOLTIP')}
         size="400"
         footer={
           <Button
@@ -51,7 +53,7 @@ const AppSettings = memo((props: AppSettingsProps) => {
             form="app-settings-form"
             disabled={!methods.formState.isValid}
           >
-            Сохранить
+            {t('APP_SETTINGS.SUBMIT_BUTTON')}
           </Button>
         }
         open={dialogOpen}

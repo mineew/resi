@@ -12,5 +12,33 @@
     "ITEM_IS_ACTIVE": "Active",
     "DELETE_ITEM": "Delete",
     "ITEM_STROKE_WIDTH": "Stroke width"
+  },
+
+  "APP_SETTINGS": {
+    "TITLE": "App Settings",
+    "TOOLTIP": "Settings",
+    "Z_SCORE_THRESHOLD": "Z-Score Threshold",
+    "Z_SCORE_CENTRAL_TENDENCY": "Measure of Central Tendency (Z-Score)",
+    "CHUNK_SIZE": "Chunk Size",
+    "CHUNK_CENTRAL_TENDENCY": "Measure of Central Tendency (Chunks)",
+    "CHUNK_SIZE_RENDER": "Render the Chunk Size",
+    "DIFF_CENTRAL_TENDENCY": "Measure of Central Tendency (Difference)",
+    "DIFF_TAKE_NEGATIVE": "Take Negative Differences",
+    "GROWTH_CENTRAL_TENDENCY": "Measure of Central Tendency (Growth)",
+    "GROWTH_TAKE_NEGATIVE": "Take Negative Growth (Decline)",
+    "OFFSET_LEFT": "Left Offset",
+    "OFFSET_RIGHT": "Right Offset",
+    "SUBMIT_BUTTON": "Save"
+  },
+
+  "VALIDATION_ERRORS": {
+    "MM_MAX": "max. {{value}} mm",
+    "MM_MIN": "at least {{value}} mm"
+  },
+
+  "COMMON": {
+    "MEAN_VALUE": "Mean",
+    "MEDIAN": "Median",
+    "MM": "{{value, rightSpace}}mm"
   }
 }

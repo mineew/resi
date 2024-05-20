@@ -32,4 +32,12 @@ i18n.on('languageChanged', (lang) => {
   document.documentElement.setAttribute('lang', lang);
 });
 
+i18n.services.formatter?.add('rightSpace', (value) => {
+  if (value === undefined) {
+    return '';
+  }
+
+  return `${value} `;
+});
+
 export default i18n;

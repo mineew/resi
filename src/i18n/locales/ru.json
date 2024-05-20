@@ -12,5 +12,33 @@
     "ITEM_IS_ACTIVE": "Активен",
     "DELETE_ITEM": "Удалить",
     "ITEM_STROKE_WIDTH": "Толщина линии"
+  },
+
+  "APP_SETTINGS": {
+    "TITLE": "Настройки графика",
+    "TOOLTIP": "Настройки",
+    "Z_SCORE_THRESHOLD": "Порог Z-Score",
+    "Z_SCORE_CENTRAL_TENDENCY": "Мера среднего в расчетах Z-Score",
+    "CHUNK_SIZE": "Окно сглаживания",
+    "CHUNK_CENTRAL_TENDENCY": "Мера среднего в расчетах сглаживания",
+    "CHUNK_SIZE_RENDER": "Отобразить окно на графике",
+    "DIFF_CENTRAL_TENDENCY": "Мера среднего в расчетах разности",
+    "DIFF_TAKE_NEGATIVE": "Учитывать отрицательные разности",
+    "GROWTH_CENTRAL_TENDENCY": "Мера среднего в расчетах роста",
+    "GROWTH_TAKE_NEGATIVE": "Учитывать отрицательный рост (спад)",
+    "OFFSET_LEFT": "Смещение слева",
+    "OFFSET_RIGHT": "Смещение справа",
+    "SUBMIT_BUTTON": "Сохранить"
+  },
+
+  "VALIDATION_ERRORS": {
+    "MM_MAX": "не более {{value}} мм",
+    "MM_MIN": "не менее {{value}} мм"
+  },
+
+  "COMMON": {
+    "MEAN_VALUE": "Среднее значение",
+    "MEDIAN": "Медиана",
+    "MM": "{{value, rightSpace}}мм"
   }
 }

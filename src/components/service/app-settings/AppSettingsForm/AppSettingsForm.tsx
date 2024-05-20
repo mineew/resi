@@ -2,6 +2,7 @@
 
 import { memo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
 import InputNumber from '@/components/ui/InputNumber/InputNumber';
@@ -19,13 +20,14 @@ interface AppSettingsFormProps {
 
 const AppSettingsForm = memo((props: AppSettingsFormProps) => {
   const { onSubmit } = props;
+  const { t } = useTranslation();
 
   const { control, watch, formState, handleSubmit } =
     useFormContext<Settings>();
 
   const meanOptions: RadioGroupItem[] = [
-    { label: 'Среднее значение', value: 'mean' },
-    { label: 'Медиана', value: 'median' },
+    { label: t('COMMON.MEAN_VALUE'), value: 'mean' },
+    { label: t('COMMON.MEDIAN'), value: 'median' },
   ];
 
   const offsetLeft = watch('offsetLeft');
@@ -43,7 +45,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="zScoreThreshold"
         render={({ field }) => (
           <Slider
-            label="Порог Z-Score"
+            label={t('APP_SETTINGS.Z_SCORE_THRESHOLD')}
             hasBoldLabel
             value={field.value || DEFAULT_SETTINGS.zScoreThreshold}
             onValueChange={field.onChange}
@@ -58,7 +60,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="zScoreMeanMethod"
         render={({ field }) => (
           <RadioGroup
-            label="Мера среднего в расчетах Z-Score"
+            label={t('APP_SETTINGS.Z_SCORE_CENTRAL_TENDENCY')}
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.zScoreMeanMethod}
             onValueChange={field.onChange}
@@ -71,7 +73,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="chunkSize"
         render={({ field }) => (
           <Slider
-            label="Окно сглаживания"
+            label={t('APP_SETTINGS.CHUNK_SIZE')}
             hasBoldLabel
             value={field.value || DEFAULT_SETTINGS.chunkSize}
             onValueChange={(value) => {
@@ -83,10 +85,10 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             }}
             valueFormatter={(value) => {
               if (value === 1) {
-                return '0 мм';
+                return t('COMMON.MM', { value: 0 });
               }
 
-              return `${value / 100} мм`;
+              return t('COMMON.MM', { value: value / 100 });
             }}
             min={1}
             max={3000}
@@ -100,7 +102,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="chunkAggregateMethod"
         render={({ field }) => (
           <RadioGroup
-            label="Мера среднего в расчетах сглаживания"
+            label={t('APP_SETTINGS.CHUNK_CENTRAL_TENDENCY')}
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.chunkAggregateMethod}
             onValueChange={field.onChange}
@@ -113,7 +115,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="renderChunksOnChart"
         render={({ field }) => (
           <Checkbox
-            label="Отобразить окно на графике"
+            label={t('APP_SETTINGS.CHUNK_SIZE_RENDER')}
             hasBoldLabel
             checked={field.value ?? DEFAULT_SETTINGS.renderChunksOnChart}
             onCheckedChange={field.onChange}
@@ -126,7 +128,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="differenceMeanMethod"
         render={({ field }) => (
           <RadioGroup
-            label="Мера среднего в расчетах разности"
+            label={t('APP_SETTINGS.DIFF_CENTRAL_TENDENCY')}
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
             onValueChange={field.onChange}
@@ -139,7 +141,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="takeNegativeDiffs"
         render={({ field }) => (
           <Checkbox
-            label="Учитывать отрицательные разности"
+            label={t('APP_SETTINGS.DIFF_TAKE_NEGATIVE')}
             hasBoldLabel
             checked={field.value ?? DEFAULT_SETTINGS.takeNegativeDiffs}
             onCheckedChange={field.onChange}
@@ -152,7 +154,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="growthMeanMethod"
         render={({ field }) => (
           <RadioGroup
-            label="Мера среднего в расчетах роста"
+            label={t('APP_SETTINGS.GROWTH_CENTRAL_TENDENCY')}
             items={meanOptions}
             value={field.value || DEFAULT_SETTINGS.growthMeanMethod}
             onValueChange={field.onChange}
@@ -165,7 +167,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
         name="takeNegativeGrowth"
         render={({ field }) => (
           <Checkbox
-            label="Учитывать отрицательный рост (спад)"
+            label={t('APP_SETTINGS.GROWTH_TAKE_NEGATIVE')}
             hasBoldLabel
             checked={field.value ?? DEFAULT_SETTINGS.takeNegativeGrowth}
             onCheckedChange={field.onChange}
@@ -183,18 +185,20 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             }
 
             if (value > offsetRight - offsetGap) {
-              return `Не более ${offsetRight - offsetGap} мм`;
+              return t('VALIDATION_ERRORS.MM_MAX', {
+                value: offsetRight - offsetGap,
+              });
             }
           },
         }}
         render={({ field }) => (
           <InputNumber
-            label="Смещение слева"
+            label={t('APP_SETTINGS.OFFSET_LEFT')}
             typedValue={field.value}
             onValueChange={field.onChange}
             invalid={!!formState.errors.offsetLeft}
             help={formState.errors.offsetLeft?.message}
-            rightElement="мм"
+            rightElement={t('COMMON.MM')}
           />
         )}
       />
@@ -209,18 +213,20 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             }
 
             if (value < offsetLeft + offsetGap) {
-              return `Не менее ${offsetLeft + offsetGap} мм`;
+              return t('VALIDATION_ERRORS.MM_MIN', {
+                value: offsetLeft + offsetGap,
+              });
             }
           },
         }}
         render={({ field }) => (
           <InputNumber
-            label="Смещение справа"
+            label={t('APP_SETTINGS.OFFSET_RIGHT')}
             typedValue={field.value}
             onValueChange={field.onChange}
             invalid={!!formState.errors.offsetRight}
             help={formState.errors.offsetRight?.message}
-            rightElement="мм"
+            rightElement={t('COMMON.MM')}
           />
         )}
       />
