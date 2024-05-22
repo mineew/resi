@@ -15,8 +15,14 @@
   },
 
   "RESI_FILE_CHART": {
-    "NO_DATA": "No data to plot",
-    "TITLE": "Resistograms"
+    "TITLE": "Resistograms",
+    "NO_DATA": "No data to plot"
+  },
+
+  "RESI_FILE_DIFF_CHART": {
+    "TITLE": "Drill wear",
+    "NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
+    "NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
   },
 
   "APP_SETTINGS": {
