@@ -1,5 +1,6 @@
 import { Moon, Sun } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
@@ -14,12 +15,15 @@ interface ThemeButtonProps {
 
 const ThemeButton = memo((props: ThemeButtonProps) => {
   const { theme, onToggleTheme } = props;
+  const { t } = useTranslation();
 
   return (
     <Tooltip
       className={styles.tooltip}
       title={
-        theme === 'dark' ? 'Включить светлую тему' : 'Включить темную тему'
+        theme === 'dark'
+          ? t('THEME.ENABLE_LIGHT_THEME')
+          : t('THEME.ENABLE_DARK_THEME')
       }
     >
       <Button onClick={onToggleTheme} outlined icon>

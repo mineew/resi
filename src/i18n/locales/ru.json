@@ -31,6 +31,11 @@
     "SUBMIT_BUTTON": "Сохранить"
   },
 
+  "THEME": {
+    "ENABLE_LIGHT_THEME": "Включить светлую тему",
+    "ENABLE_DARK_THEME": "Включить темную тему"
+  },
+
   "VALIDATION_ERRORS": {
     "MM_MAX": "не более {{value}} мм",
     "MM_MIN": "не менее {{value}} мм"
