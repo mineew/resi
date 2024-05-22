@@ -14,6 +14,11 @@
     "ITEM_STROKE_WIDTH": "Stroke width"
   },
 
+  "RESI_FILE_CHART": {
+    "NO_DATA": "No data to plot",
+    "TITLE": "Resistograms"
+  },
+
   "APP_SETTINGS": {
     "TITLE": "App Settings",
     "TOOLTIP": "Settings",
@@ -44,6 +49,7 @@
   "COMMON": {
     "MEAN_VALUE": "Mean",
     "MEDIAN": "Median",
-    "MM": "{{value, rightSpace}}mm"
+    "MM": "{{value, rightSpace}}mm",
+    "CM": "cm"
   }
 }

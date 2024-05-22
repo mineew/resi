@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import LineChart from '@/components/charts/LineChart/LineChart';
 import { type RESIFile } from '@/store/types/RESIFile';
@@ -28,6 +29,8 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     interactive,
   } = props;
 
+  const { t } = useTranslation();
+
   const convertX = useCallback(
     (x: number) => {
       return (x * chunkSize) / 1000;
@@ -49,15 +52,18 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     [onChangeOffsetRight],
   );
 
-  const formatTooltip = useCallback((tooltipContent: number) => {
-    return `${tooltipContent * 10} мм`;
-  }, []);
+  const formatTooltip = useCallback(
+    (tooltipContent: number) => {
+      return t('COMMON.MM', { value: tooltipContent * 10 });
+    },
+    [t],
+  );
 
   return (
     <LineChart
-      title="Резистограммы"
+      title={t('RESI_FILE_CHART.TITLE')}
       data={files}
-      xLabel="см"
+      xLabel={t('COMMON.CM')}
       xConverter={convertX}
       xTickCount={20}
       yLabel="RESI"

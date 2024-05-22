@@ -14,6 +14,11 @@
     "ITEM_STROKE_WIDTH": "Толщина линии"
   },
 
+  "RESI_FILE_CHART": {
+    "NO_DATA": "Нет данных для построения графика",
+    "TITLE": "Резистограммы"
+  },
+
   "APP_SETTINGS": {
     "TITLE": "Настройки графика",
     "TOOLTIP": "Настройки",
@@ -44,6 +49,7 @@
   "COMMON": {
     "MEAN_VALUE": "Среднее значение",
     "MEDIAN": "Медиана",
-    "MM": "{{value, rightSpace}}мм"
+    "MM": "{{value, rightSpace}}мм",
+    "CM": "см"
   }
 }
