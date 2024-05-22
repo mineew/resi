@@ -1,4 +1,5 @@
 import { type ReactNode, type Ref } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useIMask } from 'react-imask';
 
 import Input from '@/components/ui/Input/Input';
@@ -28,12 +29,14 @@ function InputNumber(props: InputNumberProps) {
     invalid,
   } = props;
 
+  const { i18n } = useTranslation();
+
   const { ref } = useIMask(
     {
       mask: Number,
       min,
       max,
-      thousandsSeparator: ' ',
+      thousandsSeparator: i18n.language === 'en' ? ',' : ' ',
       scale: 0,
     },
     {
