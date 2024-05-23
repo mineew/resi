@@ -1,4 +1,5 @@
 import katext from 'katex';
+import { useTranslation } from 'react-i18next';
 
 interface FormulaProps {
   a: number;
@@ -7,18 +8,25 @@ interface FormulaProps {
 
 function Formula(props: FormulaProps) {
   const { a, b } = props;
+  const { i18n } = useTranslation();
+
+  let aStr = a.toString();
+  aStr = i18n.language === 'ru' ? aStr.replace('.', '{,}') : aStr;
+  let bStr = b.toString();
+  bStr = i18n.language === 'ru' ? bStr.replace('.', '{,}') : bStr;
+
   let formula = 'y=';
 
   if (a) {
-    formula += `${a}x`;
+    formula += `${aStr}x`;
   }
 
   if (b && b > 0) {
-    formula += a ? `+${b}` : b;
+    formula += a ? `+${bStr}` : bStr;
   }
 
   if (b && b < 0) {
-    formula += b;
+    formula += bStr;
   }
 
   if (!a && !b) {
