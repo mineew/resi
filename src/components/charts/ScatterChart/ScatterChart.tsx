@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   CartesianGrid,
   ComposedChart,
@@ -9,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import Formula from '@/components/ui/Formula/Formula';
 
 import styles from './ScatterChart.module.css';
@@ -24,6 +26,7 @@ interface ScatterChartProps {
 
 function ScatterChart(props: ScatterChartProps) {
   const { title, points, xLabel, yLabel } = props;
+  const { t } = useTranslation();
   const { regression, regressionLine } =
     convertPointsToLinearRegression(points);
 
@@ -59,7 +62,7 @@ function ScatterChart(props: ScatterChartProps) {
               dataKey="x"
               type="number"
               label={xLabelObject}
-              tickFormatter={(value) => (value ? value + '' : '')}
+              tickFormatter={xTickFormatter(t)}
               height={70}
             />
 
@@ -68,6 +71,7 @@ function ScatterChart(props: ScatterChartProps) {
               dataKey="y"
               type="number"
               label={yLabelObject}
+              tickFormatter={yTickFormatter(t)}
             />
 
             <ReferenceLine className={styles['zero-reference']} y={0} />

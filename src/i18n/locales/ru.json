@@ -65,5 +65,9 @@
       "SCATTER_CHART_NO_DATA_few": "Минимум {{count, number}} резистограммы необходимы для построения графика зависимости",
       "SCATTER_CHART_NO_DATA_many": "Минимум {{count, number}} резистограмм необходимо для построения графика зависимости"
     }
+  },
+
+  "UTILS": {
+    "NUMBER": "{{value, number}}"
   }
 }

@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 import {
   CartesianGrid,
   Line,
@@ -9,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
 import styles from './LineChart.module.css';
@@ -54,6 +56,8 @@ function LineChart(props: LineChartProps) {
     step,
     interactive,
   } = props;
+
+  const { t } = useTranslation();
 
   const [offsetLeft, setOffsetLeft] = useDebouncedState(
     defaultOffsetLeft,
@@ -126,12 +130,6 @@ function LineChart(props: LineChartProps) {
         >
           <CartesianGrid className={styles.grid} />
 
-          <YAxis
-            className={styles.axis}
-            tickCount={yTickCount}
-            label={yLabelObject}
-          />
-
           <XAxis
             className={styles.axis}
             dataKey="x"
@@ -139,7 +137,15 @@ function LineChart(props: LineChartProps) {
             tickCount={xTickCount}
             domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
             label={xLabelObject}
+            tickFormatter={xTickFormatter(t)}
             height={70}
+          />
+
+          <YAxis
+            className={styles.axis}
+            tickCount={yTickCount}
+            label={yLabelObject}
+            tickFormatter={yTickFormatter(t)}
           />
 
           {renderStepReferences({ step, maxX })}
