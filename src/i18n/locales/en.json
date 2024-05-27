@@ -20,9 +20,11 @@
   },
 
   "RESI_FILE_DIFF_CHART": {
-    "TITLE": "Drill wear",
-    "NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
-    "NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
+    "TITLE": "Drill wear"
+  },
+
+  "RESI_FILE_GROWTH_CHART": {
+    "TITLE": "Wall pressure"
   },
 
   "APP_SETTINGS": {
@@ -56,6 +58,11 @@
     "MEAN_VALUE": "Mean",
     "MEDIAN": "Median",
     "MM": "{{value, rightSpace}}mm",
-    "CM": "cm"
+    "CM": "cm",
+
+    "CHARTS": {
+      "SCATTER_CHART_NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
+      "SCATTER_CHART_NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
+    }
   }
 }
