@@ -22,7 +22,12 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
 
-  plugins: ['@typescript-eslint', 'jsx-a11y', 'react-refresh'],
+  plugins: [
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react-refresh',
+    'react-compiler',
+  ],
 
   rules: {
     'no-console': 'warn',
@@ -61,6 +66,8 @@ module.exports = {
         allowConstantExport: true,
       },
     ],
+
+    'react-compiler/react-compiler': 'error',
   },
 
   overrides: [
