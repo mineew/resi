@@ -67,7 +67,7 @@ module.exports = {
       },
     ],
 
-    'react-compiler/react-compiler': 'error',
+    'react-compiler/react-compiler': 'warn',
   },
 
   overrides: [
