@@ -1,23 +1,10 @@
 .content {
-  position: fixed;
-  top: 0;
-  left: 50%;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  border: 1px solid var(--slate-6);
-  border-radius: 8px;
-  outline: none;
-  transform: translate(-50%, 20px);
-  animation: content 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .content.scrollable {
   height: calc(100vh - 40px);
-}
-
-:global(.dark) .content {
-  background-color: var(--slate-4);
 }
 
 .header,
@@ -78,18 +65,6 @@
 
 .close:active {
   background-color: var(--slate-10);
-}
-
-@keyframes content {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 40px) scale(0.8);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(-50%, 20px) scale(1);
-  }
 }
 
 /* Sizes -------------------------------------------------------------------- */

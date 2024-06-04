@@ -9,4 +9,5 @@
 @import url('./components/icons.css');
 @import url('./components/shadow.css');
 @import url('./components/overlay.css');
+@import url('./components/dialog.css');
 @import url('../../node_modules/katex/dist/katex.css');

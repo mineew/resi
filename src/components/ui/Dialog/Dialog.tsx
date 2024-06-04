@@ -57,10 +57,11 @@ function Dialog(props: DialogProps) {
 
         <Radix.Content
           className={classNames(
+            'dialog',
+            'shadow',
             styles.content,
             styles[`size-${size}`],
             { [styles.scrollable]: scrollable },
-            'shadow',
           )}
           onCloseAutoFocus={handleCloseAutoFocus}
         >
