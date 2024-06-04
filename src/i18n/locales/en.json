@@ -57,7 +57,7 @@
   "COMMON": {
     "MEAN_VALUE": "Mean",
     "MEDIAN": "Median",
-    "MM": "{{value, rightSpace}}mm",
+    "MM": "{{value, number, notNaN, rightSpace}}mm",
     "CM": "cm",
 
     "CHARTS": {

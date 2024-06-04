@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { useTranslation } from 'react-i18next';
 import { useDebouncedCallback } from 'use-debounce';
@@ -37,6 +37,13 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
     onChangeStrokeWidth,
   );
 
+  const strokeWidthFormatter = useCallback(
+    (value: number) => {
+      return t('UTILS.NUMBER', { value });
+    },
+    [t],
+  );
+
   return (
     <Popover trigger={children} onOpenChange={onOpenChange}>
       <div className={styles.wrapper}>
@@ -46,6 +53,7 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
           label={t('RESI_FILE_LIST.ITEM_STROKE_WIDTH')}
           value={strokeWidth}
           onValueChange={setStrokeWidth}
+          valueFormatter={strokeWidthFormatter}
           size="small"
           min={1}
         />

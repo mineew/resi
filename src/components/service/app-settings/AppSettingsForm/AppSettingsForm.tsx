@@ -49,7 +49,7 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             hasBoldLabel
             value={field.value || DEFAULT_SETTINGS.zScoreThreshold}
             onValueChange={field.onChange}
-            valueFormatter={(value) => `${value} SD`}
+            valueFormatter={(value) => t('UTILS.NUMBER', { value }) + ' SD'}
             min={1}
           />
         )}

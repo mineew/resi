@@ -108,12 +108,12 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
       <div className={styles.footer}>
         <div className={styles['footer-row']}>
           <div>{t('RESI_FILE_LIST.TOTAL_FILES')}:</div>
-          <div>{files.length}</div>
+          <div>{t('UTILS.NUMBER', { value: files.length })}</div>
         </div>
 
         <div className={styles['footer-row']}>
           <div>{t('RESI_FILE_LIST.ACTIVE_FILES')}:</div>
-          <div>{checkedFiles.length}</div>
+          <div>{t('UTILS.NUMBER', { value: checkedFiles.length })}</div>
         </div>
       </div>
     </div>

@@ -32,8 +32,16 @@ i18n.on('languageChanged', (lang) => {
   document.documentElement.setAttribute('lang', lang);
 });
 
+i18n.services.formatter?.add('notNaN', (value) => {
+  if (value === 'NaN') {
+    return '';
+  }
+
+  return value + '';
+});
+
 i18n.services.formatter?.add('rightSpace', (value) => {
-  if (value === undefined) {
+  if (value === undefined || value === '') {
     return '';
   }
 

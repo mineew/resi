@@ -57,7 +57,7 @@
   "COMMON": {
     "MEAN_VALUE": "Среднее значение",
     "MEDIAN": "Медиана",
-    "MM": "{{value, rightSpace}}мм",
+    "MM": "{{value, number, notNaN, rightSpace}}мм",
     "CM": "см",
 
     "CHARTS": {
