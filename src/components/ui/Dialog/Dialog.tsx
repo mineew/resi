@@ -53,7 +53,7 @@ function Dialog(props: DialogProps) {
       )}
 
       <Radix.Portal>
-        <Radix.Overlay className={styles.overlay} />
+        <Radix.Overlay className="overlay" />
 
         <Radix.Content
           className={classNames(

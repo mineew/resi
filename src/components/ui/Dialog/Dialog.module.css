@@ -1,9 +1,3 @@
-.overlay {
-  position: fixed;
-  inset: 0;
-  animation: overlay 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 .content {
   position: fixed;
   top: 0;
@@ -84,16 +78,6 @@
 
 .close:active {
   background-color: var(--slate-10);
-}
-
-@keyframes overlay {
-  from {
-    backdrop-filter: blur(0);
-  }
-
-  to {
-    backdrop-filter: blur(3px);
-  }
 }
 
 @keyframes content {
