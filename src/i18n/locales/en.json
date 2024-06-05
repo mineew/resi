@@ -54,6 +54,14 @@
     "MM_MIN": "at least {{value}} mm"
   },
 
+  "UI": {
+    "ALERT": {
+      "TITLE": "Are you sure?",
+      "CANCEL": "Cancel",
+      "ACTION": "Yes, I'm sure"
+    }
+  },
+
   "COMMON": {
     "MEAN_VALUE": "Mean",
     "MEDIAN": "Median",

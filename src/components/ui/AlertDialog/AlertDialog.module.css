@@ -1,0 +1,31 @@
+.content {
+  width: 400px;
+  padding: 16px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.description {
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 16px 0;
+  margin-right: -16px;
+  margin-left: -16px;
+  border-top: 1px solid var(--slate-6);
+}
+
+@media (width <= 460px) {
+  .content {
+    width: 90vw;
+  }
+}
