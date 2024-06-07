@@ -12,10 +12,13 @@ interface AlertDialogProps {
   description?: string;
   cancelLabel?: string;
   actionLabel?: string;
+  onAction?: () => void;
 }
 
 function AlertDialog(props: AlertDialogProps) {
-  const { trigger, title, description, cancelLabel, actionLabel } = props;
+  const { trigger, title, description, cancelLabel, actionLabel, onAction } =
+    props;
+
   const { t } = useTranslation();
 
   return (
@@ -44,7 +47,7 @@ function AlertDialog(props: AlertDialogProps) {
             </Radix.Cancel>
 
             <Radix.Action asChild>
-              <Button theme="danger">
+              <Button theme="danger" onClick={onAction}>
                 {actionLabel || t('UI.ALERT.ACTION')}
               </Button>
             </Radix.Action>

@@ -1,4 +1,5 @@
 import { type Meta, type StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import Button from '@/components/ui/Button/Button';
 
@@ -9,6 +10,7 @@ export const Default: StoryFn<typeof AlertDialog> = ({
   description,
   cancelLabel,
   actionLabel,
+  onAction,
 }) => {
   return (
     <div style={{ padding: 20 }}>
@@ -18,6 +20,7 @@ export const Default: StoryFn<typeof AlertDialog> = ({
         description={description}
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
+        onAction={onAction}
       />
     </div>
   );
@@ -28,6 +31,7 @@ export default {
   component: AlertDialog,
   argTypes: {
     trigger: { table: { disable: true } },
+    onAction: { table: { disable: true } },
   },
   args: {
     title: '',
@@ -35,5 +39,6 @@ export default {
       'This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
     cancelLabel: '',
     actionLabel: '',
+    onAction: fn(),
   },
 } as Meta<typeof AlertDialog>;
