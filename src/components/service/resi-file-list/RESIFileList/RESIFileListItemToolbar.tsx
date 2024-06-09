@@ -2,6 +2,7 @@ import { Trash2 } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import AlertDialog from '@/components/ui/AlertDialog/AlertDialog';
 import Button from '@/components/ui/Button/Button';
 import Checkbox from '@/components/ui/Checkbox/Checkbox';
 import useDebouncedState from '@/utils/hooks/useDebouncedState';
@@ -32,17 +33,23 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
         size="small"
       />
 
-      <Button
-        className={styles['delete-button']}
-        theme="danger"
-        size="small"
-        outlined
-        onClick={onDelete}
-        tabIndex={-1}
-      >
-        <Trash2 />
-        {t('RESI_FILE_LIST.DELETE_ITEM')}
-      </Button>
+      <AlertDialog
+        trigger={
+          <Button
+            className={styles['delete-button']}
+            theme="danger"
+            size="small"
+            outlined
+            tabIndex={-1}
+          >
+            <Trash2 />
+            {t('RESI_FILE_LIST.DELETE_ITEM')}
+          </Button>
+        }
+        description={t('RESI_FILE_LIST.DELETE_ITEM_WARNING')}
+        actionLabel={t('RESI_FILE_LIST.DELETE_ITEM_SURE')}
+        onAction={onDelete}
+      />
     </div>
   );
 });

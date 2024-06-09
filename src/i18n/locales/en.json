@@ -11,6 +11,8 @@
     "ACTIVE_FILES": "Active",
     "ITEM_IS_ACTIVE": "Active",
     "DELETE_ITEM": "Delete",
+    "DELETE_ITEM_WARNING": "This file will no longer be displayed on the chart and will no longer participate in calculations",
+    "DELETE_ITEM_SURE": "Yes, delete it",
     "ITEM_STROKE_WIDTH": "Stroke width"
   },
 

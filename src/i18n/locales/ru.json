@@ -11,6 +11,8 @@
     "ACTIVE_FILES": "Активны",
     "ITEM_IS_ACTIVE": "Активен",
     "DELETE_ITEM": "Удалить",
+    "DELETE_ITEM_WARNING": "Файл больше не будет отображаться на графике и участвовать в расчетах",
+    "DELETE_ITEM_SURE": "Да, удалить",
     "ITEM_STROKE_WIDTH": "Толщина линии"
   },
 
