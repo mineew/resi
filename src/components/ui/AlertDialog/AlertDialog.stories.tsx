@@ -1,5 +1,6 @@
 import { type Meta, type StoryFn } from '@storybook/react';
 import { fn } from '@storybook/test';
+import { useState } from 'react';
 
 import Button from '@/components/ui/Button/Button';
 
@@ -26,10 +27,44 @@ export const Default: StoryFn<typeof AlertDialog> = ({
   );
 };
 
+export const Controlled: StoryFn<typeof AlertDialog> = ({
+  title,
+  description,
+  cancelLabel,
+  actionLabel,
+  onAction,
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ padding: 20 }}>
+      <Button
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Custom Button
+      </Button>
+
+      <AlertDialog
+        open={open}
+        onOpenChange={setOpen}
+        title={title}
+        description={description}
+        cancelLabel={cancelLabel}
+        actionLabel={actionLabel}
+        onAction={onAction}
+      />
+    </div>
+  );
+};
+
 export default {
   title: 'Components/UI/AlertDialog',
   component: AlertDialog,
   argTypes: {
+    open: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
     trigger: { table: { disable: true } },
     onAction: { table: { disable: true } },
   },

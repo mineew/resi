@@ -5,6 +5,8 @@
     "ADD_FILES": "Добавить файлы",
     "MORE_FILE_OPERATIONS": "Больше операций с файлами",
     "CLEAR_FILES": "Очистить",
+    "CLEAR_FILES_WARNING": "Все расчеты будут удалены",
+    "CLEAR_FILES_SURE": "Да, очистить",
     "ENABLE_ALL_FILES": "Выбрать все",
     "DISABLE_ALL_FILES": "Отключить все",
     "TOTAL_FILES": "Всего",

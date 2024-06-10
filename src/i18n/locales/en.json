@@ -5,6 +5,8 @@
     "ADD_FILES": "Add RESI files",
     "MORE_FILE_OPERATIONS": "More file operations",
     "CLEAR_FILES": "Clear",
+    "CLEAR_FILES_WARNING": "All calculations will be removed",
+    "CLEAR_FILES_SURE": "Yes, clear",
     "ENABLE_ALL_FILES": "Enable all",
     "DISABLE_ALL_FILES": "Disable all",
     "TOTAL_FILES": "Total",

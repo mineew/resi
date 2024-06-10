@@ -1,9 +1,10 @@
 import { CopyCheck, CopyX, FilePlus2, Trash2 } from 'lucide-react';
-import { type ReactNode, memo } from 'react';
+import { type ReactNode, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import RESIFileList from '@/components/service/resi-file-list/RESIFileList/RESIFileList';
 import RESIFileListEmpty from '@/components/service/resi-file-list/RESIFileListEmpty/RESIFileListEmpty';
+import AlertDialog from '@/components/ui/AlertDialog/AlertDialog';
 import Button from '@/components/ui/Button/Button';
 import Dropdown, { type DropdownItem } from '@/components/ui/Dropdown/Dropdown';
 import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
@@ -43,13 +44,14 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const allFilesChecked = !files.some((f) => !f.checked);
   const allFilesUnchecked = !files.some((f) => f.checked);
   const checkedFiles = files.filter((f) => f.checked);
+  const [clearAlertOpen, setClearAlertOpen] = useState(false);
 
   const dropdownItems: Array<DropdownItem | 'separator'> = [
     {
       id: 'clear',
       icon: <Trash2 />,
       label: t('RESI_FILE_LIST.CLEAR_FILES'),
-      onClick: onDeleteAllFiles,
+      onClick: () => setClearAlertOpen(true),
       danger: true,
     },
     'separator',
@@ -88,6 +90,14 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
         <Dropdown
           tooltip={t('RESI_FILE_LIST.MORE_FILE_OPERATIONS')}
           items={dropdownItems}
+        />
+
+        <AlertDialog
+          open={clearAlertOpen}
+          onOpenChange={setClearAlertOpen}
+          description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
+          actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
+          onAction={onDeleteAllFiles}
         />
 
         {appSettings}

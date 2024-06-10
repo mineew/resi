@@ -7,7 +7,9 @@ import Button from '@/components/ui/Button/Button';
 import styles from './AlertDialog.module.css';
 
 interface AlertDialogProps {
-  trigger: JSX.Element;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  trigger?: JSX.Element;
   title?: string;
   description?: string;
   cancelLabel?: string;
@@ -16,14 +18,22 @@ interface AlertDialogProps {
 }
 
 function AlertDialog(props: AlertDialogProps) {
-  const { trigger, title, description, cancelLabel, actionLabel, onAction } =
-    props;
+  const {
+    open,
+    onOpenChange,
+    trigger,
+    title,
+    description,
+    cancelLabel,
+    actionLabel,
+    onAction,
+  } = props;
 
   const { t } = useTranslation();
 
   return (
-    <Radix.Root>
-      <Radix.Trigger asChild>{trigger}</Radix.Trigger>
+    <Radix.Root open={open} onOpenChange={onOpenChange}>
+      {trigger && <Radix.Trigger asChild>{trigger}</Radix.Trigger>}
 
       <Radix.Portal>
         <Radix.Overlay className="overlay" />
