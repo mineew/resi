@@ -62,7 +62,8 @@
     "ALERT": {
       "TITLE": "Are you sure?",
       "CANCEL": "Cancel",
-      "ACTION": "Yes, I'm sure"
+      "ACTION": "Yes, I'm sure",
+      "DONT_SHOW_AGAIN": "Don't show it again"
     }
   },
 
