@@ -13,6 +13,8 @@ export const Default: StoryFn<typeof AlertDialog> = ({
   actionLabel,
   onAction,
 }) => {
+  const [dontShowAgain, setDontShowAgain] = useState(false);
+
   return (
     <div style={{ padding: 20 }}>
       <AlertDialog
@@ -22,6 +24,8 @@ export const Default: StoryFn<typeof AlertDialog> = ({
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
         onAction={onAction}
+        dontShowAgain={dontShowAgain}
+        onChangeDontShowAgain={setDontShowAgain}
       />
     </div>
   );
@@ -35,6 +39,7 @@ export const Controlled: StoryFn<typeof AlertDialog> = ({
   onAction,
 }) => {
   const [open, setOpen] = useState(false);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
 
   return (
     <div style={{ padding: 20 }}>
@@ -54,6 +59,8 @@ export const Controlled: StoryFn<typeof AlertDialog> = ({
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
         onAction={onAction}
+        dontShowAgain={dontShowAgain}
+        onChangeDontShowAgain={setDontShowAgain}
       />
     </div>
   );
@@ -67,6 +74,8 @@ export default {
     onOpenChange: { table: { disable: true } },
     trigger: { table: { disable: true } },
     onAction: { table: { disable: true } },
+    dontShowAgain: { table: { disable: true } },
+    onChangeDontShowAgain: { table: { disable: true } },
   },
   args: {
     title: '',

@@ -1,6 +1,6 @@
 import * as Radix from '@radix-ui/react-alert-dialog';
 import classNames from 'classnames';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';
@@ -16,7 +16,9 @@ interface AlertDialogProps {
   description?: string;
   cancelLabel?: string;
   actionLabel?: string;
-  onAction?: (dontShowAgain: boolean) => void;
+  onAction?: () => void;
+  dontShowAgain?: boolean;
+  onChangeDontShowAgain?: (dontShowAgain: boolean) => void;
 }
 
 function AlertDialog(props: AlertDialogProps) {
@@ -29,18 +31,22 @@ function AlertDialog(props: AlertDialogProps) {
     cancelLabel,
     actionLabel,
     onAction,
+    dontShowAgain = false,
+    onChangeDontShowAgain,
   } = props;
 
   const { t } = useTranslation();
-  const [dontShowAgainChecked, setDontShowAgainChecked] = useState(false);
-
-  const handleAction = useCallback(() => {
-    onAction?.(dontShowAgainChecked);
-  }, [onAction, dontShowAgainChecked]);
 
   const handleCloseAutofocus = useCallback((e: Event) => {
     e.preventDefault();
   }, []);
+
+  const handleChangeDontShowAgain = useCallback(
+    (dontShowAgain: boolean) => {
+      onChangeDontShowAgain?.(dontShowAgain);
+    },
+    [onChangeDontShowAgain],
+  );
 
   return (
     <Radix.Root open={open} onOpenChange={onOpenChange}>
@@ -65,7 +71,7 @@ function AlertDialog(props: AlertDialogProps) {
 
           <div className={styles.buttons}>
             <Radix.Action asChild>
-              <Button theme="danger" onClick={handleAction}>
+              <Button theme="danger" onClick={onAction}>
                 {actionLabel || t('UI.ALERT.ACTION')}
               </Button>
             </Radix.Action>
@@ -78,8 +84,8 @@ function AlertDialog(props: AlertDialogProps) {
           <div className={styles.checkbox}>
             <Checkbox
               label={t('UI.ALERT.DONT_SHOW_AGAIN')}
-              checked={dontShowAgainChecked}
-              onCheckedChange={setDontShowAgainChecked}
+              checked={dontShowAgain}
+              onCheckedChange={handleChangeDontShowAgain}
             />
           </div>
         </Radix.Content>

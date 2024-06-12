@@ -1,6 +1,7 @@
 import { CopyCheck, CopyX, FilePlus2, Trash2 } from 'lucide-react';
-import { type ReactNode, memo, useState } from 'react';
+import { type ReactNode, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useLocalStorage from 'use-local-storage';
 
 import RESIFileList from '@/components/service/resi-file-list/RESIFileList/RESIFileList';
 import RESIFileListEmpty from '@/components/service/resi-file-list/RESIFileListEmpty/RESIFileListEmpty';
@@ -44,14 +45,25 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const allFilesChecked = !files.some((f) => !f.checked);
   const allFilesUnchecked = !files.some((f) => f.checked);
   const checkedFiles = files.filter((f) => f.checked);
-  const [clearAlertOpen, setClearAlertOpen] = useState(false);
+
+  const [alertDialogOpen, setAlertDialogOpen] = useState(false);
+  const [dontShowAgainAlertDialog, setDontShowAgainAlertDialog] =
+    useLocalStorage('show-delete-all-resi-files-warning', false);
+
+  const handleClearFiles = useCallback(() => {
+    if (!dontShowAgainAlertDialog) {
+      setAlertDialogOpen(true);
+    } else {
+      onDeleteAllFiles();
+    }
+  }, [dontShowAgainAlertDialog, onDeleteAllFiles]);
 
   const dropdownItems: Array<DropdownItem | 'separator'> = [
     {
       id: 'clear',
       icon: <Trash2 />,
       label: t('RESI_FILE_LIST.CLEAR_FILES'),
-      onClick: () => setClearAlertOpen(true),
+      onClick: handleClearFiles,
       danger: true,
     },
     'separator',
@@ -93,11 +105,13 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
         />
 
         <AlertDialog
-          open={clearAlertOpen}
-          onOpenChange={setClearAlertOpen}
+          open={alertDialogOpen}
+          onOpenChange={setAlertDialogOpen}
           description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
           actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
           onAction={onDeleteAllFiles}
+          dontShowAgain={dontShowAgainAlertDialog}
+          onChangeDontShowAgain={setDontShowAgainAlertDialog}
         />
 
         {appSettings}
