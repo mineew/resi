@@ -5,9 +5,11 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  build: {
-    sourcemap: true,
+  base: '/app',
 
+  build: {
+    outDir: path.join(__dirname, 'dist', 'app'),
+    sourcemap: true,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',

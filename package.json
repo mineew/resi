@@ -3,14 +3,27 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "React App for processing resistograph files",
+  "keywords": [
+    "react",
+    "app"
+  ],
+  "author": "Alexandr Mineev <mineew.al@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mineew/resi.git"
+  },
+  "homepage": "https://mineew.github.io/resi/",
   "scripts": {
-    "storybook": "storybook dev -p 6006",
     "dev": "vite",
     "build": "run-s build:ts build:vite",
     "build:ts": "tsc",
     "build:vite": "vite build",
     "preview": "run-s build preview:vite",
     "preview:vite": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o dist/storybook",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
@@ -22,6 +35,10 @@
     "clear": "rimraf dist coverage",
     "clear:lint:cache": "rimraf .eslintcache .stylelintcache",
     "clear:app:cache": "rimraf node_modules/.cache node_modules/.vite",
+    "release": "run-s \"release:version -- {1}\" release:push --",
+    "release:version": "npm version",
+    "release:push": "git push --follow-tags",
+    "copy:redirect": "cp redirect.html dist/index.html",
     "deps:update": "ncu -ui"
   },
   "dependencies": {

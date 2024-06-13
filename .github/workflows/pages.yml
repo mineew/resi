@@ -1,0 +1,39 @@
+name: 'Deploy to GitHub Pages'
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        run: npm install
+      - name: 'Build App'
+        run: npm run build
+      - name: 'Build Storybook'
+        run: npm run storybook:build
+      - name: 'Configure Root index.html'
+        run: npm run copy:redirect
+      - name: 'Upload Artifact'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 'Deploy Pages'
+        id: deployment
+        uses: actions/deploy-pages@v4
