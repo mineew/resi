@@ -23,7 +23,7 @@ const config: StorybookConfig = {
   },
 
   viteFinal(config) {
-    config.base = '/storybook';
+    config.base = '/resi/storybook';
     return config;
   },
 };
