@@ -36,19 +36,19 @@ export default defineConfig({
 
         manualChunks: (id) => {
           if (id.includes('recharts')) {
-            return 'recharts';
+            return 'vendors-recharts';
           }
 
           if (id.includes('katex')) {
-            return 'katex';
+            return 'vendors-katex';
           }
 
-          if (id.includes('i18next')) {
-            return 'i18next';
+          if (id.includes('i18next') || id.includes('@radix')) {
+            return 'vendors-main-2';
           }
 
           if (id.includes('node_modules')) {
-            return 'vendors';
+            return 'vendors-main-1';
           }
         },
       },
