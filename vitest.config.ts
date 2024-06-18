@@ -13,7 +13,6 @@ export default mergeConfig(
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./vitest.setup.ts'],
-      reporters: ['dot'],
       coverage: {
         enabled: true,
         reporter: ['html'],
