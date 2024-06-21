@@ -34,8 +34,6 @@ function calculateFileGrowth(
     }
   }
 
-  console.log('distanceGrowthMap', distanceGrowthMap);
-
   const distances = Object.keys(distanceGrowthMap);
 
   const growthArray: RESIFileGrowth[] = distances.map((distance) => ({
