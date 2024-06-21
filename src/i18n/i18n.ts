@@ -33,7 +33,7 @@ i18n.on('languageChanged', (lang) => {
 });
 
 i18n.services.formatter?.add('notNaN', (value) => {
-  if (value === 'NaN') {
+  if (value === 'NaN' || value === 'не число') {
     return '';
   }
 
