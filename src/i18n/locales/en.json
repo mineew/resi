@@ -20,15 +20,21 @@
 
   "RESI_FILE_CHART": {
     "TITLE": "Resistograms",
-    "NO_DATA": "No data to plot"
+    "NO_DATA": "No data to plot",
+    "X_LABEL": "Trunk diameter",
+    "Y_LABEL": "Drilling resistance"
   },
 
   "RESI_FILE_DIFF_CHART": {
-    "TITLE": "Drill wear"
+    "TITLE": "Wear of cutting edges of drill bit",
+    "X_LABEL": "Total drilling depth",
+    "Y_LABEL": "Drilling resistance"
   },
 
   "RESI_FILE_GROWTH_CHART": {
-    "TITLE": "Wall pressure"
+    "TITLE": "Drilling depth",
+    "X_LABEL": "Drilling depth",
+    "Y_LABEL": "Drilling resistance"
   },
 
   "APP_SETTINGS": {

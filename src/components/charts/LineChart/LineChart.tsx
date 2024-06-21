@@ -105,8 +105,9 @@ function LineChart(props: LineChartProps) {
     ? undefined
     : {
         value: yLabel,
-        position: 'insideLeft',
+        position: 'middle',
         angle: -90,
+        offset: 40,
       };
 
   return (
@@ -123,7 +124,7 @@ function LineChart(props: LineChartProps) {
       <ResponsiveContainer className={styles['chart-wrapper']}>
         <RechartsLineChart
           data={lines}
-          margin={{ top: 0, right: 40, left: 20, bottom: 0 }}
+          margin={{ top: 0, left: -25, right: 40, bottom: -10 }}
           onMouseDown={handleChartMouseDown}
           onMouseUp={handleChartMouseUp}
           onMouseMove={handleChartMouseMove}
@@ -138,7 +139,7 @@ function LineChart(props: LineChartProps) {
             domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
             label={xLabelObject}
             tickFormatter={xTickFormatter(t)}
-            height={70}
+            height={80}
           />
 
           <YAxis
@@ -146,6 +147,7 @@ function LineChart(props: LineChartProps) {
             tickCount={yTickCount}
             label={yLabelObject}
             tickFormatter={yTickFormatter(t)}
+            width={120}
           />
 
           {renderStepReferences({ step, maxX })}

@@ -41,7 +41,7 @@ function ScatterChart(props: ScatterChartProps) {
     ? undefined
     : {
         value: yLabel,
-        position: 'insideLeft',
+        position: 'middle',
         angle: -90,
       };
 
@@ -54,7 +54,9 @@ function ScatterChart(props: ScatterChartProps) {
 
       <div className={styles['chart']}>
         <ResponsiveContainer>
-          <ComposedChart margin={{ top: 10, right: 40, left: 20, bottom: 0 }}>
+          <ComposedChart
+            margin={{ top: 10, right: 40, left: -25, bottom: -10 }}
+          >
             <CartesianGrid className={styles.grid} />
 
             <XAxis
@@ -63,7 +65,7 @@ function ScatterChart(props: ScatterChartProps) {
               type="number"
               label={xLabelObject}
               tickFormatter={xTickFormatter(t)}
-              height={70}
+              height={80}
             />
 
             <YAxis
@@ -72,6 +74,7 @@ function ScatterChart(props: ScatterChartProps) {
               type="number"
               label={yLabelObject}
               tickFormatter={yTickFormatter(t)}
+              width={120}
             />
 
             <ReferenceLine className={styles['zero-reference']} y={0} />

@@ -19,8 +19,8 @@ const RESIFileDiffChart = memo((props: RESIFileDiffChartProps) => {
     <ScatterChart
       title={t('RESI_FILE_DIFF_CHART.TITLE')}
       points={points}
-      xLabel={t('COMMON.CM')}
-      yLabel="RESI"
+      xLabel={t('RESI_FILE_DIFF_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
+      yLabel={t('RESI_FILE_DIFF_CHART.Y_LABEL') + ', RESI'}
     />
   );
 });

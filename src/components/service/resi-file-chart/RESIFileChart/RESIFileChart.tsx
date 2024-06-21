@@ -63,10 +63,10 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     <LineChart
       title={t('RESI_FILE_CHART.TITLE')}
       data={files}
-      xLabel={t('COMMON.CM')}
+      xLabel={t('RESI_FILE_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
       xConverter={convertX}
       xTickCount={20}
-      yLabel="RESI"
+      yLabel={t('RESI_FILE_CHART.Y_LABEL') + ', RESI'}
       yTickCount={20}
       offsetGap={offsetGap / 10}
       offsetLeft={offsetLeft / 10}
