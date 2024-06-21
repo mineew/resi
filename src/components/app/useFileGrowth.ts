@@ -14,9 +14,6 @@ function useFileGrowth() {
 
   const chunkSize = useStore((state) => state.settings.chunkSize);
   const growthMeanMethod = useStore((state) => state.settings.growthMeanMethod);
-  const takeNegativeDiffs = useStore(
-    (state) => state.settings.takeNegativeDiffs,
-  );
   const takeNegativeGrowth = useStore(
     (state) => state.settings.takeNegativeGrowth,
   );
@@ -26,16 +23,9 @@ function useFileGrowth() {
       smoothedFiles,
       chunkSize,
       growthMeanMethod,
-      takeNegativeDiffs,
       takeNegativeGrowth,
     );
-  }, [
-    smoothedFiles,
-    chunkSize,
-    growthMeanMethod,
-    takeNegativeDiffs,
-    takeNegativeGrowth,
-  ]);
+  }, [smoothedFiles, chunkSize, growthMeanMethod, takeNegativeGrowth]);
 
   return growth;
 }

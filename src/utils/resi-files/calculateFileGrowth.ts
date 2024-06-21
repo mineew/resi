@@ -7,21 +7,22 @@ function calculateFileGrowth(
   files: RESIFile[],
   chunkSize = 300,
   growthMeanMethod: 'mean' | 'median' = 'mean',
-  takeNegativeDiffs = false,
   takeNegativeGrowth = false,
 ): RESIFileGrowth[] {
   const distanceGrowthMap: Record<string, number[]> = {};
 
   for (let i = 0; i < files.length; i += 1) {
     const file = files[i];
+    let totalGrowth = 0;
 
     for (let j = 1; j < file.contents.length; j += 1) {
+      const distance = (chunkSize * j) / 100;
       const a = file.contents[j];
       const b = file.contents[j - 1];
       const growth = a - b;
-      const distance = (chunkSize * j) / 100;
+      totalGrowth += growth;
 
-      if (!takeNegativeDiffs && growth < 0) {
+      if (!takeNegativeGrowth && totalGrowth < 0) {
         continue;
       }
 
@@ -29,40 +30,21 @@ function calculateFileGrowth(
         distanceGrowthMap[distance] = [];
       }
 
-      distanceGrowthMap[distance].push(growth);
+      distanceGrowthMap[distance].push(totalGrowth);
     }
   }
+
+  console.log('distanceGrowthMap', distanceGrowthMap);
 
   const distances = Object.keys(distanceGrowthMap);
-  if (!distances.length) {
-    return [];
-  }
 
-  const growthArray: RESIFileGrowth[] = [
-    {
-      distance: Number(distances[0]),
-      growth:
-        growthMeanMethod === 'mean'
-          ? mean(distanceGrowthMap[distances[0]])
-          : median(distanceGrowthMap[distances[0]]),
-    },
-  ];
-
-  for (let i = 1; i < distances.length; i += 1) {
-    const distance = Number(distances[i]);
-    const growth =
+  const growthArray: RESIFileGrowth[] = distances.map((distance) => ({
+    distance: Number(distance),
+    growth:
       growthMeanMethod === 'mean'
         ? mean(distanceGrowthMap[distance])
-        : median(distanceGrowthMap[distance]);
-
-    const prevGrowth = growthArray[growthArray.length - 1];
-
-    if (!takeNegativeGrowth && prevGrowth.growth > growth) {
-      continue;
-    }
-
-    growthArray.push({ distance, growth });
-  }
+        : median(distanceGrowthMap[distance]),
+  }));
 
   return growthArray;
 }
