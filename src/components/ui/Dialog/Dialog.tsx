@@ -64,6 +64,7 @@ function Dialog(props: DialogProps) {
             { [styles.scrollable]: scrollable },
           )}
           onCloseAutoFocus={handleCloseAutoFocus}
+          aria-describedby={undefined}
         >
           <div className={styles.header}>
             <Radix.Title className={styles.title}>{title}</Radix.Title>
