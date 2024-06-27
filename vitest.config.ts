@@ -16,14 +16,7 @@ export default mergeConfig(
       coverage: {
         enabled: true,
         reporter: ['html'],
-        exclude: [
-          '**/*.stories.tsx',
-          '**/*/types/*.ts',
-          '**/*/misc/*.ts',
-          '**/*/i18n/*.ts',
-          '**/*/polyfills/*.ts',
-          ...coverageConfigDefaults.exclude,
-        ],
+        exclude: ['**/*.stories.tsx', ...coverageConfigDefaults.exclude],
       },
     },
   }),
