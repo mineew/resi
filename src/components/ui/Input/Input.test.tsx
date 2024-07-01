@@ -25,9 +25,7 @@ describe('@/components/ui/Input', () => {
 
     await user.type(input, value);
 
-    const byDisplayValue = screen.getByDisplayValue(value);
-    expect(byDisplayValue).toBeInTheDocument();
-
+    expect(input).toHaveValue(value);
     expect(handleChange).toHaveBeenCalledTimes(value.length);
   });
 
@@ -42,9 +40,8 @@ describe('@/components/ui/Input', () => {
 
     await user.type(input, value);
 
-    const byDisplayValue = screen.queryByDisplayValue(value);
-    expect(byDisplayValue).not.toBeInTheDocument();
-
+    expect(input).toBeDisabled();
+    expect(input).toHaveValue('');
     expect(handleChange).toHaveBeenCalledTimes(0);
   });
 
