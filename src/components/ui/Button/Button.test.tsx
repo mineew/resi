@@ -38,6 +38,7 @@ describe('@/components/ui/Button', () => {
     expect(button).toBeInTheDocument();
 
     await user.click(button);
+    expect(button).toBeDisabled();
     expect(handleClick).toHaveBeenCalledTimes(0);
   });
 });
