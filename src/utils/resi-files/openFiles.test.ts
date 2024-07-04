@@ -31,7 +31,13 @@ const showOpenFilePicker = vi
     Promise.reject(new Error('showOpenFilePicker Error')),
   );
 
-vi.stubGlobal('showOpenFilePicker', showOpenFilePicker);
+beforeAll(() => {
+  vi.stubGlobal('showOpenFilePicker', showOpenFilePicker);
+
+  return () => {
+    vi.unstubAllGlobals();
+  };
+});
 
 describe('@/utils/resi-files/openFiles', () => {
   it('should open RESI files using the native file picker', async () => {
