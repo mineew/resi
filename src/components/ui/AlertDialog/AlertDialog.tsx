@@ -63,11 +63,9 @@ function AlertDialog(props: AlertDialogProps) {
             {title || t('UI.ALERT.TITLE')}
           </Radix.Title>
 
-          {description && (
-            <Radix.Description className={styles.description}>
-              {description}
-            </Radix.Description>
-          )}
+          <Radix.Description className={styles.description}>
+            {description || t('UI.ALERT.DESCRIPTION')}
+          </Radix.Description>
 
           <div className={styles.buttons}>
             <Radix.Action asChild>

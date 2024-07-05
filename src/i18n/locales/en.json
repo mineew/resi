@@ -67,6 +67,7 @@
   "UI": {
     "ALERT": {
       "TITLE": "Are you sure?",
+      "DESCRIPTION": "This action cannot be undone",
       "CANCEL": "Cancel",
       "ACTION": "Yes, I'm sure",
       "DONT_SHOW_AGAIN": "Don't show it again"
