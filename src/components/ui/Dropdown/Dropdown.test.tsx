@@ -22,6 +22,12 @@ const items: Array<DropdownItem | 'separator'> = [
   },
 ];
 
+const isDropdownItem = (
+  item: DropdownItem | 'separator',
+): item is DropdownItem => {
+  return item !== 'separator';
+};
+
 describe('@/components/ui/Dropdown', () => {
   it('renders', async () => {
     const user = userEvent.setup();
@@ -53,9 +59,8 @@ describe('@/components/ui/Dropdown', () => {
     const item2 = screen.getByRole('menuitem', { name: 'Item 2' });
     await user.click(item2);
 
-    expect(
-      items.filter((i) => typeof i !== 'string')[1].onClick,
-    ).toHaveBeenCalledTimes(1);
+    const item2Data = items.filter(isDropdownItem)[1];
+    expect(item2Data.onClick).toHaveBeenCalledTimes(1);
   });
 
   it('can render a tooltip', async () => {

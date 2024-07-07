@@ -20,6 +20,9 @@ describe('@/components/ui/Popover', () => {
     const trigger = screen.getByRole('button');
     await user.click(trigger);
 
+    expect(handleOpenChange).toHaveBeenCalledTimes(1);
+    expect(handleOpenChange).toHaveBeenCalledWith(true);
+
     const dialog = screen.getByRole('dialog');
     const content = screen.getByText('Popover Content');
 
