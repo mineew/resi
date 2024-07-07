@@ -73,4 +73,20 @@ describe('@/components/ui/Dropdown', () => {
     const tooltip = screen.getByRole('tooltip');
     expect(tooltip).toBeInTheDocument();
   });
+
+  it('can be closed by ESC', async () => {
+    const user = userEvent.setup();
+    render(<Dropdown items={items} tooltip="Tooltip Content" />);
+
+    const trigger = screen.getByRole('button');
+    await user.click(trigger);
+
+    const menu = screen.getByRole('menu');
+    expect(menu).toBeInTheDocument();
+
+    await user.keyboard('{Escape}');
+
+    const closed = screen.queryByRole('menu');
+    expect(closed).not.toBeInTheDocument();
+  });
 });

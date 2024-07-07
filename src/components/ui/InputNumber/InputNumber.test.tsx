@@ -21,6 +21,19 @@ describe('@/components/ui/InputNumber', () => {
     expect(input).toBeInTheDocument();
   });
 
+  it('can change value', async () => {
+    const user = userEvent.setup();
+    const handleValueChange = vi.fn();
+
+    render(<InputNumber onValueChange={handleValueChange} />);
+
+    const input = screen.getByRole('textbox');
+    await user.type(input, '12 3');
+
+    expect(handleValueChange).toHaveBeenCalledTimes(3);
+    expect(handleValueChange).toHaveBeenLastCalledWith(123, '123');
+  });
+
   it('accepts only numbers', async () => {
     const user = userEvent.setup();
     render(<InputNumber />);
