@@ -22,10 +22,12 @@ interface ScatterChartProps {
   points: ScatterChartPoint[];
   xLabel?: string;
   yLabel?: string;
+  width?: number;
+  height?: number;
 }
 
 function ScatterChart(props: ScatterChartProps) {
-  const { title, points, xLabel, yLabel } = props;
+  const { title, points, xLabel, yLabel, width, height } = props;
   const { t } = useTranslation();
   const { regression, regressionLine } =
     convertPointsToLinearRegression(points);
@@ -52,8 +54,8 @@ function ScatterChart(props: ScatterChartProps) {
         <Formula a={regression.equation[0]} b={regression.equation[1]} />
       </div>
 
-      <div className={styles['chart']}>
-        <ResponsiveContainer>
+      <div className={styles['chart']} data-testid="scatter-chart-container">
+        <ResponsiveContainer width={width} height={height}>
           <ComposedChart
             margin={{ top: 10, right: 40, left: -25, bottom: -10 }}
           >
