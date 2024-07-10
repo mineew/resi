@@ -92,8 +92,8 @@
     "@typescript-eslint/parser": "7.15.0",
     "@vitejs/plugin-legacy": "5.4.1",
     "@vitejs/plugin-react": "4.3.1",
-    "@vitest/coverage-v8": "1.6.0",
-    "@vitest/ui": "1.6.0",
+    "@vitest/coverage-v8": "2.0.1",
+    "@vitest/ui": "2.0.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
@@ -119,6 +119,6 @@
     "terser": "5.31.1",
     "typescript": "5.4.5",
     "vite": "5.3.3",
-    "vitest": "1.6.0"
+    "vitest": "2.0.1"
   }
 }
