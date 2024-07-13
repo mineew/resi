@@ -36,6 +36,8 @@ interface LineChartProps {
   tooltipFormatter?: (tooltipContent: number) => string;
   step?: number;
   interactive?: boolean;
+  width?: number;
+  height?: number;
 }
 
 function LineChart(props: LineChartProps) {
@@ -55,6 +57,8 @@ function LineChart(props: LineChartProps) {
     tooltipFormatter,
     step,
     interactive,
+    width,
+    height,
   } = props;
 
   const { t } = useTranslation();
@@ -118,10 +122,15 @@ function LineChart(props: LineChartProps) {
         [styles['dragging-right']]: offsetDrag === 'right',
         [styles['tooltip-visible']]: tooltipIsVisible,
       })}
+      data-testid="line-chart-container"
     >
       <h2 className={styles['chart-title']}>{title}</h2>
 
-      <ResponsiveContainer className={styles['chart-wrapper']}>
+      <ResponsiveContainer
+        className={styles['chart-wrapper']}
+        width={width}
+        height={height}
+      >
         <RechartsLineChart
           data={lines}
           margin={{ top: 0, left: -25, right: 40, bottom: -10 }}

@@ -33,6 +33,8 @@ export default {
   component: ScatterChart,
   argTypes: {
     points: { table: { disable: true } },
+    width: { table: { disable: true } },
+    height: { table: { disable: true } },
   },
   args: {
     title: 'Scatter Chart Title',
