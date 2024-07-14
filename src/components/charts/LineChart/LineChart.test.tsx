@@ -42,7 +42,7 @@ const data: LineChartDataset[] = [
   },
   {
     name: 'Dataset 3',
-    contents: [11, 12, 13, 14, 15],
+    contents: [11, 12, 13],
     color: '#0000FF',
     strokeWidth: 3,
   },
@@ -59,6 +59,7 @@ describe('@/components/charts/LineChart', () => {
         offsetGap={1}
         offsetLeft={2}
         offsetRight={10}
+        step={3}
         width={1000}
         height={1000}
       />,
