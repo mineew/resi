@@ -14,6 +14,8 @@ interface RESIFileChartProps {
   offsetRight?: number;
   onChangeOffsetRight?: (offset: number) => void;
   interactive?: boolean;
+  width?: number;
+  height?: number;
 }
 
 const RESIFileChart = memo((props: RESIFileChartProps) => {
@@ -27,6 +29,8 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     offsetRight = 0,
     onChangeOffsetRight,
     interactive,
+    width,
+    height,
   } = props;
 
   const { t } = useTranslation();
@@ -78,6 +82,8 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
         shouldRenderChunkSize && chunkSize > 1 ? chunkSize / 1000 : undefined
       }
       interactive={interactive}
+      width={width}
+      height={height}
     />
   );
 });

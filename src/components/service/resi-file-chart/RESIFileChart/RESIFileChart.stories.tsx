@@ -54,6 +54,8 @@ export default {
     onChangeOffsetLeft: { table: { disable: true } },
     offsetRight: { table: { disable: true } },
     onChangeOffsetRight: { table: { disable: true } },
+    width: { table: { disable: true } },
+    height: { table: { disable: true } },
   },
   args: {
     shouldRenderChunkSize: false,

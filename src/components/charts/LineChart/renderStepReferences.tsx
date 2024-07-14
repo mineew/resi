@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ReferenceLine } from 'recharts';
 
 import styles from './LineChart.module.css';
@@ -30,7 +31,7 @@ function renderStepReferences(options: RenderStepReferencesOptions) {
       {references.map((x) => (
         <ReferenceLine
           key={`step-${x}-reference`}
-          className={styles['step-line']}
+          className={classNames(styles['step-line'], 'step-line')}
           x={x}
         />
       ))}
