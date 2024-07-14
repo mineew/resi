@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import RESIFileGrowthChartEmpty from './RESIFileGrowthChartEmpty';
+import RESIFileDiffChartEmpty from './RESIFileDiffChartEmpty';
 
 const mocks = vi.hoisted(() => ({
   useTranslation: vi.fn(() => ({
@@ -13,9 +13,9 @@ vi.mock('react-i18next', () => ({
   useTranslation: mocks.useTranslation,
 }));
 
-describe('@/components/service/resi-file-growth-chart/RESIFileGrowthChartEmpty', () => {
+describe('@/components/service/resi-file-diff-chart/RESIFileDiffChartEmpty', () => {
   it('renders', () => {
-    render(<RESIFileGrowthChartEmpty />);
+    render(<RESIFileDiffChartEmpty />);
 
     const emptyDescription = screen.getByText(
       'COMMON.CHARTS.SCATTER_CHART_NO_DATA',
