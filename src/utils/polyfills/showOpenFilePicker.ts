@@ -44,3 +44,5 @@ function showOpenFilePickerPolyfill(options: ShowOpenFilePickerOptions) {
 if (typeof window.showOpenFilePicker !== 'function') {
   window.showOpenFilePicker = showOpenFilePickerPolyfill;
 }
+
+export { showOpenFilePickerPolyfill };
