@@ -88,7 +88,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="resi-file-list-panel">
       <div className={styles.header}>
         <Button
           className={styles['add-files-button']}

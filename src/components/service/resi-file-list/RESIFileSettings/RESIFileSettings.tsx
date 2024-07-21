@@ -46,7 +46,7 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
 
   return (
     <Popover trigger={children} onOpenChange={onOpenChange}>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} data-testid="resi-file-settings">
         <HexColorPicker color={color} onChange={handleChangeColor} />
 
         <Slider
