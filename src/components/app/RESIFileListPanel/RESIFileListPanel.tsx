@@ -37,7 +37,6 @@ function RESIFileListPanel() {
       onChangeFileStrokeWidth={changeFileStrokeWidth}
       onChangeFileChecked={toggleFile}
       onDeleteFile={deleteFile}
-      //
       appSettings={<AppSettings />}
     />
   );
