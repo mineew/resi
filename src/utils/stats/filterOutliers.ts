@@ -13,9 +13,7 @@ function filterOutliers(
   const std = standardDeviation(data);
   const scores = data.map((x) => zScore(x, m, std));
 
-  return data
-    .map(filterZScores(scores, zScoreThreshold))
-    .filter(filterNotNull) as number[];
+  return data.map(filterZScores(scores, zScoreThreshold)).filter(filterNotNull);
 }
 
 function filterZScores(scores: number[], threshold: number) {
@@ -28,7 +26,7 @@ function filterZScores(scores: number[], threshold: number) {
   };
 }
 
-function filterNotNull(x: number | null) {
+function filterNotNull(x: number | null): x is number {
   return x !== null;
 }
 
