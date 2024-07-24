@@ -1,8 +1,9 @@
-import openFiles from './openFiles';
 import parseFiles from './parseFiles';
 
-const processFiles = async () => {
-  const files = await openFiles();
+type GetFilesFunction = () => Promise<Record<string, string> | null>;
+
+const processFiles = async (getFiles: GetFilesFunction) => {
+  const files = await getFiles();
   const resiFiles = parseFiles(files || {});
 
   return resiFiles;

@@ -61,6 +61,7 @@ const file3: RESIFile = {
 
 const files = [file1, file2, file3];
 const handleAddFiles = vi.fn();
+const handleFetchExampleFiles = vi.fn();
 const handleDeleteAllFiles = vi.fn();
 const handleSelectAllFiles = vi.fn();
 const handleUnselectAllFiles = vi.fn();
@@ -76,6 +77,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -96,6 +98,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={[]}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -121,6 +124,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -147,6 +151,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -177,6 +182,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -207,6 +213,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}
@@ -239,6 +246,7 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
       <RESIFileListPanel
         files={files}
         onAddFiles={handleAddFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
         onUnselectAllFiles={handleUnselectAllFiles}

@@ -16,6 +16,7 @@ import styles from './RESIFileListPanel.module.css';
 interface RESIFileListPanelProps {
   files: RESIFile[];
   onAddFiles: () => void;
+  onFetchExampleFiles: () => void;
   onDeleteAllFiles: () => void;
   onSelectAllFiles: () => void;
   onUnselectAllFiles: () => void;
@@ -24,12 +25,14 @@ interface RESIFileListPanelProps {
   onChangeFileChecked: (idx: number, checked: boolean) => void;
   onDeleteFile: (idx: number) => void;
   appSettings?: ReactNode;
+  isFetchExampleFiles?: boolean;
 }
 
 const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const {
     files,
     onAddFiles,
+    onFetchExampleFiles,
     onDeleteAllFiles,
     onSelectAllFiles,
     onUnselectAllFiles,
@@ -38,6 +41,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     onChangeFileChecked,
     onDeleteFile,
     appSettings,
+    isFetchExampleFiles,
   } = props;
 
   const { t } = useTranslation();
@@ -84,7 +88,13 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   ];
 
   if (!files.length) {
-    return <RESIFileListEmpty onAddFiles={onAddFiles} />;
+    return (
+      <RESIFileListEmpty
+        onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
+        isFetchExampleFiles={isFetchExampleFiles}
+      />
+    );
   }
 
   return (

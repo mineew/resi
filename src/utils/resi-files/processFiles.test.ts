@@ -1,18 +1,22 @@
 import processFiles from './processFiles';
 
-const mocks = vi.hoisted(() => ({
-  openFiles: vi.fn(),
-  parseFiles: vi.fn(),
-}));
-
-vi.mock('./openFiles', () => ({ default: mocks.openFiles }));
-vi.mock('./parseFiles', () => ({ default: mocks.parseFiles }));
-
 describe('@/utils/resi-files/processFiles', () => {
-  it('should open and parse RESI files', async () => {
-    await processFiles();
+  it('should get and parse RESI files', async () => {
+    const getFiles = vi.fn(() =>
+      Promise.resolve({
+        'File 1': 'File 1 Contents',
+      }),
+    );
+    const files = await processFiles(getFiles);
 
-    expect(mocks.openFiles).toHaveBeenCalledTimes(1);
-    expect(mocks.parseFiles).toHaveBeenCalledTimes(1);
+    expect(getFiles).toHaveBeenCalledTimes(1);
+    expect(files).toHaveLength(1);
+  });
+
+  it('should handle null result', async () => {
+    const getFiles = vi.fn(() => Promise.resolve(null));
+    const files = await processFiles(getFiles);
+
+    expect(files).toStrictEqual([]);
   });
 });

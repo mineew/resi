@@ -89,7 +89,7 @@ describe('@/components/app/RESIFileListPanel', () => {
     expect(panel).toBeInTheDocument();
   });
 
-  it('can process RESI files', async () => {
+  it('can open RESI files', async () => {
     const user = userEvent.setup();
     render(<RESIFileListPanel />);
 
@@ -97,5 +97,16 @@ describe('@/components/app/RESIFileListPanel', () => {
     await user.click(buttons[0]);
 
     expect(mocks.processFiles).toHaveBeenCalledTimes(1);
+  });
+
+  it('can fetch RESI files', async () => {
+    const user = userEvent.setup();
+    mocks.storeState.files = [];
+    render(<RESIFileListPanel />);
+
+    const buttons = await screen.findAllByRole('button');
+    await user.click(buttons[1]);
+
+    expect(mocks.processFiles).toHaveBeenCalledTimes(2);
   });
 });

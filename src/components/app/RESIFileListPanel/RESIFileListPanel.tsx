@@ -3,6 +3,8 @@ import { useCallback } from 'react';
 import AppSettings from '@/components/app/AppSettings/AppSettings';
 import RESIFileListPanelView from '@/components/service/resi-file-list/RESIFileListPanel/RESIFileListPanel';
 import useStore from '@/store/store';
+import fetchExampleFiles from '@/utils/resi-files/fetchExampleFiles';
+import openFiles from '@/utils/resi-files/openFiles';
 import processFiles from '@/utils/resi-files/processFiles';
 
 function RESIFileListPanel() {
@@ -19,7 +21,15 @@ function RESIFileListPanel() {
   const deleteFile = useStore((state) => state.deleteFile);
 
   const handleAddFiles = useCallback(() => {
-    processFiles()
+    processFiles(openFiles)
+      .then(addFiles)
+      .catch(() => {
+        // do nothing
+      });
+  }, [addFiles]);
+
+  const handleFetchExampleFiles = useCallback(() => {
+    processFiles(fetchExampleFiles)
       .then(addFiles)
       .catch(() => {
         // do nothing
@@ -30,6 +40,7 @@ function RESIFileListPanel() {
     <RESIFileListPanelView
       files={files}
       onAddFiles={handleAddFiles}
+      onFetchExampleFiles={handleFetchExampleFiles}
       onDeleteAllFiles={deleteAllFiles}
       onSelectAllFiles={checkAllFiles}
       onUnselectAllFiles={uncheckAllFiles}

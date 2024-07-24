@@ -13,6 +13,7 @@ const files: RESIFile[] = getRandomArray((idx) =>
 
 export const Default: StoryFn<typeof RESIFileListPanel> = ({
   onAddFiles,
+  onFetchExampleFiles,
   onDeleteAllFiles,
   onSelectAllFiles,
   onUnselectAllFiles,
@@ -34,6 +35,7 @@ export const Default: StoryFn<typeof RESIFileListPanel> = ({
       <RESIFileListPanel
         files={files}
         onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
         onDeleteAllFiles={onDeleteAllFiles}
         onSelectAllFiles={onSelectAllFiles}
         onUnselectAllFiles={onUnselectAllFiles}
@@ -52,6 +54,7 @@ export default {
   argTypes: {
     files: { table: { disable: true } },
     onAddFiles: { table: { disable: true } },
+    onFetchExampleFiles: { table: { disable: true } },
     onDeleteAllFiles: { table: { disable: true } },
     onSelectAllFiles: { table: { disable: true } },
     onUnselectAllFiles: { table: { disable: true } },
@@ -60,9 +63,11 @@ export default {
     onChangeFileChecked: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
     appSettings: { table: { disable: true } },
+    isFetchExampleFiles: { table: { disable: true } },
   },
   args: {
     onAddFiles: fn(),
+    onFetchExampleFiles: fn(),
     onDeleteAllFiles: fn(),
     onSelectAllFiles: fn(),
     onUnselectAllFiles: fn(),

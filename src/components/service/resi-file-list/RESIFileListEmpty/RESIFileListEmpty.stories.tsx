@@ -3,7 +3,11 @@ import { fn } from '@storybook/test';
 
 import RESIFileListEmpty from './RESIFileListEmpty';
 
-export const Default: StoryFn<typeof RESIFileListEmpty> = ({ onAddFiles }) => {
+export const Default: StoryFn<typeof RESIFileListEmpty> = ({
+  onAddFiles,
+  onFetchExampleFiles,
+  isFetchExampleFiles,
+}) => {
   return (
     <div
       style={{
@@ -14,7 +18,11 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({ onAddFiles }) => {
         border: '1px solid var(--slate-6)',
       }}
     >
-      <RESIFileListEmpty onAddFiles={onAddFiles} />
+      <RESIFileListEmpty
+        onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
+        isFetchExampleFiles={isFetchExampleFiles}
+      />
     </div>
   );
 };
@@ -24,8 +32,11 @@ export default {
   component: RESIFileListEmpty,
   argTypes: {
     onAddFiles: { table: { disable: true } },
+    onFetchExampleFiles: { table: { disable: true } },
   },
   args: {
     onAddFiles: fn(),
+    onFetchExampleFiles: fn(),
+    isFetchExampleFiles: false,
   },
 } as Meta<typeof RESIFileListEmpty>;
