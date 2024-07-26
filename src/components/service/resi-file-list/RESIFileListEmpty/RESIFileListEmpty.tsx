@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';
 import EmptyState from '@/components/ui/EmptyState/EmptyState';
+import Loader from '@/components/ui/Loader/Loader';
 
 import styles from './RESIFileListEmpty.module.css';
 
@@ -36,7 +37,7 @@ const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
           disabled={isFetchExampleFiles}
           outlined
         >
-          <FolderDown />
+          {isFetchExampleFiles ? <Loader /> : <FolderDown />}
           {t('RESI_FILE_LIST.FETCH_FILES')}
         </Button>
       </div>

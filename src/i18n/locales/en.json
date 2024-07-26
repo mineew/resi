@@ -2,7 +2,7 @@
   "RESI_FILE_LIST": {
     "OPEN_FILES": "Open RESI files",
     "OPEN_FILES_DESCRIPTION": "Resistograph instrument files, extension *.xls",
-    "FETCH_FILES": "Download sample files",
+    "FETCH_FILES": "Open sample files",
     "FETCH_FILES_DESCRIPTION": "If you don't have such files, you can",
     "ADD_FILES": "Add RESI files",
     "MORE_FILE_OPERATIONS": "More file operations",

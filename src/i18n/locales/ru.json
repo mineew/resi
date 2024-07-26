@@ -2,7 +2,7 @@
   "RESI_FILE_LIST": {
     "OPEN_FILES": "Открыть RESI файлы",
     "OPEN_FILES_DESCRIPTION": "Файлы прибора резистографа, расширение *.xls",
-    "FETCH_FILES": "Скачать пример",
+    "FETCH_FILES": "Открыть пример",
     "FETCH_FILES_DESCRIPTION": "Если у вас нет таких файлов, вы можете",
     "ADD_FILES": "Добавить файлы",
     "MORE_FILE_OPERATIONS": "Больше операций с файлами",
