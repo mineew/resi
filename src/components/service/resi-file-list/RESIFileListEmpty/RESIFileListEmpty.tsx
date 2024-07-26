@@ -11,11 +11,11 @@ import styles from './RESIFileListEmpty.module.css';
 interface RESIFileListEmptyProps {
   onAddFiles: () => void;
   onFetchExampleFiles: () => void;
-  isFetchExampleFiles?: boolean;
+  isFetchingExampleFiles?: boolean;
 }
 
 const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
-  const { onAddFiles, onFetchExampleFiles, isFetchExampleFiles } = props;
+  const { onAddFiles, onFetchExampleFiles, isFetchingExampleFiles } = props;
   const { t } = useTranslation();
 
   return (
@@ -34,10 +34,10 @@ const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
 
         <Button
           onClick={onFetchExampleFiles}
-          disabled={isFetchExampleFiles}
+          disabled={isFetchingExampleFiles}
           outlined
         >
-          {isFetchExampleFiles ? <Loader /> : <FolderDown />}
+          {isFetchingExampleFiles ? <Loader /> : <FolderDown />}
           {t('RESI_FILE_LIST.FETCH_FILES')}
         </Button>
       </div>

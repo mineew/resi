@@ -25,7 +25,7 @@ interface RESIFileListPanelProps {
   onChangeFileChecked: (idx: number, checked: boolean) => void;
   onDeleteFile: (idx: number) => void;
   appSettings?: ReactNode;
-  isFetchExampleFiles?: boolean;
+  isFetchingExampleFiles?: boolean;
 }
 
 const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
@@ -41,7 +41,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     onChangeFileChecked,
     onDeleteFile,
     appSettings,
-    isFetchExampleFiles,
+    isFetchingExampleFiles,
   } = props;
 
   const { t } = useTranslation();
@@ -92,7 +92,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
       <RESIFileListEmpty
         onAddFiles={onAddFiles}
         onFetchExampleFiles={onFetchExampleFiles}
-        isFetchExampleFiles={isFetchExampleFiles}
+        isFetchingExampleFiles={isFetchingExampleFiles}
       />
     );
   }

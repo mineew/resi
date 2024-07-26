@@ -63,7 +63,7 @@ export default {
     onChangeFileChecked: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
     appSettings: { table: { disable: true } },
-    isFetchExampleFiles: { table: { disable: true } },
+    isFetchingExampleFiles: { table: { disable: true } },
   },
   args: {
     onAddFiles: fn(),

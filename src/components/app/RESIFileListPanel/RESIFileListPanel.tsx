@@ -20,7 +20,7 @@ function RESIFileListPanel() {
   const toggleFile = useStore((state) => state.toggleFile);
   const deleteFile = useStore((state) => state.deleteFile);
 
-  const [isFetchExampleFiles, setIsFetchExampleFiles] = useState(false);
+  const [isFetchingExampleFiles, setIsFetchingExampleFiles] = useState(false);
 
   const handleAddFiles = useCallback(() => {
     processFiles(openFiles)
@@ -31,7 +31,7 @@ function RESIFileListPanel() {
   }, [addFiles]);
 
   const handleFetchExampleFiles = useCallback(() => {
-    setIsFetchExampleFiles(true);
+    setIsFetchingExampleFiles(true);
 
     processFiles(fetchExampleFiles)
       .then(addFiles)
@@ -39,7 +39,7 @@ function RESIFileListPanel() {
         // do nothing
       })
       .finally(() => {
-        setIsFetchExampleFiles(false);
+        setIsFetchingExampleFiles(false);
       });
   }, [addFiles]);
 
@@ -56,7 +56,7 @@ function RESIFileListPanel() {
       onChangeFileChecked={toggleFile}
       onDeleteFile={deleteFile}
       appSettings={<AppSettings />}
-      isFetchExampleFiles={isFetchExampleFiles}
+      isFetchingExampleFiles={isFetchingExampleFiles}
     />
   );
 }
