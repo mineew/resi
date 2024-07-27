@@ -10,7 +10,7 @@ function AppToolbar() {
   const { langs, selectedLang, changeSelectedLang } = useCurrentLang();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="app-toolbar">
       <ThemeButton theme={theme} onToggleTheme={toggleTheme} />
 
       <LangDropdown
