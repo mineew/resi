@@ -27,12 +27,14 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "lint": "run-s lint:eslint lint:css",
     "lint:eslint": "eslint . --cache",
     "lint:css": "stylelint \"**/*.css\" --cache",
     "format": "prettier --write \"**/*.(t|j)s?(x)\"",
     "format:check": "prettier --check \"**/*.(t|j)s?(x)\"",
-    "clear": "rimraf dist coverage",
+    "clear": "rimraf dist coverage playwright-report test-results",
     "clear:lint:cache": "rimraf .eslintcache .stylelintcache",
     "clear:app:cache": "rimraf node_modules/.cache node_modules/.vite",
     "clear:cache": "run-s clear:lint:cache clear:app:cache",
@@ -74,6 +76,7 @@
     "zustand": "4.5.4"
   },
   "devDependencies": {
+    "@playwright/test": "1.45.3",
     "@storybook/addon-essentials": "8.2.6",
     "@storybook/addon-interactions": "8.2.6",
     "@storybook/addon-links": "8.2.6",
