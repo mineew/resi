@@ -1,6 +1,5 @@
 import {
   coverageConfigDefaults,
-  defaultExclude,
   defineConfig,
   mergeConfig,
 } from 'vitest/config';
@@ -14,7 +13,7 @@ export default mergeConfig(
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./vitest.setup.ts'],
-      exclude: ['e2e', ...defaultExclude],
+      include: ['src/**/*.test.ts?(x)'],
       coverage: {
         enabled: true,
         reporter: ['html'],
