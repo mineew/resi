@@ -17,9 +17,27 @@ describe('@/utils/resi-files/fetchExampleFiles', () => {
         text: () => Promise.resolve(''),
       }),
     );
-    await fetchExampleFiles();
 
+    await fetchExampleFiles();
     expect(fetchMock).toHaveBeenCalledTimes(10);
+  });
+
+  it('should fetch in both envs', async () => {
+    fetchMock.mockImplementation(() =>
+      Promise.resolve({
+        text: () => Promise.resolve(''),
+      }),
+    );
+
+    vi.stubEnv('DEV', true);
+    await fetchExampleFiles();
+    expect(fetchMock).toHaveBeenLastCalledWith('app/example-data/File-010.xls');
+
+    vi.stubEnv('DEV', false);
+    await fetchExampleFiles();
+    expect(fetchMock).toHaveBeenLastCalledWith('example-data/File-010.xls');
+
+    vi.unstubAllEnvs();
   });
 
   it('should handle errors', async () => {
