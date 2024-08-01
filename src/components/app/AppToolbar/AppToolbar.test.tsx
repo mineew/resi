@@ -4,8 +4,10 @@ import { userEvent } from '@testing-library/user-event';
 import AppToolbar from './AppToolbar';
 
 const mocks = vi.hoisted(() => ({
+  changeLanguage: vi.fn(),
+
   useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
+    i18n: { language: 'en', changeLanguage: mocks.changeLanguage },
     t: (message: string) => message,
   })),
 }));
@@ -109,5 +111,21 @@ describe('@/components/app/AppToolbar', () => {
     unmount();
 
     expect(listeners).toHaveLength(0);
+  });
+
+  it('can change current lang', async () => {
+    const user = userEvent.setup();
+    render(<AppToolbar />);
+
+    const buttons = screen.queryAllByRole('button');
+    const langDropdownButton = buttons[1];
+    await user.click(langDropdownButton);
+
+    const menuItems = screen.getAllByRole('menuitem');
+    const ruLangItem = menuItems[1];
+    await user.click(ruLangItem);
+
+    expect(mocks.changeLanguage).toHaveBeenCalledTimes(1);
+    expect(mocks.changeLanguage).toHaveBeenLastCalledWith('ru');
   });
 });
