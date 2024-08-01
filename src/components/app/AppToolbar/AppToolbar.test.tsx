@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import AppToolbar from './AppToolbar';
@@ -74,5 +74,40 @@ describe('@/components/app/AppToolbar', () => {
 
     const { baseElement } = render(<AppToolbar />);
     expect(baseElement).toHaveClass('dark');
+  });
+
+  it('is watching for a change in the system theme', () => {
+    type Listener = (e: MediaQueryListEvent) => void;
+    let listeners: Listener[] = [];
+
+    matchMediaMock.mockImplementation(() => ({
+      matches: true,
+      addEventListener: vi.fn((_: string, listener: Listener) => {
+        listeners.push(listener);
+      }),
+      removeEventListener: vi.fn((_: string, listener: Listener) => {
+        listeners = listeners.filter((l) => l !== listener);
+      }),
+    }));
+
+    const { baseElement, unmount } = render(<AppToolbar />);
+
+    expect(listeners).toHaveLength(1);
+
+    act(() => {
+      listeners.forEach((l) => l({ matches: true } as MediaQueryListEvent));
+    });
+
+    expect(baseElement).toHaveClass('dark');
+
+    act(() => {
+      listeners.forEach((l) => l({ matches: false } as MediaQueryListEvent));
+    });
+
+    expect(baseElement).not.toHaveClass('dark');
+
+    unmount();
+
+    expect(listeners).toHaveLength(0);
   });
 });
