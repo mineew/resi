@@ -17,7 +17,11 @@ export default mergeConfig(
       coverage: {
         enabled: true,
         reporter: ['html'],
-        exclude: ['**/*.stories.tsx', ...coverageConfigDefaults.exclude],
+        exclude: [
+          '**/*.stories.tsx',
+          'playwright.config.ts',
+          ...coverageConfigDefaults.exclude,
+        ],
       },
     },
   }),
