@@ -13,6 +13,9 @@ describe('@/components/layout/AppLayout', () => {
       />,
     );
 
+    const layout = screen.getByTestId('app-layout');
+    expect(layout).toBeInTheDocument();
+
     const fileList = screen.getByText('File List');
     expect(fileList).toBeInTheDocument();
 

@@ -13,7 +13,7 @@ function AppLayout(props: AppLayoutProps) {
   const { fileList, fileChart, diffChart, growthChart } = props;
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="app-layout">
       <div className={styles['file-list']}>{fileList}</div>
 
       <div className={styles.charts}>
