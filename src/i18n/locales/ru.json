@@ -66,6 +66,12 @@
     "MM_MIN": "не менее {{value}} мм"
   },
 
+  "CHARTS": {
+    "SCATTER_CHART_NO_DATA_one": "Минимум {{count, number}} резистограмма необходима для построения графика зависимости",
+    "SCATTER_CHART_NO_DATA_few": "Минимум {{count, number}} резистограммы необходимы для построения графика зависимости",
+    "SCATTER_CHART_NO_DATA_many": "Минимум {{count, number}} резистограмм необходимо для построения графика зависимости"
+  },
+
   "UI": {
     "ALERT": {
       "TITLE": "Вы уверены?",
@@ -80,13 +86,7 @@
     "MEAN_VALUE": "Среднее значение",
     "MEDIAN": "Медиана",
     "MM": "{{value, number, notNaN, rightSpace}}мм",
-    "CM": "см",
-
-    "CHARTS": {
-      "SCATTER_CHART_NO_DATA_one": "Минимум {{count, number}} резистограмма необходима для построения графика зависимости",
-      "SCATTER_CHART_NO_DATA_few": "Минимум {{count, number}} резистограммы необходимы для построения графика зависимости",
-      "SCATTER_CHART_NO_DATA_many": "Минимум {{count, number}} резистограмм необходимо для построения графика зависимости"
-    }
+    "CM": "см"
   },
 
   "UTILS": {

@@ -9,7 +9,7 @@ const RESIFileGrowthChartEmpty = memo(() => {
 
   return (
     <EmptyState icon={<ScatterChart />}>
-      <p>{t('COMMON.CHARTS.SCATTER_CHART_NO_DATA', { count: 1 })}</p>
+      <p>{t('CHARTS.SCATTER_CHART_NO_DATA', { count: 1 })}</p>
     </EmptyState>
   );
 });

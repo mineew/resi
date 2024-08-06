@@ -9,7 +9,7 @@ const RESIFileDiffChartEmpty = memo(() => {
 
   return (
     <EmptyState icon={<ScatterChart />}>
-      <p>{t('COMMON.CHARTS.SCATTER_CHART_NO_DATA', { count: 3 })}</p>
+      <p>{t('CHARTS.SCATTER_CHART_NO_DATA', { count: 3 })}</p>
     </EmptyState>
   );
 });

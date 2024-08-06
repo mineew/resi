@@ -88,10 +88,7 @@ describe('@/components/app/RESIFileGrowthChartPanel', () => {
     mocks.storeState.files = [];
     render(<RESIFileGrowthChartPanel />);
 
-    const emptyDescription = screen.getByText(
-      'COMMON.CHARTS.SCATTER_CHART_NO_DATA',
-    );
-
+    const emptyDescription = screen.getByText('CHARTS.SCATTER_CHART_NO_DATA');
     expect(emptyDescription).toBeInTheDocument();
   });
 });

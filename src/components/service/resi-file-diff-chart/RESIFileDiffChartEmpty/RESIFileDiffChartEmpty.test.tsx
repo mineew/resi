@@ -17,10 +17,7 @@ describe('@/components/service/resi-file-diff-chart/RESIFileDiffChartEmpty', () 
   it('renders', () => {
     render(<RESIFileDiffChartEmpty />);
 
-    const emptyDescription = screen.getByText(
-      'COMMON.CHARTS.SCATTER_CHART_NO_DATA',
-    );
-
+    const emptyDescription = screen.getByText('CHARTS.SCATTER_CHART_NO_DATA');
     expect(emptyDescription).toBeInTheDocument();
   });
 });

@@ -88,10 +88,7 @@ describe('@/components/app/RESIFileDiffChartPanel', () => {
     mocks.storeState.files = [];
     render(<RESIFileDiffChartPanel />);
 
-    const emptyDescription = screen.getByText(
-      'COMMON.CHARTS.SCATTER_CHART_NO_DATA',
-    );
-
+    const emptyDescription = screen.getByText('CHARTS.SCATTER_CHART_NO_DATA');
     expect(emptyDescription).toBeInTheDocument();
   });
 });

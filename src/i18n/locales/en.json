@@ -66,6 +66,11 @@
     "MM_MIN": "at least {{value}} mm"
   },
 
+  "CHARTS": {
+    "SCATTER_CHART_NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
+    "SCATTER_CHART_NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
+  },
+
   "UI": {
     "ALERT": {
       "TITLE": "Are you sure?",
@@ -80,12 +85,7 @@
     "MEAN_VALUE": "Mean",
     "MEDIAN": "Median",
     "MM": "{{value, number, notNaN, rightSpace}}mm",
-    "CM": "cm",
-
-    "CHARTS": {
-      "SCATTER_CHART_NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
-      "SCATTER_CHART_NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
-    }
+    "CM": "cm"
   },
 
   "UTILS": {
