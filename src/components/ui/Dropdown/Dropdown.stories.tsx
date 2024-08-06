@@ -91,8 +91,11 @@ export default {
   component: Dropdown,
   argTypes: {
     items: { table: { disable: true } },
+    defaultTriggerClassName: { table: { disable: true } },
     defaultTriggerTitle: { table: { disable: true } },
     tooltip: { table: { disable: true } },
     trigger: { table: { disable: true } },
+    align: { table: { disable: true } },
+    fullWidthContent: { table: { disable: true } },
   },
 } as Meta<typeof Dropdown>;

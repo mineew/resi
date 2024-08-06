@@ -1,3 +1,7 @@
+.trigger {
+  user-select: none;
+}
+
 .trigger-icon {
   transition: transform 0.15s;
 }
@@ -10,7 +14,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-width: var(--radix-dropdown-menu-trigger-width);
   padding: 6px;
   background-color: #fff;
   border: 1px solid var(--slate-6);
@@ -19,6 +22,10 @@
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+}
+
+.content.full-width {
+  min-width: var(--radix-dropdown-menu-trigger-width);
 }
 
 .content[data-state='open'] {
