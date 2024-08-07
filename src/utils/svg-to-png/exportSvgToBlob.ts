@@ -16,6 +16,7 @@ async function exportSvgToBlob(data: ExportSvgToBlobData) {
 
   if (ctx) {
     const v = await Canvg.from(ctx, svg, preset as IOptions);
+    v.resize(width, height, true);
     await v.render();
 
     const blob = await canvas.convertToBlob();

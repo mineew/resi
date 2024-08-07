@@ -68,7 +68,8 @@
 
   "CHARTS": {
     "SCATTER_CHART_NO_DATA_one": "A minimum of {{count, number}} resistogram is required to plot the relationship",
-    "SCATTER_CHART_NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship"
+    "SCATTER_CHART_NO_DATA_other": "A minimum of {{count, number}} resistograms are required to plot the relationship",
+    "EXPORT_CHART_BUTTON": "Export as PNG"
   },
 
   "UI": {

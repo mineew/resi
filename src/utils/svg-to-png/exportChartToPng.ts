@@ -1,13 +1,17 @@
 import downloadBlob from './downloadBlob';
 import exportSvgToBlob from './exportSvgToBlob';
 
-async function exportChartToPng(chartWrapper: Element, filename: string) {
+async function exportChartToPng(
+  chartWrapper: Element,
+  filename: string,
+  scale = 1,
+) {
   const svgElement = chartWrapper.querySelector('svg');
-  const svg = svgElement?.outerHTML;
-  const width = chartWrapper.clientWidth;
-  const height = chartWrapper.clientHeight;
 
-  if (svg) {
+  if (svgElement) {
+    const svg = svgElement.outerHTML;
+    const width = svgElement.clientWidth * scale;
+    const height = svgElement.clientHeight * scale;
     const blob = await exportSvgToBlob({ svg, width, height });
 
     if (blob) {

@@ -69,7 +69,8 @@
   "CHARTS": {
     "SCATTER_CHART_NO_DATA_one": "Минимум {{count, number}} резистограмма необходима для построения графика зависимости",
     "SCATTER_CHART_NO_DATA_few": "Минимум {{count, number}} резистограммы необходимы для построения графика зависимости",
-    "SCATTER_CHART_NO_DATA_many": "Минимум {{count, number}} резистограмм необходимо для построения графика зависимости"
+    "SCATTER_CHART_NO_DATA_many": "Минимум {{count, number}} резистограмм необходимо для построения графика зависимости",
+    "EXPORT_CHART_BUTTON": "Сохранить как PNG"
   },
 
   "UI": {
