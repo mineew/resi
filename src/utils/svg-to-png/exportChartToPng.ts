@@ -1,5 +1,6 @@
+import { toBlob } from 'html-to-image';
+
 import downloadBlob from './downloadBlob';
-import exportSvgToBlob from './exportSvgToBlob';
 
 async function exportChartToPng(
   chartWrapper: Element,
@@ -9,10 +10,9 @@ async function exportChartToPng(
   const svgElement = chartWrapper.querySelector('svg');
 
   if (svgElement) {
-    const svg = svgElement.outerHTML;
-    const width = svgElement.clientWidth * scale;
-    const height = svgElement.clientHeight * scale;
-    const blob = await exportSvgToBlob({ svg, width, height });
+    const blob = await toBlob(svgElement as unknown as HTMLElement, {
+      pixelRatio: scale,
+    });
 
     if (blob) {
       downloadBlob(blob, filename);
