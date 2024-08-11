@@ -1,7 +1,10 @@
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import Dropdown, { type DropdownItem } from '@/components/ui/Dropdown/Dropdown';
 import exportChartToPng from '@/utils/svg-to-png/exportChartToPng';
+
+import styles from './ExportChartButton.module.css';
 
 interface ExportChartButtonProps {
   className?: string;
@@ -40,7 +43,7 @@ function ExportChartButton(props: ExportChartButtonProps) {
   return (
     <Dropdown
       items={items}
-      defaultTriggerClassName={className}
+      defaultTriggerClassName={classNames(styles.button, className)}
       defaultTriggerTitle={t('CHARTS.EXPORT_CHART_BUTTON')}
       fullWidthContent={false}
     />

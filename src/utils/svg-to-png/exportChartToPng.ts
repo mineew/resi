@@ -7,7 +7,7 @@ async function exportChartToPng(
   filename: string,
   scale = 1,
 ) {
-  const svgElement = chartWrapper.querySelector('svg');
+  const svgElement = chartWrapper.querySelector('svg:not(.lucide)');
 
   if (svgElement) {
     const blob = await toBlob(svgElement as unknown as HTMLElement, {

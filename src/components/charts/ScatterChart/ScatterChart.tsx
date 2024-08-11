@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   CartesianGrid,
@@ -10,6 +11,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import ExportChartButton from '@/components/charts/ExportChartButton/ExportChartButton';
 import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import Formula from '@/components/ui/Formula/Formula';
 
@@ -22,15 +24,25 @@ interface ScatterChartProps {
   points: ScatterChartPoint[];
   xLabel?: string;
   yLabel?: string;
+  exportFilename?: string;
   width?: number;
   height?: number;
 }
 
 function ScatterChart(props: ScatterChartProps) {
-  const { title, points, xLabel, yLabel, width, height } = props;
+  const {
+    title,
+    points,
+    xLabel,
+    yLabel,
+    exportFilename = 'scatter-chart.png',
+    width,
+    height,
+  } = props;
   const { t } = useTranslation();
   const { regression, regressionLine } =
     convertPointsToLinearRegression(points);
+  const [chartWrapper, setChartWrapper] = useState<HTMLDivElement | null>(null);
 
   const xLabelObject = !xLabel
     ? undefined
@@ -54,7 +66,17 @@ function ScatterChart(props: ScatterChartProps) {
         <Formula a={regression.equation[0]} b={regression.equation[1]} />
       </div>
 
-      <div className={styles['chart']} data-testid="scatter-chart-container">
+      <div
+        className={styles['chart']}
+        ref={setChartWrapper}
+        data-testid="scatter-chart-container"
+      >
+        <ExportChartButton
+          className={styles['export-button']}
+          chartWrapper={chartWrapper}
+          filename={exportFilename}
+        />
+
         <ResponsiveContainer width={width} height={height}>
           <ComposedChart
             margin={{ top: 10, right: 40, left: -25, bottom: -10 }}

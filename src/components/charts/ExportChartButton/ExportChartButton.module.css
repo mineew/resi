@@ -1,0 +1,9 @@
+.button {
+  opacity: 0.5;
+}
+
+.button:hover,
+.button:focus,
+.button[data-state='open'] {
+  opacity: 1;
+}
