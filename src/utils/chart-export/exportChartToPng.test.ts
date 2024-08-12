@@ -13,7 +13,7 @@ vi.mock('./downloadBlob', () => ({
   default: mocks.downloadBlob,
 }));
 
-describe('@/utils/svg-to-png/exportChartToPng', () => {
+describe('@/utils/chart-export/exportChartToPng', () => {
   it('exports chart to png', async () => {
     const chartWrapper = document.createElement('div');
     const svgElement = document.createElement('svg');

@@ -13,7 +13,7 @@ vi.mock('react-i18next', () => ({
   })),
 }));
 
-vi.mock('@/utils/svg-to-png/exportChartToPng', () => ({
+vi.mock('@/utils/chart-export/exportChartToPng', () => ({
   default: mocks.exportChartToPng,
 }));
 

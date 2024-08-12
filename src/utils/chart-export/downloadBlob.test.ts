@@ -25,7 +25,7 @@ beforeAll(() => {
   };
 });
 
-describe('@/utils/svg-to-png/downloadBlob', () => {
+describe('@/utils/chart-export/downloadBlob', () => {
   it('downloads a blob', () => {
     const blob = new Blob([JSON.stringify({ hello: 'world' })], {
       type: 'application/json',

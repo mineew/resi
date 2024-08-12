@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import ScatterChart from '@/components/charts/ScatterChart/ScatterChart';
 import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
-import getChartExportFilename from '@/utils/svg-to-png/getChartExportFilename';
+import getChartExportFilename from '@/utils/chart-export/getChartExportFilename';
 
 import convertGrowthToChartPoints from './convertGrowthToChartPoints';
 
