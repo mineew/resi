@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import ScatterChart from '@/components/charts/ScatterChart/ScatterChart';
 import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
+import getChartExportFilename from '@/utils/svg-to-png/getChartExportFilename';
 
 import convertDiffsToChartPoints from './convertDiffsToChartPoints';
 
@@ -15,12 +16,16 @@ const RESIFileDiffChart = memo((props: RESIFileDiffChartProps) => {
   const { t } = useTranslation();
   const points = convertDiffsToChartPoints(diffs);
 
+  const title = t('RESI_FILE_DIFF_CHART.TITLE');
+  const exportFilename = getChartExportFilename(title);
+
   return (
     <ScatterChart
-      title={t('RESI_FILE_DIFF_CHART.TITLE')}
+      title={title}
       points={points}
       xLabel={t('RESI_FILE_DIFF_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
       yLabel={t('RESI_FILE_DIFF_CHART.Y_LABEL') + ', RESI'}
+      exportFilename={exportFilename}
     />
   );
 });
