@@ -109,3 +109,10 @@
 .wrapper :global(.recharts-active-dot) {
   display: none;
 }
+
+.export-button {
+  position: absolute;
+  top: 68px;
+  right: 48px;
+  z-index: 1;
+}

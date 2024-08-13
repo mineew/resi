@@ -70,6 +70,7 @@ export default {
     tooltipFormatter: { table: { disable: true } },
     step: { table: { disable: true } },
     interactive: { table: { disable: true } },
+    exportFilename: { table: { disable: true } },
     width: { table: { disable: true } },
     height: { table: { disable: true } },
   },

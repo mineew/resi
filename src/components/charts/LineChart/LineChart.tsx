@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   CartesianGrid,
@@ -10,6 +11,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import ExportChartButton from '@/components/charts/ExportChartButton/ExportChartButton';
 import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
@@ -36,6 +38,7 @@ interface LineChartProps {
   tooltipFormatter?: (tooltipContent: number) => string;
   step?: number;
   interactive?: boolean;
+  exportFilename?: string;
   width?: number;
   height?: number;
 }
@@ -57,11 +60,14 @@ function LineChart(props: LineChartProps) {
     tooltipFormatter,
     step,
     interactive,
+    exportFilename = 'line-chart.png',
     width,
     height,
   } = props;
 
   const { t } = useTranslation();
+
+  const [chartWrapper, setChartWrapper] = useState<HTMLDivElement | null>(null);
 
   const [offsetLeft, setOffsetLeft] = useDebouncedState(
     defaultOffsetLeft,
@@ -122,9 +128,16 @@ function LineChart(props: LineChartProps) {
         [styles['dragging-right']]: offsetDrag === 'right',
         [styles['tooltip-visible']]: tooltipIsVisible,
       })}
+      ref={setChartWrapper}
       data-testid="line-chart-container"
     >
       <h2 className={styles['chart-title']}>{title}</h2>
+
+      <ExportChartButton
+        className={styles['export-button']}
+        chartWrapper={chartWrapper}
+        filename={exportFilename}
+      />
 
       <ResponsiveContainer
         className={styles['chart-wrapper']}

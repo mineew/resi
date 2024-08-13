@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import LineChart from '@/components/charts/LineChart/LineChart';
 import { type RESIFile } from '@/store/types/RESIFile';
+import getChartExportFilename from '@/utils/chart-export/getChartExportFilename';
 
 interface RESIFileChartProps {
   files: RESIFile[];
@@ -63,9 +64,12 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
     [t],
   );
 
+  const title = t('RESI_FILE_CHART.TITLE');
+  const exportFilename = getChartExportFilename(title);
+
   return (
     <LineChart
-      title={t('RESI_FILE_CHART.TITLE')}
+      title={title}
       data={files}
       xLabel={t('RESI_FILE_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
       xConverter={convertX}
@@ -82,6 +86,7 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
         shouldRenderChunkSize && chunkSize > 1 ? chunkSize / 1000 : undefined
       }
       interactive={interactive}
+      exportFilename={exportFilename}
       width={width}
       height={height}
     />
