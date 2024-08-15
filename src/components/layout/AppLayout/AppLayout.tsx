@@ -1,6 +1,8 @@
-import { type ReactNode } from 'react';
+import classNames from 'classnames';
+import { type ReactNode, useCallback, useState } from 'react';
 
 import styles from './AppLayout.module.css';
+import AppLayoutSidebarToggleButton from './AppLayoutSidebarToggleButton';
 
 interface AppLayoutProps {
   fileList: ReactNode;
@@ -11,10 +13,26 @@ interface AppLayoutProps {
 
 function AppLayout(props: AppLayoutProps) {
   const { fileList, fileChart, diffChart, growthChart } = props;
+  const [fileListIsCollapsed, setFileListIsCollapsed] = useState(false);
+
+  const handleToggleFileList = useCallback(() => {
+    setFileListIsCollapsed((collapsed) => !collapsed);
+  }, []);
 
   return (
     <div className={styles.wrapper} data-testid="app-layout">
-      <div className={styles['file-list']}>{fileList}</div>
+      <div
+        className={classNames(styles['file-list'], {
+          [styles.collapsed]: fileListIsCollapsed,
+        })}
+      >
+        {fileList}
+      </div>
+
+      <AppLayoutSidebarToggleButton
+        isCollapsed={fileListIsCollapsed}
+        onClick={handleToggleFileList}
+      />
 
       <div className={styles.charts}>
         <div className={styles['file-chart']}>{fileChart}</div>

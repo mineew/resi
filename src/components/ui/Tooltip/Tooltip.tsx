@@ -5,12 +5,13 @@ import styles from './Tooltip.module.css';
 
 interface TooltipProps {
   className?: string;
+  triggerClassName?: string;
   title: string;
   children: JSX.Element;
 }
 
 function Tooltip(props: TooltipProps) {
-  const { className, title, children } = props;
+  const { className, triggerClassName, title, children } = props;
 
   return (
     <Radix.Provider
@@ -19,7 +20,10 @@ function Tooltip(props: TooltipProps) {
       disableHoverableContent
     >
       <Radix.Root>
-        <Radix.Trigger className={styles.trigger} asChild>
+        <Radix.Trigger
+          className={classNames(styles.trigger, triggerClassName)}
+          asChild
+        >
           <div>{children}</div>
         </Radix.Trigger>
 

@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   display: flex;
   height: 100%;
   overflow: hidden;
@@ -9,6 +10,31 @@
   width: 300px;
   background-color: var(--slate-2);
   border-right: 1px solid var(--slate-6);
+  transition: margin 0.25s;
+}
+
+.file-list.collapsed {
+  margin-left: -310px;
+}
+
+.file-list-toggle-button {
+  position: absolute;
+  top: 12px;
+  left: 312px;
+  z-index: 1;
+  transition: transform 0.25s;
+}
+
+.file-list-toggle-button svg {
+  transition: transform 0.35s;
+}
+
+.file-list-toggle-button.collapsed {
+  transform: translateX(-300px);
+}
+
+.file-list-toggle-button.collapsed svg {
+  transform: rotate(-180deg);
 }
 
 .charts {
