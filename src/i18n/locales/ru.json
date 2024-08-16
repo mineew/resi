@@ -1,4 +1,9 @@
 {
+  "APP_LAYOUT": {
+    "COLLAPSE_SIDEBAR": "Свернуть",
+    "EXPAND_SIDEBAR": "Развернуть"
+  },
+
   "RESI_FILE_LIST": {
     "OPEN_FILES": "Открыть RESI файлы",
     "OPEN_FILES_DESCRIPTION": "Файлы прибора резистографа, расширение *.xls",

@@ -15,6 +15,8 @@ function AppLayout(props: AppLayoutProps) {
   const { fileList, fileChart, diffChart, growthChart } = props;
   const [fileListIsCollapsed, setFileListIsCollapsed] = useState(false);
 
+  const fileListId = 'resi-file-list';
+
   const handleToggleFileList = useCallback(() => {
     setFileListIsCollapsed((collapsed) => !collapsed);
   }, []);
@@ -25,12 +27,14 @@ function AppLayout(props: AppLayoutProps) {
         className={classNames(styles['file-list'], {
           [styles.collapsed]: fileListIsCollapsed,
         })}
+        id={fileListId}
       >
         {fileList}
       </div>
 
       <AppLayoutSidebarToggleButton
         isCollapsed={fileListIsCollapsed}
+        controls={fileListId}
         onClick={handleToggleFileList}
       />
 

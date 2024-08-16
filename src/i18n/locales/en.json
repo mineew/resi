@@ -1,4 +1,9 @@
 {
+  "APP_LAYOUT": {
+    "COLLAPSE_SIDEBAR": "Collapse",
+    "EXPAND_SIDEBAR": "Expand"
+  },
+
   "RESI_FILE_LIST": {
     "OPEN_FILES": "Open RESI files",
     "OPEN_FILES_DESCRIPTION": "Resistograph instrument files, extension *.xls",
