@@ -59,7 +59,7 @@
     "@radix-ui/react-tooltip": "1.1.2",
     "classnames": "2.5.1",
     "html-to-image": "1.11.11",
-    "i18next": "23.13.0",
+    "i18next": "23.14.0",
     "i18next-browser-languagedetector": "8.0.0",
     "i18next-resources-to-backend": "1.2.1",
     "katex": "0.16.11",
@@ -73,12 +73,12 @@
     "recharts": "2.12.7",
     "regression": "2.0.1",
     "simple-statistics": "7.8.3",
-    "use-debounce": "10.0.2",
+    "use-debounce": "10.0.3",
     "use-local-storage": "3.0.0",
     "zustand": "4.5.5"
   },
   "devDependencies": {
-    "@playwright/test": "1.46.0",
+    "@playwright/test": "1.46.1",
     "@storybook/addon-essentials": "8.2.9",
     "@storybook/addon-interactions": "8.2.9",
     "@storybook/addon-links": "8.2.9",
