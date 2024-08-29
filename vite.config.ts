@@ -4,6 +4,8 @@ import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
+import pwa from './vite.pwa.config';
+
 export default defineConfig({
   base: '/resi/app',
 
@@ -66,5 +68,5 @@ export default defineConfig({
     },
   },
 
-  plugins: [react(), legacy()],
+  plugins: [react(), legacy(), pwa],
 });
