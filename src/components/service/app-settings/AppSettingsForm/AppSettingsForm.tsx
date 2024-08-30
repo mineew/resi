@@ -76,21 +76,11 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             label={t('APP_SETTINGS.CHUNK_SIZE')}
             hasBoldLabel
             value={field.value || DEFAULT_SETTINGS.chunkSize}
-            onValueChange={(value) => {
-              if (value !== 1 && value !== 3000) {
-                field.onChange(value - 1);
-              } else {
-                field.onChange(value);
-              }
-            }}
+            onValueChange={field.onChange}
             valueFormatter={(value) => {
-              if (value === 1) {
-                return t('COMMON.MM', { value: 0 });
-              }
-
               return t('COMMON.MM', { value: value / 100 });
             }}
-            min={1}
+            min={100}
             max={3000}
             step={100}
           />
