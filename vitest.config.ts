@@ -20,6 +20,8 @@ export default mergeConfig(
         exclude: [
           '**/*.stories.tsx',
           'playwright.config.ts',
+          'pwa-assets.config.ts',
+          'vite.pwa.config.ts',
           ...coverageConfigDefaults.exclude,
         ],
       },
