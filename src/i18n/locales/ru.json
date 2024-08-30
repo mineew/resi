@@ -58,7 +58,8 @@
     "GROWTH_TAKE_NEGATIVE": "Учитывать отрицательный рост (спад)",
     "OFFSET_LEFT": "Смещение слева",
     "OFFSET_RIGHT": "Смещение справа",
-    "SUBMIT_BUTTON": "Сохранить"
+    "SUBMIT_BUTTON": "Сохранить",
+    "VERSION": "Версия"
   },
 
   "THEME": {

@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-version {
+  font-size: 0.8rem;
+  color: var(--slate-a9);
+}

@@ -6,6 +6,9 @@ import AppSettingsForm from '@/components/service/app-settings/AppSettingsForm/A
 import Button from '@/components/ui/Button/Button';
 import Dialog from '@/components/ui/Dialog/Dialog';
 import { DEFAULT_SETTINGS, type Settings } from '@/store/types/Settings';
+import appPackage from '~/package.json';
+
+import styles from './AppSettings.module.css';
 
 interface AppSettingsProps {
   values?: Settings;
@@ -48,13 +51,19 @@ const AppSettings = memo((props: AppSettingsProps) => {
         tooltip={t('APP_SETTINGS.TOOLTIP')}
         size="400"
         footer={
-          <Button
-            type="submit"
-            form="app-settings-form"
-            disabled={!methods.formState.isValid}
-          >
-            {t('APP_SETTINGS.SUBMIT_BUTTON')}
-          </Button>
+          <div className={styles.footer}>
+            <Button
+              type="submit"
+              form="app-settings-form"
+              disabled={!methods.formState.isValid}
+            >
+              {t('APP_SETTINGS.SUBMIT_BUTTON')}
+            </Button>
+
+            <div className={styles['app-version']}>
+              {t('APP_SETTINGS.VERSION')} {appPackage.version}
+            </div>
+          </div>
         }
         open={dialogOpen}
         onOpenChange={handleOpenChange}

@@ -58,7 +58,8 @@
     "GROWTH_TAKE_NEGATIVE": "Take Negative Growth (Decline)",
     "OFFSET_LEFT": "Left Offset",
     "OFFSET_RIGHT": "Right Offset",
-    "SUBMIT_BUTTON": "Save"
+    "SUBMIT_BUTTON": "Save",
+    "VERSION": "Version"
   },
 
   "THEME": {
