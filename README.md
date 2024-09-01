@@ -9,11 +9,11 @@ _Исследования проведены в рамках государст�
 ## Стек и технологии
 
 1. React
-2. React Hook Form
-3. Zustand
-4. react-i18next, i18next
-5. Radix UI, CSS-модули
-6. Recharts
+2. Recharts
+3. Radix UI, CSS-модули
+4. Zustand
+5. React Hook Form
+6. react-i18next, i18next
 7. TypeScript
 
 Сборка:
