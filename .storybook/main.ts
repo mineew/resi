@@ -21,6 +21,11 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
+
+  viteFinal(config) {
+    config.base = '/resi/storybook';
+    return config;
+  },
 };
 
 export default config;
