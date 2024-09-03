@@ -11,7 +11,11 @@ const config: StorybookConfig = {
 
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {
+      builder: {
+        viteConfigPath: 'vite.storybook.config.ts',
+      },
+    },
   },
 
   docs: {
@@ -20,11 +24,6 @@ const config: StorybookConfig = {
 
   core: {
     disableTelemetry: true,
-  },
-
-  viteFinal(config) {
-    config.base = '/resi/storybook';
-    return config;
   },
 };
 

@@ -9,6 +9,7 @@
   },
   "include": [
     "vite.config.ts",
+    "vite.storybook.config.ts",
     "vite.pwa.config.ts",
     "pwa-assets.config.ts",
     "vitest.config.ts",
