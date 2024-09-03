@@ -26,7 +26,7 @@ _Исследования проведены в рамках государст�
 
 1. Vitest
 2. React Testing Library
-3. Storybook
+3. [Storybook](https://mineew.github.io/resi/storybook/)
 
 Форматирование и линтинг:
 
