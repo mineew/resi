@@ -37,7 +37,7 @@
     "lint:css": "stylelint \"**/*.css\" --cache",
     "format": "prettier --write \"**/*.(t|j)s?(x)\"",
     "format:check": "prettier --check \"**/*.(t|j)s?(x)\"",
-    "check:all": "run-s format:check lint test:run test:e2e build",
+    "check:all": "run-s format:check lint test:run test:e2e build storybook:build",
     "clear": "rimraf dist dev-dist coverage playwright-report test-results",
     "clear:lint:cache": "rimraf .eslintcache .stylelintcache",
     "clear:app:cache": "rimraf node_modules/.cache node_modules/.vite",
