@@ -22,6 +22,7 @@ export default mergeConfig(
           'playwright.config.ts',
           'pwa-assets.config.ts',
           'vite.pwa.config.ts',
+          'vite.storybook.config.ts',
           ...coverageConfigDefaults.exclude,
         ],
       },
