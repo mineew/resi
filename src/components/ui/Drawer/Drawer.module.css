@@ -1,0 +1,86 @@
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #fff;
+  border-right: 1px solid var(--slate-6);
+  outline: none;
+  animation: drawer 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:global(.dark) .content {
+  background-color: var(--slate-4);
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 0;
+  color: var(--slate-1);
+  cursor: pointer;
+  background-color: var(--slate-12);
+  border: none;
+  border-radius: 100%;
+  transition: background-color 0.15s;
+}
+
+.close:focus {
+  outline: 1px solid var(--slate-12);
+  outline-offset: 2px;
+}
+
+.close:hover {
+  background-color: var(--slate-11);
+}
+
+.close:active {
+  background-color: var(--slate-10);
+}
+
+.header {
+  position: absolute;
+  top: 7px;
+  right: -42px;
+}
+
+.body {
+  flex: 1;
+}
+
+@keyframes drawer {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (width <= 350px) {
+  .content {
+    right: 0;
+    left: 0;
+    width: auto;
+    border-right: none;
+  }
+
+  .header {
+    position: static;
+    display: flex;
+    flex: none;
+    justify-content: flex-end;
+    padding: 8px 12px;
+    background-color: var(--slate-2);
+    border-bottom: 1px solid var(--slate-6);
+  }
+}
