@@ -52,6 +52,7 @@
 
 .body {
   flex: 1;
+  height: 0;
 }
 
 @keyframes drawer {
