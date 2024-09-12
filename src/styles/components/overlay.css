@@ -1,7 +1,12 @@
 .overlay {
   position: fixed;
   inset: 0;
+  background-color: var(--slate-a10);
   animation: overlay 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dark .overlay {
+  background-color: var(--slate-a1);
 }
 
 @keyframes overlay {
