@@ -22,7 +22,10 @@ describe('@/components/ui/Drawer', () => {
     const user = userEvent.setup();
 
     render(
-      <Drawer trigger={<button type="button">Open Drawer</button>}>
+      <Drawer
+        title="Drawer Title"
+        trigger={<button type="button">Open Drawer</button>}
+      >
         <p>Drawer Content</p>
       </Drawer>,
     );
@@ -34,12 +37,36 @@ describe('@/components/ui/Drawer', () => {
     expect(drawer).toBeInTheDocument();
   });
 
+  it('can be closed', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Drawer
+        title="Drawer Title"
+        trigger={<button type="button">Open Drawer</button>}
+        tooltip="Drawer Trigger Tooltip"
+      >
+        <p>Drawer Content</p>
+      </Drawer>,
+    );
+
+    const trigger = screen.getByRole('button');
+    await user.click(trigger);
+
+    const closeButton = screen.getByRole('button');
+    await user.click(closeButton);
+
+    const drawer = screen.queryByRole('dialog');
+    expect(drawer).not.toBeInTheDocument();
+  });
+
   it('can display tooltip', async () => {
     const user = userEvent.setup();
 
     render(
       <Drawer
-        trigger={<button type="button">Open Dialog</button>}
+        title="Drawer Title"
+        trigger={<button type="button">Open Drawer</button>}
         tooltip="Drawer Trigger Tooltip"
       >
         <p>Drawer Content</p>
