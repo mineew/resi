@@ -23,6 +23,7 @@ export default mergeConfig(
           'pwa-assets.config.ts',
           'vite.pwa.config.ts',
           'vite.storybook.config.ts',
+          'dev-dist',
           ...coverageConfigDefaults.exclude,
         ],
       },
