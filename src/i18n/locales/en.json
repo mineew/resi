@@ -5,6 +5,8 @@
   },
 
   "RESI_FILE_LIST": {
+    "TITLE": "RESI files",
+    "OPEN_SIDEBAR": "Open sidebar",
     "OPEN_FILES": "Open RESI files",
     "OPEN_FILES_DESCRIPTION": "Resistograph instrument files, extension *.xls",
     "FETCH_FILES": "Open sample files",

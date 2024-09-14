@@ -13,15 +13,21 @@ interface DrawerProps {
   overlayClassName?: string;
   title: string;
   trigger: JSX.Element;
+  triggerClassName?: string;
   tooltip?: string;
   children: ReactNode;
 }
 
 function Drawer(props: DrawerProps) {
-  const { className, overlayClassName, title, trigger, tooltip, children } =
-    props;
-
-  const triggerElement = <Radix.Trigger asChild>{trigger}</Radix.Trigger>;
+  const {
+    className,
+    overlayClassName,
+    title,
+    trigger,
+    triggerClassName,
+    tooltip,
+    children,
+  } = props;
 
   const handleCloseAutoFocus = useCallback(
     (e: Event) => {
@@ -35,9 +41,13 @@ function Drawer(props: DrawerProps) {
   return (
     <Radix.Root>
       {tooltip ? (
-        <Tooltip title={tooltip}>{triggerElement}</Tooltip>
+        <Tooltip title={tooltip} triggerClassName={triggerClassName}>
+          <Radix.Trigger asChild>{trigger}</Radix.Trigger>
+        </Tooltip>
       ) : (
-        triggerElement
+        <Radix.Trigger className={triggerClassName} asChild>
+          {trigger}
+        </Radix.Trigger>
       )}
 
       <Radix.Portal>

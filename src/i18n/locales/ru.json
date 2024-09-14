@@ -5,6 +5,8 @@
   },
 
   "RESI_FILE_LIST": {
+    "TITLE": "Файлы",
+    "OPEN_SIDEBAR": "Открыть панель",
     "OPEN_FILES": "Открыть RESI файлы",
     "OPEN_FILES_DESCRIPTION": "Файлы прибора резистографа, расширение *.xls",
     "FETCH_FILES": "Открыть пример",

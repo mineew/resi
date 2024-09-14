@@ -30,6 +30,7 @@ export default {
     overlayClassName: { table: { disable: true } },
     title: { table: { disable: true } },
     trigger: { table: { disable: true } },
+    triggerClassName: { table: { disable: true } },
     tooltip: { table: { disable: true } },
     children: { table: { disable: true } },
   },

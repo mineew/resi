@@ -1,0 +1,32 @@
+.drawer,
+.overlay,
+.toggle-button {
+  display: none;
+}
+
+.drawer,
+:global(.dark) .drawer {
+  background-color: var(--slate-2);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 30;
+  line-height: 0;
+}
+
+@media (width <= 1400px) {
+  .drawer {
+    display: flex;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .toggle-button {
+    display: block;
+  }
+}

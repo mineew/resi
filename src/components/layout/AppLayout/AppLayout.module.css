@@ -42,3 +42,9 @@
 .derived-charts > div:first-child {
   border-bottom: 1px solid var(--slate-6);
 }
+
+@media (width <= 1400px) {
+  .file-list {
+    display: none;
+  }
+}
