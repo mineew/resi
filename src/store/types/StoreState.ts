@@ -6,6 +6,13 @@ interface StoreState {
   setFiles: (files: RESIFile[]) => void;
 
   addFiles: (files: RESIFile[]) => void;
+
+  isAddingFiles: boolean;
+  setIsAddingFiles: (isAddingFiles: boolean) => void;
+
+  isFetchingFiles: boolean;
+  setIsFetchingFiles: (isFetchingFiles: boolean) => void;
+
   deleteAllFiles: () => void;
   checkAllFiles: () => void;
   uncheckAllFiles: () => void;

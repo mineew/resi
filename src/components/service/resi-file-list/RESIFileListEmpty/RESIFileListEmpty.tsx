@@ -7,18 +7,21 @@ import EmptyState from '@/components/ui/EmptyState/EmptyState';
 interface RESIFileListEmptyProps {
   onAddFiles: () => void;
   onFetchExampleFiles: () => void;
-  isFetchingExampleFiles?: boolean;
+  isAddingFiles?: boolean;
+  isFetchingFiles?: boolean;
 }
 
 const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
-  const { onAddFiles, onFetchExampleFiles, isFetchingExampleFiles } = props;
+  const { onAddFiles, onFetchExampleFiles, isAddingFiles, isFetchingFiles } =
+    props;
 
   return (
     <EmptyState icon={<Inbox />}>
       <RESIFilesInit
         onAddFiles={onAddFiles}
         onFetchExampleFiles={onFetchExampleFiles}
-        isFetchingExampleFiles={isFetchingExampleFiles}
+        isAddingFiles={isAddingFiles}
+        isFetchingFiles={isFetchingFiles}
       />
     </EmptyState>
   );

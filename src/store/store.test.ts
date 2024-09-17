@@ -49,6 +49,22 @@ describe('@/store/store', () => {
     expect(result.current.files).toHaveLength(6);
   });
 
+  it('can toggle adding files status', async () => {
+    const { result } = renderHook(() => useStore());
+
+    expect(result.current.isAddingFiles).toBeFalsy();
+    await waitFor(() => result.current.setIsAddingFiles(true));
+    expect(result.current.isAddingFiles).toBeTruthy();
+  });
+
+  it('can toggle fetching files status', async () => {
+    const { result } = renderHook(() => useStore());
+
+    expect(result.current.isFetchingFiles).toBeFalsy();
+    await waitFor(() => result.current.setIsFetchingFiles(true));
+    expect(result.current.isFetchingFiles).toBeTruthy();
+  });
+
   it('can update files', async () => {
     const { result } = renderHook(() => useStore());
     const updatedFile2 = { ...file2, contents: [10] };

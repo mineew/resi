@@ -9,17 +9,22 @@ import styles from './RESIFilesInit.module.css';
 interface RESIFilesInitProps {
   onAddFiles: () => void;
   onFetchExampleFiles: () => void;
-  isFetchingExampleFiles?: boolean;
+  isAddingFiles?: boolean;
+  isFetchingFiles?: boolean;
 }
 
 function RESIFilesInit(props: RESIFilesInitProps) {
-  const { onAddFiles, onFetchExampleFiles, isFetchingExampleFiles } = props;
+  const { onAddFiles, onFetchExampleFiles, isAddingFiles, isFetchingFiles } =
+    props;
   const { t } = useTranslation();
 
   return (
     <>
       <div className={styles.section}>
-        <Button onClick={onAddFiles}>
+        <Button
+          onClick={onAddFiles}
+          disabled={isAddingFiles || isFetchingFiles}
+        >
           <FolderOpen />
           {t('RESI_FILE_LIST.OPEN_FILES')}
         </Button>
@@ -32,10 +37,10 @@ function RESIFilesInit(props: RESIFilesInitProps) {
 
         <Button
           onClick={onFetchExampleFiles}
-          disabled={isFetchingExampleFiles}
+          disabled={isAddingFiles || isFetchingFiles}
           outlined
         >
-          {isFetchingExampleFiles ? <Loader /> : <FolderDown />}
+          {isFetchingFiles ? <Loader /> : <FolderDown />}
           {t('RESI_FILE_LIST.FETCH_FILES')}
         </Button>
       </div>

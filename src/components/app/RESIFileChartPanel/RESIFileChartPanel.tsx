@@ -1,8 +1,12 @@
+import useAddFiles from '@/components/app/useAddFiles';
 import useFiles from '@/components/app/useFiles';
 import useSmoothedFiles from '@/components/app/useSmoothedFiles';
 import RESIFileChart from '@/components/service/resi-file-chart/RESIFileChart/RESIFileChart';
 import RESIFileChartEmpty from '@/components/service/resi-file-chart/RESIFileChartEmpty/RESIFileChartEmpty';
+import RESIFilesInit from '@/components/service/resi-file-list/RESIFilesInit/RESIFilesInit';
 import useStore from '@/store/store';
+
+import styles from './RESIFileChartPanel.module.css';
 
 function RESIFileChartPanel() {
   const files = useFiles('checked');
@@ -17,8 +21,22 @@ function RESIFileChartPanel() {
   const setOffsetRight = useStore((state) => state.setOffsetRight);
   const offsetGap = useStore((state) => state.settings.offsetGap);
 
+  const { addFiles, isAddingFiles, fetchExampleFiles, isFetchingFiles } =
+    useAddFiles();
+
   if (!smoothedFiles.length) {
-    return <RESIFileChartEmpty />;
+    return (
+      <RESIFileChartEmpty>
+        <div className={styles['files-init']}>
+          <RESIFilesInit
+            onAddFiles={addFiles}
+            onFetchExampleFiles={fetchExampleFiles}
+            isAddingFiles={isAddingFiles}
+            isFetchingFiles={isFetchingFiles}
+          />
+        </div>
+      </RESIFileChartEmpty>
+    );
   }
 
   return (

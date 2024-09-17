@@ -6,7 +6,8 @@ import RESIFileListEmpty from './RESIFileListEmpty';
 export const Default: StoryFn<typeof RESIFileListEmpty> = ({
   onAddFiles,
   onFetchExampleFiles,
-  isFetchingExampleFiles,
+  isAddingFiles,
+  isFetchingFiles,
 }) => {
   return (
     <div
@@ -21,7 +22,8 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({
       <RESIFileListEmpty
         onAddFiles={onAddFiles}
         onFetchExampleFiles={onFetchExampleFiles}
-        isFetchingExampleFiles={isFetchingExampleFiles}
+        isAddingFiles={isAddingFiles}
+        isFetchingFiles={isFetchingFiles}
       />
     </div>
   );
@@ -37,6 +39,7 @@ export default {
   args: {
     onAddFiles: fn(),
     onFetchExampleFiles: fn(),
-    isFetchingExampleFiles: false,
+    isAddingFiles: false,
+    isFetchingFiles: false,
   },
 } as Meta<typeof RESIFileListEmpty>;
