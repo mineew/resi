@@ -4,6 +4,10 @@
   display: none;
 }
 
+.drawer {
+  z-index: 40;
+}
+
 .drawer,
 :global(.dark) .drawer {
   background-color: var(--slate-2);

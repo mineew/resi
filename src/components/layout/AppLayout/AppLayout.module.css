@@ -1,8 +1,6 @@
 .wrapper {
-  position: relative;
   display: flex;
   height: 100%;
-  overflow: hidden;
 }
 
 .file-list {
@@ -10,37 +8,6 @@
   width: 300px;
   background-color: var(--slate-2);
   border-right: 1px solid var(--slate-6);
-  transition: margin 0.25s;
-}
-
-.charts {
-  display: flex;
-  flex: 1;
-  background-color: #fff;
-}
-
-:global(.dark) .charts {
-  background-color: var(--slate-1);
-}
-
-.file-chart {
-  position: relative;
-  flex: 5;
-  border-right: 1px solid var(--slate-6);
-}
-
-.derived-charts {
-  display: flex;
-  flex: 3;
-  flex-direction: column;
-}
-
-.derived-charts > div {
-  flex: 1;
-}
-
-.derived-charts > div:first-child {
-  border-bottom: 1px solid var(--slate-6);
 }
 
 @media (width <= 1400px) {
