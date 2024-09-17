@@ -10,7 +10,20 @@ export const Default: StoryFn<typeof RESIFileChartEmpty> = () => {
   );
 };
 
+export const WithChildren: StoryFn<typeof RESIFileChartEmpty> = () => {
+  return (
+    <div style={{ height: '100vh' }}>
+      <RESIFileChartEmpty>
+        <div>Additional Content</div>
+      </RESIFileChartEmpty>
+    </div>
+  );
+};
+
 export default {
   title: 'Components/Service/RESI File Chart/RESIFileChartEmpty',
   component: RESIFileChartEmpty,
+  argTypes: {
+    children: { table: { disable: true } },
+  },
 } as Meta<typeof RESIFileChartEmpty>;
