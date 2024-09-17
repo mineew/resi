@@ -46,6 +46,10 @@
   filter: none;
 }
 
+.button > svg {
+  flex: none;
+}
+
 /* --- Primary -------------------------------------------------------------- */
 .button.primary {
   --background-color: var(--slate-12);
