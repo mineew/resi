@@ -6,6 +6,7 @@ import AppLayoutDrawer from '@/components/layout/AppLayoutDrawer/AppLayoutDrawer
 import styles from './AppLayout.module.css';
 
 interface AppLayoutProps {
+  appToolbar: ReactNode;
   fileList: ReactNode;
   fileChart: ReactNode;
   diffChart: ReactNode;
@@ -13,7 +14,7 @@ interface AppLayoutProps {
 }
 
 function AppLayout(props: AppLayoutProps) {
-  const { fileList, fileChart, diffChart, growthChart } = props;
+  const { appToolbar, fileList, fileChart, diffChart, growthChart } = props;
 
   return (
     <>
@@ -21,7 +22,12 @@ function AppLayout(props: AppLayoutProps) {
         <div className={styles['file-list']}>{fileList}</div>
 
         <AppLayoutCharts
-          fileChart={fileChart}
+          fileChart={
+            <>
+              <div className={styles['app-toolbar']}>{appToolbar}</div>
+              {fileChart}
+            </>
+          }
           diffChart={diffChart}
           growthChart={growthChart}
         />

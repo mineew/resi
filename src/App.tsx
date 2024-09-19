@@ -10,13 +10,9 @@ import './styles/index.css';
 function App() {
   return (
     <AppLayout
+      appToolbar={<AppToolbar />}
       fileList={<RESIFileListPanel />}
-      fileChart={
-        <>
-          <AppToolbar />
-          <RESIFileChartPanel />
-        </>
-      }
+      fileChart={<RESIFileChartPanel />}
       diffChart={<RESIFileDiffChartPanel />}
       growthChart={<RESIFileGrowthChartPanel />}
     />

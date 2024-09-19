@@ -24,6 +24,7 @@ export const Default: StoryFn<typeof AppLayout> = () => {
   return (
     <div style={{ height: '100vh' }}>
       <AppLayout
+        appToolbar={null}
         fileList={<Block title="File List" />}
         fileChart={<Block title="File Chart" />}
         diffChart={<Block title="File Diff Chart" />}
@@ -37,6 +38,7 @@ export default {
   title: 'Components/Layout/AppLayout',
   component: AppLayout,
   argTypes: {
+    appToolbar: { table: { disable: true } },
     fileList: { table: { disable: true } },
     fileChart: { table: { disable: true } },
     diffChart: { table: { disable: true } },
