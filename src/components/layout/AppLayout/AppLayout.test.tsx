@@ -42,8 +42,9 @@ describe('@/components/layout/AppLayout', () => {
     const layout = screen.getByTestId('app-layout');
     expect(layout).toBeInTheDocument();
 
-    const appToolbar = screen.getByText('App Toolbar');
-    expect(appToolbar).toBeInTheDocument();
+    const appToolbar = screen.queryAllByText('App Toolbar');
+    expect(appToolbar[0]).toBeInTheDocument();
+    expect(appToolbar[1]).toBeInTheDocument();
 
     const fileList = screen.getByText('File List');
     expect(fileList).toBeInTheDocument();

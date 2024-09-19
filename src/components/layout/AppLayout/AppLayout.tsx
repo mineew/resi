@@ -17,7 +17,9 @@ function AppLayout(props: AppLayoutProps) {
   const { appToolbar, fileList, fileChart, diffChart, growthChart } = props;
 
   return (
-    <>
+    <div className={styles.layout}>
+      <div className={styles.header}>{appToolbar}</div>
+
       <div className={styles.wrapper} data-testid="app-layout">
         <div className={styles['file-list']}>{fileList}</div>
 
@@ -34,7 +36,7 @@ function AppLayout(props: AppLayoutProps) {
       </div>
 
       <AppLayoutDrawer>{fileList}</AppLayoutDrawer>
-    </>
+    </div>
   );
 }
 
