@@ -1,13 +1,13 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "plugins": ["stylelint-prettier"],
 
   "rules": {
     "selector-pseudo-class-no-unknown": [
       true,
-      {
-        "ignorePseudoClasses": ["global"]
-      }
-    ]
+      { "ignorePseudoClasses": ["global"] }
+    ],
+    "prettier/prettier": true
   },
 
   "reportInvalidScopeDisables": true,
