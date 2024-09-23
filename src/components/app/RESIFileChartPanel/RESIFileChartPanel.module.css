@@ -12,3 +12,9 @@
     display: block;
   }
 }
+
+@media (width <= 600px) {
+  .files-init {
+    margin-top: 24px;
+  }
+}

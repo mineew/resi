@@ -9,3 +9,9 @@
 .section:last-child {
   margin-bottom: 0;
 }
+
+@media (width <= 600px) {
+  .section {
+    margin-bottom: 24px;
+  }
+}

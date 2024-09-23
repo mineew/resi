@@ -1,5 +1,7 @@
 import { type ReactNode } from 'react';
 
+import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
+
 import styles from './AppLayoutCharts.module.css';
 
 interface AppLayoutChartsProps {
@@ -12,14 +14,16 @@ function AppLayoutCharts(props: AppLayoutChartsProps) {
   const { fileChart, diffChart, growthChart } = props;
 
   return (
-    <div className={styles.charts}>
-      <div className={styles['file-chart']}>{fileChart}</div>
+    <ScrollArea className={styles['scroll-area']}>
+      <div className={styles.charts}>
+        <div className={styles['file-chart']}>{fileChart}</div>
 
-      <div className={styles['derived-charts']}>
-        <div>{diffChart}</div>
-        <div>{growthChart}</div>
+        <div className={styles['derived-charts']}>
+          <div>{diffChart}</div>
+          <div>{growthChart}</div>
+        </div>
       </div>
-    </div>
+    </ScrollArea>
   );
 }
 

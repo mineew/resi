@@ -1,11 +1,23 @@
-.charts {
-  display: flex;
+.scroll-area {
   flex: 1;
   background-color: #fff;
 }
 
-:global(.dark) .charts {
+:global(.dark) .scroll-area {
   background-color: var(--slate-1);
+}
+
+.scroll-area [data-radix-scroll-area-viewport] {
+  overflow: hidden !important;
+}
+
+.scroll-area [data-orientation] {
+  display: none;
+}
+
+.charts {
+  display: flex;
+  height: 100vh;
 }
 
 .file-chart {
@@ -26,4 +38,40 @@
 
 .derived-charts > div:first-child {
   border-bottom: 1px solid var(--slate-6);
+}
+
+@media (width <= 1100px) {
+  .scroll-area {
+    height: calc(100vh - 55px);
+  }
+
+  .scroll-area [data-radix-scroll-area-viewport] {
+    overflow: scroll !important;
+  }
+
+  .scroll-area [data-orientation] {
+    display: block;
+  }
+
+  .charts,
+  .derived-charts {
+    display: block;
+    height: auto;
+  }
+
+  .file-chart {
+    height: 600px;
+    border-right: none;
+    border-bottom: 1px solid var(--slate-6);
+  }
+
+  .derived-charts > div {
+    height: 400px;
+  }
+}
+
+@media (width <= 600px) {
+  .file-chart {
+    height: 400px;
+  }
 }
