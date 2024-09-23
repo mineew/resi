@@ -72,3 +72,13 @@
 .item.active .delete-button {
   opacity: 1;
 }
+
+@media (width <=500px) {
+  .item {
+    background-color: var(--slate-4);
+  }
+
+  .item .delete-button {
+    opacity: 1;
+  }
+}
