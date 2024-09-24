@@ -1,0 +1,13 @@
+.files-init {
+  padding: 28px 34px 24px;
+  margin-top: 36px;
+  background-color: var(--slate-2);
+  border: 1px solid var(--slate-6);
+  border-radius: 12px;
+}
+
+@media (width <= 600px) {
+  .files-init {
+    margin-top: 24px;
+  }
+}
