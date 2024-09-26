@@ -13,20 +13,6 @@ vi.mock('react-i18next', () => ({
   useTranslation: mocks.useTranslation,
 }));
 
-const matchMediaMock = vi.fn(() => ({
-  matches: false,
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-}));
-
-beforeAll(() => {
-  vi.stubGlobal('matchMedia', matchMediaMock);
-
-  return () => {
-    vi.unstubAllGlobals();
-  };
-});
-
 describe('@/App', () => {
   it('renders', () => {
     render(<App />);

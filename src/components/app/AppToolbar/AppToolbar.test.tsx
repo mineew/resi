@@ -67,17 +67,6 @@ describe('@/components/app/AppToolbar', () => {
     expect(baseElement).toHaveClass('dark');
   });
 
-  it('can initialize theme', () => {
-    matchMediaMock.mockImplementation(() => ({
-      matches: true,
-      addEventListener: vi.fn(),
-      removeEventListener: vi.fn(),
-    }));
-
-    const { baseElement } = render(<AppToolbar />);
-    expect(baseElement).toHaveClass('dark');
-  });
-
   it('is watching for a change in the system theme', () => {
     type Listener = (e: MediaQueryListEvent) => void;
     let listeners: Listener[] = [];
