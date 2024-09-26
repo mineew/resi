@@ -34,6 +34,7 @@ describe('@/components/layout/AppLayout', () => {
         appToolbar={<div>App Toolbar</div>}
         fileList={<div>File List</div>}
         fileChart={<div>File Chart</div>}
+        filesInit={<div>Files Init</div>}
         diffChart={<div>File Diff Chart</div>}
         growthChart={<div>File Growth Chart</div>}
       />,
@@ -51,6 +52,9 @@ describe('@/components/layout/AppLayout', () => {
 
     const fileChart = screen.getByText('File Chart');
     expect(fileChart).toBeInTheDocument();
+
+    const filesInit = screen.getByText('Files Init');
+    expect(filesInit).toBeInTheDocument();
 
     const diffChart = screen.getByText('File Diff Chart');
     expect(diffChart).toBeInTheDocument();

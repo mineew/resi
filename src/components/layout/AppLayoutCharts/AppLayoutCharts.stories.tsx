@@ -25,6 +25,7 @@ export const Default: StoryFn<typeof AppLayoutCharts> = () => {
     <div style={{ height: '100vh', display: 'flex' }}>
       <AppLayoutCharts
         fileChart={<Block title="File Chart" />}
+        filesInit={<Block title="Files Init" />}
         diffChart={<Block title="File Diff Chart" />}
         growthChart={<Block title="File Growth Chart" />}
       />
@@ -37,6 +38,7 @@ export default {
   component: AppLayoutCharts,
   argTypes: {
     fileChart: { table: { disable: true } },
+    filesInit: { table: { disable: true } },
     diffChart: { table: { disable: true } },
     growthChart: { table: { disable: true } },
   },

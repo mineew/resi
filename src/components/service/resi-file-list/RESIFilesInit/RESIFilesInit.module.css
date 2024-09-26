@@ -10,6 +10,11 @@
   margin-bottom: 0;
 }
 
+.section > p {
+  color: var(--slate-11);
+  text-align: center;
+}
+
 @media (width <= 600px) {
   .section {
     margin-bottom: 24px;

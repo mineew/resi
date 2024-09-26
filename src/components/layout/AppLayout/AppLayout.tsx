@@ -9,12 +9,14 @@ interface AppLayoutProps {
   appToolbar: ReactNode;
   fileList: ReactNode;
   fileChart: ReactNode;
+  filesInit: ReactNode;
   diffChart: ReactNode;
   growthChart: ReactNode;
 }
 
 function AppLayout(props: AppLayoutProps) {
-  const { appToolbar, fileList, fileChart, diffChart, growthChart } = props;
+  const { appToolbar, fileList, fileChart, filesInit, diffChart, growthChart } =
+    props;
 
   return (
     <div className={styles.layout}>
@@ -30,6 +32,7 @@ function AppLayout(props: AppLayoutProps) {
               {fileChart}
             </>
           }
+          filesInit={filesInit}
           diffChart={diffChart}
           growthChart={growthChart}
         />

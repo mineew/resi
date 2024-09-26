@@ -3,6 +3,7 @@ import RESIFileChartPanel from '@/components/app/RESIFileChartPanel/RESIFileChar
 import RESIFileDiffChartPanel from '@/components/app/RESIFileDiffChartPanel/RESIFileDiffChartPanel';
 import RESIFileGrowthChartPanel from '@/components/app/RESIFileGrowthChartPanel/RESIFileGrowthChartPanel';
 import RESIFileListPanel from '@/components/app/RESIFileListPanel/RESIFileListPanel';
+import RESIFilesInit from '@/components/app/RESIFilesInit/RESIFilesInit';
 import AppLayout from '@/components/layout/AppLayout/AppLayout';
 
 import './styles/index.css';
@@ -13,6 +14,7 @@ function App() {
       appToolbar={<AppToolbar />}
       fileList={<RESIFileListPanel />}
       fileChart={<RESIFileChartPanel />}
+      filesInit={<RESIFilesInit />}
       diffChart={<RESIFileDiffChartPanel />}
       growthChart={<RESIFileGrowthChartPanel />}
     />

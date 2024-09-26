@@ -26,6 +26,10 @@
   border-right: 1px solid var(--slate-6);
 }
 
+.files-init {
+  display: none;
+}
+
 .derived-charts {
   display: flex;
   flex: 3;
@@ -73,5 +77,25 @@
 @media (width <= 600px) {
   .file-chart {
     height: 400px;
+  }
+}
+
+@media (width <= 500px) {
+  .file-chart {
+    display: none;
+  }
+
+  .files-init {
+    display: block;
+    margin: 24px;
+  }
+
+  .derived-charts > div {
+    height: auto;
+    padding: 24px;
+    margin: 24px;
+    background-color: var(--slate-2);
+    border: 1px solid var(--slate-6);
+    border-radius: 12px;
   }
 }

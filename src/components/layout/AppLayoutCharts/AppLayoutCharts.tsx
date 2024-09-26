@@ -6,17 +6,20 @@ import styles from './AppLayoutCharts.module.css';
 
 interface AppLayoutChartsProps {
   fileChart: ReactNode;
+  filesInit: ReactNode;
   diffChart: ReactNode;
   growthChart: ReactNode;
 }
 
 function AppLayoutCharts(props: AppLayoutChartsProps) {
-  const { fileChart, diffChart, growthChart } = props;
+  const { fileChart, filesInit, diffChart, growthChart } = props;
 
   return (
     <ScrollArea className={styles['scroll-area']}>
       <div className={styles.charts}>
         <div className={styles['file-chart']}>{fileChart}</div>
+
+        <div className={styles['files-init']}>{filesInit}</div>
 
         <div className={styles['derived-charts']}>
           <div>{diffChart}</div>

@@ -27,6 +27,7 @@ export const Default: StoryFn<typeof AppLayout> = () => {
         appToolbar={null}
         fileList={<Block title="File List" />}
         fileChart={<Block title="File Chart" />}
+        filesInit={<Block title="Files Init" />}
         diffChart={<Block title="File Diff Chart" />}
         growthChart={<Block title="File Growth Chart" />}
       />
@@ -41,6 +42,7 @@ export default {
     appToolbar: { table: { disable: true } },
     fileList: { table: { disable: true } },
     fileChart: { table: { disable: true } },
+    filesInit: { table: { disable: true } },
     diffChart: { table: { disable: true } },
     growthChart: { table: { disable: true } },
   },

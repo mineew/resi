@@ -48,3 +48,17 @@
   right: 48px;
   z-index: 1;
 }
+
+@media (width <= 500px) {
+  .chart {
+    display: none;
+  }
+
+  .chart-title > h2 {
+    margin-bottom: 24px;
+  }
+
+  .chart-title > div {
+    font-size: 1.5rem;
+  }
+}
