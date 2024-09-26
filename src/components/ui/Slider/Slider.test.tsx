@@ -3,20 +3,6 @@ import { userEvent } from '@testing-library/user-event';
 
 import Slider from './Slider';
 
-const ResizeObserverMock = vi.fn(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
-
-beforeAll(() => {
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock);
-
-  return () => {
-    vi.unstubAllGlobals();
-  };
-});
-
 describe('@/components/ui/Slider', () => {
   it('renders', () => {
     const value = 5;

@@ -14,20 +14,6 @@ vi.mock('react-i18next', () => ({
   useTranslation: mocks.useTranslation,
 }));
 
-const ResizeObserverMock = vi.fn(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
-
-beforeAll(() => {
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock);
-
-  return () => {
-    vi.unstubAllGlobals();
-  };
-});
-
 describe('@/components/service/app-settings/AppSettings', () => {
   it('renders', async () => {
     const user = userEvent.setup();

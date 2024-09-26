@@ -71,20 +71,6 @@ vi.mock('@/utils/resi-files/processFiles', () => ({
   default: mocks.processFiles,
 }));
 
-const ResizeObserverMock = vi.fn(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
-
-beforeAll(() => {
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock);
-
-  return () => {
-    vi.unstubAllGlobals();
-  };
-});
-
 describe('@/components/app/RESIFileListPanel', () => {
   it('renders', async () => {
     render(<RESIFileListPanel />);

@@ -15,20 +15,6 @@ vi.mock('react-i18next', () => ({
   useTranslation: mocks.useTranslation,
 }));
 
-const ResizeObserverMock = vi.fn(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
-
-beforeAll(() => {
-  vi.stubGlobal('ResizeObserver', ResizeObserverMock);
-
-  return () => {
-    vi.unstubAllGlobals();
-  };
-});
-
 const growth: RESIFileGrowth[] = [
   { distance: 1, growth: 1 },
   { distance: 2, growth: 2 },

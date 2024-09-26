@@ -8,11 +8,12 @@ import viteConfig from './vite.config';
 
 export default mergeConfig(
   viteConfig,
+
   defineConfig({
     test: {
       globals: true,
       environment: 'jsdom',
-      setupFiles: ['./vitest.setup.ts'],
+      setupFiles: ['./vitest.setup.ts', './vitest.mocks.ts'],
       include: ['src/**/*.test.ts?(x)'],
       coverage: {
         enabled: true,
