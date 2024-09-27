@@ -31,6 +31,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "e2e"],
+  "include": ["src", "e2e", "vitest.mocks.hoisted.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

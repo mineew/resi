@@ -2,7 +2,7 @@
 
 import { vi } from 'vitest';
 
-import { type StoreState } from './src/store/types/StoreState';
+import { type StoreState } from '@/store/types/StoreState';
 
 const commonMocks = vi.hoisted(() => ({
   storeState: {
