@@ -4,17 +4,6 @@ import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 
 import RESIFileGrowthChart from './RESIFileGrowthChart';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 const growth: RESIFileGrowth[] = [
   { distance: 1, growth: 1 },
   { distance: 2, growth: 2 },

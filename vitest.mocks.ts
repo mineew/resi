@@ -1,5 +1,17 @@
 import { beforeAll, vi } from 'vitest';
 
+vi.mock('react-i18next', () => ({
+  initReactI18next: {
+    type: '3rdParty',
+    init: vi.fn(),
+  },
+
+  useTranslation: vi.fn(() => ({
+    i18n: { language: 'en' },
+    t: (message: string) => message,
+  })),
+}));
+
 const ResizeObserverMock = vi.fn(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),

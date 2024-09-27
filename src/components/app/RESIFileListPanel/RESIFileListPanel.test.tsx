@@ -6,11 +6,6 @@ import { type StoreState } from '@/store/types/StoreState';
 import RESIFileListPanel from './RESIFileListPanel';
 
 const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-
   storeState: {
     files: [
       {
@@ -55,10 +50,6 @@ const mocks = vi.hoisted(() => ({
   } satisfies StoreState,
 
   processFiles: vi.fn(() => Promise.resolve([])),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
 }));
 
 vi.mock('@/store/store', () => ({

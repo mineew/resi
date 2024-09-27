@@ -5,11 +5,6 @@ import { type StoreState } from '@/store/types/StoreState';
 import RESIFileChartPanel from './RESIFileChartPanel';
 
 const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-
   storeState: {
     files: [
       {
@@ -54,10 +49,6 @@ const mocks = vi.hoisted(() => ({
     setOffsetLeft: vi.fn(),
     setOffsetRight: vi.fn(),
   } satisfies StoreState,
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
 }));
 
 vi.mock('@/store/store', () => ({

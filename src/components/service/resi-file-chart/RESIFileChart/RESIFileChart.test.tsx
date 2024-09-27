@@ -7,16 +7,6 @@ import { type RESIFile } from '@/store/types/RESIFile';
 
 import RESIFileChart from './RESIFileChart';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 const file1: RESIFile = {
   name: 'File 1',
   color: 'red',

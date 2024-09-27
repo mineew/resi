@@ -3,17 +3,6 @@ import { userEvent } from '@testing-library/user-event';
 
 import AppSettings from './AppSettings';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 describe('@/components/service/app-settings/AppSettings', () => {
   it('renders', async () => {
     const user = userEvent.setup();

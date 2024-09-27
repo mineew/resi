@@ -5,17 +5,6 @@ import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 
 import RESIFileDiffChart from './RESIFileDiffChart';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 const diffs: RESIFileDiff[] = [
   {
     fileA: createRandomRESIFile('File 1 (A)'),

@@ -3,16 +3,6 @@ import { render, screen } from '@testing-library/react';
 import LineChart from './LineChart';
 import { type LineChartDataset } from './LineChartDataset';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 const data: LineChartDataset[] = [
   {
     name: 'Dataset 1',

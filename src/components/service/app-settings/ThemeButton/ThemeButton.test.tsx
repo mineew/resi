@@ -3,17 +3,6 @@ import { userEvent } from '@testing-library/user-event';
 
 import ThemeButton from './ThemeButton';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 describe('@/components/service/app-settings/ThemeButton', () => {
   it('renders', () => {
     const handleToggleTheme = vi.fn();

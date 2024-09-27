@@ -7,12 +7,6 @@ const mocks = vi.hoisted(() => ({
   exportChartToPng: vi.fn(),
 }));
 
-vi.mock('react-i18next', () => ({
-  useTranslation: vi.fn(() => ({
-    t: (message: string) => message,
-  })),
-}));
-
 vi.mock('@/utils/chart-export/exportChartToPng', () => ({
   default: mocks.exportChartToPng,
 }));

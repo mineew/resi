@@ -3,16 +3,6 @@ import { userEvent } from '@testing-library/user-event';
 
 import AlertDialog from './AlertDialog';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 describe('@/components/ui/AlertDialog', () => {
   it('renders', () => {
     render(<AlertDialog open />);

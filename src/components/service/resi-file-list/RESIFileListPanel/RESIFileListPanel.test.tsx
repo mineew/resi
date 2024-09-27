@@ -6,15 +6,7 @@ import { type RESIFile } from '@/store/types/RESIFile';
 import RESIFileListPanel from './RESIFileListPanel';
 
 const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
   useLocalStorage: vi.fn(() => [false, () => undefined]),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
 }));
 
 vi.mock('use-local-storage', () => ({

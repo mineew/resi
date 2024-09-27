@@ -2,17 +2,6 @@ import { render, screen } from '@testing-library/react';
 
 import AppLayout from './AppLayout';
 
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
-
 describe('@/components/layout/AppLayout', () => {
   it('renders', () => {
     render(
