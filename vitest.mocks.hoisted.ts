@@ -2,6 +2,7 @@
 
 import { vi } from 'vitest';
 
+import { type RESIFile } from '@/store/types/RESIFile';
 import { type StoreState } from '@/store/types/StoreState';
 
 const commonMocks = vi.hoisted(() => ({
@@ -28,7 +29,7 @@ const commonMocks = vi.hoisted(() => ({
         checked: true,
         contents: [4, 4, 8, 12, 3, 17],
       },
-    ],
+    ] as RESIFile[],
     setFiles: vi.fn(),
     addFiles: vi.fn(),
     isAddingFiles: false,
@@ -68,4 +69,28 @@ vi.mock('react-i18next', () => ({
   useTranslation: commonMocks.useTranslation,
 }));
 
-export { commonMocks };
+const files: RESIFile[] = [
+  {
+    name: 'File 1',
+    color: 'red',
+    strokeWidth: 1,
+    checked: true,
+    contents: [3, 3, 6, 6, 6, 4],
+  },
+  {
+    name: 'File 2',
+    color: 'green',
+    strokeWidth: 1,
+    checked: true,
+    contents: [5, 5, 5, 3, 1, 7],
+  },
+  {
+    name: 'File 3',
+    color: 'blue',
+    strokeWidth: 1,
+    checked: true,
+    contents: [4, 4, 8, 12, 3, 17],
+  },
+];
+
+export { commonMocks, files };
