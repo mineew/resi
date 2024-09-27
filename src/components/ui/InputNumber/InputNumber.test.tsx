@@ -1,17 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
+import { commonMocks } from '~/vitest.mocks.hoisted';
+
 import InputNumber from './InputNumber';
-
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
 
 describe('@/components/ui/InputNumber', () => {
   it('renders', () => {
@@ -46,7 +38,7 @@ describe('@/components/ui/InputNumber', () => {
   });
 
   it('displays the thousands separator in EN locale', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'en' },
     });
 
@@ -57,7 +49,7 @@ describe('@/components/ui/InputNumber', () => {
   });
 
   it('displays the thousands separator in RU locale', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'ru' },
     });
 

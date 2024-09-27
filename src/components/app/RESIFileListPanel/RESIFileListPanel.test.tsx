@@ -1,61 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { type StoreState } from '@/store/types/StoreState';
+import { commonMocks } from '~/vitest.mocks.hoisted';
 
 import RESIFileListPanel from './RESIFileListPanel';
 
 const mocks = vi.hoisted(() => ({
-  storeState: {
-    files: [
-      {
-        name: 'File 1',
-        color: 'red',
-        strokeWidth: 1,
-        checked: true,
-        contents: [3, 3, 6, 6, 6, 4],
-      },
-      {
-        name: 'File 2',
-        color: 'green',
-        strokeWidth: 1,
-        checked: true,
-        contents: [5, 5, 5, 3, 1, 7],
-      },
-      {
-        name: 'File 3',
-        color: 'blue',
-        strokeWidth: 1,
-        checked: true,
-        contents: [4, 4, 8, 12, 3, 17],
-      },
-    ],
-    setFiles: vi.fn(),
-    addFiles: vi.fn(),
-    isAddingFiles: false,
-    setIsAddingFiles: vi.fn(),
-    isFetchingFiles: false,
-    setIsFetchingFiles: vi.fn(),
-    deleteAllFiles: vi.fn(),
-    checkAllFiles: vi.fn(),
-    uncheckAllFiles: vi.fn(),
-    changeFileColor: vi.fn(),
-    changeFileStrokeWidth: vi.fn(),
-    toggleFile: vi.fn(),
-    deleteFile: vi.fn(),
-    settings: {},
-    setSettings: vi.fn(),
-    setOffsetLeft: vi.fn(),
-    setOffsetRight: vi.fn(),
-  } satisfies StoreState,
-
   processFiles: vi.fn(() => Promise.resolve([])),
-}));
-
-vi.mock('@/store/store', () => ({
-  default: (selector: (state: StoreState) => unknown) => {
-    return selector(mocks.storeState);
-  },
 }));
 
 vi.mock('@/utils/resi-files/processFiles', () => ({
@@ -82,7 +33,7 @@ describe('@/components/app/RESIFileListPanel', () => {
 
   it('can fetch RESI files', async () => {
     const user = userEvent.setup();
-    mocks.storeState.files = [];
+    commonMocks.storeState.files = [];
     render(<RESIFileListPanel />);
 
     const buttons = await screen.findAllByRole('button');

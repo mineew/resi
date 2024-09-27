@@ -1,20 +1,9 @@
 import { act, render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
+import { commonMocks } from '~/vitest.mocks.hoisted';
+
 import AppToolbar from './AppToolbar';
-
-const mocks = vi.hoisted(() => ({
-  changeLanguage: vi.fn(),
-
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en', changeLanguage: mocks.changeLanguage },
-    t: (message: string) => message,
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
 
 const matchMediaMock = vi.fn(() => ({
   matches: false,
@@ -114,7 +103,7 @@ describe('@/components/app/AppToolbar', () => {
     const ruLangItem = menuItems[1];
     await user.click(ruLangItem);
 
-    expect(mocks.changeLanguage).toHaveBeenCalledTimes(1);
-    expect(mocks.changeLanguage).toHaveBeenLastCalledWith('ru');
+    expect(commonMocks.changeLanguage).toHaveBeenCalledTimes(1);
+    expect(commonMocks.changeLanguage).toHaveBeenLastCalledWith('ru');
   });
 });

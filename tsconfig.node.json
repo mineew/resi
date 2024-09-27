@@ -15,6 +15,7 @@
     "vitest.config.ts",
     "vitest.setup.ts",
     "vitest.mocks.ts",
+    "vitest.mocks.hoisted.ts",
     "playwright.config.ts"
   ]
 }

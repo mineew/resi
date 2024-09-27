@@ -1,20 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
+import { commonMocks } from '~/vitest.mocks.hoisted';
+
 import Formula from './Formula';
-
-const mocks = vi.hoisted(() => ({
-  useTranslation: vi.fn(() => ({
-    i18n: { language: 'en' },
-  })),
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: mocks.useTranslation,
-}));
 
 describe('@/components/ui/Formula', () => {
   it('renders in EN locale', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'en' },
     });
 
@@ -31,7 +23,7 @@ describe('@/components/ui/Formula', () => {
   });
 
   it('renders in RU locale', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'ru' },
     });
 
@@ -48,7 +40,7 @@ describe('@/components/ui/Formula', () => {
   });
 
   it('renders with negative values', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'en' },
     });
 
@@ -65,7 +57,7 @@ describe('@/components/ui/Formula', () => {
   });
 
   it('renders with partial values', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'en' },
     });
 
@@ -93,7 +85,7 @@ describe('@/components/ui/Formula', () => {
   });
 
   it('renders without values', () => {
-    mocks.useTranslation.mockReturnValue({
+    commonMocks.useTranslation.mockReturnValue({
       i18n: { language: 'en' },
     });
 

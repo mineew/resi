@@ -1,61 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import { type StoreState } from '@/store/types/StoreState';
+import { commonMocks } from '~/vitest.mocks.hoisted';
 
 import RESIFileChartPanel from './RESIFileChartPanel';
-
-const mocks = vi.hoisted(() => ({
-  storeState: {
-    files: [
-      {
-        name: 'File 1',
-        color: 'red',
-        strokeWidth: 1,
-        checked: true,
-        contents: [3, 3, 6, 6, 6, 4],
-      },
-      {
-        name: 'File 2',
-        color: 'green',
-        strokeWidth: 1,
-        checked: true,
-        contents: [5, 5, 5, 3, 1, 7],
-      },
-      {
-        name: 'File 3',
-        color: 'blue',
-        strokeWidth: 1,
-        checked: true,
-        contents: [4, 4, 8, 12, 3, 17],
-      },
-    ],
-    setFiles: vi.fn(),
-    addFiles: vi.fn(),
-    isAddingFiles: false,
-    setIsAddingFiles: vi.fn(),
-    isFetchingFiles: false,
-    setIsFetchingFiles: vi.fn(),
-    deleteAllFiles: vi.fn(),
-    checkAllFiles: vi.fn(),
-    uncheckAllFiles: vi.fn(),
-    changeFileColor: vi.fn(),
-    changeFileStrokeWidth: vi.fn(),
-    toggleFile: vi.fn(),
-    deleteFile: vi.fn(),
-    settings: {
-      chunkSize: 1,
-    },
-    setSettings: vi.fn(),
-    setOffsetLeft: vi.fn(),
-    setOffsetRight: vi.fn(),
-  } satisfies StoreState,
-}));
-
-vi.mock('@/store/store', () => ({
-  default: (selector: (state: StoreState) => unknown) => {
-    return selector(mocks.storeState);
-  },
-}));
 
 describe('@/components/app/RESIFileChartPanel', () => {
   it('renders', () => {
@@ -66,7 +13,7 @@ describe('@/components/app/RESIFileChartPanel', () => {
   });
 
   it('can render an empty state', () => {
-    mocks.storeState.files = [];
+    commonMocks.storeState.files = [];
     render(<RESIFileChartPanel />);
 
     const emptyDescription = screen.getByText('RESI_FILE_CHART.NO_DATA');
