@@ -1,11 +1,13 @@
-import { type Preview } from '@storybook/react';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import '../src/i18n/i18n';
 import '../src/styles/index.css';
 
-const preview: Preview = {
+/**
+ * @type {import('@storybook/react').Preview}
+ */
+const preview = {
   parameters: {
     layout: 'fullscreen',
   },
