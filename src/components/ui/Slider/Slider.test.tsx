@@ -38,7 +38,7 @@ describe('@/components/ui/Slider', () => {
       <Slider
         value={value}
         onValueChange={handleValueChange}
-        valueFormatter={(value) => `Current Value: ${value}`}
+        valueFormatter={(newValue) => `Current Value: ${newValue}`}
       />,
     );
 
@@ -56,7 +56,7 @@ describe('@/components/ui/Slider', () => {
         label="Slider Label"
         value={value}
         onValueChange={handleValueChange}
-        valueFormatter={(value) => `Current Value: ${value}`}
+        valueFormatter={(newValue) => `Current Value: ${newValue}`}
       />,
     );
 

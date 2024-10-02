@@ -14,8 +14,8 @@ export const Default: StoryFn<typeof InputNumber> = ({
   const [typedValue, setTypedValue] = useState(1500);
   const [, setUnmaskedValue] = useState('1500');
 
-  const handleValueChange = (typedValue: number, unmaskedValue: string) => {
-    setTypedValue(typedValue);
+  const handleValueChange = (newTypedValue: number, unmaskedValue: string) => {
+    setTypedValue(newTypedValue);
     setUnmaskedValue(unmaskedValue);
   };
 

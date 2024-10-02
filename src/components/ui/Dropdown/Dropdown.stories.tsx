@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button/Button';
 
 import Dropdown, { type DropdownItem } from './Dropdown';
 
-const items: (DropdownItem | 'separator')[] = [
+const fileListExampleItems: (DropdownItem | 'separator')[] = [
   {
     id: 'clear',
     icon: <Trash2 />,
@@ -31,13 +31,32 @@ const items: (DropdownItem | 'separator')[] = [
   },
 ];
 
+const simpleListExampleItems: DropdownItem[] = [
+  {
+    id: 'item-1',
+    label: 'Item 1',
+    onClick: fn(),
+  },
+  {
+    id: 'item-2',
+    label: 'Item 2',
+    onClick: fn(),
+    danger: true,
+  },
+  {
+    id: 'item-3',
+    label: 'Item 3',
+    onClick: fn(),
+  },
+];
+
 export const Default: StoryFn<typeof Dropdown> = () => {
   return (
     <div style={{ padding: 20 }}>
       <Dropdown
         tooltip="Dropdown Trigger Tooltip"
         trigger={<Button>Dropdown Trigger</Button>}
-        items={items}
+        items={fileListExampleItems}
       />
     </div>
   );
@@ -46,7 +65,7 @@ export const Default: StoryFn<typeof Dropdown> = () => {
 export const DefaultTrigger: StoryFn<typeof Dropdown> = () => {
   return (
     <div style={{ padding: 20 }}>
-      <Dropdown tooltip="More Options" items={items} />
+      <Dropdown tooltip="More Options" items={fileListExampleItems} />
     </div>
   );
 };
@@ -54,33 +73,13 @@ export const DefaultTrigger: StoryFn<typeof Dropdown> = () => {
 export const SelectedItem: StoryFn<typeof Dropdown> = () => {
   const [selectedItem, setSelectedItem] = useState('item-1');
 
-  const items: DropdownItem[] = [
-    {
-      id: 'item-1',
-      label: 'Item 1',
-      onClick: () => {
-        setSelectedItem('item-1');
-      },
-      selected: selectedItem === 'item-1',
+  const items = simpleListExampleItems.map((item) => ({
+    ...item,
+    onClick: () => {
+      setSelectedItem(item.id);
     },
-    {
-      id: 'item-2',
-      label: 'Item 2',
-      onClick: () => {
-        setSelectedItem('item-2');
-      },
-      selected: selectedItem === 'item-2',
-      danger: true,
-    },
-    {
-      id: 'item-3',
-      label: 'Item 3',
-      onClick: () => {
-        setSelectedItem('item-3');
-      },
-      selected: selectedItem === 'item-3',
-    },
-  ];
+    selected: selectedItem === item.id,
+  }));
 
   return (
     <div style={{ padding: 20 }}>

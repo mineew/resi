@@ -26,7 +26,7 @@ const AppSettings = memo((props: AppSettingsProps) => {
     values: { ...DEFAULT_SETTINGS, ...values },
   });
 
-  const reset = methods.reset;
+  const { reset } = methods;
 
   const handleOpenChange = useCallback(
     (open: boolean) => {
@@ -37,9 +37,9 @@ const AppSettings = memo((props: AppSettingsProps) => {
   );
 
   const handleSubmit = useCallback(
-    (values: Settings) => {
+    (newValues: Settings) => {
       setDialogOpen(false);
-      onChange(values);
+      onChange(newValues);
     },
     [onChange],
   );

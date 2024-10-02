@@ -26,7 +26,7 @@ function Slider(props: SliderProps) {
     value,
     onValueChange,
     shouldDisplayValue = true,
-    valueFormatter = (value) => value.toString(),
+    valueFormatter = (unformatted) => unformatted.toString(),
     min = 0,
     max = 10,
     step = 1,
@@ -41,8 +41,8 @@ function Slider(props: SliderProps) {
   }, [value]);
 
   const handleSliderChange = useCallback(
-    (value: number[]) => {
-      onValueChange(value[0]);
+    (newValue: number[]) => {
+      onValueChange(newValue[0]);
     },
     [onValueChange],
   );

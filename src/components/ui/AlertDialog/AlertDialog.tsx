@@ -42,8 +42,8 @@ function AlertDialog(props: AlertDialogProps) {
   }, []);
 
   const handleChangeDontShowAgain = useCallback(
-    (dontShowAgain: boolean) => {
-      onChangeDontShowAgain?.(dontShowAgain);
+    (newDontShowAgain: boolean) => {
+      onChangeDontShowAgain?.(newDontShowAgain);
     },
     [onChangeDontShowAgain],
   );

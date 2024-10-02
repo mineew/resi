@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.BASE_URL;
+const { BASE_URL } = import.meta.env;
 
 async function fetchExampleFiles() {
   try {

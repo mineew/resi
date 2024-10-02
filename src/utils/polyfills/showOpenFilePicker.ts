@@ -1,22 +1,22 @@
-let input: HTMLInputElement | undefined;
+let globalInputElement: HTMLInputElement | undefined;
 
 function getInputElement(options: ShowOpenFilePickerOptions) {
   const { multiple = false, types } = options;
 
-  if (!input) {
-    input = document.createElement('input');
+  if (!globalInputElement) {
+    globalInputElement = document.createElement('input');
   }
 
-  input.type = 'file';
-  input.multiple = multiple || false;
+  globalInputElement.type = 'file';
+  globalInputElement.multiple = multiple || false;
 
-  input.accept =
+  globalInputElement.accept =
     types
       ?.map((t) => t.accept)
       .flatMap((t) => Object.keys(t).flatMap((k) => t[k]))
       .join(',') || '';
 
-  return input;
+  return globalInputElement;
 }
 
 function convertFileToFileHandle(file: File): FileSystemFileHandle {

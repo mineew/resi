@@ -43,21 +43,21 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   checkAllFiles: () => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = files.map((file) => ({ ...file, checked: true }));
 
     set({ files: newFiles });
   },
 
   uncheckAllFiles: () => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = files.map((file) => ({ ...file, checked: false }));
 
     set({ files: newFiles });
   },
 
   changeFileColor: (idx, color) => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = [...files];
     newFiles[idx] = { ...newFiles[idx], color };
 
@@ -65,7 +65,7 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   changeFileStrokeWidth: (idx, width) => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = [...files];
     newFiles[idx] = { ...newFiles[idx], strokeWidth: width };
 
@@ -73,7 +73,7 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   toggleFile: (idx, checked) => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = [...files];
     newFiles[idx] = { ...newFiles[idx], checked };
 
@@ -81,7 +81,7 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   deleteFile: (idx) => {
-    const files = get().files;
+    const { files } = get();
     const newFiles = [...files];
     newFiles.splice(idx, 1);
 
