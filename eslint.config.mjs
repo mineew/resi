@@ -1,3 +1,7 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { includeIgnoreFile } from '@eslint/compat';
+
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import globals from 'globals';
@@ -7,6 +11,10 @@ import hooks from 'eslint-plugin-react-hooks';
 import refresh from 'eslint-plugin-react-refresh';
 import prettier from 'eslint-plugin-prettier/recommended';
 import jestDom from 'eslint-plugin-jest-dom';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const gitignorePath = path.resolve(__dirname, '.gitignore');
 
 export default tseslint.config(
   {
@@ -81,4 +89,6 @@ export default tseslint.config(
     files: ['src/**/*.stories.tsx'],
     rules: { 'react/prop-types': 'off' },
   },
+
+  includeIgnoreFile(gitignorePath),
 );
