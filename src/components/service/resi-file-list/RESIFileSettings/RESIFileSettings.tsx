@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, type JSX } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { useTranslation } from 'react-i18next';
 import { useDebouncedCallback } from 'use-debounce';

@@ -75,13 +75,17 @@ describe('@/components/app/AppToolbar', () => {
     expect(listeners).toHaveLength(1);
 
     act(() => {
-      listeners.forEach((l) => l({ matches: true } as MediaQueryListEvent));
+      listeners.forEach((l) => {
+        l({ matches: true } as MediaQueryListEvent);
+      });
     });
 
     expect(baseElement).toHaveClass('dark');
 
     act(() => {
-      listeners.forEach((l) => l({ matches: false } as MediaQueryListEvent));
+      listeners.forEach((l) => {
+        l({ matches: false } as MediaQueryListEvent);
+      });
     });
 
     expect(baseElement).not.toHaveClass('dark');

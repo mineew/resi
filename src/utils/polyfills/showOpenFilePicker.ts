@@ -1,4 +1,4 @@
-let input: HTMLInputElement;
+let input: HTMLInputElement | undefined;
 
 function getInputElement(options: ShowOpenFilePickerOptions) {
   const { multiple = false, types } = options;
@@ -21,7 +21,11 @@ function getInputElement(options: ShowOpenFilePickerOptions) {
 
 function convertFileToFileHandle(file: File): FileSystemFileHandle {
   return {
-    getFile: () => new Promise((resolve) => resolve(file)),
+    getFile: () => {
+      return new Promise((resolve) => {
+        resolve(file);
+      });
+    },
   } as FileSystemFileHandle;
 }
 

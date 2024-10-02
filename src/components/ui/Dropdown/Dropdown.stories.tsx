@@ -58,20 +58,26 @@ export const SelectedItem: StoryFn<typeof Dropdown> = () => {
     {
       id: 'item-1',
       label: 'Item 1',
-      onClick: () => setSelectedItem('item-1'),
+      onClick: () => {
+        setSelectedItem('item-1');
+      },
       selected: selectedItem === 'item-1',
     },
     {
       id: 'item-2',
       label: 'Item 2',
-      onClick: () => setSelectedItem('item-2'),
+      onClick: () => {
+        setSelectedItem('item-2');
+      },
       selected: selectedItem === 'item-2',
       danger: true,
     },
     {
       id: 'item-3',
       label: 'Item 3',
-      onClick: () => setSelectedItem('item-3'),
+      onClick: () => {
+        setSelectedItem('item-3');
+      },
       selected: selectedItem === 'item-3',
     },
   ];

@@ -26,17 +26,23 @@ function ExportChartButton(props: ExportChartButtonProps) {
     {
       id: '1x',
       label: '1✕',
-      onClick: () => handleExportChart(1),
+      onClick: () => {
+        handleExportChart(1);
+      },
     },
     {
       id: '2x',
       label: '2✕',
-      onClick: () => handleExportChart(2),
+      onClick: () => {
+        handleExportChart(2);
+      },
     },
     {
       id: '3x',
       label: '3✕',
-      onClick: () => handleExportChart(3),
+      onClick: () => {
+        handleExportChart(3);
+      },
     },
   ];
 

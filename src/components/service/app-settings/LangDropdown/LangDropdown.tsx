@@ -20,7 +20,9 @@ const LangDropdown = memo((props: LangDropdownProps) => {
     id: lang.id,
     label: lang.label,
     selected: lang.id === selectedLang,
-    onClick: () => onChangeSelectedLang(lang.id),
+    onClick: () => {
+      onChangeSelectedLang(lang.id);
+    },
   }));
 
   return (

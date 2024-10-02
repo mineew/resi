@@ -54,7 +54,7 @@ function useCurrentTheme() {
 }
 
 function getSystemTheme(): Theme {
-  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return 'dark';
   }
 
@@ -62,7 +62,7 @@ function getSystemTheme(): Theme {
 }
 
 function getThemeFromLS(): Theme | undefined {
-  const theme = window.localStorage?.getItem('theme');
+  const theme = window.localStorage.getItem('theme');
 
   if (theme === 'light' || theme === 'dark') {
     return theme;
@@ -70,7 +70,7 @@ function getThemeFromLS(): Theme | undefined {
 }
 
 function saveThemeToLS(theme: Theme) {
-  window.localStorage?.setItem('theme', theme);
+  window.localStorage.setItem('theme', theme);
 }
 
 export default useCurrentTheme;

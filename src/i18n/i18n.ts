@@ -34,7 +34,7 @@ i18n.services.formatter?.add('notNaN', (value) => {
     return '';
   }
 
-  return value + '';
+  return String(value);
 });
 
 i18n.services.formatter?.add('rightSpace', (value) => {

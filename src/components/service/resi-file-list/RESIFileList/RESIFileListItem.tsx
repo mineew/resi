@@ -29,21 +29,29 @@ const RESIFileListItem = memo((props: RESIFileListItemProps) => {
   const [active, setActive] = useState(false);
 
   const handleChangeColor = useCallback(
-    (color: string) => onChangeColor(idx, color),
+    (color: string) => {
+      onChangeColor(idx, color);
+    },
     [idx, onChangeColor],
   );
 
   const handleChangeStrokeWidth = useCallback(
-    (width: number) => onChangeStrokeWidth(idx, width),
+    (width: number) => {
+      onChangeStrokeWidth(idx, width);
+    },
     [idx, onChangeStrokeWidth],
   );
 
   const handleChangeChecked = useCallback(
-    (checked: boolean) => onChangeChecked(idx, checked),
+    (checked: boolean) => {
+      onChangeChecked(idx, checked);
+    },
     [idx, onChangeChecked],
   );
 
-  const handleDelete = useCallback(() => onDelete(idx), [idx, onDelete]);
+  const handleDelete = useCallback(() => {
+    onDelete(idx);
+  }, [idx, onDelete]);
 
   return (
     <li

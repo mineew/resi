@@ -25,7 +25,7 @@ function calculateFileGrowth(
         continue;
       }
 
-      if (!distanceGrowthMap[distance]) {
+      if (!(distance in distanceGrowthMap)) {
         distanceGrowthMap[distance] = [];
       }
 

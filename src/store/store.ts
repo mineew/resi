@@ -5,7 +5,9 @@ import { type StoreState } from './types/StoreState';
 
 const useStore = create<StoreState>()((set, get) => ({
   files: [],
-  setFiles: (files) => set({ files }),
+  setFiles: (files) => {
+    set({ files });
+  },
 
   addFiles: (files) => {
     const storedFiles = get().files;
@@ -27,10 +29,14 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   isAddingFiles: false,
-  setIsAddingFiles: (isAddingFiles) => set({ isAddingFiles }),
+  setIsAddingFiles: (isAddingFiles) => {
+    set({ isAddingFiles });
+  },
 
   isFetchingFiles: false,
-  setIsFetchingFiles: (isFetchingFiles) => set({ isFetchingFiles }),
+  setIsFetchingFiles: (isFetchingFiles) => {
+    set({ isFetchingFiles });
+  },
 
   deleteAllFiles: () => {
     set({ files: [] });
@@ -83,11 +89,15 @@ const useStore = create<StoreState>()((set, get) => ({
   },
 
   settings: DEFAULT_SETTINGS,
-  setSettings: (settings) => set({ settings }),
-  setOffsetLeft: (offsetLeft) =>
-    set((state) => ({ settings: { ...state.settings, offsetLeft } })),
-  setOffsetRight: (offsetRight) =>
-    set((state) => ({ settings: { ...state.settings, offsetRight } })),
+  setSettings: (settings) => {
+    set({ settings });
+  },
+  setOffsetLeft: (offsetLeft) => {
+    set((state) => ({ settings: { ...state.settings, offsetLeft } }));
+  },
+  setOffsetRight: (offsetRight) => {
+    set((state) => ({ settings: { ...state.settings, offsetRight } }));
+  },
 }));
 
 export default useStore;

@@ -22,7 +22,7 @@ export default tseslint.config(
 
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
+      ...tseslint.configs.strictTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       a11y.flatConfigs.recommended,
       react.configs.flat.recommended,
@@ -40,9 +40,6 @@ export default tseslint.config(
       'no-alert': 'warn',
       'no-debugger': 'warn',
 
-      '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/consistent-type-imports': 'error',
-
       ...hooks.configs.recommended.rules,
 
       'react-refresh/only-export-components': [
@@ -50,11 +47,16 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
 
+      '@typescript-eslint/consistent-type-exports': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
-
       '@typescript-eslint/no-empty-object-type': [
         'error',
         { allowInterfaces: 'with-single-extends' },
+      ],
+      '@typescript-eslint/restrict-template-expressions': [
+        'error',
+        { allowNumber: true },
       ],
     },
 

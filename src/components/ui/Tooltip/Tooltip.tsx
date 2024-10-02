@@ -1,5 +1,6 @@
 import * as Radix from '@radix-ui/react-tooltip';
 import classNames from 'classnames';
+import { type JSX } from 'react';
 
 import styles from './Tooltip.module.css';
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-confusing-void-expression */
+
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { type RESIFile } from '@/store/types/RESIFile';

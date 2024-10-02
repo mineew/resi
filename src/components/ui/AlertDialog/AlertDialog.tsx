@@ -1,6 +1,6 @@
 import * as Radix from '@radix-ui/react-alert-dialog';
 import classNames from 'classnames';
-import { useCallback } from 'react';
+import { useCallback, type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';

@@ -6,8 +6,12 @@ import '@/i18n/i18n';
 import '@/preload-error';
 import '@/utils/polyfills/showOpenFilePicker';
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+const container = document.getElementById('root');
+
+if (container) {
+  createRoot(container).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+}

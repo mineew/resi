@@ -2,7 +2,7 @@ import * as Radix from '@radix-ui/react-dialog';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import classNames from 'classnames';
 import { X } from 'lucide-react';
-import { type ReactNode, useCallback } from 'react';
+import { type ReactNode, useCallback, type JSX } from 'react';
 
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 

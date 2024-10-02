@@ -1,6 +1,6 @@
 import * as Radix from '@radix-ui/react-popover';
 import classNames from 'classnames';
-import { type ReactNode } from 'react';
+import { type ReactNode, type JSX } from 'react';
 
 import styles from './Popover.module.css';
 

@@ -10,7 +10,11 @@ function useReferenceTooltip(visibilityDelay = 100) {
   const enableTooltip = useCallback(
     (x: number) => {
       setTooltipIsActive(true);
-      timeout = setTimeout(() => setTooltipIsVisible(true), visibilityDelay);
+
+      timeout = setTimeout(() => {
+        setTooltipIsVisible(true);
+      }, visibilityDelay);
+
       setTooltipContent(x);
     },
     [visibilityDelay],
