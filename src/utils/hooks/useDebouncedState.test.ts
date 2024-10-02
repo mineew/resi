@@ -6,6 +6,7 @@ import useDebouncedState from './useDebouncedState';
 
 describe('@/utils/hooks/useDebouncedState', () => {
   it('should debounce state updates', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     const defaultValue: number = 100;
     const notify = vi.fn();
     const wait = 300;

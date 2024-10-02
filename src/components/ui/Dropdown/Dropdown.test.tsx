@@ -3,7 +3,7 @@ import { userEvent } from '@testing-library/user-event';
 
 import Dropdown, { type DropdownItem } from './Dropdown';
 
-const items: Array<DropdownItem | 'separator'> = [
+const items: (DropdownItem | 'separator')[] = [
   {
     id: 'item-1',
     label: 'Item 1',

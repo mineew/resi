@@ -4,9 +4,9 @@ import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 function convertGrowthToChartPoints(growth: RESIFileGrowth[]) {
   const points: ScatterChartPoint[] = [];
 
-  for (let i = 0; i < growth.length; i += 1) {
-    const x = growth[i].distance / 10;
-    const y = growth[i].growth;
+  for (const g of growth) {
+    const x = g.distance / 10;
+    const y = g.growth;
 
     points.push({ x, y });
   }

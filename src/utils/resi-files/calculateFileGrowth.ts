@@ -11,8 +11,7 @@ function calculateFileGrowth(
 ): RESIFileGrowth[] {
   const distanceGrowthMap: Record<string, number[]> = {};
 
-  for (let i = 0; i < files.length; i += 1) {
-    const file = files[i];
+  for (const file of files) {
     let totalGrowth = 0;
 
     for (let j = 1; j < file.contents.length; j += 1) {

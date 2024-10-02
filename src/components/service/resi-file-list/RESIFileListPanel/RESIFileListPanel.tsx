@@ -64,7 +64,7 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     }
   }, [dontShowAgainAlertDialog, onDeleteAllFiles]);
 
-  const dropdownItems: Array<DropdownItem | 'separator'> = [
+  const dropdownItems: (DropdownItem | 'separator')[] = [
     {
       id: 'clear',
       icon: <Trash2 />,

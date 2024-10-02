@@ -36,7 +36,6 @@ function Formula(props: FormulaProps) {
   return (
     <div
       dangerouslySetInnerHTML={{
-        // eslint-disable-next-line import/no-named-as-default-member
         __html: katext.renderToString(formula),
       }}
     />

@@ -16,7 +16,7 @@ async function fetchExampleFiles() {
     }
 
     return result;
-  } catch (e) {
+  } catch {
     return null;
   }
 }

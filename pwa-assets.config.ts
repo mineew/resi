@@ -1,5 +1,3 @@
-/* eslint-disable import/exports-last */
-
 import fs from 'fs';
 import pt from 'path';
 

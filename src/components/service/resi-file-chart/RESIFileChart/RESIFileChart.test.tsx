@@ -1,6 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
-/* eslint-disable testing-library/no-container */
-
 import { render, screen } from '@testing-library/react';
 
 import { type RESIFile } from '@/store/types/RESIFile';

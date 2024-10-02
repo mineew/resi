@@ -23,7 +23,7 @@ describe('@/utils/resi-files/fetchExampleFiles', () => {
   });
 
   it('should handle errors', async () => {
-    fetchMock.mockImplementation(() => () => Promise.reject());
+    fetchMock.mockImplementation(() => () => Promise.reject(new Error()));
     const files = await fetchExampleFiles();
 
     expect(files).toBe(null);

@@ -3,10 +3,10 @@
 interface ShowOpenFilePickerOptions {
   excludeAcceptAllOption?: boolean;
   multiple?: boolean;
-  types?: Array<{
+  types?: {
     description?: string;
     accept: Record<string, string[]>;
-  }>;
+  }[];
 }
 
 interface Window {

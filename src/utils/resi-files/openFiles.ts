@@ -23,7 +23,7 @@ async function openFiles() {
     }
 
     return result;
-  } catch (e) {
+  } catch {
     return null;
   }
 }

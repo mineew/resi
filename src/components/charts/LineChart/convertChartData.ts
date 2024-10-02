@@ -4,7 +4,7 @@ function convertChartData(
   datasets: LineChartDataset[],
   xConverter = (x: number) => x,
 ) {
-  const lines: Array<Record<string, number>> = [];
+  const lines: Record<string, number>[] = [];
 
   let maxX = 0;
   let maxY = 0;

@@ -20,7 +20,7 @@ interface DropdownItem {
 }
 
 interface DropdownProps {
-  items: Array<DropdownItem | 'separator'>;
+  items: (DropdownItem | 'separator')[];
   defaultTriggerClassName?: string;
   defaultTriggerTitle?: string;
   tooltip?: string;

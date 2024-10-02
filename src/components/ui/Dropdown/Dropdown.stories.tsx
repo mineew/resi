@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button/Button';
 
 import Dropdown, { type DropdownItem } from './Dropdown';
 
-const items: Array<DropdownItem | 'separator'> = [
+const items: (DropdownItem | 'separator')[] = [
   {
     id: 'clear',
     icon: <Trash2 />,

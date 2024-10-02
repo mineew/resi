@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import {
   type InputHTMLAttributes,
   type ReactNode,
-  type Ref,
   forwardRef,
   useId,
 } from 'react';
@@ -16,7 +15,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   invalid?: boolean;
 }
 
-function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     className,
     id: providedId,
@@ -65,8 +64,8 @@ function _Input(props: InputProps, ref: Ref<HTMLInputElement>) {
       {help && <div className={styles.help}>{help}</div>}
     </div>
   );
-}
+});
 
-const Input = forwardRef(_Input);
+Input.displayName = 'Input';
 
 export default Input;

@@ -25,7 +25,7 @@ export default defineConfig({
         },
 
         assetFileNames: ({ name }) => {
-          if (/\.css$/.test(name ?? '')) {
+          if (name?.endsWith('.css')) {
             return 'assets/css/[name]-[hash][extname]';
           }
 

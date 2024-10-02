@@ -67,7 +67,7 @@ function ScatterChart(props: ScatterChartProps) {
       </div>
 
       <div
-        className={styles['chart']}
+        className={styles.chart}
         ref={setChartWrapper}
         data-testid="scatter-chart-container"
       >
