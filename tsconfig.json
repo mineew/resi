@@ -22,6 +22,7 @@
 
     /* Added to vite's confing */
     "esModuleInterop": true,
+    "noImplicitReturns": true,
     "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     /* Path aliases */

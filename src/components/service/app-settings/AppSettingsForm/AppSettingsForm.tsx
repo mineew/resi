@@ -179,6 +179,8 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
                 value: offsetRight - offsetGap,
               });
             }
+
+            return;
           },
         }}
         render={({ field }) => (
@@ -207,6 +209,8 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
                 value: offsetLeft + offsetGap,
               });
             }
+
+            return;
           },
         }}
         render={({ field }) => (

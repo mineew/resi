@@ -67,6 +67,8 @@ function getThemeFromLS(): Theme | undefined {
   if (theme === 'light' || theme === 'dark') {
     return theme;
   }
+
+  return;
 }
 
 function saveThemeToLS(theme: Theme) {
