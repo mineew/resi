@@ -80,6 +80,12 @@ export default tseslint.config(
         'error',
         { object: true, array: false },
       ],
+
+      'no-restricted-imports': 'off',
+      '@typescript-eslint/no-restricted-imports': [
+        'error',
+        { patterns: ['../*'] },
+      ],
     },
 
     languageOptions: {
