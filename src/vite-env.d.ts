@@ -4,8 +4,8 @@ interface ShowOpenFilePickerOptions {
   multiple?: boolean;
   excludeAcceptAllOption?: boolean;
   types?: {
-    description?: string;
     accept: Record<string, string[]>;
+    description?: string;
   }[];
 }
 

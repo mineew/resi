@@ -96,6 +96,17 @@ export default tseslint.config(
         },
       ],
 
+      'perfectionist/sort-object-types': [
+        'error',
+        {
+          type: 'line-length',
+          groupKind: 'required-first',
+          partitionByNewLine: true,
+          groups: ['unknown', 'multiline', 'callbacks'],
+          customGroups: { callbacks: ['on*'] },
+        },
+      ],
+
       'perfectionist/sort-objects': [
         'error',
         {
@@ -105,6 +116,35 @@ export default tseslint.config(
           customGroups: { callbacks: ['on*'] },
         },
       ],
+
+      'perfectionist/sort-array-includes': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+          groupKind: 'literals-first',
+        },
+      ],
+
+      'perfectionist/sort-maps': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+        },
+      ],
+
+      'perfectionist/sort-sets': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+          groupKind: 'literals-first',
+        },
+      ],
+
+      'perfectionist/sort-intersection-types': 'error',
+      'perfectionist/sort-switch-case': 'error',
 
       // added tseslint rules
       '@typescript-eslint/consistent-type-exports': 'error',
@@ -188,3 +228,34 @@ export default tseslint.config(
 
   includeIgnoreFile(gitignorePath),
 );
+
+// TODO plugins
+// eslint-plugin-testing-library
+// eslint-plugin-storybook
+// eslint-plugin-react-compiler
+// eslint-plugin-import
+// eslint-import-resolver-typescript
+
+// TODO rules
+// naming-convention
+// no-magic-numbers
+// promise-function-async
+// strict-boolean-expressions
+
+// module.exports = {
+//   rules: {
+//     'import/no-duplicates': ['error', { 'prefer-inline': true }],
+//     'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+//     'import/exports-last': 'error',
+//     'import/group-exports': 'error',
+
+//     'react-compiler/react-compiler': 'warn',
+//   },
+
+//   settings: {
+//     'import/resolver': {
+//       typescript: true,
+//       node: true,
+//     },
+//   },
+// };
