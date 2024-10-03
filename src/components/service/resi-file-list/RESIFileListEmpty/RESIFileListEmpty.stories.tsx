@@ -1,4 +1,4 @@
-import { type Meta, type StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import RESIFileListEmpty from './RESIFileListEmpty';

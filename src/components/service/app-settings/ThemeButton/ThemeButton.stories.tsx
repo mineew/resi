@@ -1,7 +1,7 @@
-import { type Meta, type StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 
-import { type Theme } from './Theme';
+import type { Theme } from './Theme';
 import ThemeButton from './ThemeButton';
 
 export const Default: StoryFn<typeof ThemeButton> = () => {

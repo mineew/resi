@@ -1,4 +1,4 @@
-import { type ReactNode, type Ref } from 'react';
+import type { ReactNode, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useIMask } from 'react-imask';
 

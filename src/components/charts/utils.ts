@@ -1,4 +1,4 @@
-import { type TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 
 const xTickFormatter = (t: TFunction) => (value: unknown) => {
   return t('UTILS.NUMBER', { value: Number(value) });

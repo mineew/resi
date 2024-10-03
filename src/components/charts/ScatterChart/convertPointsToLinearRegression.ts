@@ -1,6 +1,6 @@
 import { type DataPoint, linear } from 'regression';
 
-import { type ScatterChartPoint } from './ScatterChartPoint';
+import type { ScatterChartPoint } from './ScatterChartPoint';
 
 function convertPointsToLinearRegression(points: ScatterChartPoint[]) {
   const dataPoints: DataPoint[] = points.map((p) => [p.x, p.y]);

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ScatterChart from '@/components/charts/ScatterChart/ScatterChart';
-import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
+import type { RESIFileDiff } from '@/store/types/RESIFileDiff';
 import getChartExportFilename from '@/utils/chart-export/getChartExportFilename';
 
 import convertDiffsToChartPoints from './convertDiffsToChartPoints';

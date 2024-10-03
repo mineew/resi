@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import getRandomArray from './getRandomArray';
 import getRandomBoolean from './getRandomBoolean';

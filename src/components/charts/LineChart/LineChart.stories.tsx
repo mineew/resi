@@ -1,8 +1,8 @@
-import { type Meta, type StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 
 import LineChart from './LineChart';
-import { type LineChartDataset } from './LineChartDataset';
+import type { LineChartDataset } from './LineChartDataset';
 
 export const Default: StoryFn<typeof LineChart> = ({
   title,

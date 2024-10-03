@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
-import { type Theme } from './Theme';
+import type { Theme } from './Theme';
 import styles from './ThemeButton.module.css';
 
 interface ThemeButtonProps {

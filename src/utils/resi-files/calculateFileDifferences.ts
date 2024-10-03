@@ -1,5 +1,5 @@
-import { type RESIFile } from '@/store/types/RESIFile';
-import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
+import type { RESIFile } from '@/store/types/RESIFile';
+import type { RESIFileDiff } from '@/store/types/RESIFileDiff';
 import calculateDataDifference from '@/utils/stats/calculateDataDifference';
 
 function calculateFileDifferences(

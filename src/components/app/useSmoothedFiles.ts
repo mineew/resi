@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import useStore from '@/store/store';
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import smoothFiles from '@/utils/resi-files/smoothFiles';
 
 function useSmoothedFiles(files: RESIFile[]) {

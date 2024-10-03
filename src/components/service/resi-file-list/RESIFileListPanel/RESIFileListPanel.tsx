@@ -9,7 +9,7 @@ import AlertDialog from '@/components/ui/AlertDialog/AlertDialog';
 import Button from '@/components/ui/Button/Button';
 import Dropdown, { type DropdownItem } from '@/components/ui/Dropdown/Dropdown';
 import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileListPanel.module.css';
 

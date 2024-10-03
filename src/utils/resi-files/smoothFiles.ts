@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import smoothData from '@/utils/stats/smoothData';
 
 function smoothFiles(

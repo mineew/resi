@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 import { DEFAULT_SETTINGS } from './types/Settings';
-import { type StoreState } from './types/StoreState';
+import type { StoreState } from './types/StoreState';
 
 const useStore = create<StoreState>()((set, get) => ({
   files: [],

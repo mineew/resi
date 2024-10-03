@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import RESIFileListPanel from './RESIFileListPanel';
 

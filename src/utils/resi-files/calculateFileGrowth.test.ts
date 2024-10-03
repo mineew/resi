@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import calculateFileGrowth from './calculateFileGrowth';
 

@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import cropArray from '@/utils/arrays/cropArray';
 
 function cropFiles(files: RESIFile[], offsetLeft = 0, offsetRight = 0) {

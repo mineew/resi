@@ -1,6 +1,6 @@
 import * as Radix from '@radix-ui/react-scroll-area';
 import classNames from 'classnames';
-import { type HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
 import styles from './ScrollArea.module.css';
 

@@ -16,7 +16,7 @@ import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import Formula from '@/components/ui/Formula/Formula';
 
 import styles from './ScatterChart.module.css';
-import { type ScatterChartPoint } from './ScatterChartPoint';
+import type { ScatterChartPoint } from './ScatterChartPoint';
 import convertPointsToLinearRegression from './convertPointsToLinearRegression';
 
 interface ScatterChartProps {

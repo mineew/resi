@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import styles from './RESIFileList.module.css';
 import RESIFileListItem from './RESIFileListItem';

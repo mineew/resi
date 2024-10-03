@@ -1,4 +1,4 @@
-import { type LineChartDataset } from './LineChartDataset';
+import type { LineChartDataset } from './LineChartDataset';
 
 function convertChartData(
   datasets: LineChartDataset[],

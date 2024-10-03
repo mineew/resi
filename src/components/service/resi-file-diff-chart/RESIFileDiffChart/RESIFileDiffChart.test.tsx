@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
+import type { RESIFileDiff } from '@/store/types/RESIFileDiff';
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 
 import RESIFileDiffChart from './RESIFileDiffChart';

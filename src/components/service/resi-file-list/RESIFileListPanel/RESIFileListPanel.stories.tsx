@@ -1,7 +1,7 @@
-import { type Meta, type StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import createRandomRESIFile from '@/utils/misc/createRandomRESIFile';
 import getRandomArray from '@/utils/misc/getRandomArray';
 

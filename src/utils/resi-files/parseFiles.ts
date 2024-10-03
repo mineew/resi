@@ -1,4 +1,4 @@
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 const HEADER_ROWS = 25;
 const DEFAULT_FILE_COLOR = '';

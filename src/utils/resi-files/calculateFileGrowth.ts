@@ -1,7 +1,7 @@
 import { mean, median } from 'simple-statistics';
 
-import { type RESIFile } from '@/store/types/RESIFile';
-import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
+import type { RESIFile } from '@/store/types/RESIFile';
+import type { RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 
 function calculateFileGrowth(
   files: RESIFile[],

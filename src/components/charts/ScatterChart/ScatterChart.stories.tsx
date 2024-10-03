@@ -1,10 +1,10 @@
-import { type Meta, type StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
 import getRandomArray from '@/utils/misc/getRandomArray';
 import getRandomInt from '@/utils/misc/getRandomInt';
 
 import ScatterChart from './ScatterChart';
-import { type ScatterChartPoint } from './ScatterChartPoint';
+import type { ScatterChartPoint } from './ScatterChartPoint';
 
 export const Default: StoryFn<typeof ScatterChart> = ({
   title,

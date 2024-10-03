@@ -16,7 +16,7 @@ import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
 import styles from './LineChart.module.css';
-import { type LineChartDataset } from './LineChartDataset';
+import type { LineChartDataset } from './LineChartDataset';
 import convertChartData from './convertChartData';
 import renderReference from './renderReference';
 import renderStepReferences from './renderStepReferences';

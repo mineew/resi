@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
+import type { RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 
 import RESIFileGrowthChart from './RESIFileGrowthChart';
 

@@ -1,4 +1,4 @@
-import { type RESIFile } from './RESIFile';
+import type { RESIFile } from './RESIFile';
 
 interface RESIFileDiff {
   fileA: RESIFile;

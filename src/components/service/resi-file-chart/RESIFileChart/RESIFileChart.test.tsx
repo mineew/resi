@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import RESIFileChart from './RESIFileChart';
 

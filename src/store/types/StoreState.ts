@@ -1,5 +1,5 @@
-import { type RESIFile } from './RESIFile';
-import { type Settings } from './Settings';
+import type { RESIFile } from './RESIFile';
+import type { Settings } from './Settings';
 
 interface StoreState {
   files: RESIFile[];

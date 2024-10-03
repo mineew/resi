@@ -1,5 +1,5 @@
-import { type ScatterChartPoint } from '@/components/charts/ScatterChart/ScatterChartPoint';
-import { type RESIFileDiff } from '@/store/types/RESIFileDiff';
+import type { ScatterChartPoint } from '@/components/charts/ScatterChart/ScatterChartPoint';
+import type { RESIFileDiff } from '@/store/types/RESIFileDiff';
 
 function convertDiffsToChartPoints(diffs: RESIFileDiff[]) {
   const points: ScatterChartPoint[] = [];

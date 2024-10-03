@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import LineChart from '@/components/charts/LineChart/LineChart';
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import getChartExportFilename from '@/utils/chart-export/getChartExportFilename';
 
 interface RESIFileChartProps {

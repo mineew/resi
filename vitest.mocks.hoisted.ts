@@ -2,8 +2,8 @@
 
 import { vi } from 'vitest';
 
-import { type RESIFile } from '@/store/types/RESIFile';
-import { type StoreState } from '@/store/types/StoreState';
+import type { RESIFile } from '@/store/types/RESIFile';
+import type { StoreState } from '@/store/types/StoreState';
 
 const commonMocks = vi.hoisted(() => ({
   storeState: {

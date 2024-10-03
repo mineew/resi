@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import ScatterChart from './ScatterChart';
-import { type ScatterChartPoint } from './ScatterChartPoint';
+import type { ScatterChartPoint } from './ScatterChartPoint';
 
 const points: ScatterChartPoint[] = [
   { x: 1, y: 1 },

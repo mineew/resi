@@ -1,5 +1,5 @@
 import { ChevronsRight } from 'lucide-react';
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@/components/ui/Button/Button';

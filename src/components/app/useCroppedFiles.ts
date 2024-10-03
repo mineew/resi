@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import useStore from '@/store/store';
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 import cropFiles from '@/utils/resi-files/cropFiles';
 
 function useCroppedFiles(files: RESIFile[]) {

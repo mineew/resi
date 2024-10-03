@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { type Theme } from '@/components/service/app-settings/ThemeButton/Theme';
+import type { Theme } from '@/components/service/app-settings/ThemeButton/Theme';
 
 function useCurrentTheme() {
   const [theme, setTheme] = useState<Theme>(

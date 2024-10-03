@@ -53,6 +53,7 @@ export default tseslint.config(
       '@typescript-eslint/method-signature-style': 'error',
       '@typescript-eslint/no-useless-empty-export': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
+      '@typescript-eslint/no-import-type-side-effects': 'error',
 
       // overrided tseslint rules
       '@typescript-eslint/prefer-nullish-coalescing': 'off',

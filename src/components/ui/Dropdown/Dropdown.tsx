@@ -1,5 +1,5 @@
 import * as Radix from '@radix-ui/react-dropdown-menu';
-import { type DropdownMenuContentProps } from '@radix-ui/react-dropdown-menu';
+import type { DropdownMenuContentProps } from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 import { ChevronDown } from 'lucide-react';
 import { useCallback, type JSX } from 'react';

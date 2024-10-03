@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import LineChart from './LineChart';
-import { type LineChartDataset } from './LineChartDataset';
+import type { LineChartDataset } from './LineChartDataset';
 
 const data: LineChartDataset[] = [
   {

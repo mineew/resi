@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { type MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 import { ReferenceArea, ReferenceLine } from 'recharts';
 
 import styles from './LineChart.module.css';

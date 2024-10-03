@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import AppLayoutCharts from '@/components/layout/AppLayoutCharts/AppLayoutCharts';
 import AppLayoutDrawer from '@/components/layout/AppLayoutDrawer/AppLayoutDrawer';

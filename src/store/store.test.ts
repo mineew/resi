@@ -2,7 +2,7 @@
 
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { type RESIFile } from '@/store/types/RESIFile';
+import type { RESIFile } from '@/store/types/RESIFile';
 
 import useStore from './store';
 import { DEFAULT_SETTINGS } from './types/Settings';

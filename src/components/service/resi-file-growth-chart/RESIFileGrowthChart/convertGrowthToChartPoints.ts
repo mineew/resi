@@ -1,5 +1,5 @@
-import { type ScatterChartPoint } from '@/components/charts/ScatterChart/ScatterChartPoint';
-import { type RESIFileGrowth } from '@/store/types/RESIFileGrowth';
+import type { ScatterChartPoint } from '@/components/charts/ScatterChart/ScatterChartPoint';
+import type { RESIFileGrowth } from '@/store/types/RESIFileGrowth';
 
 function convertGrowthToChartPoints(growth: RESIFileGrowth[]) {
   const points: ScatterChartPoint[] = [];
