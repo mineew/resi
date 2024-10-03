@@ -107,6 +107,15 @@ export default tseslint.config(
         },
       ],
 
+      'perfectionist/sort-union-types': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+          groups: ['unknown', 'literal', 'nullish'],
+        },
+      ],
+
       'perfectionist/sort-objects': [
         'error',
         {
@@ -228,34 +237,3 @@ export default tseslint.config(
 
   includeIgnoreFile(gitignorePath),
 );
-
-// TODO plugins
-// eslint-plugin-testing-library
-// eslint-plugin-storybook
-// eslint-plugin-react-compiler
-// eslint-plugin-import
-// eslint-import-resolver-typescript
-
-// TODO rules
-// naming-convention
-// no-magic-numbers
-// promise-function-async
-// strict-boolean-expressions
-
-// module.exports = {
-//   rules: {
-//     'import/no-duplicates': ['error', { 'prefer-inline': true }],
-//     'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
-//     'import/exports-last': 'error',
-//     'import/group-exports': 'error',
-
-//     'react-compiler/react-compiler': 'warn',
-//   },
-
-//   settings: {
-//     'import/resolver': {
-//       typescript: true,
-//       node: true,
-//     },
-//   },
-// };

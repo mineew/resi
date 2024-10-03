@@ -8,8 +8,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   center?: boolean;
   outlined?: boolean;
   fullWidth?: boolean;
-  size?: 'default' | 'small';
-  theme?: 'primary' | 'danger';
+  size?: 'small' | 'default';
+  theme?: 'danger' | 'primary';
 }
 
 function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {

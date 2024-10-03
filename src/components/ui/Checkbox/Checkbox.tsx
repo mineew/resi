@@ -11,7 +11,7 @@ interface CheckboxProps {
   onCheckedChange: (checked: boolean) => void;
   id?: string;
   hasBoldLabel?: boolean;
-  size?: 'default' | 'small';
+  size?: 'small' | 'default';
 }
 
 function Checkbox(props: CheckboxProps) {

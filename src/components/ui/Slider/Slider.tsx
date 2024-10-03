@@ -13,7 +13,7 @@ interface SliderProps {
   step?: number;
   label?: string;
   hasBoldLabel?: boolean;
-  size?: 'default' | 'small';
+  size?: 'small' | 'default';
   shouldDisplayValue?: boolean;
   valueFormatter?: (value: number) => string;
 }

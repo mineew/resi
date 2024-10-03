@@ -11,7 +11,7 @@ interface RadioGroupProps {
   items: RadioGroupItemProps[];
   onValueChange: (value: string) => void;
   label?: string;
-  size?: 'default' | 'small';
+  size?: 'small' | 'default';
 }
 
 function RadioGroup(props: RadioGroupProps) {
