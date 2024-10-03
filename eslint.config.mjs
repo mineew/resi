@@ -116,6 +116,15 @@ export default tseslint.config(
         },
       ],
 
+      'perfectionist/sort-enums': [
+        'error',
+        {
+          type: 'line-length',
+          forceNumericSort: true,
+          partitionByNewLine: true,
+        },
+      ],
+
       'perfectionist/sort-objects': [
         'error',
         {
@@ -152,8 +161,17 @@ export default tseslint.config(
         },
       ],
 
+      'perfectionist/sort-variable-declarations': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+        },
+      ],
+
       'perfectionist/sort-intersection-types': 'error',
       'perfectionist/sort-switch-case': 'error',
+      'perfectionist/sort-classes': 'error',
 
       // added tseslint rules
       '@typescript-eslint/consistent-type-exports': 'error',
