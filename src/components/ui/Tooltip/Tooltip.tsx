@@ -30,10 +30,10 @@ function Tooltip(props: TooltipProps) {
 
         <Radix.Portal>
           <Radix.Content
-            className={classNames(className, styles.content, 'shadow')}
             side="bottom"
             sideOffset={6}
             align="center"
+            className={classNames(className, styles.content, 'shadow')}
           >
             {title}
           </Radix.Content>

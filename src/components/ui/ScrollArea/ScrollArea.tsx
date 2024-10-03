@@ -14,11 +14,11 @@ function ScrollArea(props: ScrollAreaProps) {
       <div className={classNames(className, styles.root)} {...otherProps}>
         <Radix.Viewport className={styles.viewport}>{children}</Radix.Viewport>
 
-        <Radix.Scrollbar className={styles.scrollbar} orientation="horizontal">
+        <Radix.Scrollbar orientation="horizontal" className={styles.scrollbar}>
           <Radix.Thumb className={styles.thumb} />
         </Radix.Scrollbar>
 
-        <Radix.Scrollbar className={styles.scrollbar} orientation="vertical">
+        <Radix.Scrollbar orientation="vertical" className={styles.scrollbar}>
           <Radix.Thumb className={styles.thumb} />
         </Radix.Scrollbar>
       </div>

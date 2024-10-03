@@ -81,8 +81,8 @@ function AlertDialog(props: AlertDialogProps) {
 
           <div className={styles.checkbox}>
             <Checkbox
-              label={t('UI.ALERT.DONT_SHOW_AGAIN')}
               checked={dontShowAgain}
+              label={t('UI.ALERT.DONT_SHOW_AGAIN')}
               onCheckedChange={handleChangeDontShowAgain}
             />
           </div>

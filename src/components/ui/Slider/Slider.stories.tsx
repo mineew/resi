@@ -14,12 +14,12 @@ export const Default: StoryFn<typeof Slider> = ({
   return (
     <div style={{ padding: 20, maxWidth: 400 }}>
       <Slider
-        label={label}
-        hasBoldLabel={hasBoldLabel}
-        value={value}
-        onValueChange={setValue}
-        shouldDisplayValue={shouldDisplayValue}
         size={size}
+        label={label}
+        value={value}
+        hasBoldLabel={hasBoldLabel}
+        shouldDisplayValue={shouldDisplayValue}
+        onValueChange={setValue}
       />
     </div>
   );

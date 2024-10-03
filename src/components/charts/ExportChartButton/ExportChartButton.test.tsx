@@ -17,7 +17,7 @@ describe('@/components/charts/ExportChartButton', () => {
     const chartWrapper = document.createElement('div');
 
     render(
-      <ExportChartButton chartWrapper={chartWrapper} filename="image.png" />,
+      <ExportChartButton filename="image.png" chartWrapper={chartWrapper} />,
     );
 
     const trigger = screen.getByRole('button');
@@ -38,7 +38,7 @@ describe('@/components/charts/ExportChartButton', () => {
     const chartWrapper = document.createElement('div');
 
     render(
-      <ExportChartButton chartWrapper={chartWrapper} filename="image.png" />,
+      <ExportChartButton filename="image.png" chartWrapper={chartWrapper} />,
     );
 
     const trigger = screen.getByRole('button');

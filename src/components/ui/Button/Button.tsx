@@ -27,7 +27,6 @@ function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
 
   return (
     <button
-      ref={ref}
       className={classNames(
         className,
         styles.button,
@@ -41,6 +40,7 @@ function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
           [styles['full-width']]: fullWidth,
         },
       )}
+      ref={ref}
       type={type}
       {...otherProps}
     />

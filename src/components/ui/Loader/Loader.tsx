@@ -4,7 +4,7 @@ import styles from './Loader.module.css';
 
 function Loader() {
   return (
-    <LoaderIcon className={styles.loader} role="status" aria-busy="true" />
+    <LoaderIcon role="status" aria-busy="true" className={styles.loader} />
   );
 }
 

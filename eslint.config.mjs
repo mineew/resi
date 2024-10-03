@@ -125,6 +125,15 @@ export default tseslint.config(
         },
       ],
 
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          type: 'line-length',
+          groups: ['multiline', 'unknown', 'data', 'callbacks', 'shorthand'],
+          customGroups: { callbacks: ['on*'], data: ['data-*'] },
+        },
+      ],
+
       'perfectionist/sort-objects': [
         'error',
         {

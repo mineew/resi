@@ -20,11 +20,11 @@ export const Default: StoryFn<typeof RadioGroup> = ({ size, label }) => {
   return (
     <div style={{ padding: 20 }}>
       <RadioGroup
+        size={size}
         label={label}
         items={items}
         value={value}
         onValueChange={setValue}
-        size={size}
       />
     </div>
   );

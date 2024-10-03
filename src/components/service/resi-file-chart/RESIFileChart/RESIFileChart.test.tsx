@@ -41,11 +41,11 @@ describe('@/components/service/resi-file-chart/RESIFileChart', () => {
   it('can render the chunk size', () => {
     const { container } = render(
       <RESIFileChart
+        width={1000}
         files={files}
         chunkSize={2}
-        shouldRenderChunkSize
-        width={1000}
         height={1000}
+        shouldRenderChunkSize
       />,
     );
 

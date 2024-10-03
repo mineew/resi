@@ -38,7 +38,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       })}
     >
       {label && (
-        <label className={styles.label} htmlFor={id}>
+        <label htmlFor={id} className={styles.label}>
           {label}
         </label>
       )}
@@ -49,12 +49,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         })}
       >
         <input
-          ref={ref}
-          className={classNames(className, styles.input)}
           id={id}
+          ref={ref}
           type={type}
           disabled={disabled}
           aria-invalid={invalid}
+          className={classNames(className, styles.input)}
           {...otherProps}
         />
 

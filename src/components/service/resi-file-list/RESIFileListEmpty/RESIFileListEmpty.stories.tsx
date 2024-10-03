@@ -20,10 +20,10 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({
       }}
     >
       <RESIFileListEmpty
-        onAddFiles={onAddFiles}
-        onFetchExampleFiles={onFetchExampleFiles}
         isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
+        onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
       />
     </div>
   );

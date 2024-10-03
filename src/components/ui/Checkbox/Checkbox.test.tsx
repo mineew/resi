@@ -9,8 +9,8 @@ describe('@/components/ui/Checkbox', () => {
 
     render(
       <Checkbox
-        label="Checkbox Label"
         checked={false}
+        label="Checkbox Label"
         onCheckedChange={handleCheckedChange}
       />,
     );
@@ -28,8 +28,8 @@ describe('@/components/ui/Checkbox', () => {
 
     render(
       <Checkbox
-        label="Checkbox Label"
         checked={false}
+        label="Checkbox Label"
         onCheckedChange={handleCheckedChange}
       />,
     );

@@ -9,8 +9,8 @@ export const Default: StoryFn<typeof Drawer> = () => {
     <div style={{ padding: 20 }}>
       <Drawer
         title="Drawer Title"
-        trigger={<Button>Drawer Trigger</Button>}
         tooltip="Drawer Tooltip"
+        trigger={<Button>Drawer Trigger</Button>}
       >
         <div style={{ padding: 20 }}>
           <p>Drawer Content</p>

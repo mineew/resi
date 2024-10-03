@@ -36,18 +36,18 @@ export const Default: StoryFn<typeof LineChart> = ({
   return (
     <div style={{ padding: 20, height: '100vh' }}>
       <LineChart
-        title={title}
+        step={0}
         data={data}
-        xLabel={xLabel}
+        title={title}
+        offsetGap={1}
         xTickCount={8}
+        xLabel={xLabel}
         yLabel={yLabel}
         yTickCount={10}
-        offsetGap={1}
         offsetLeft={offsetLeft}
-        onChangeOffsetLeft={setOffsetLeft}
         offsetRight={offsetRight}
+        onChangeOffsetLeft={setOffsetLeft}
         onChangeOffsetRight={setOffsetRight}
-        step={0}
         interactive
       />
     </div>

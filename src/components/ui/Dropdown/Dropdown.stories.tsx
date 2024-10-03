@@ -54,9 +54,9 @@ export const Default: StoryFn<typeof Dropdown> = () => {
   return (
     <div style={{ padding: 20 }}>
       <Dropdown
+        items={fileListExampleItems}
         tooltip="Dropdown Trigger Tooltip"
         trigger={<Button>Dropdown Trigger</Button>}
-        items={fileListExampleItems}
       />
     </div>
   );

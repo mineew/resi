@@ -39,19 +39,19 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
   return (
     <div className={styles.toolbar}>
       <Checkbox
-        label={t('RESI_FILE_LIST.ITEM_IS_ACTIVE')}
-        checked={checked}
-        onCheckedChange={setChecked}
         size="small"
+        checked={checked}
+        label={t('RESI_FILE_LIST.ITEM_IS_ACTIVE')}
+        onCheckedChange={setChecked}
       />
 
       <Button
-        className={styles['delete-button']}
-        theme="danger"
         size="small"
-        outlined
         tabIndex={-1}
+        theme="danger"
+        className={styles['delete-button']}
         onClick={handleClickDeleteButton}
+        outlined
       >
         <Trash2 />
         {t('RESI_FILE_LIST.DELETE_ITEM')}
@@ -59,11 +59,11 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
 
       <AlertDialog
         open={alertDialogOpen}
-        onOpenChange={setAlertDialogOpen}
-        description={t('RESI_FILE_LIST.DELETE_ITEM_WARNING')}
-        actionLabel={t('RESI_FILE_LIST.DELETE_ITEM_SURE')}
-        onAction={onDelete}
         dontShowAgain={dontShowAgainAlertDialog}
+        actionLabel={t('RESI_FILE_LIST.DELETE_ITEM_SURE')}
+        description={t('RESI_FILE_LIST.DELETE_ITEM_WARNING')}
+        onAction={onDelete}
+        onOpenChange={setAlertDialogOpen}
         onChangeDontShowAgain={setDontShowAgainAlertDialog}
       />
     </div>

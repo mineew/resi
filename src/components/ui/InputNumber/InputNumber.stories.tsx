@@ -22,14 +22,14 @@ export const Default: StoryFn<typeof InputNumber> = ({
   return (
     <div style={{ padding: 20, maxWidth: 400 }}>
       <InputNumber
-        label={label}
-        placeholder={placeholder}
-        typedValue={typedValue}
-        onValueChange={handleValueChange}
         min={min}
         max={max}
         help={help}
+        label={label}
         invalid={invalid}
+        typedValue={typedValue}
+        placeholder={placeholder}
+        onValueChange={handleValueChange}
       />
     </div>
   );

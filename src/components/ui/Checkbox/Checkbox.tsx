@@ -30,13 +30,13 @@ function Checkbox(props: CheckboxProps) {
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
       <Radix.Root
-        className={styles.root}
         id={id}
         checked={checked}
+        className={styles.root}
         onCheckedChange={onCheckedChange}
       >
         <Radix.Indicator className={styles.indicator} forceMount>
-          <Check className={styles.icon} strokeWidth={3} />
+          <Check strokeWidth={3} className={styles.icon} />
         </Radix.Indicator>
       </Radix.Root>
 

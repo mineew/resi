@@ -54,16 +54,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -75,16 +75,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={[]}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -101,16 +101,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -128,16 +128,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -159,16 +159,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -190,16 +190,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 
@@ -223,16 +223,16 @@ describe('@/components/service/resi-file-list/RESIFileListPanel', () => {
     render(
       <RESIFileListPanel
         files={files}
+        appSettings={appSettings}
         onAddFiles={handleAddFiles}
-        onFetchExampleFiles={handleFetchExampleFiles}
+        onDeleteFile={handleDeleteFile}
         onDeleteAllFiles={handleDeleteAllFiles}
         onSelectAllFiles={handleSelectAllFiles}
-        onUnselectAllFiles={handleUnselectAllFiles}
         onChangeFileColor={handleChangeFileColor}
-        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
+        onUnselectAllFiles={handleUnselectAllFiles}
+        onFetchExampleFiles={handleFetchExampleFiles}
         onChangeFileChecked={handleChangeFileChecked}
-        onDeleteFile={handleDeleteFile}
-        appSettings={appSettings}
+        onChangeFileStrokeWidth={handleChangeFileStrokeWidth}
       />,
     );
 

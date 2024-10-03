@@ -35,14 +35,14 @@ export const Default: StoryFn<typeof RESIFileListPanel> = ({
       <RESIFileListPanel
         files={files}
         onAddFiles={onAddFiles}
-        onFetchExampleFiles={onFetchExampleFiles}
+        onDeleteFile={onDeleteFile}
         onDeleteAllFiles={onDeleteAllFiles}
         onSelectAllFiles={onSelectAllFiles}
-        onUnselectAllFiles={onUnselectAllFiles}
         onChangeFileColor={onChangeFileColor}
-        onChangeFileStrokeWidth={onChangeFileStrokeWidth}
+        onUnselectAllFiles={onUnselectAllFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
         onChangeFileChecked={onChangeFileChecked}
-        onDeleteFile={onDeleteFile}
+        onChangeFileStrokeWidth={onChangeFileStrokeWidth}
       />
     </div>
   );

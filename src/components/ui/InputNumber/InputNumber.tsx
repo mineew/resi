@@ -49,12 +49,12 @@ function InputNumber(props: InputNumberProps) {
 
   return (
     <Input
-      ref={ref as Ref<HTMLInputElement>}
+      help={help}
       label={label}
+      invalid={invalid}
       placeholder={placeholder}
       rightElement={rightElement}
-      help={help}
-      invalid={invalid}
+      ref={ref as Ref<HTMLInputElement>}
     />
   );
 }

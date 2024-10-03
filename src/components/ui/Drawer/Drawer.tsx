@@ -54,9 +54,9 @@ function Drawer(props: DrawerProps) {
         <Radix.Overlay className={classNames('overlay', overlayClassName)} />
 
         <Radix.Content
+          aria-describedby={undefined}
           className={classNames(styles.content, className)}
           onCloseAutoFocus={handleCloseAutoFocus}
-          aria-describedby={undefined}
         >
           <VisuallyHidden.Root asChild>
             <Radix.Title>{title}</Radix.Title>
@@ -64,7 +64,7 @@ function Drawer(props: DrawerProps) {
 
           <div className={styles.header}>
             <Radix.Close asChild>
-              <button className={styles.close} type="button">
+              <button type="button" className={styles.close}>
                 <X />
               </button>
             </Radix.Close>

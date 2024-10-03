@@ -68,14 +68,14 @@ function ScatterChart(props: ScatterChartProps) {
       </div>
 
       <div
-        className={styles.chart}
         ref={setChartWrapper}
+        className={styles.chart}
         data-testid="scatter-chart-container"
       >
         <ExportChartButton
-          className={styles['export-button']}
-          chartWrapper={chartWrapper}
           filename={exportFilename}
+          chartWrapper={chartWrapper}
+          className={styles['export-button']}
         />
 
         <ResponsiveContainer width={width} height={height}>
@@ -85,37 +85,37 @@ function ScatterChart(props: ScatterChartProps) {
             <CartesianGrid className={styles.grid} />
 
             <XAxis
-              className={styles.axis}
               dataKey="x"
+              height={80}
               type="number"
               label={xLabelObject}
+              className={styles.axis}
               tickFormatter={xTickFormatter(t)}
-              height={80}
             />
 
             <YAxis
-              className={styles.axis}
               dataKey="y"
+              width={120}
               type="number"
               label={yLabelObject}
+              className={styles.axis}
               tickFormatter={yTickFormatter(t)}
-              width={120}
             />
 
-            <ReferenceLine className={styles['zero-reference']} y={0} />
+            <ReferenceLine y={0} className={styles['zero-reference']} />
 
             <Scatter
-              className={styles.scatter}
               data={points}
               isAnimationActive={false}
+              className={styles.scatter}
             />
 
             <Line
-              className={styles['data-line']}
-              data={regressionLine}
               dataKey="y"
               dot={false}
+              data={regressionLine}
               isAnimationActive={false}
+              className={styles['data-line']}
             />
           </ComposedChart>
         </ResponsiveContainer>

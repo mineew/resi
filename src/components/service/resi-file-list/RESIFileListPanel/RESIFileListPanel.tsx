@@ -92,10 +92,10 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   if (!files.length) {
     return (
       <RESIFileListEmpty
-        onAddFiles={onAddFiles}
-        onFetchExampleFiles={onFetchExampleFiles}
         isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
+        onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
       />
     );
   }
@@ -105,8 +105,8 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
       <div className={styles.header}>
         <Button
           className={styles['add-files-button']}
-          onClick={onAddFiles}
           disabled={isAddingFiles || isFetchingFiles}
+          onClick={onAddFiles}
           center
         >
           <FilePlus2 />
@@ -114,17 +114,17 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
         </Button>
 
         <Dropdown
-          tooltip={t('RESI_FILE_LIST.MORE_FILE_OPERATIONS')}
           items={dropdownItems}
+          tooltip={t('RESI_FILE_LIST.MORE_FILE_OPERATIONS')}
         />
 
         <AlertDialog
           open={alertDialogOpen}
-          onOpenChange={setAlertDialogOpen}
-          description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
-          actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
-          onAction={onDeleteAllFiles}
           dontShowAgain={dontShowAgainAlertDialog}
+          actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
+          description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
+          onAction={onDeleteAllFiles}
+          onOpenChange={setAlertDialogOpen}
           onChangeDontShowAgain={setDontShowAgainAlertDialog}
         />
 
@@ -135,10 +135,10 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
         <div className={styles['list-wrapper']}>
           <RESIFileList
             files={files}
-            onChangeFileColor={onChangeFileColor}
-            onChangeFileStrokeWidth={onChangeFileStrokeWidth}
-            onChangeFileChecked={onChangeFileChecked}
             onDeleteFile={onDeleteFile}
+            onChangeFileColor={onChangeFileColor}
+            onChangeFileChecked={onChangeFileChecked}
+            onChangeFileStrokeWidth={onChangeFileStrokeWidth}
           />
         </div>
       </ScrollArea>

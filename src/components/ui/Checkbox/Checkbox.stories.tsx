@@ -9,10 +9,10 @@ export const Default: StoryFn<typeof Checkbox> = ({ size, label }) => {
   return (
     <div style={{ padding: 20 }}>
       <Checkbox
+        size={size}
         label={label}
         checked={checked}
         onCheckedChange={setChecked}
-        size={size}
       />
     </div>
   );

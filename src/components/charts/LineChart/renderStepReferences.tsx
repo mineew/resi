@@ -30,9 +30,9 @@ function renderStepReferences(options: RenderStepReferencesOptions) {
     <>
       {references.map((x) => (
         <ReferenceLine
+          x={x}
           key={`step-${x}-reference`}
           className={classNames(styles['step-line'], 'step-line')}
-          x={x}
         />
       ))}
     </>

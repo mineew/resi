@@ -13,12 +13,12 @@ export const Default: StoryFn<typeof Button> = ({
   return (
     <div style={{ padding: 20 }}>
       <Button
-        theme={theme}
         size={size}
-        fullWidth={fullWidth}
+        theme={theme}
         center={center}
         outlined={outlined}
         disabled={disabled}
+        fullWidth={fullWidth}
       >
         Click me
       </Button>

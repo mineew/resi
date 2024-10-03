@@ -69,26 +69,26 @@ const RESIFileChart = memo((props: RESIFileChartProps) => {
 
   return (
     <LineChart
-      title={title}
-      data={files}
-      xLabel={t('RESI_FILE_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
-      xConverter={convertX}
-      xTickCount={20}
-      yLabel={t('RESI_FILE_CHART.Y_LABEL') + ', RESI'}
-      yTickCount={20}
-      offsetGap={offsetGap / 10}
-      offsetLeft={offsetLeft / 10}
-      onChangeOffsetLeft={handleChangeOffsetLeft}
-      offsetRight={offsetRight / 10}
-      onChangeOffsetRight={handleChangeOffsetRight}
-      tooltipFormatter={formatTooltip}
       step={
         shouldRenderChunkSize && chunkSize > 1 ? chunkSize / 1000 : undefined
       }
-      interactive={interactive}
-      exportFilename={exportFilename}
+      data={files}
+      title={title}
       width={width}
+      xTickCount={20}
+      yTickCount={20}
       height={height}
+      xConverter={convertX}
+      interactive={interactive}
+      offsetGap={offsetGap / 10}
+      offsetLeft={offsetLeft / 10}
+      offsetRight={offsetRight / 10}
+      exportFilename={exportFilename}
+      tooltipFormatter={formatTooltip}
+      yLabel={t('RESI_FILE_CHART.Y_LABEL') + ', RESI'}
+      xLabel={t('RESI_FILE_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
+      onChangeOffsetLeft={handleChangeOffsetLeft}
+      onChangeOffsetRight={handleChangeOffsetRight}
     />
   );
 });

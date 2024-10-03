@@ -29,8 +29,8 @@ describe('@/components/ui/Drawer', () => {
     render(
       <Drawer
         title="Drawer Title"
-        trigger={<button type="button">Open Drawer</button>}
         tooltip="Drawer Trigger Tooltip"
+        trigger={<button type="button">Open Drawer</button>}
       >
         <p>Drawer Content</p>
       </Drawer>,
@@ -52,8 +52,8 @@ describe('@/components/ui/Drawer', () => {
     render(
       <Drawer
         title="Drawer Title"
-        trigger={<button type="button">Open Drawer</button>}
         tooltip="Drawer Trigger Tooltip"
+        trigger={<button type="button">Open Drawer</button>}
       >
         <p>Drawer Content</p>
       </Drawer>,

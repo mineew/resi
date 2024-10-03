@@ -13,12 +13,12 @@ export const Default: StoryFn<typeof Input> = ({
   return (
     <div style={{ padding: 20, maxWidth: 400 }}>
       <Input
-        label={label}
-        placeholder={placeholder}
-        rightElement={rightElement}
         help={help}
+        label={label}
         invalid={invalid}
         disabled={disabled}
+        placeholder={placeholder}
+        rightElement={rightElement}
       />
     </div>
   );

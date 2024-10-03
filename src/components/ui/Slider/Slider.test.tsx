@@ -20,8 +20,8 @@ describe('@/components/ui/Slider', () => {
 
     render(
       <Slider
-        label="Slider Label"
         value={value}
+        label="Slider Label"
         onValueChange={handleValueChange}
       />,
     );
@@ -37,8 +37,8 @@ describe('@/components/ui/Slider', () => {
     render(
       <Slider
         value={value}
-        onValueChange={handleValueChange}
         valueFormatter={(newValue) => `Current Value: ${newValue}`}
+        onValueChange={handleValueChange}
       />,
     );
 
@@ -53,10 +53,10 @@ describe('@/components/ui/Slider', () => {
 
     render(
       <Slider
-        label="Slider Label"
         value={value}
-        onValueChange={handleValueChange}
+        label="Slider Label"
         valueFormatter={(newValue) => `Current Value: ${newValue}`}
+        onValueChange={handleValueChange}
       />,
     );
 

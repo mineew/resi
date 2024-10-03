@@ -25,16 +25,16 @@ function RadioGroup(props: RadioGroupProps) {
     <div className={classNames(styles.wrapper, styles[size])}>
       {label && (
         <label
-          className={classNames(styles.label, styles.bold)}
           htmlFor={firstItemId}
+          className={classNames(styles.label, styles.bold)}
         >
           {label}
         </label>
       )}
 
       <Radix.Root
-        className={styles.root}
         value={value}
+        className={styles.root}
         onValueChange={onValueChange}
       >
         {items.map((item, idx) => (

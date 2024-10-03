@@ -26,18 +26,18 @@ const RESIFileListItemTitle = memo((props: RESIFileListItemTitleProps) => {
   return (
     <RESIFileSettings
       color={color}
-      onChangeColor={onChangeColor}
       strokeWidth={strokeWidth}
-      onChangeStrokeWidth={onChangeStrokeWidth}
+      onChangeColor={onChangeColor}
       onOpenChange={onChangeActive}
+      onChangeStrokeWidth={onChangeStrokeWidth}
     >
       <button className={styles.title}>
         <div
-          className={styles['color-indicator']}
           style={{
             color: color,
             backgroundColor: color,
           }}
+          className={styles['color-indicator']}
         />
 
         <div className={styles['title-text']}>{name}</div>

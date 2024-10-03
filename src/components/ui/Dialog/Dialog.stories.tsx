@@ -9,9 +9,9 @@ export const Default: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
+        size={size}
         title={title}
         trigger={<Button>Dialog Trigger</Button>}
-        size={size}
       >
         <div style={{ padding: 20 }}>
           <p>Dialog Content</p>
@@ -27,10 +27,10 @@ export const WithFooter: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
-        title={title}
-        trigger={<Button>Dialog Trigger</Button>}
         size={size}
+        title={title}
         footer={<p>Dialog Footer</p>}
+        trigger={<Button>Dialog Trigger</Button>}
       >
         <div style={{ padding: 20 }}>
           <p>Dialog Content</p>
@@ -46,10 +46,10 @@ export const LongContent: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
-        title={title}
-        trigger={<Button>Dialog Trigger</Button>}
         size={size}
+        title={title}
         footer={<p>Dialog Footer</p>}
+        trigger={<Button>Dialog Trigger</Button>}
         scrollable
       >
         <div style={{ padding: 20 }}>

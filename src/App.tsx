@@ -12,9 +12,9 @@ function App() {
   return (
     <AppLayout
       appToolbar={<AppToolbar />}
+      filesInit={<RESIFilesInit />}
       fileList={<RESIFileListPanel />}
       fileChart={<RESIFileChartPanel />}
-      filesInit={<RESIFilesInit />}
       diffChart={<RESIFileDiffChartPanel />}
       growthChart={<RESIFileGrowthChartPanel />}
     />

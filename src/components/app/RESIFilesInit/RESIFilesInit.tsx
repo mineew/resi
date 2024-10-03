@@ -21,10 +21,10 @@ function RESIFilesInit(props: RESIFilesInitProps) {
   return (
     <div className={classNames(styles['files-init'], className)}>
       <RESIFilesInitView
-        onAddFiles={addFiles}
-        onFetchExampleFiles={fetchExampleFiles}
         isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
+        onAddFiles={addFiles}
+        onFetchExampleFiles={fetchExampleFiles}
       />
     </div>
   );

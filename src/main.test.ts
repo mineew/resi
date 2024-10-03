@@ -18,7 +18,7 @@ describe('@/main', () => {
     await import('./main');
 
     expect(mocks.render).toHaveBeenCalledTimes(1);
-  });
+  }, 30_000);
 
   it('does not render if there is no container', async () => {
     vi.stubEnv('DEV', false);

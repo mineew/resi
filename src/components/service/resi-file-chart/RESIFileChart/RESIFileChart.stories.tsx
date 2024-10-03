@@ -29,15 +29,15 @@ export const Default: StoryFn<typeof RESIFileChart> = ({
   return (
     <div style={{ padding: 20, height: '100vh' }}>
       <RESIFileChart
-        files={smoothFiles(files, 3, 'mean', 1000)}
-        chunkSize={1000}
-        shouldRenderChunkSize={shouldRenderChunkSize}
         offsetGap={10}
+        chunkSize={1000}
         offsetLeft={offsetLeft}
-        onChangeOffsetLeft={setOffsetLeft}
         offsetRight={offsetRight}
-        onChangeOffsetRight={setOffsetRight}
         interactive={interactive}
+        files={smoothFiles(files, 3, 'mean', 1000)}
+        shouldRenderChunkSize={shouldRenderChunkSize}
+        onChangeOffsetLeft={setOffsetLeft}
+        onChangeOffsetRight={setOffsetRight}
       />
     </div>
   );

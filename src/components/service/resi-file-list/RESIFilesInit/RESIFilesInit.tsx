@@ -22,8 +22,8 @@ function RESIFilesInit(props: RESIFilesInitProps) {
     <>
       <div className={styles.section}>
         <Button
-          onClick={onAddFiles}
           disabled={isAddingFiles || isFetchingFiles}
+          onClick={onAddFiles}
         >
           <FolderOpen />
           {t('RESI_FILE_LIST.OPEN_FILES')}
@@ -36,8 +36,8 @@ function RESIFilesInit(props: RESIFilesInitProps) {
         <p>{t('RESI_FILE_LIST.FETCH_FILES_DESCRIPTION')}</p>
 
         <Button
-          onClick={onFetchExampleFiles}
           disabled={isAddingFiles || isFetchingFiles}
+          onClick={onFetchExampleFiles}
           outlined
         >
           {isFetchingFiles ? <Loader /> : <FolderDown />}

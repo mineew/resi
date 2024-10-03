@@ -16,9 +16,9 @@ function RadioGroupItem(props: RadioGroupItemProps) {
 
   return (
     <div className={styles['item-wrapper']}>
-      <Radix.Item className={styles.item} id={id} value={value} />
+      <Radix.Item id={id} value={value} className={styles.item} />
 
-      <label className={styles.label} htmlFor={id}>
+      <label htmlFor={id} className={styles.label}>
         {label}
       </label>
     </div>

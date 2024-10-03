@@ -27,13 +27,13 @@ const RESIFileList = memo((props: RESIFileListProps) => {
     <ul className={styles.list}>
       {files.map((file, idx) => (
         <RESIFileListItem
-          key={`${file.name}-${idx}`}
-          file={file}
           idx={idx}
-          onChangeColor={onChangeFileColor}
-          onChangeStrokeWidth={onChangeFileStrokeWidth}
-          onChangeChecked={onChangeFileChecked}
+          file={file}
+          key={`${file.name}-${idx}`}
           onDelete={onDeleteFile}
+          onChangeColor={onChangeFileColor}
+          onChangeChecked={onChangeFileChecked}
+          onChangeStrokeWidth={onChangeFileStrokeWidth}
         />
       ))}
     </ul>

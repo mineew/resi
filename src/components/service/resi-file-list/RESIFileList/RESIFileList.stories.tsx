@@ -22,10 +22,10 @@ export const Default: StoryFn<typeof RESIFileList> = ({
     <div style={{ width: 400, padding: 20 }}>
       <RESIFileList
         files={files}
-        onChangeFileColor={onChangeFileColor}
-        onChangeFileStrokeWidth={onChangeFileStrokeWidth}
-        onChangeFileChecked={onChangeFileChecked}
         onDeleteFile={onDeleteFile}
+        onChangeFileColor={onChangeFileColor}
+        onChangeFileChecked={onChangeFileChecked}
+        onChangeFileStrokeWidth={onChangeFileStrokeWidth}
       />
     </div>
   );

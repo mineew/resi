@@ -20,10 +20,10 @@ function Popover(props: PopoverProps) {
 
       <Radix.Portal>
         <Radix.Content
-          className={classNames(styles.content, 'shadow')}
           side="bottom"
-          sideOffset={6}
           align="start"
+          sideOffset={6}
+          className={classNames(styles.content, 'shadow')}
         >
           {children}
         </Radix.Content>

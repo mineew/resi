@@ -50,12 +50,12 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
         <HexColorPicker color={color} onChange={handleChangeColor} />
 
         <Slider
-          label={t('RESI_FILE_LIST.ITEM_STROKE_WIDTH')}
-          value={strokeWidth}
-          onValueChange={setStrokeWidth}
-          valueFormatter={strokeWidthFormatter}
-          size="small"
           min={1}
+          size="small"
+          value={strokeWidth}
+          valueFormatter={strokeWidthFormatter}
+          label={t('RESI_FILE_LIST.ITEM_STROKE_WIDTH')}
+          onValueChange={setStrokeWidth}
         />
       </div>
     </Popover>

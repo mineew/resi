@@ -23,9 +23,9 @@ const RESIFileGrowthChart = memo((props: RESIFileGrowthChartProps) => {
     <ScatterChart
       title={title}
       points={points}
-      xLabel={t('RESI_FILE_GROWTH_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
-      yLabel={t('RESI_FILE_GROWTH_CHART.Y_LABEL') + ', RESI'}
       exportFilename={exportFilename}
+      yLabel={t('RESI_FILE_GROWTH_CHART.Y_LABEL') + ', RESI'}
+      xLabel={t('RESI_FILE_GROWTH_CHART.X_LABEL') + ', ' + t('COMMON.CM')}
     />
   );
 });

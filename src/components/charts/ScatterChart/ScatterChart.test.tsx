@@ -13,10 +13,10 @@ describe('@/components/charts/ScatterChart', () => {
   it('renders', () => {
     render(
       <ScatterChart
-        title="Scatter Chart"
-        points={points}
         width={1000}
         height={1000}
+        points={points}
+        title="Scatter Chart"
       />,
     );
 
@@ -27,12 +27,12 @@ describe('@/components/charts/ScatterChart', () => {
   it('can render axis labels', () => {
     render(
       <ScatterChart
-        title="Scatter Chart"
+        width={1000}
+        height={1000}
         points={points}
         xLabel="X Label"
         yLabel="Y Label"
-        width={1000}
-        height={1000}
+        title="Scatter Chart"
       />,
     );
 

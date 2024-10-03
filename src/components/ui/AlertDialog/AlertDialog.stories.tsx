@@ -18,13 +18,13 @@ export const Default: StoryFn<typeof AlertDialog> = ({
   return (
     <div style={{ padding: 20 }}>
       <AlertDialog
-        trigger={<Button>Alert Dialog Trigger</Button>}
         title={title}
         description={description}
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
-        onAction={onAction}
         dontShowAgain={dontShowAgain}
+        trigger={<Button>Alert Dialog Trigger</Button>}
+        onAction={onAction}
         onChangeDontShowAgain={setDontShowAgain}
       />
     </div>
@@ -53,13 +53,13 @@ export const Controlled: StoryFn<typeof AlertDialog> = ({
 
       <AlertDialog
         open={open}
-        onOpenChange={setOpen}
         title={title}
         description={description}
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
-        onAction={onAction}
         dontShowAgain={dontShowAgain}
+        onAction={onAction}
+        onOpenChange={setOpen}
         onChangeDontShowAgain={setDontShowAgain}
       />
     </div>

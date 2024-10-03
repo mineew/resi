@@ -61,18 +61,18 @@ const RESIFileListItem = memo((props: RESIFileListItemProps) => {
       })}
     >
       <RESIFileListItemTitle
-        color={file.color}
         name={file.name}
+        color={file.color}
         strokeWidth={file.strokeWidth}
+        onChangeActive={setActive}
         onChangeColor={handleChangeColor}
         onChangeStrokeWidth={handleChangeStrokeWidth}
-        onChangeActive={setActive}
       />
 
       <RESIFileListItemToolbar
         checked={file.checked}
-        onChangeChecked={handleChangeChecked}
         onDelete={handleDelete}
+        onChangeChecked={handleChangeChecked}
       />
     </li>
   );

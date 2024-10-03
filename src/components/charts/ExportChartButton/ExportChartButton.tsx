@@ -49,9 +49,9 @@ function ExportChartButton(props: ExportChartButtonProps) {
   return (
     <Dropdown
       items={items}
-      defaultTriggerClassName={classNames(styles.button, className)}
-      defaultTriggerTitle={t('CHARTS.EXPORT_CHART_BUTTON')}
       fullWidthContent={false}
+      defaultTriggerTitle={t('CHARTS.EXPORT_CHART_BUTTON')}
+      defaultTriggerClassName={classNames(styles.button, className)}
     />
   );
 }

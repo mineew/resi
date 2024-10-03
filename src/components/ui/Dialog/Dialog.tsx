@@ -63,14 +63,14 @@ function Dialog(props: DialogProps) {
             styles[`size-${size}`],
             { [styles.scrollable]: scrollable },
           )}
-          onCloseAutoFocus={handleCloseAutoFocus}
           aria-describedby={undefined}
+          onCloseAutoFocus={handleCloseAutoFocus}
         >
           <div className={styles.header}>
             <Radix.Title className={styles.title}>{title}</Radix.Title>
 
             <Radix.Close asChild>
-              <button className={styles.close} type="button">
+              <button type="button" className={styles.close}>
                 <X />
               </button>
             </Radix.Close>

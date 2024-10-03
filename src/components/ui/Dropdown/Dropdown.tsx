@@ -82,16 +82,16 @@ function Dropdown(props: DropdownProps) {
             'shadow',
           )}
           side="bottom"
-          sideOffset={6}
           align={align}
+          sideOffset={6}
           onCloseAutoFocus={handleCloseAutoFocus}
         >
           {items.map((item, idx) => {
             if (item === 'separator') {
               return (
                 <Radix.Separator
-                  className={styles.separator}
                   key={`separator-${idx}`}
+                  className={styles.separator}
                 />
               );
             }
@@ -103,8 +103,8 @@ function Dropdown(props: DropdownProps) {
                   [styles.selected]: item.selected,
                 })}
                 key={item.id}
-                onSelect={item.onClick}
                 disabled={item.disabled}
+                onSelect={item.onClick}
               >
                 {item.icon}
                 {item.label}

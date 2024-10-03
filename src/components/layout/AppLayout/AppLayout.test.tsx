@@ -6,10 +6,10 @@ describe('@/components/layout/AppLayout', () => {
   it('renders', () => {
     render(
       <AppLayout
-        appToolbar={<div>App Toolbar</div>}
         fileList={<div>File List</div>}
         fileChart={<div>File Chart</div>}
         filesInit={<div>Files Init</div>}
+        appToolbar={<div>App Toolbar</div>}
         diffChart={<div>File Diff Chart</div>}
         growthChart={<div>File Growth Chart</div>}
       />,

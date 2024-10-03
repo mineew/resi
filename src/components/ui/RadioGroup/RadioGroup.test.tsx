@@ -62,9 +62,9 @@ describe('@/components/ui/RadioGroup', () => {
 
     render(
       <RadioGroup
-        label="Radio Group Label"
         items={items}
         value="item-2"
+        label="Radio Group Label"
         onValueChange={handleValueChange}
       />,
     );

@@ -72,11 +72,11 @@ function Slider(props: SliderProps) {
       )}
 
       <Radix.Root
-        className={styles.root}
         min={min}
         max={max}
         step={step}
         value={sliderValue}
+        className={styles.root}
         onValueChange={handleSliderChange}
       >
         <Radix.Track className={styles.track}>
@@ -84,7 +84,7 @@ function Slider(props: SliderProps) {
         </Radix.Track>
 
         <Radix.Thumb asChild>
-          <button className={styles.thumb} id={id} type="button" />
+          <button id={id} type="button" className={styles.thumb} />
         </Radix.Thumb>
       </Radix.Root>
     </div>

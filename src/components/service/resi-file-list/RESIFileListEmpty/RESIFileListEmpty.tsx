@@ -18,10 +18,10 @@ const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
   return (
     <EmptyState icon={<Inbox />}>
       <RESIFilesInit
-        onAddFiles={onAddFiles}
-        onFetchExampleFiles={onFetchExampleFiles}
         isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
+        onAddFiles={onAddFiles}
+        onFetchExampleFiles={onFetchExampleFiles}
       />
     </EmptyState>
   );

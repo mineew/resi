@@ -13,8 +13,8 @@ export const Default: StoryFn<typeof RESIFileSettings> = () => {
     <div style={{ padding: 20 }}>
       <RESIFileSettings
         color={color}
-        onChangeColor={setColor}
         strokeWidth={strokeWidth}
+        onChangeColor={setColor}
         onChangeStrokeWidth={setStrokeWidth}
       >
         <Button

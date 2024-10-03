@@ -47,9 +47,6 @@ const AppSettings = memo((props: AppSettingsProps) => {
   return (
     <FormProvider {...methods}>
       <Dialog
-        title={t('APP_SETTINGS.TITLE')}
-        tooltip={t('APP_SETTINGS.TOOLTIP')}
-        size="400"
         footer={
           <div className={styles.footer}>
             <Button
@@ -65,9 +62,12 @@ const AppSettings = memo((props: AppSettingsProps) => {
             </div>
           </div>
         }
+        size="400"
         open={dialogOpen}
-        onOpenChange={handleOpenChange}
         trigger={children}
+        title={t('APP_SETTINGS.TITLE')}
+        tooltip={t('APP_SETTINGS.TOOLTIP')}
+        onOpenChange={handleOpenChange}
         scrollable
       >
         <AppSettingsForm onSubmit={handleSubmit} />

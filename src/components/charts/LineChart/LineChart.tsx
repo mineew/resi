@@ -135,42 +135,42 @@ function LineChart(props: LineChartProps) {
       <h2 className={styles['chart-title']}>{title}</h2>
 
       <ExportChartButton
-        className={styles['export-button']}
-        chartWrapper={chartWrapper}
         filename={exportFilename}
+        chartWrapper={chartWrapper}
+        className={styles['export-button']}
       />
 
       <ResponsiveContainer
-        className={styles['chart-wrapper']}
         width={width}
         height={height}
+        className={styles['chart-wrapper']}
       >
         <RechartsLineChart
           data={lines}
           margin={{ top: 0, left: -25, right: 40, bottom: -10 }}
-          onMouseDown={handleChartMouseDown}
           onMouseUp={handleChartMouseUp}
+          onMouseDown={handleChartMouseDown}
           onMouseMove={handleChartMouseMove}
         >
           <CartesianGrid className={styles.grid} />
 
           <XAxis
-            className={styles.axis}
             dataKey="x"
-            type="number"
-            tickCount={xTickCount}
-            domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
-            label={xLabelObject}
-            tickFormatter={xTickFormatter(t)}
             height={80}
+            type="number"
+            label={xLabelObject}
+            tickCount={xTickCount}
+            className={styles.axis}
+            tickFormatter={xTickFormatter(t)}
+            domain={[0, (dataMax: number) => Math.round(dataMax + 1)]}
           />
 
           <YAxis
-            className={styles.axis}
-            tickCount={yTickCount}
-            label={yLabelObject}
-            tickFormatter={yTickFormatter(t)}
             width={120}
+            label={yLabelObject}
+            tickCount={yTickCount}
+            className={styles.axis}
+            tickFormatter={yTickFormatter(t)}
           />
 
           {renderStepReferences({ step, maxX })}
@@ -209,14 +209,14 @@ function LineChart(props: LineChartProps) {
 
           {data.map((line, i) => (
             <Line
-              className={styles['data-line']}
-              key={`${line.name}-${i}`}
+              dot={false}
+              type="monotone"
               dataKey={line.name}
               stroke={line.color}
-              strokeWidth={line.strokeWidth}
-              type="monotone"
-              dot={false}
+              key={`${line.name}-${i}`}
               isAnimationActive={false}
+              strokeWidth={line.strokeWidth}
+              className={styles['data-line']}
             />
           ))}
         </RechartsLineChart>

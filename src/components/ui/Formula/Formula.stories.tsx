@@ -8,8 +8,8 @@ export const Default: StoryFn<typeof Formula> = () => {
       <Formula a={0} b={0} />
 
       <div style={{ marginBottom: 20 }}>
-        <Formula a={12} b={0} />
-        <Formula a={-12} b={0} />
+        <Formula b={0} a={12} />
+        <Formula b={0} a={-12} />
       </div>
 
       <div style={{ marginBottom: 20 }}>

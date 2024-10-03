@@ -21,18 +21,18 @@ function RESIFileListPanel() {
   return (
     <RESIFileListPanelView
       files={files}
-      onAddFiles={addFiles}
-      onFetchExampleFiles={fetchExampleFiles}
-      onDeleteAllFiles={deleteAllFiles}
-      onSelectAllFiles={checkAllFiles}
-      onUnselectAllFiles={uncheckAllFiles}
-      onChangeFileColor={changeFileColor}
-      onChangeFileStrokeWidth={changeFileStrokeWidth}
-      onChangeFileChecked={toggleFile}
-      onDeleteFile={deleteFile}
       appSettings={<AppSettings />}
       isAddingFiles={isAddingFiles}
       isFetchingFiles={isFetchingFiles}
+      onAddFiles={addFiles}
+      onDeleteFile={deleteFile}
+      onSelectAllFiles={checkAllFiles}
+      onChangeFileChecked={toggleFile}
+      onDeleteAllFiles={deleteAllFiles}
+      onChangeFileColor={changeFileColor}
+      onUnselectAllFiles={uncheckAllFiles}
+      onFetchExampleFiles={fetchExampleFiles}
+      onChangeFileStrokeWidth={changeFileStrokeWidth}
     />
   );
 }
