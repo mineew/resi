@@ -78,6 +78,13 @@ export default tseslint.config(
         { groupKind: 'values-first' },
       ],
 
+      'perfectionist/sort-exports': ['error', { groupKind: 'values-first' }],
+
+      'perfectionist/sort-named-exports': [
+        'error',
+        { groupKind: 'values-first' },
+      ],
+
       // added tseslint rules
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
