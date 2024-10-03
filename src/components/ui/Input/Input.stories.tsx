@@ -3,12 +3,12 @@ import type { Meta, StoryFn } from '@storybook/react';
 import Input from './Input';
 
 export const Default: StoryFn<typeof Input> = ({
-  label,
-  placeholder,
-  rightElement,
   help,
+  label,
   invalid,
   disabled,
+  placeholder,
+  rightElement,
 }) => {
   return (
     <div style={{ padding: 20, maxWidth: 400 }}>
@@ -25,19 +25,19 @@ export const Default: StoryFn<typeof Input> = ({
 };
 
 export default {
-  title: 'Components/UI/Input',
   component: Input,
+  title: 'Components/UI/Input',
   argTypes: {
     rightElement: {
       type: 'string',
     },
   },
   args: {
-    label: 'Input Label',
-    placeholder: 'Input Placeholder',
-    rightElement: 'right',
-    help: 'Input Help Text',
     invalid: false,
     disabled: false,
+    label: 'Input Label',
+    rightElement: 'right',
+    help: 'Input Help Text',
+    placeholder: 'Input Placeholder',
   },
 } as Meta<typeof Input>;

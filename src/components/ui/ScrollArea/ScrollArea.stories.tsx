@@ -8,9 +8,9 @@ export const Default: StoryFn<typeof ScrollArea> = () => {
   return (
     <div
       style={{
+        width: 300,
         padding: 20,
         height: '100vh',
-        width: 300,
       }}
     >
       <ScrollArea
@@ -21,9 +21,9 @@ export const Default: StoryFn<typeof ScrollArea> = () => {
       >
         <div
           style={{
+            gap: 8,
             display: 'flex',
             flexDirection: 'column',
-            gap: 8,
           }}
         >
           {items.map((item) => (
@@ -31,8 +31,8 @@ export const Default: StoryFn<typeof ScrollArea> = () => {
               key={item}
               style={{
                 padding: 10,
-                borderRadius: 10,
                 width: '120%',
+                borderRadius: 10,
                 backgroundColor: 'var(--slate-3)',
               }}
             >
@@ -46,6 +46,6 @@ export const Default: StoryFn<typeof ScrollArea> = () => {
 };
 
 export default {
-  title: 'Components/UI/ScrollArea',
   component: ScrollArea,
+  title: 'Components/UI/ScrollArea',
 } as Meta<typeof ScrollArea>;

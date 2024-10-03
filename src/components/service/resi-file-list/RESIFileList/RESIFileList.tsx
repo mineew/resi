@@ -8,19 +8,19 @@ import styles from './RESIFileList.module.css';
 
 interface RESIFileListProps {
   files: RESIFile[];
-  onChangeFileColor: (idx: number, color: string) => void;
-  onChangeFileStrokeWidth: (idx: number, width: number) => void;
-  onChangeFileChecked: (idx: number, checked: boolean) => void;
   onDeleteFile: (idx: number) => void;
+  onChangeFileColor: (idx: number, color: string) => void;
+  onChangeFileChecked: (idx: number, checked: boolean) => void;
+  onChangeFileStrokeWidth: (idx: number, width: number) => void;
 }
 
 const RESIFileList = memo((props: RESIFileListProps) => {
   const {
     files,
-    onChangeFileColor,
-    onChangeFileStrokeWidth,
-    onChangeFileChecked,
     onDeleteFile,
+    onChangeFileColor,
+    onChangeFileChecked,
+    onChangeFileStrokeWidth,
   } = props;
 
   return (

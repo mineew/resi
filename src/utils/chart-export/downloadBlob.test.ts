@@ -12,8 +12,8 @@ const documentMock = {
 };
 
 const URLMock = {
-  createObjectURL: vi.fn(() => 'URL'),
   revokeObjectURL: vi.fn(),
+  createObjectURL: vi.fn(() => 'URL'),
 };
 
 beforeAll(() => {

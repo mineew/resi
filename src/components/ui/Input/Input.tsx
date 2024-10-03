@@ -9,21 +9,21 @@ import {
 import styles from './Input.module.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  rightElement?: ReactNode;
   help?: string;
+  label?: string;
   invalid?: boolean;
+  rightElement?: ReactNode;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
-    className,
-    id: providedId,
-    type = 'text',
-    disabled,
-    label,
-    rightElement,
     help,
+    label,
+    disabled,
+    className,
+    rightElement,
+    type = 'text',
+    id: providedId,
     invalid = false,
     ...otherProps
   } = props;

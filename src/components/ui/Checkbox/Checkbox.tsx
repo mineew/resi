@@ -6,22 +6,22 @@ import { useId } from 'react';
 import styles from './Checkbox.module.css';
 
 interface CheckboxProps {
-  id?: string;
   label: string;
-  hasBoldLabel?: boolean;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
+  id?: string;
+  hasBoldLabel?: boolean;
   size?: 'default' | 'small';
 }
 
 function Checkbox(props: CheckboxProps) {
   const {
-    id: providedId,
     label,
-    hasBoldLabel = false,
     checked,
-    onCheckedChange,
+    id: providedId,
     size = 'default',
+    hasBoldLabel = false,
+    onCheckedChange,
   } = props;
 
   const defaultId = useId();

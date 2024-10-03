@@ -70,7 +70,7 @@ describe('@/components/app/AppToolbar', () => {
       }),
     }));
 
-    const { baseElement, unmount } = render(<AppToolbar />);
+    const { unmount, baseElement } = render(<AppToolbar />);
 
     expect(listeners).toHaveLength(1);
 

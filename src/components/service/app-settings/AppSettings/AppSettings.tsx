@@ -11,13 +11,13 @@ import appPackage from '~/package.json';
 import styles from './AppSettings.module.css';
 
 interface AppSettingsProps {
-  values?: Settings;
-  onChange: (values: Settings) => void;
   children: JSX.Element;
+  onChange: (values: Settings) => void;
+  values?: Settings;
 }
 
 const AppSettings = memo((props: AppSettingsProps) => {
-  const { values = {}, onChange, children } = props;
+  const { children, values = {}, onChange } = props;
   const { t } = useTranslation();
   const [dialogOpen, setDialogOpen] = useState(false);
 

@@ -11,6 +11,6 @@ export const Default: StoryFn<typeof RESIFileDiffChartEmpty> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File Diff Chart/RESIFileDiffChartEmpty',
   component: RESIFileDiffChartEmpty,
+  title: 'Components/Service/RESI File Diff Chart/RESIFileDiffChartEmpty',
 } as Meta<typeof RESIFileDiffChartEmpty>;

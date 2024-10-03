@@ -11,6 +11,6 @@ export const Default: StoryFn<typeof RESIFileGrowthChartEmpty> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File Growth Chart/RESIFileGrowthChartEmpty',
   component: RESIFileGrowthChartEmpty,
+  title: 'Components/Service/RESI File Growth Chart/RESIFileGrowthChartEmpty',
 } as Meta<typeof RESIFileGrowthChartEmpty>;

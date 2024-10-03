@@ -9,8 +9,8 @@ import styles from './LineChart.module.css';
  */
 
 interface RenderStepReferencesOptions {
-  step?: number;
   maxX: number;
+  step?: number;
 }
 
 function renderStepReferences(options: RenderStepReferencesOptions) {

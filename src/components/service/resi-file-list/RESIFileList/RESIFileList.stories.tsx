@@ -13,13 +13,13 @@ const files: RESIFile[] = getRandomArray(
 );
 
 export const Default: StoryFn<typeof RESIFileList> = ({
-  onChangeFileColor,
-  onChangeFileStrokeWidth,
-  onChangeFileChecked,
   onDeleteFile,
+  onChangeFileColor,
+  onChangeFileChecked,
+  onChangeFileStrokeWidth,
 }) => {
   return (
-    <div style={{ padding: 20, width: 400 }}>
+    <div style={{ width: 400, padding: 20 }}>
       <RESIFileList
         files={files}
         onChangeFileColor={onChangeFileColor}
@@ -32,19 +32,19 @@ export const Default: StoryFn<typeof RESIFileList> = ({
 };
 
 export default {
-  title: 'Components/Service/RESI File List/RESIFileList',
   component: RESIFileList,
+  title: 'Components/Service/RESI File List/RESIFileList',
+  args: {
+    onDeleteFile: fn(),
+    onChangeFileColor: fn(),
+    onChangeFileChecked: fn(),
+    onChangeFileStrokeWidth: fn(),
+  },
   argTypes: {
     files: { table: { disable: true } },
-    onChangeFileColor: { table: { disable: true } },
-    onChangeFileStrokeWidth: { table: { disable: true } },
-    onChangeFileChecked: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
-  },
-  args: {
-    onChangeFileColor: fn(),
-    onChangeFileStrokeWidth: fn(),
-    onChangeFileChecked: fn(),
-    onDeleteFile: fn(),
+    onChangeFileColor: { table: { disable: true } },
+    onChangeFileChecked: { table: { disable: true } },
+    onChangeFileStrokeWidth: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileList>;

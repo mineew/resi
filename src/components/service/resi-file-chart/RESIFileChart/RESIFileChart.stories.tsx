@@ -10,18 +10,18 @@ import RESIFileChart from './RESIFileChart';
 const files = getRandomArray(
   (idx) =>
     createRandomRESIFile(`File-${idx + 1}`, {
+      color: '',
+      strokeWidth: 1,
       contentsLength: 50000,
       contentsItemMin: (idx + 1) * 50,
       contentsItemMax: (idx + 1) * 250,
-      color: '',
-      strokeWidth: 1,
     }),
   3,
 );
 
 export const Default: StoryFn<typeof RESIFileChart> = ({
-  shouldRenderChunkSize,
   interactive,
+  shouldRenderChunkSize,
 }) => {
   const [offsetLeft, setOffsetLeft] = useState(60);
   const [offsetRight, setOffsetRight] = useState(420);
@@ -44,21 +44,21 @@ export const Default: StoryFn<typeof RESIFileChart> = ({
 };
 
 export default {
-  title: 'Components/Service/RESI File Chart/RESIFileChart',
   component: RESIFileChart,
+  title: 'Components/Service/RESI File Chart/RESIFileChart',
+  args: {
+    interactive: true,
+    shouldRenderChunkSize: false,
+  },
   argTypes: {
     files: { table: { disable: true } },
+    width: { table: { disable: true } },
+    height: { table: { disable: true } },
     chunkSize: { table: { disable: true } },
     offsetGap: { table: { disable: true } },
     offsetLeft: { table: { disable: true } },
-    onChangeOffsetLeft: { table: { disable: true } },
     offsetRight: { table: { disable: true } },
+    onChangeOffsetLeft: { table: { disable: true } },
     onChangeOffsetRight: { table: { disable: true } },
-    width: { table: { disable: true } },
-    height: { table: { disable: true } },
-  },
-  args: {
-    shouldRenderChunkSize: false,
-    interactive: true,
   },
 } as Meta<typeof RESIFileChart>;

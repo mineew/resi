@@ -27,11 +27,11 @@ function useReferenceTooltip(visibilityDelay = 100) {
   }, []);
 
   return {
+    enableTooltip,
     tooltipContent,
+    disableTooltip,
     tooltipIsActive,
     tooltipIsVisible,
-    enableTooltip,
-    disableTooltip,
   };
 }
 

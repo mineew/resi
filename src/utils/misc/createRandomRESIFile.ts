@@ -6,11 +6,11 @@ import getRandomHEXColor from './getRandomHEXColor';
 import getRandomInt from './getRandomInt';
 
 interface CreateRandomRESIFileOptions {
+  color?: string;
+  strokeWidth?: number;
   contentsLength?: number;
   contentsItemMin?: number;
   contentsItemMax?: number;
-  color?: string;
-  strokeWidth?: number;
 }
 
 function createRandomRESIFile(
@@ -18,11 +18,11 @@ function createRandomRESIFile(
   options: CreateRandomRESIFileOptions = {},
 ): RESIFile {
   const {
+    color,
+    strokeWidth,
     contentsLength,
     contentsItemMin = 50,
     contentsItemMax = 150,
-    color,
-    strokeWidth,
   } = options;
 
   return {

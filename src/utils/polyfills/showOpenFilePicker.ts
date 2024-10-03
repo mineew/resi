@@ -1,7 +1,7 @@
 let globalInputElement: HTMLInputElement | undefined;
 
 function getInputElement(options: ShowOpenFilePickerOptions) {
-  const { multiple = false, types } = options;
+  const { types, multiple = false } = options;
 
   if (!globalInputElement) {
     globalInputElement = document.createElement('input');

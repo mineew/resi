@@ -5,7 +5,7 @@ import getRandomArray from '@/utils/misc/getRandomArray';
 
 import Dialog from './Dialog';
 
-export const Default: StoryFn<typeof Dialog> = ({ title, size }) => {
+export const Default: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
@@ -23,7 +23,7 @@ export const Default: StoryFn<typeof Dialog> = ({ title, size }) => {
   );
 };
 
-export const WithFooter: StoryFn<typeof Dialog> = ({ title, size }) => {
+export const WithFooter: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
@@ -42,7 +42,7 @@ export const WithFooter: StoryFn<typeof Dialog> = ({ title, size }) => {
   );
 };
 
-export const LongContent: StoryFn<typeof Dialog> = ({ title, size }) => {
+export const LongContent: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
@@ -66,19 +66,19 @@ export const LongContent: StoryFn<typeof Dialog> = ({ title, size }) => {
 };
 
 export default {
-  title: 'Components/UI/Dialog',
   component: Dialog,
+  title: 'Components/UI/Dialog',
+  args: {
+    size: '600',
+    title: 'Dialog Title',
+  },
   argTypes: {
+    open: { table: { disable: true } },
+    footer: { table: { disable: true } },
     trigger: { table: { disable: true } },
     tooltip: { table: { disable: true } },
-    open: { table: { disable: true } },
-    onOpenChange: { table: { disable: true } },
     children: { table: { disable: true } },
-    footer: { table: { disable: true } },
     scrollable: { table: { disable: true } },
-  },
-  args: {
-    title: 'Dialog Title',
-    size: '600',
+    onOpenChange: { table: { disable: true } },
   },
 } as Meta<typeof Dialog>;

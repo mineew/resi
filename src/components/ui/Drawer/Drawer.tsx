@@ -9,24 +9,24 @@ import Tooltip from '@/components/ui/Tooltip/Tooltip';
 import styles from './Drawer.module.css';
 
 interface DrawerProps {
+  title: string;
+  children: ReactNode;
+  trigger: JSX.Element;
+  tooltip?: string;
   className?: string;
   overlayClassName?: string;
-  title: string;
-  trigger: JSX.Element;
   triggerClassName?: string;
-  tooltip?: string;
-  children: ReactNode;
 }
 
 function Drawer(props: DrawerProps) {
   const {
-    className,
-    overlayClassName,
     title,
     trigger,
-    triggerClassName,
     tooltip,
     children,
+    className,
+    overlayClassName,
+    triggerClassName,
   } = props;
 
   const handleCloseAutoFocus = useCallback(

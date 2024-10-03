@@ -23,15 +23,15 @@ export const Default: StoryFn<typeof Drawer> = () => {
 };
 
 export default {
-  title: 'Components/UI/Drawer',
   component: Drawer,
+  title: 'Components/UI/Drawer',
   argTypes: {
-    className: { table: { disable: true } },
-    overlayClassName: { table: { disable: true } },
     title: { table: { disable: true } },
     trigger: { table: { disable: true } },
-    triggerClassName: { table: { disable: true } },
     tooltip: { table: { disable: true } },
     children: { table: { disable: true } },
+    className: { table: { disable: true } },
+    overlayClassName: { table: { disable: true } },
+    triggerClassName: { table: { disable: true } },
   },
 } as Meta<typeof Drawer>;

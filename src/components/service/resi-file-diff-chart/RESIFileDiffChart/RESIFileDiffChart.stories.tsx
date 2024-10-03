@@ -10,11 +10,11 @@ import RESIFileDiffChart from './RESIFileDiffChart';
 const files = getRandomArray(
   (idx) =>
     createRandomRESIFile(`File-${idx + 1}`, {
-      contentsLength: 50000,
-      contentsItemMin: 0,
-      contentsItemMax: 200,
       color: '',
       strokeWidth: 1,
+      contentsItemMin: 0,
+      contentsItemMax: 200,
+      contentsLength: 50000,
     }),
   100,
 );
@@ -31,9 +31,9 @@ export const Default: StoryFn<typeof RESIFileDiffChart> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File Diff Chart/RESIFileDiffChart',
   component: RESIFileDiffChart,
   argTypes: {
     diffs: { table: { disable: true } },
   },
+  title: 'Components/Service/RESI File Diff Chart/RESIFileDiffChart',
 } as Meta<typeof RESIFileDiffChart>;

@@ -8,8 +8,8 @@ interface LangDropdownItem {
 }
 
 interface LangDropdownProps {
-  langs: LangDropdownItem[];
   selectedLang: string;
+  langs: LangDropdownItem[];
   onChangeSelectedLang: (lang: string) => void;
 }
 

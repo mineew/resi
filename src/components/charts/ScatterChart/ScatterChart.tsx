@@ -23,22 +23,22 @@ import styles from './ScatterChart.module.css';
 interface ScatterChartProps {
   title: string;
   points: ScatterChartPoint[];
+  width?: number;
   xLabel?: string;
   yLabel?: string;
-  exportFilename?: string;
-  width?: number;
   height?: number;
+  exportFilename?: string;
 }
 
 function ScatterChart(props: ScatterChartProps) {
   const {
     title,
+    width,
     points,
     xLabel,
     yLabel,
-    exportFilename = 'scatter-chart.png',
-    width,
     height,
+    exportFilename = 'scatter-chart.png',
   } = props;
   const { t } = useTranslation();
   const { regression, regressionLine } =
@@ -55,9 +55,9 @@ function ScatterChart(props: ScatterChartProps) {
   const yLabelObject = !yLabel
     ? undefined
     : {
+        angle: -90,
         value: yLabel,
         position: 'middle',
-        angle: -90,
       };
 
   return (

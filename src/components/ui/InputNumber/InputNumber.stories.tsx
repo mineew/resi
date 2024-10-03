@@ -4,12 +4,12 @@ import { useState } from 'react';
 import InputNumber from './InputNumber';
 
 export const Default: StoryFn<typeof InputNumber> = ({
-  label,
-  placeholder,
   min,
   max,
   help,
+  label,
   invalid,
+  placeholder,
 }) => {
   const [typedValue, setTypedValue] = useState(1500);
   const [, setUnmaskedValue] = useState('1500');
@@ -36,19 +36,19 @@ export const Default: StoryFn<typeof InputNumber> = ({
 };
 
 export default {
-  title: 'Components/UI/InputNumber',
   component: InputNumber,
-  argTypes: {
-    typedValue: { table: { disable: true } },
-    onValueChange: { table: { disable: true } },
-    rightElement: { table: { disable: true } },
-  },
+  title: 'Components/UI/InputNumber',
   args: {
-    label: 'Number',
-    placeholder: 'Placeholder',
     min: 10,
     max: 35700,
-    help: 'only numbers',
     invalid: false,
+    label: 'Number',
+    help: 'only numbers',
+    placeholder: 'Placeholder',
+  },
+  argTypes: {
+    typedValue: { table: { disable: true } },
+    rightElement: { table: { disable: true } },
+    onValueChange: { table: { disable: true } },
   },
 } as Meta<typeof InputNumber>;

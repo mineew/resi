@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import RadioGroup, { type RadioGroupItem } from './RadioGroup';
 
-export const Default: StoryFn<typeof RadioGroup> = ({ label, size }) => {
+export const Default: StoryFn<typeof RadioGroup> = ({ size, label }) => {
   const [value, setValue] = useState('mean');
 
   const items: RadioGroupItem[] = [
@@ -31,15 +31,15 @@ export const Default: StoryFn<typeof RadioGroup> = ({ label, size }) => {
 };
 
 export default {
-  title: 'Components/UI/RadioGroup',
   component: RadioGroup,
+  title: 'Components/UI/RadioGroup',
+  args: {
+    size: 'default',
+    label: 'Threshold',
+  },
   argTypes: {
     items: { table: { disable: true } },
     value: { table: { disable: true } },
     onValueChange: { table: { disable: true } },
-  },
-  args: {
-    label: 'Threshold',
-    size: 'default',
   },
 } as Meta<typeof RadioGroup>;

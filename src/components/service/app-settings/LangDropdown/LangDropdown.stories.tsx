@@ -29,8 +29,8 @@ export const Default: StoryFn<typeof LangDropdown> = () => {
 };
 
 export default {
-  title: 'Components/Service/App Settings/LangDropdown',
   component: LangDropdown,
+  title: 'Components/Service/App Settings/LangDropdown',
   argTypes: {
     langs: { table: { disable: true } },
     selectedLang: { table: { disable: true } },

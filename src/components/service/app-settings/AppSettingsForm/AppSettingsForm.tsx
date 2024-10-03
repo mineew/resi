@@ -22,12 +22,12 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
   const { onSubmit } = props;
   const { t } = useTranslation();
 
-  const { control, watch, formState, handleSubmit } =
+  const { watch, control, formState, handleSubmit } =
     useFormContext<Settings>();
 
   const meanOptions: RadioGroupItem[] = [
-    { label: t('COMMON.MEAN_VALUE'), value: 'mean' },
-    { label: t('COMMON.MEDIAN'), value: 'median' },
+    { value: 'mean', label: t('COMMON.MEAN_VALUE') },
+    { value: 'median', label: t('COMMON.MEDIAN') },
   ];
 
   const offsetLeft = watch('offsetLeft');

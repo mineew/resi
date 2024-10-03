@@ -11,32 +11,32 @@ import styles from './Dropdown.module.css';
 
 interface DropdownItem {
   id: string;
-  icon?: JSX.Element;
   label: string;
   onClick: () => void;
   danger?: boolean;
+  icon?: JSX.Element;
   selected?: boolean;
   disabled?: boolean;
 }
 
 interface DropdownProps {
   items: (DropdownItem | 'separator')[];
-  defaultTriggerClassName?: string;
-  defaultTriggerTitle?: string;
   tooltip?: string;
   trigger?: JSX.Element;
-  align?: DropdownMenuContentProps['align'];
   fullWidthContent?: boolean;
+  defaultTriggerTitle?: string;
+  defaultTriggerClassName?: string;
+  align?: DropdownMenuContentProps['align'];
 }
 
 function Dropdown(props: DropdownProps) {
   const {
     items,
-    defaultTriggerClassName,
-    defaultTriggerTitle,
     tooltip,
     trigger,
     align = 'start',
+    defaultTriggerTitle,
+    defaultTriggerClassName,
     fullWidthContent = true,
   } = props;
 

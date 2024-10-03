@@ -9,28 +9,28 @@ import Tooltip from '@/components/ui/Tooltip/Tooltip';
 import styles from './Dialog.module.css';
 
 interface DialogProps {
-  trigger: JSX.Element;
-  tooltip?: string;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
   title: string;
   children: ReactNode;
+  trigger: JSX.Element;
+  open?: boolean;
+  tooltip?: string;
   footer?: ReactNode;
-  size?: '400' | '600' | '800';
   scrollable?: boolean;
+  size?: '400' | '600' | '800';
+  onOpenChange?: (open: boolean) => void;
 }
 
 function Dialog(props: DialogProps) {
   const {
+    open,
+    title,
+    footer,
     trigger,
     tooltip,
-    open,
-    onOpenChange,
-    title,
     children,
-    footer,
     size = '400',
     scrollable = false,
+    onOpenChange,
   } = props;
 
   const triggerElement = <Radix.Trigger asChild>{trigger}</Radix.Trigger>;

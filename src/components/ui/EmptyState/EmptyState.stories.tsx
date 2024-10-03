@@ -16,8 +16,8 @@ export const Default: StoryFn<typeof EmptyState> = () => {
 };
 
 export default {
-  title: 'Components/UI/EmptyState',
   component: EmptyState,
+  title: 'Components/UI/EmptyState',
   argTypes: {
     icon: { table: { disable: true } },
     children: { table: { disable: true } },

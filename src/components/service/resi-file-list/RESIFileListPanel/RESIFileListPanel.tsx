@@ -16,14 +16,14 @@ import styles from './RESIFileListPanel.module.css';
 interface RESIFileListPanelProps {
   files: RESIFile[];
   onAddFiles: () => void;
-  onFetchExampleFiles: () => void;
   onDeleteAllFiles: () => void;
   onSelectAllFiles: () => void;
   onUnselectAllFiles: () => void;
-  onChangeFileColor: (idx: number, color: string) => void;
-  onChangeFileStrokeWidth: (idx: number, width: number) => void;
-  onChangeFileChecked: (idx: number, checked: boolean) => void;
+  onFetchExampleFiles: () => void;
   onDeleteFile: (idx: number) => void;
+  onChangeFileColor: (idx: number, color: string) => void;
+  onChangeFileChecked: (idx: number, checked: boolean) => void;
+  onChangeFileStrokeWidth: (idx: number, width: number) => void;
   appSettings?: ReactNode;
   isAddingFiles?: boolean;
   isFetchingFiles?: boolean;
@@ -32,18 +32,18 @@ interface RESIFileListPanelProps {
 const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const {
     files,
-    onAddFiles,
-    onFetchExampleFiles,
-    onDeleteAllFiles,
-    onSelectAllFiles,
-    onUnselectAllFiles,
-    onChangeFileColor,
-    onChangeFileStrokeWidth,
-    onChangeFileChecked,
-    onDeleteFile,
     appSettings,
     isAddingFiles,
     isFetchingFiles,
+    onAddFiles,
+    onDeleteFile,
+    onDeleteAllFiles,
+    onSelectAllFiles,
+    onChangeFileColor,
+    onUnselectAllFiles,
+    onFetchExampleFiles,
+    onChangeFileChecked,
+    onChangeFileStrokeWidth,
   } = props;
 
   const { t } = useTranslation();
@@ -67,25 +67,25 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const dropdownItems: (DropdownItem | 'separator')[] = [
     {
       id: 'clear',
+      danger: true,
       icon: <Trash2 />,
       label: t('RESI_FILE_LIST.CLEAR_FILES'),
       onClick: handleClearFiles,
-      danger: true,
     },
     'separator',
     {
       id: 'select-all',
       icon: <CopyCheck />,
+      disabled: allFilesChecked,
       label: t('RESI_FILE_LIST.ENABLE_ALL_FILES'),
       onClick: onSelectAllFiles,
-      disabled: allFilesChecked,
     },
     {
-      id: 'unselect-all',
       icon: <CopyX />,
+      id: 'unselect-all',
+      disabled: allFilesUnchecked,
       label: t('RESI_FILE_LIST.DISABLE_ALL_FILES'),
       onClick: onUnselectAllFiles,
-      disabled: allFilesUnchecked,
     },
   ];
 

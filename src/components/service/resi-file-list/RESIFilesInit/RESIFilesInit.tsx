@@ -14,7 +14,7 @@ interface RESIFilesInitProps {
 }
 
 function RESIFilesInit(props: RESIFilesInitProps) {
-  const { onAddFiles, onFetchExampleFiles, isAddingFiles, isFetchingFiles } =
+  const { isAddingFiles, isFetchingFiles, onAddFiles, onFetchExampleFiles } =
     props;
   const { t } = useTranslation();
 

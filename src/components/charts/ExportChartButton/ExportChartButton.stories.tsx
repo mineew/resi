@@ -22,13 +22,13 @@ export const Default: StoryFn<typeof ExportChartButton> = ({ filename }) => {
 };
 
 export default {
-  title: 'Components/Charts/ExportChartButton',
   component: ExportChartButton,
+  args: {
+    filename: 'image.png',
+  },
+  title: 'Components/Charts/ExportChartButton',
   argTypes: {
     className: { table: { disable: true } },
     chartWrapper: { table: { disable: true } },
-  },
-  args: {
-    filename: 'image.png',
   },
 } as Meta<typeof ExportChartButton>;

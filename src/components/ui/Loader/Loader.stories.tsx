@@ -11,6 +11,6 @@ export const Default: StoryFn<typeof Loader> = () => {
 };
 
 export default {
-  title: 'Components/UI/Loader',
   component: Loader,
+  title: 'Components/UI/Loader',
 } as Meta<typeof Loader>;

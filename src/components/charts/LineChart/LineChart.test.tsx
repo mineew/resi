@@ -5,22 +5,22 @@ import type { LineChartDataset } from './LineChartDataset';
 
 const data: LineChartDataset[] = [
   {
+    strokeWidth: 1,
+    color: '#FF0000',
     name: 'Dataset 1',
     contents: [1, 2, 3, 4, 5],
-    color: '#FF0000',
-    strokeWidth: 1,
   },
   {
+    strokeWidth: 2,
+    color: '#00FF00',
     name: 'Dataset 2',
     contents: [6, 7, 8, 9, 10],
-    color: '#00FF00',
-    strokeWidth: 2,
   },
   {
+    strokeWidth: 3,
+    color: '#0000FF',
     name: 'Dataset 3',
     contents: [11, 12, 13],
-    color: '#0000FF',
-    strokeWidth: 3,
   },
 ];
 

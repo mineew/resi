@@ -20,8 +20,8 @@ export const Default: StoryFn<typeof ThemeButton> = () => {
 };
 
 export default {
-  title: 'Components/Service/App Settings/ThemeButton',
   component: ThemeButton,
+  title: 'Components/Service/App Settings/ThemeButton',
   argTypes: {
     theme: { table: { disable: true } },
     onToggleTheme: { table: { disable: true } },

@@ -1,9 +1,9 @@
 interface RESIFile {
   name: string;
-  contents: number[];
   color: string;
-  strokeWidth: number;
   checked: boolean;
+  contents: number[];
+  strokeWidth: number;
 }
 
 export type { RESIFile };

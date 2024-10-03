@@ -1,7 +1,7 @@
 interface LineChartDataset {
   name: string;
-  contents: number[];
   color: string;
+  contents: number[];
   strokeWidth: number;
 }
 

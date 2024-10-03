@@ -15,11 +15,11 @@ export const Default: StoryFn<typeof Tooltip> = () => {
 };
 
 export default {
-  title: 'Components/UI/Tooltip',
   component: Tooltip,
+  title: 'Components/UI/Tooltip',
   argTypes: {
-    className: { table: { disable: true } },
     title: { table: { disable: true } },
     children: { table: { disable: true } },
+    className: { table: { disable: true } },
   },
 } as Meta<typeof Tooltip>;

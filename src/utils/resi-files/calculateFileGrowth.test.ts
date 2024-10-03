@@ -3,26 +3,26 @@ import type { RESIFile } from '@/store/types/RESIFile';
 import calculateFileGrowth from './calculateFileGrowth';
 
 const file1: RESIFile = {
-  name: 'File 1',
   color: 'red',
-  strokeWidth: 1,
   checked: true,
+  name: 'File 1',
+  strokeWidth: 1,
   contents: [1, 2, 8],
 };
 
 const file2: RESIFile = {
+  checked: true,
   name: 'File 2',
   color: 'green',
   strokeWidth: 1,
-  checked: true,
   contents: [4, 5, 11],
 };
 
 const file3: RESIFile = {
-  name: 'File 3',
   color: 'blue',
-  strokeWidth: 1,
   checked: true,
+  name: 'File 3',
+  strokeWidth: 1,
   contents: [10, 11, 17],
 };
 

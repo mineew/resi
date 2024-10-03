@@ -7,7 +7,7 @@ import styles from './ScrollArea.module.css';
 interface ScrollAreaProps extends HTMLAttributes<HTMLDivElement> {}
 
 function ScrollArea(props: ScrollAreaProps) {
-  const { className, children, ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
 
   return (
     <Radix.Root type="always" asChild>

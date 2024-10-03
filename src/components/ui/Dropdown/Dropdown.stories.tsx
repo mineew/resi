@@ -10,22 +10,22 @@ import Dropdown, { type DropdownItem } from './Dropdown';
 const fileListExampleItems: (DropdownItem | 'separator')[] = [
   {
     id: 'clear',
-    icon: <Trash2 />,
-    label: 'Clear',
-    onClick: fn(),
     danger: true,
+    label: 'Clear',
+    icon: <Trash2 />,
+    onClick: fn(),
   },
   'separator',
   {
+    disabled: true,
     id: 'select-all',
     icon: <CopyCheck />,
     label: 'Select All',
     onClick: fn(),
-    disabled: true,
   },
   {
-    id: 'unselect-all',
     icon: <CopyX />,
+    id: 'unselect-all',
     label: 'Reset All',
     onClick: fn(),
   },
@@ -39,9 +39,9 @@ const simpleListExampleItems: DropdownItem[] = [
   },
   {
     id: 'item-2',
+    danger: true,
     label: 'Item 2',
     onClick: fn(),
-    danger: true,
   },
   {
     id: 'item-3',
@@ -75,10 +75,10 @@ export const SelectedItem: StoryFn<typeof Dropdown> = () => {
 
   const items = simpleListExampleItems.map((item) => ({
     ...item,
+    selected: selectedItem === item.id,
     onClick: () => {
       setSelectedItem(item.id);
     },
-    selected: selectedItem === item.id,
   }));
 
   return (
@@ -92,15 +92,15 @@ export const SelectedItem: StoryFn<typeof Dropdown> = () => {
 };
 
 export default {
-  title: 'Components/UI/Dropdown',
   component: Dropdown,
+  title: 'Components/UI/Dropdown',
   argTypes: {
     items: { table: { disable: true } },
-    defaultTriggerClassName: { table: { disable: true } },
-    defaultTriggerTitle: { table: { disable: true } },
+    align: { table: { disable: true } },
     tooltip: { table: { disable: true } },
     trigger: { table: { disable: true } },
-    align: { table: { disable: true } },
     fullWidthContent: { table: { disable: true } },
+    defaultTriggerTitle: { table: { disable: true } },
+    defaultTriggerClassName: { table: { disable: true } },
   },
 } as Meta<typeof Dropdown>;

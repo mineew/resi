@@ -21,9 +21,9 @@ export const WithChildren: StoryFn<typeof RESIFileChartEmpty> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File Chart/RESIFileChartEmpty',
   component: RESIFileChartEmpty,
   argTypes: {
     children: { table: { disable: true } },
   },
+  title: 'Components/Service/RESI File Chart/RESIFileChartEmpty',
 } as Meta<typeof RESIFileChartEmpty>;

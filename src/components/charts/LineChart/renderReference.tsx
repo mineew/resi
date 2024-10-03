@@ -10,15 +10,15 @@ import styles from './LineChart.module.css';
  */
 
 interface RenderReferenceOptions {
-  offset?: number;
   side: 'left' | 'right';
   chartDomain: readonly [number, number, number, number];
+  offset?: number;
   onMouseEnter?: MouseEventHandler;
   onMouseLeave?: MouseEventHandler;
 }
 
 function renderReference(options: RenderReferenceOptions) {
-  const { offset, side, chartDomain, onMouseEnter, onMouseLeave } = options;
+  const { side, offset, chartDomain, onMouseEnter, onMouseLeave } = options;
   if (!offset) return null;
 
   const [minX, minY, maxX, maxY] = chartDomain;

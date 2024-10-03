@@ -1,8 +1,8 @@
 import exportChartToPng from './exportChartToPng';
 
 const mocks = vi.hoisted(() => ({
-  toBlob: vi.fn(() => Promise.resolve(new Blob())),
   downloadBlob: vi.fn(),
+  toBlob: vi.fn(() => Promise.resolve(new Blob())),
 }));
 
 vi.mock('html-to-image', () => ({

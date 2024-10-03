@@ -5,14 +5,14 @@ import type { JSX } from 'react';
 import styles from './Tooltip.module.css';
 
 interface TooltipProps {
-  className?: string;
-  triggerClassName?: string;
   title: string;
   children: JSX.Element;
+  className?: string;
+  triggerClassName?: string;
 }
 
 function Tooltip(props: TooltipProps) {
-  const { className, triggerClassName, title, children } = props;
+  const { title, children, className, triggerClassName } = props;
 
   return (
     <Radix.Provider

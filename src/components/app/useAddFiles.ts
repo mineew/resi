@@ -41,11 +41,11 @@ function useAddFiles() {
   }, [addFiles, setIsAddingFiles, setIsFetchingFiles]);
 
   return {
-    addFiles: handleAddFiles,
     isAddingFiles,
+    addFiles: handleAddFiles,
 
-    fetchExampleFiles: handleFetchExampleFiles,
     isFetchingFiles,
+    fetchExampleFiles: handleFetchExampleFiles,
   };
 }
 

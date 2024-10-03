@@ -28,11 +28,11 @@ function calculateFileDifferences(
     totalDistance += (fileB.contents.length * chunkSize) / 100;
 
     diffs.push({
+      diff,
       fileA,
       fileB,
-      diff,
-      totalDiff,
       distance,
+      totalDiff,
       totalDistance,
     });
   }

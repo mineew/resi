@@ -26,44 +26,44 @@ import styles from './LineChart.module.css';
 interface LineChartProps {
   title: string;
   data: LineChartDataset[];
-  xLabel?: string;
-  xConverter?: (x: number) => number;
-  xTickCount?: number;
-  yLabel?: string;
-  yTickCount?: number;
-  offsetGap?: number;
-  offsetLeft?: number;
-  onChangeOffsetLeft?: (offset: number) => void;
-  offsetRight?: number;
-  onChangeOffsetRight?: (offset: number) => void;
-  tooltipFormatter?: (tooltipContent: number) => string;
   step?: number;
+  width?: number;
+  xLabel?: string;
+  yLabel?: string;
+  height?: number;
+  offsetGap?: number;
+  xTickCount?: number;
+  yTickCount?: number;
+  offsetLeft?: number;
+  offsetRight?: number;
   interactive?: boolean;
   exportFilename?: string;
-  width?: number;
-  height?: number;
+  xConverter?: (x: number) => number;
+  tooltipFormatter?: (tooltipContent: number) => string;
+  onChangeOffsetLeft?: (offset: number) => void;
+  onChangeOffsetRight?: (offset: number) => void;
 }
 
 function LineChart(props: LineChartProps) {
   const {
-    title,
     data,
+    step,
+    title,
+    width,
     xLabel,
+    yLabel,
+    height,
+    offsetGap,
     xConverter,
     xTickCount,
-    yLabel,
     yTickCount,
-    offsetGap,
-    offsetLeft: defaultOffsetLeft = 0,
-    onChangeOffsetLeft,
-    offsetRight: defaultOffsetRight = 0,
-    onChangeOffsetRight,
-    tooltipFormatter,
-    step,
     interactive,
+    tooltipFormatter,
+    offsetLeft: defaultOffsetLeft = 0,
     exportFilename = 'line-chart.png',
-    width,
-    height,
+    offsetRight: defaultOffsetRight = 0,
+    onChangeOffsetLeft,
+    onChangeOffsetRight,
   } = props;
 
   const { t } = useTranslation();
@@ -84,25 +84,25 @@ function LineChart(props: LineChartProps) {
 
   const {
     offsetDrag,
+    tooltipContent,
     tooltipIsActive,
     tooltipIsVisible,
-    tooltipContent,
+    handleLeaveOffset,
+    handleChartMouseUp,
+    handleChartMouseDown,
+    handleChartMouseMove,
     handleEnterOffsetLeft,
     handleEnterOffsetRight,
-    handleLeaveOffset,
-    handleChartMouseDown,
-    handleChartMouseUp,
-    handleChartMouseMove,
   } = useReferenceDragging({
-    interactive,
-    gap: offsetGap,
     offsetLeft,
-    onChangeOffsetLeft: setOffsetLeft,
+    interactive,
     offsetRight,
+    gap: offsetGap,
+    onChangeOffsetLeft: setOffsetLeft,
     onChangeOffsetRight: setOffsetRight,
   });
 
-  const { lines, maxX, maxY } = convertChartData(data, xConverter);
+  const { maxX, maxY, lines } = convertChartData(data, xConverter);
   const chartDomain = [0, 0, maxX, maxY] as const;
 
   const xLabelObject = !xLabel
@@ -115,19 +115,19 @@ function LineChart(props: LineChartProps) {
   const yLabelObject = !yLabel
     ? undefined
     : {
-        value: yLabel,
-        position: 'middle',
         angle: -90,
         offset: 40,
+        value: yLabel,
+        position: 'middle',
       };
 
   return (
     <div
       className={classNames(styles.wrapper, {
         [styles.interactive]: interactive,
+        [styles['tooltip-visible']]: tooltipIsVisible,
         [styles['dragging-left']]: offsetDrag === 'left',
         [styles['dragging-right']]: offsetDrag === 'right',
-        [styles['tooltip-visible']]: tooltipIsVisible,
       })}
       ref={setChartWrapper}
       data-testid="line-chart-container"
@@ -176,19 +176,19 @@ function LineChart(props: LineChartProps) {
           {renderStepReferences({ step, maxX })}
 
           {renderReference({
-            offset: offsetLeft,
-            side: 'left',
             chartDomain,
-            onMouseEnter: handleEnterOffsetLeft,
+            side: 'left',
+            offset: offsetLeft,
             onMouseLeave: handleLeaveOffset,
+            onMouseEnter: handleEnterOffsetLeft,
           })}
 
           {renderReference({
-            offset: offsetRight,
-            side: 'right',
             chartDomain,
-            onMouseEnter: handleEnterOffsetRight,
+            side: 'right',
+            offset: offsetRight,
             onMouseLeave: handleLeaveOffset,
+            onMouseEnter: handleEnterOffsetRight,
           })}
 
           {tooltipIsActive && (

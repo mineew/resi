@@ -12,12 +12,12 @@ import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemToolbarProps {
   checked: boolean;
-  onChangeChecked: (checked: boolean) => void;
   onDelete: () => void;
+  onChangeChecked: (checked: boolean) => void;
 }
 
 const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
-  const { checked: defaultChecked, onChangeChecked, onDelete } = props;
+  const { checked: defaultChecked, onDelete, onChangeChecked } = props;
   const { t } = useTranslation();
   const [alertDialogOpen, setAlertDialogOpen] = useState(false);
   const [dontShowAgainAlertDialog, setDontShowAgainAlertDialog] =

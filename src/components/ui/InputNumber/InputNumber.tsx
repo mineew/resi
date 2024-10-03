@@ -5,39 +5,39 @@ import { useIMask } from 'react-imask';
 import Input from '@/components/ui/Input/Input';
 
 interface InputNumberProps {
-  label?: string;
-  placeholder?: string;
-  typedValue?: number;
-  onValueChange?: (typedValue: number, unmaskedValue: string) => void;
   min?: number;
   max?: number;
-  rightElement?: ReactNode;
   help?: string;
+  label?: string;
   invalid?: boolean;
+  typedValue?: number;
+  placeholder?: string;
+  rightElement?: ReactNode;
+  onValueChange?: (typedValue: number, unmaskedValue: string) => void;
 }
 
 function InputNumber(props: InputNumberProps) {
   const {
-    label,
-    placeholder,
-    typedValue,
-    onValueChange,
     min,
     max,
-    rightElement,
     help,
+    label,
     invalid,
+    typedValue,
+    placeholder,
+    rightElement,
+    onValueChange,
   } = props;
 
   const { i18n } = useTranslation();
 
   const { ref } = useIMask(
     {
-      mask: Number,
       min,
       max,
-      thousandsSeparator: i18n.language === 'en' ? ',' : ' ',
       scale: 0,
+      mask: Number,
+      thousandsSeparator: i18n.language === 'en' ? ',' : ' ',
     },
     {
       defaultTypedValue: typedValue,

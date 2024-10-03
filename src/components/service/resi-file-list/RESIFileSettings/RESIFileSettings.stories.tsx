@@ -19,8 +19,8 @@ export const Default: StoryFn<typeof RESIFileSettings> = () => {
       >
         <Button
           style={{
-            backgroundColor: color,
             outlineColor: color,
+            backgroundColor: color,
             outlineWidth: strokeWidth,
           }}
         >
@@ -32,14 +32,14 @@ export const Default: StoryFn<typeof RESIFileSettings> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File List/RESIFileSettings',
   component: RESIFileSettings,
+  title: 'Components/Service/RESI File List/RESIFileSettings',
   argTypes: {
     color: { table: { disable: true } },
-    onChangeColor: { table: { disable: true } },
-    strokeWidth: { table: { disable: true } },
-    onChangeStrokeWidth: { table: { disable: true } },
     children: { table: { disable: true } },
+    strokeWidth: { table: { disable: true } },
     onOpenChange: { table: { disable: true } },
+    onChangeColor: { table: { disable: true } },
+    onChangeStrokeWidth: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileSettings>;

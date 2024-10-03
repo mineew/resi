@@ -33,7 +33,7 @@ function convertChartData(
     lines.push(dataItem);
   }
 
-  return { lines, maxX, maxY };
+  return { maxX, maxY, lines };
 }
 
 export default convertChartData;

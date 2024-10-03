@@ -4,13 +4,13 @@ import { useId } from 'react';
 import styles from './RadioGroup.module.css';
 
 interface RadioGroupItemProps {
-  id?: string;
   label: string;
   value: string;
+  id?: string;
 }
 
 function RadioGroupItem(props: RadioGroupItemProps) {
-  const { id: providedId, label, value } = props;
+  const { label, value, id: providedId } = props;
   const defaultId = useId();
   const id = providedId || defaultId;
 

@@ -1,11 +1,11 @@
 import type { RESIFile } from './RESIFile';
 
 interface RESIFileDiff {
+  diff: number;
   fileA: RESIFile;
   fileB: RESIFile;
-  diff: number;
-  totalDiff: number;
   distance: number;
+  totalDiff: number;
   totalDistance: number;
 }
 

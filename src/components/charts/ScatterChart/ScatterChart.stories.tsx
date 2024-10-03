@@ -29,17 +29,17 @@ export const Default: StoryFn<typeof ScatterChart> = ({
 };
 
 export default {
-  title: 'Components/Charts/ScatterChart',
   component: ScatterChart,
-  argTypes: {
-    points: { table: { disable: true } },
-    exportFilename: { table: { disable: true } },
-    width: { table: { disable: true } },
-    height: { table: { disable: true } },
-  },
+  title: 'Components/Charts/ScatterChart',
   args: {
-    title: 'Scatter Chart Title',
     xLabel: 'X Axis Label',
     yLabel: 'Y Axis Label',
+    title: 'Scatter Chart Title',
+  },
+  argTypes: {
+    width: { table: { disable: true } },
+    points: { table: { disable: true } },
+    height: { table: { disable: true } },
+    exportFilename: { table: { disable: true } },
   },
 } as Meta<typeof ScatterChart>;

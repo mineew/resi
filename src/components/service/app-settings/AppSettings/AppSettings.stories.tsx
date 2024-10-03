@@ -19,14 +19,14 @@ export const Default: StoryFn<typeof AppSettings> = ({ onChange }) => {
 };
 
 export default {
-  title: 'Components/Service/App Settings/AppSettings',
   component: AppSettings,
-  argTypes: {
-    values: { table: { disable: true } },
-    onChange: { table: { disable: true } },
-    children: { table: { disable: true } },
-  },
   args: {
     onChange: fn(),
+  },
+  title: 'Components/Service/App Settings/AppSettings',
+  argTypes: {
+    values: { table: { disable: true } },
+    children: { table: { disable: true } },
+    onChange: { table: { disable: true } },
   },
 } as Meta<typeof AppSettings>;

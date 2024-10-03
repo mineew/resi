@@ -13,14 +13,14 @@ interface StoreState {
   isFetchingFiles: boolean;
   setIsFetchingFiles: (isFetchingFiles: boolean) => void;
 
-  deleteAllFiles: () => void;
   checkAllFiles: () => void;
+  deleteAllFiles: () => void;
   uncheckAllFiles: () => void;
 
+  deleteFile: (idx: number) => void;
+  toggleFile: (idx: number, checked: boolean) => void;
   changeFileColor: (idx: number, color: string) => void;
   changeFileStrokeWidth: (idx: number, width: number) => void;
-  toggleFile: (idx: number, checked: boolean) => void;
-  deleteFile: (idx: number) => void;
 
   settings: Settings;
   setSettings: (settings: Settings) => void;

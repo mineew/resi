@@ -3,12 +3,12 @@ import type { Meta, StoryFn } from '@storybook/react';
 import Button from './Button';
 
 export const Default: StoryFn<typeof Button> = ({
-  theme,
   size,
-  fullWidth,
+  theme,
   center,
   outlined,
   disabled,
+  fullWidth,
 }) => {
   return (
     <div style={{ padding: 20 }}>
@@ -27,17 +27,17 @@ export const Default: StoryFn<typeof Button> = ({
 };
 
 export default {
-  title: 'Components/UI/Button',
   component: Button,
-  args: {
-    theme: 'primary',
-    size: 'default',
-    fullWidth: false,
-    center: false,
-    outlined: false,
-    disabled: false,
-  },
+  title: 'Components/UI/Button',
   argTypes: {
     icon: { table: { disable: true } },
+  },
+  args: {
+    center: false,
+    size: 'default',
+    outlined: false,
+    disabled: false,
+    theme: 'primary',
+    fullWidth: false,
   },
 } as Meta<typeof Button>;

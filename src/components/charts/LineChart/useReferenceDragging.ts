@@ -8,37 +8,37 @@ interface ChartMouseMoveEvent {
 }
 
 interface UseReferenceDraggingOptions {
-  interactive?: boolean;
   gap?: number;
   offsetLeft?: number;
-  onChangeOffsetLeft?: (offset: number) => void;
   offsetRight?: number;
+  interactive?: boolean;
+  onChangeOffsetLeft?: (offset: number) => void;
   onChangeOffsetRight?: (offset: number) => void;
 }
 
 function useReferenceDragging(options: UseReferenceDraggingOptions) {
   const {
-    interactive = false,
     gap = 1,
     offsetLeft,
-    onChangeOffsetLeft,
     offsetRight,
+    interactive = false,
+    onChangeOffsetLeft,
     onChangeOffsetRight,
   } = options;
 
   const {
+    enableTooltip,
     tooltipContent,
+    disableTooltip,
     tooltipIsActive,
     tooltipIsVisible,
-    enableTooltip,
-    disableTooltip,
   } = useReferenceTooltip();
 
   const {
     offsetOver,
+    handleLeaveOffset,
     handleEnterOffsetLeft,
     handleEnterOffsetRight,
-    handleLeaveOffset,
   } = useReferenceOver();
 
   const [offsetDrag, setOffsetDrag] = useState<'left' | 'right' | null>(null);
@@ -96,29 +96,29 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
   if (interactive) {
     return {
       offsetDrag,
+      tooltipContent,
       tooltipIsActive,
       tooltipIsVisible,
-      tooltipContent,
+      handleLeaveOffset,
+      handleChartMouseUp,
+      handleChartMouseDown,
+      handleChartMouseMove,
       handleEnterOffsetLeft,
       handleEnterOffsetRight,
-      handleLeaveOffset,
-      handleChartMouseDown,
-      handleChartMouseUp,
-      handleChartMouseMove,
     };
   }
 
   return {
     offsetDrag: null,
+    tooltipContent: 0,
     tooltipIsActive: false,
     tooltipIsVisible: false,
-    tooltipContent: 0,
+    handleLeaveOffset: undefined,
+    handleChartMouseUp: undefined,
+    handleChartMouseDown: undefined,
+    handleChartMouseMove: undefined,
     handleEnterOffsetLeft: undefined,
     handleEnterOffsetRight: undefined,
-    handleLeaveOffset: undefined,
-    handleChartMouseDown: undefined,
-    handleChartMouseUp: undefined,
-    handleChartMouseMove: undefined,
   };
 }
 

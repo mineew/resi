@@ -15,12 +15,12 @@ export const Default: StoryFn<typeof Popover> = () => {
 };
 
 export default {
-  title: 'Components/UI/Popover',
   component: Popover,
+  title: 'Components/UI/Popover',
   argTypes: {
-    trigger: { table: { disable: true } },
     open: { table: { disable: true } },
-    onOpenChange: { table: { disable: true } },
+    trigger: { table: { disable: true } },
     children: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
   },
 } as Meta<typeof Popover>;

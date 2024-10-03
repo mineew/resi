@@ -18,11 +18,11 @@ function parseFiles(files: Record<string, string>): RESIFile[] {
       .map((i) => Number(i));
 
     resiFiles.push({
-      name: name.replace('.xls', '').replace(/^0*/, ''),
       contents,
       color: DEFAULT_FILE_COLOR,
-      strokeWidth: DEFAULT_FILE_STROKE_WIDTH,
       checked: DEFAULT_FILE_CHECKED,
+      strokeWidth: DEFAULT_FILE_STROKE_WIDTH,
+      name: name.replace('.xls', '').replace(/^0*/, ''),
     });
   }
 

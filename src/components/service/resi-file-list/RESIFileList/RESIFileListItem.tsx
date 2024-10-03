@@ -9,22 +9,22 @@ import RESIFileListItemToolbar from './RESIFileListItemToolbar';
 import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemProps {
-  file: RESIFile;
   idx: number;
-  onChangeColor: (idx: number, color: string) => void;
-  onChangeStrokeWidth: (idx: number, width: number) => void;
-  onChangeChecked: (idx: number, checked: boolean) => void;
+  file: RESIFile;
   onDelete: (idx: number) => void;
+  onChangeColor: (idx: number, color: string) => void;
+  onChangeChecked: (idx: number, checked: boolean) => void;
+  onChangeStrokeWidth: (idx: number, width: number) => void;
 }
 
 const RESIFileListItem = memo((props: RESIFileListItemProps) => {
   const {
-    file,
     idx,
-    onChangeColor,
-    onChangeStrokeWidth,
-    onChangeChecked,
+    file,
     onDelete,
+    onChangeColor,
+    onChangeChecked,
+    onChangeStrokeWidth,
   } = props;
 
   const [active, setActive] = useState(false);

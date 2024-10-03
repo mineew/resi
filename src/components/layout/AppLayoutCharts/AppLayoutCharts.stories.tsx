@@ -8,8 +8,8 @@ function Block({ title }: { title: string }) {
       <div
         style={{
           padding: 20,
-          borderRadius: 16,
           height: '100%',
+          borderRadius: 16,
           backgroundColor: 'var(--slate-3)',
           border: '2px dashed var(--slate-6)',
         }}
@@ -34,8 +34,8 @@ export const Default: StoryFn<typeof AppLayoutCharts> = () => {
 };
 
 export default {
-  title: 'Components/Layout/AppLayoutCharts',
   component: AppLayoutCharts,
+  title: 'Components/Layout/AppLayoutCharts',
   argTypes: {
     fileChart: { table: { disable: true } },
     filesInit: { table: { disable: true } },

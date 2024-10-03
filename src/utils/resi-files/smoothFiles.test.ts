@@ -3,26 +3,26 @@ import type { RESIFile } from '@/store/types/RESIFile';
 import smoothFiles from './smoothFiles';
 
 const file1: RESIFile = {
-  name: 'File 1',
   color: 'red',
-  strokeWidth: 1,
   checked: true,
+  name: 'File 1',
+  strokeWidth: 1,
   contents: [3, 3, 6, 6, 6, 4],
 };
 
 const file2: RESIFile = {
+  checked: true,
   name: 'File 2',
   color: 'green',
   strokeWidth: 1,
-  checked: true,
   contents: [5, 5, 5, 3, 1, 7],
 };
 
 const file3: RESIFile = {
-  name: 'File 3',
   color: 'blue',
-  strokeWidth: 1,
   checked: true,
+  name: 'File 3',
+  strokeWidth: 1,
   contents: [4, 4, 8, 12, 3, 17],
 };
 

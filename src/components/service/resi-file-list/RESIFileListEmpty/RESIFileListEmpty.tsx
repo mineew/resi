@@ -12,7 +12,7 @@ interface RESIFileListEmptyProps {
 }
 
 const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
-  const { onAddFiles, onFetchExampleFiles, isAddingFiles, isFetchingFiles } =
+  const { isAddingFiles, isFetchingFiles, onAddFiles, onFetchExampleFiles } =
     props;
 
   return (

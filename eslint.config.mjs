@@ -85,6 +85,27 @@ export default tseslint.config(
         { groupKind: 'values-first' },
       ],
 
+      'perfectionist/sort-interfaces': [
+        'error',
+        {
+          type: 'line-length',
+          groupKind: 'required-first',
+          partitionByNewLine: true,
+          groups: ['unknown', 'multiline', 'callbacks'],
+          customGroups: { callbacks: ['on*'] },
+        },
+      ],
+
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          type: 'line-length',
+          partitionByNewLine: true,
+          groups: ['unknown', 'callbacks'],
+          customGroups: { callbacks: ['on*'] },
+        },
+      ],
+
       // added tseslint rules
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -95,6 +116,7 @@ export default tseslint.config(
 
       // overrided tseslint rules
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
+      '@typescript-eslint/adjacent-overload-signatures': 'off',
       '@typescript-eslint/no-empty-object-type': [
         'error',
         { allowInterfaces: 'with-single-extends' },
@@ -157,6 +179,11 @@ export default tseslint.config(
   {
     files: ['src/**/*.stories.tsx'],
     rules: { 'react/prop-types': 'off' },
+  },
+
+  {
+    files: ['*.config.ts', '*.mocks*.ts'],
+    rules: { 'perfectionist/sort-objects': 'off' },
   },
 
   includeIgnoreFile(gitignorePath),

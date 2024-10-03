@@ -1,6 +1,6 @@
 interface RESIFileGrowth {
-  distance: number;
   growth: number;
+  distance: number;
 }
 
 export type { RESIFileGrowth };

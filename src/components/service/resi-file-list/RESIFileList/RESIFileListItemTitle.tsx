@@ -5,22 +5,22 @@ import RESIFileSettings from '@/components/service/resi-file-list/RESIFileSettin
 import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemTitleProps {
-  color: string;
   name: string;
+  color: string;
   strokeWidth: number;
   onChangeColor: (color: string) => void;
-  onChangeStrokeWidth: (width: number) => void;
   onChangeActive: (active: boolean) => void;
+  onChangeStrokeWidth: (width: number) => void;
 }
 
 const RESIFileListItemTitle = memo((props: RESIFileListItemTitleProps) => {
   const {
-    color,
     name,
+    color,
     strokeWidth,
     onChangeColor,
-    onChangeStrokeWidth,
     onChangeActive,
+    onChangeStrokeWidth,
   } = props;
 
   return (

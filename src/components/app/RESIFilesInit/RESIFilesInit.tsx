@@ -13,7 +13,7 @@ interface RESIFilesInitProps {
 function RESIFilesInit(props: RESIFilesInitProps) {
   const { className } = props;
   const files = useStore((state) => state.files);
-  const { addFiles, isAddingFiles, fetchExampleFiles, isFetchingFiles } =
+  const { addFiles, isAddingFiles, isFetchingFiles, fetchExampleFiles } =
     useAddFiles();
 
   if (files.length) return null;

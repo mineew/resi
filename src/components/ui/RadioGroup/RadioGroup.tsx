@@ -7,15 +7,15 @@ import RadioGroupItem, { type RadioGroupItemProps } from './RadioGroupItem';
 import styles from './RadioGroup.module.css';
 
 interface RadioGroupProps {
-  label?: string;
-  items: RadioGroupItemProps[];
   value: string;
+  items: RadioGroupItemProps[];
   onValueChange: (value: string) => void;
+  label?: string;
   size?: 'default' | 'small';
 }
 
 function RadioGroup(props: RadioGroupProps) {
-  const { label, items, value, onValueChange, size = 'default' } = props;
+  const { label, items, value, size = 'default', onValueChange } = props;
 
   const firstItemProvidedId = items[0]?.id;
   const firstItemDefaultId = useId();

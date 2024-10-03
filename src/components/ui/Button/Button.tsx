@@ -4,24 +4,24 @@ import { forwardRef, type ButtonHTMLAttributes, type Ref } from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme?: 'primary' | 'danger';
-  size?: 'default' | 'small';
-  fullWidth?: boolean;
+  icon?: boolean;
   center?: boolean;
   outlined?: boolean;
-  icon?: boolean;
+  fullWidth?: boolean;
+  size?: 'default' | 'small';
+  theme?: 'primary' | 'danger';
 }
 
 function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
   const {
-    theme = 'primary',
-    size = 'default',
-    fullWidth = false,
-    center = false,
-    outlined = false,
-    icon = false,
     className,
+    icon = false,
+    center = false,
     type = 'button',
+    size = 'default',
+    outlined = false,
+    theme = 'primary',
+    fullWidth = false,
     ...otherProps
   } = props;
 
@@ -34,11 +34,11 @@ function _Button(props: ButtonProps, ref: Ref<HTMLButtonElement>) {
         styles[theme],
         styles[size],
         {
-          [styles['full-width']]: fullWidth,
+          [styles.icon]: icon,
           [styles.center]: center,
           [styles.filled]: !outlined,
           [styles.outlined]: outlined,
-          [styles.icon]: icon,
+          [styles['full-width']]: fullWidth,
         },
       )}
       type={type}

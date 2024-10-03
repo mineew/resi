@@ -7,13 +7,13 @@ import exportChartToPng from '@/utils/chart-export/exportChartToPng';
 import styles from './ExportChartButton.module.css';
 
 interface ExportChartButtonProps {
-  className?: string;
-  chartWrapper: HTMLDivElement | null;
   filename: string;
+  chartWrapper: HTMLDivElement | null;
+  className?: string;
 }
 
 function ExportChartButton(props: ExportChartButtonProps) {
-  const { className, chartWrapper, filename } = props;
+  const { filename, className, chartWrapper } = props;
   const { t } = useTranslation();
 
   const handleExportChart = (scale: number) => {

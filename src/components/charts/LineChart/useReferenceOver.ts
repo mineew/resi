@@ -17,9 +17,9 @@ function useReferenceOver() {
 
   return {
     offsetOver,
+    handleLeaveOffset,
     handleEnterOffsetLeft,
     handleEnterOffsetRight,
-    handleLeaveOffset,
   };
 }
 

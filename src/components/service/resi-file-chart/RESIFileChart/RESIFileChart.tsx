@@ -7,31 +7,31 @@ import getChartExportFilename from '@/utils/chart-export/getChartExportFilename'
 
 interface RESIFileChartProps {
   files: RESIFile[];
-  chunkSize?: number;
-  shouldRenderChunkSize?: boolean;
-  offsetGap?: number;
-  offsetLeft?: number;
-  onChangeOffsetLeft?: (offset: number) => void;
-  offsetRight?: number;
-  onChangeOffsetRight?: (offset: number) => void;
-  interactive?: boolean;
   width?: number;
   height?: number;
+  chunkSize?: number;
+  offsetGap?: number;
+  offsetLeft?: number;
+  offsetRight?: number;
+  interactive?: boolean;
+  shouldRenderChunkSize?: boolean;
+  onChangeOffsetLeft?: (offset: number) => void;
+  onChangeOffsetRight?: (offset: number) => void;
 }
 
 const RESIFileChart = memo((props: RESIFileChartProps) => {
   const {
     files,
-    chunkSize = 1,
-    shouldRenderChunkSize,
-    offsetGap = 1,
-    offsetLeft = 0,
-    onChangeOffsetLeft,
-    offsetRight = 0,
-    onChangeOffsetRight,
-    interactive,
     width,
     height,
+    interactive,
+    chunkSize = 1,
+    offsetGap = 1,
+    offsetLeft = 0,
+    offsetRight = 0,
+    shouldRenderChunkSize,
+    onChangeOffsetLeft,
+    onChangeOffsetRight,
   } = props;
 
   const { t } = useTranslation();

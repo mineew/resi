@@ -15,7 +15,7 @@ function RESIFileListPanel() {
   const toggleFile = useStore((state) => state.toggleFile);
   const deleteFile = useStore((state) => state.deleteFile);
 
-  const { addFiles, isAddingFiles, fetchExampleFiles, isFetchingFiles } =
+  const { addFiles, isAddingFiles, isFetchingFiles, fetchExampleFiles } =
     useAddFiles();
 
   return (

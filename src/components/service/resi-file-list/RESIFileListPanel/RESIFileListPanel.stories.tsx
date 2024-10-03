@@ -13,21 +13,21 @@ const files: RESIFile[] = getRandomArray((idx) =>
 
 export const Default: StoryFn<typeof RESIFileListPanel> = ({
   onAddFiles,
-  onFetchExampleFiles,
+  onDeleteFile,
   onDeleteAllFiles,
   onSelectAllFiles,
-  onUnselectAllFiles,
   onChangeFileColor,
-  onChangeFileStrokeWidth,
+  onUnselectAllFiles,
+  onFetchExampleFiles,
   onChangeFileChecked,
-  onDeleteFile,
+  onChangeFileStrokeWidth,
 }) => {
   return (
     <div
       style={{
         margin: 20,
-        height: 'calc(100vh - 40px)',
         width: 300,
+        height: 'calc(100vh - 40px)',
         backgroundColor: 'var(--slate-2)',
         border: '1px solid var(--slate-6)',
       }}
@@ -49,32 +49,32 @@ export const Default: StoryFn<typeof RESIFileListPanel> = ({
 };
 
 export default {
-  title: 'Components/Service/RESI File List/RESIFileListPanel',
   component: RESIFileListPanel,
+  title: 'Components/Service/RESI File List/RESIFileListPanel',
+  args: {
+    onAddFiles: fn(),
+    onDeleteFile: fn(),
+    onDeleteAllFiles: fn(),
+    onSelectAllFiles: fn(),
+    onChangeFileColor: fn(),
+    onUnselectAllFiles: fn(),
+    onFetchExampleFiles: fn(),
+    onChangeFileChecked: fn(),
+    onChangeFileStrokeWidth: fn(),
+  },
   argTypes: {
     files: { table: { disable: true } },
-    onAddFiles: { table: { disable: true } },
-    onFetchExampleFiles: { table: { disable: true } },
-    onDeleteAllFiles: { table: { disable: true } },
-    onSelectAllFiles: { table: { disable: true } },
-    onUnselectAllFiles: { table: { disable: true } },
-    onChangeFileColor: { table: { disable: true } },
-    onChangeFileStrokeWidth: { table: { disable: true } },
-    onChangeFileChecked: { table: { disable: true } },
-    onDeleteFile: { table: { disable: true } },
     appSettings: { table: { disable: true } },
     isAddingFiles: { table: { disable: true } },
     isFetchingFiles: { table: { disable: true } },
-  },
-  args: {
-    onAddFiles: fn(),
-    onFetchExampleFiles: fn(),
-    onDeleteAllFiles: fn(),
-    onSelectAllFiles: fn(),
-    onUnselectAllFiles: fn(),
-    onChangeFileColor: fn(),
-    onChangeFileStrokeWidth: fn(),
-    onChangeFileChecked: fn(),
-    onDeleteFile: fn(),
+    onAddFiles: { table: { disable: true } },
+    onDeleteFile: { table: { disable: true } },
+    onDeleteAllFiles: { table: { disable: true } },
+    onSelectAllFiles: { table: { disable: true } },
+    onChangeFileColor: { table: { disable: true } },
+    onUnselectAllFiles: { table: { disable: true } },
+    onFetchExampleFiles: { table: { disable: true } },
+    onChangeFileChecked: { table: { disable: true } },
+    onChangeFileStrokeWidth: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileListPanel>;

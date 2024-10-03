@@ -10,28 +10,28 @@ import styles from './AlertDialog.module.css';
 
 interface AlertDialogProps {
   open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  trigger?: JSX.Element;
   title?: string;
   description?: string;
   cancelLabel?: string;
   actionLabel?: string;
-  onAction?: () => void;
+  trigger?: JSX.Element;
   dontShowAgain?: boolean;
+  onAction?: () => void;
+  onOpenChange?: (open: boolean) => void;
   onChangeDontShowAgain?: (dontShowAgain: boolean) => void;
 }
 
 function AlertDialog(props: AlertDialogProps) {
   const {
     open,
-    onOpenChange,
-    trigger,
     title,
+    trigger,
     description,
     cancelLabel,
     actionLabel,
-    onAction,
     dontShowAgain = false,
+    onAction,
+    onOpenChange,
     onChangeDontShowAgain,
   } = props;
 

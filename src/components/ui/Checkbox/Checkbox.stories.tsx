@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import Checkbox from './Checkbox';
 
-export const Default: StoryFn<typeof Checkbox> = ({ label, size }) => {
+export const Default: StoryFn<typeof Checkbox> = ({ size, label }) => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -19,16 +19,16 @@ export const Default: StoryFn<typeof Checkbox> = ({ label, size }) => {
 };
 
 export default {
-  title: 'Components/UI/Checkbox',
   component: Checkbox,
+  title: 'Components/UI/Checkbox',
+  args: {
+    size: 'default',
+    label: 'Checkbox Label',
+  },
   argTypes: {
     id: { table: { disable: true } },
-    hasBoldLabel: { table: { disable: true } },
     checked: { table: { disable: true } },
+    hasBoldLabel: { table: { disable: true } },
     onCheckedChange: { table: { disable: true } },
-  },
-  args: {
-    label: 'Checkbox Label',
-    size: 'default',
   },
 } as Meta<typeof Checkbox>;

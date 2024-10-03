@@ -6,16 +6,16 @@ import AppLayoutDrawer from '@/components/layout/AppLayoutDrawer/AppLayoutDrawer
 import styles from './AppLayout.module.css';
 
 interface AppLayoutProps {
-  appToolbar: ReactNode;
   fileList: ReactNode;
   fileChart: ReactNode;
   filesInit: ReactNode;
   diffChart: ReactNode;
+  appToolbar: ReactNode;
   growthChart: ReactNode;
 }
 
 function AppLayout(props: AppLayoutProps) {
-  const { appToolbar, fileList, fileChart, filesInit, diffChart, growthChart } =
+  const { fileList, fileChart, filesInit, diffChart, appToolbar, growthChart } =
     props;
 
   return (

@@ -28,8 +28,8 @@ export const Default: StoryFn<typeof Formula> = () => {
 };
 
 export default {
-  title: 'Components/UI/Formula',
   component: Formula,
+  title: 'Components/UI/Formula',
   argTypes: {
     a: { table: { disable: true } },
     b: { table: { disable: true } },

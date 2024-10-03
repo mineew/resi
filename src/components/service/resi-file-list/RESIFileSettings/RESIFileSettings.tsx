@@ -11,21 +11,21 @@ import styles from './RESIFileSettings.module.css';
 
 interface RESIFileSettingsProps {
   color: string;
-  onChangeColor: (color: string) => void;
   strokeWidth: number;
-  onChangeStrokeWidth: (width: number) => void;
   children: JSX.Element;
+  onChangeColor: (color: string) => void;
+  onChangeStrokeWidth: (width: number) => void;
   onOpenChange?: (open: boolean) => void;
 }
 
 const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
   const {
     color,
-    onChangeColor,
-    strokeWidth: defaultStrokeWidth,
-    onChangeStrokeWidth,
     children,
+    strokeWidth: defaultStrokeWidth,
     onOpenChange,
+    onChangeColor,
+    onChangeStrokeWidth,
   } = props;
 
   const { t } = useTranslation();

@@ -67,21 +67,21 @@ export const Controlled: StoryFn<typeof AlertDialog> = ({
 };
 
 export default {
-  title: 'Components/UI/AlertDialog',
   component: AlertDialog,
-  argTypes: {
-    open: { table: { disable: true } },
-    onOpenChange: { table: { disable: true } },
-    trigger: { table: { disable: true } },
-    onAction: { table: { disable: true } },
-    dontShowAgain: { table: { disable: true } },
-    onChangeDontShowAgain: { table: { disable: true } },
-  },
+  title: 'Components/UI/AlertDialog',
   args: {
     title: '',
     description: '',
     cancelLabel: '',
     actionLabel: '',
     onAction: fn(),
+  },
+  argTypes: {
+    open: { table: { disable: true } },
+    trigger: { table: { disable: true } },
+    dontShowAgain: { table: { disable: true } },
+    onAction: { table: { disable: true } },
+    onOpenChange: { table: { disable: true } },
+    onChangeDontShowAgain: { table: { disable: true } },
   },
 } as Meta<typeof AlertDialog>;

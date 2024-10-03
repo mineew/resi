@@ -5,32 +5,32 @@ import { useCallback, useId, useMemo } from 'react';
 import styles from './Slider.module.css';
 
 interface SliderProps {
-  id?: string;
-  label?: string;
-  hasBoldLabel?: boolean;
   value: number;
   onValueChange: (value: number) => void;
-  shouldDisplayValue?: boolean;
-  valueFormatter?: (value: number) => string;
+  id?: string;
   min?: number;
   max?: number;
   step?: number;
+  label?: string;
+  hasBoldLabel?: boolean;
   size?: 'default' | 'small';
+  shouldDisplayValue?: boolean;
+  valueFormatter?: (value: number) => string;
 }
 
 function Slider(props: SliderProps) {
   const {
-    id: providedId,
-    label = '',
-    hasBoldLabel = false,
     value,
-    onValueChange,
-    shouldDisplayValue = true,
-    valueFormatter = (unformatted) => unformatted.toString(),
     min = 0,
     max = 10,
     step = 1,
+    label = '',
+    id: providedId,
     size = 'default',
+    hasBoldLabel = false,
+    shouldDisplayValue = true,
+    valueFormatter = (unformatted) => unformatted.toString(),
+    onValueChange,
   } = props;
 
   const defaultId = useId();

@@ -3,8 +3,8 @@ async function openFiles() {
     const result: Record<string, string> = {};
 
     const handles = await window.showOpenFilePicker({
-      excludeAcceptAllOption: true,
       multiple: true,
+      excludeAcceptAllOption: true,
       types: [
         {
           description: 'RESI Files',

@@ -10,11 +10,11 @@ import RESIFileGrowthChart from './RESIFileGrowthChart';
 const files = getRandomArray(
   (idx) =>
     createRandomRESIFile(`File-${idx + 1}`, {
-      contentsLength: 50000,
-      contentsItemMin: 0,
-      contentsItemMax: 200,
       color: '',
       strokeWidth: 1,
+      contentsItemMin: 0,
+      contentsItemMax: 200,
+      contentsLength: 50000,
     }),
   100,
 );
@@ -31,9 +31,9 @@ export const Default: StoryFn<typeof RESIFileGrowthChart> = () => {
 };
 
 export default {
-  title: 'Components/Service/RESI File Growth Chart/RESIFileGrowthChart',
   component: RESIFileGrowthChart,
   argTypes: {
     diffs: { table: { disable: true } },
   },
+  title: 'Components/Service/RESI File Growth Chart/RESIFileGrowthChart',
 } as Meta<typeof RESIFileGrowthChart>;

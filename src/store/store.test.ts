@@ -8,8 +8,8 @@ import useStore from './store';
 import { DEFAULT_SETTINGS } from './types/Settings';
 
 const file1: RESIFile = {
-  name: 'File 1',
   color: 'red',
+  name: 'File 1',
   strokeWidth: 1,
   checked: false,
   contents: [3, 3, 6, 6, 6, 4],
@@ -24,8 +24,8 @@ const file2: RESIFile = {
 };
 
 const file3: RESIFile = {
-  name: 'File 3',
   color: 'blue',
+  name: 'File 3',
   strokeWidth: 1,
   checked: false,
   contents: [4, 4, 8, 12, 3, 17],
