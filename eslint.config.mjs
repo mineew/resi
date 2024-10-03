@@ -9,6 +9,7 @@ import a11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import hooks from 'eslint-plugin-react-hooks';
 import refresh from 'eslint-plugin-react-refresh';
+import perfectionist from 'eslint-plugin-perfectionist';
 import prettier from 'eslint-plugin-prettier/recommended';
 import jestDom from 'eslint-plugin-jest-dom';
 
@@ -33,6 +34,7 @@ export default tseslint.config(
     plugins: {
       'react-hooks': hooks,
       'react-refresh': refresh,
+      perfectionist,
     },
 
     rules: {
@@ -45,6 +47,35 @@ export default tseslint.config(
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+      ],
+
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          internalPattern: ['~/**', '@/**'],
+          groups: [
+            ['builtin', 'builtin-type'],
+            ['external', 'external-type'],
+            ['internal', 'internal-type'],
+            [
+              'parent',
+              'parent-type',
+              'sibling',
+              'sibling-type',
+              'index',
+              'index-type',
+            ],
+            ['side-effect'],
+            ['style', 'side-effect-style'],
+            ['object'],
+            ['unknown'],
+          ],
+        },
+      ],
+
+      'perfectionist/sort-named-imports': [
+        'error',
+        { groupKind: 'values-first' },
       ],
 
       // added tseslint rules

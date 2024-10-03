@@ -109,6 +109,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jest-dom": "5.4.0",
     "eslint-plugin-jsx-a11y": "6.10.0",
+    "eslint-plugin-perfectionist": "3.8.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.37.1",
     "eslint-plugin-react-hooks": "5.1.0-rc-2d16326d-20240930",

@@ -2,8 +2,9 @@ import * as Radix from '@radix-ui/react-radio-group';
 import classNames from 'classnames';
 import { useId } from 'react';
 
-import styles from './RadioGroup.module.css';
 import RadioGroupItem, { type RadioGroupItemProps } from './RadioGroupItem';
+
+import styles from './RadioGroup.module.css';
 
 interface RadioGroupProps {
   label?: string;

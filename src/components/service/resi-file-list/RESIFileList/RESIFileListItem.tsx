@@ -3,9 +3,10 @@ import { memo, useCallback, useState } from 'react';
 
 import type { RESIFile } from '@/store/types/RESIFile';
 
-import styles from './RESIFileList.module.css';
 import RESIFileListItemTitle from './RESIFileListItemTitle';
 import RESIFileListItemToolbar from './RESIFileListItemToolbar';
+
+import styles from './RESIFileList.module.css';
 
 interface RESIFileListItemProps {
   file: RESIFile;

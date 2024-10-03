@@ -15,12 +15,13 @@ import ExportChartButton from '@/components/charts/ExportChartButton/ExportChart
 import { xTickFormatter, yTickFormatter } from '@/components/charts/utils';
 import useDebouncedState from '@/utils/hooks/useDebouncedState';
 
-import styles from './LineChart.module.css';
-import type { LineChartDataset } from './LineChartDataset';
 import convertChartData from './convertChartData';
+import type { LineChartDataset } from './LineChartDataset';
 import renderReference from './renderReference';
 import renderStepReferences from './renderStepReferences';
 import useReferenceDragging from './useReferenceDragging';
+
+import styles from './LineChart.module.css';
 
 interface LineChartProps {
   title: string;

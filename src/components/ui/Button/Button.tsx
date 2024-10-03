@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { type ButtonHTMLAttributes, type Ref, forwardRef } from 'react';
+import { forwardRef, type ButtonHTMLAttributes, type Ref } from 'react';
 
 import styles from './Button.module.css';
 

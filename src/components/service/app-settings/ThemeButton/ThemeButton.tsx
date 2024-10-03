@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 import type { Theme } from './Theme';
+
 import styles from './ThemeButton.module.css';
 
 interface ThemeButtonProps {

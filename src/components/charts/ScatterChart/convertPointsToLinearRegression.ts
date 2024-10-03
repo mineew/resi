@@ -1,4 +1,4 @@
-import { type DataPoint, linear } from 'regression';
+import { linear, type DataPoint } from 'regression';
 
 import type { ScatterChartPoint } from './ScatterChartPoint';
 

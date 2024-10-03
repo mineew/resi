@@ -1,5 +1,5 @@
 import { LineChart } from 'lucide-react';
-import { type ReactNode, memo } from 'react';
+import { memo, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import EmptyState from '@/components/ui/EmptyState/EmptyState';

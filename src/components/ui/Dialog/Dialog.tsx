@@ -1,7 +1,7 @@
 import * as Radix from '@radix-ui/react-dialog';
 import classNames from 'classnames';
 import { X } from 'lucide-react';
-import { type ReactNode, useCallback, type JSX } from 'react';
+import { useCallback, type JSX, type ReactNode } from 'react';
 
 import ScrollArea from '@/components/ui/ScrollArea/ScrollArea';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';

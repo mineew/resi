@@ -1,5 +1,5 @@
 import { CopyCheck, CopyX, FilePlus2, Trash2 } from 'lucide-react';
-import { type ReactNode, memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import useLocalStorage from 'use-local-storage';
 

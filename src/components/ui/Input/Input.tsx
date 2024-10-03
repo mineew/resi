@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import {
-  type InputHTMLAttributes,
-  type ReactNode,
   forwardRef,
   useId,
+  type InputHTMLAttributes,
+  type ReactNode,
 } from 'react';
 
 import styles from './Input.module.css';
