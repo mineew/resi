@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+
 import classNames from 'classnames';
 import { forwardRef, type ButtonHTMLAttributes, type Ref } from 'react';
 

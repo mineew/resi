@@ -31,7 +31,7 @@ const RESIFileListItemTitle = memo((props: RESIFileListItemTitleProps) => {
       onOpenChange={onChangeActive}
       onChangeStrokeWidth={onChangeStrokeWidth}
     >
-      <button className={styles.title}>
+      <button type="button" className={styles.title}>
         <div
           style={{
             color: color,

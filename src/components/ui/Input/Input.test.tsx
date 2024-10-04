@@ -60,7 +60,7 @@ describe('@/components/ui/Input', () => {
   });
 
   it('can display custom elements', () => {
-    render(<Input rightElement={<button>Click Me</button>} />);
+    render(<Input rightElement={<button type="button">Click Me</button>} />);
     const button = screen.getByRole('button');
 
     expect(button).toBeInTheDocument();
