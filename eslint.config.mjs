@@ -100,7 +100,17 @@ export default tseslint.config(
  */
 function getReactRules() {
   return {
+    // 'react/boolean-prop-naming': [
+    //   'error',
+    //   {
+    //     rule: '^(is|has|can|should)[A-Z]([A-Za-z0-9]?)+|open|disabled|checked|invalid',
+    //   },
+    // ],
+
     'react/button-has-type': 'error',
+    'react/forward-ref-uses-ref': 'error',
+
+    'react/jsx-no-useless-fragment': 'error',
   };
 }
 
