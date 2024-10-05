@@ -64,10 +64,10 @@ function Slider(props: SliderProps) {
 
   return (
     <div className={classNames(styles.wrapper, styles[size])}>
-      {(!!label || shouldDisplayValue) && (
+      {(!!label || !!shouldDisplayValue) && (
         <div className={styles['label-wrapper']}>
           {!!label && labelElement}
-          {shouldDisplayValue && valueElement}
+          {!!shouldDisplayValue && valueElement}
         </div>
       )}
 

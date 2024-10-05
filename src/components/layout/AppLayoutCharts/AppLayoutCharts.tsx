@@ -18,7 +18,6 @@ function AppLayoutCharts(props: AppLayoutChartsProps) {
     <ScrollArea className={styles['scroll-area']}>
       <div className={styles.charts}>
         <div className={styles['file-chart']}>{fileChart}</div>
-
         <div className={styles['files-init']}>{filesInit}</div>
 
         <div className={styles['derived-charts']}>

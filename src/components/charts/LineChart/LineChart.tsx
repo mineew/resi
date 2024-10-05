@@ -191,17 +191,15 @@ function LineChart(props: LineChartProps) {
             onMouseEnter: handleEnterOffsetRight,
           })}
 
-          {tooltipIsActive && (
+          {!!tooltipIsActive && (
             <Tooltip
-              content={() => {
-                return (
-                  <div className={styles.tooltip}>
-                    {tooltipFormatter
-                      ? tooltipFormatter(tooltipContent)
-                      : tooltipContent}
-                  </div>
-                );
-              }}
+              content={
+                <div className={styles.tooltip}>
+                  {tooltipFormatter
+                    ? tooltipFormatter(tooltipContent)
+                    : tooltipContent}
+                </div>
+              }
               cursor={false}
               isAnimationActive={false}
             />

@@ -50,7 +50,7 @@ function AlertDialog(props: AlertDialogProps) {
 
   return (
     <Radix.Root open={open} onOpenChange={onOpenChange}>
-      {trigger && <Radix.Trigger asChild>{trigger}</Radix.Trigger>}
+      {!!trigger && <Radix.Trigger asChild>{trigger}</Radix.Trigger>}
 
       <Radix.Portal>
         <Radix.Overlay className="overlay" />

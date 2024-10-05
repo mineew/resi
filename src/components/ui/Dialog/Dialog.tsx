@@ -77,8 +77,7 @@ function Dialog(props: DialogProps) {
           </div>
 
           <ScrollArea className={styles.body}>{children}</ScrollArea>
-
-          {footer && <div className={styles.footer}>{footer}</div>}
+          {!!footer && <div className={styles.footer}>{footer}</div>}
         </Radix.Content>
       </Radix.Portal>
     </Radix.Root>

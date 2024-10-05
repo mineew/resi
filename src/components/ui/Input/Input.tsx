@@ -37,7 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         [styles.invalid]: invalid,
       })}
     >
-      {label && (
+      {!!label && (
         <label htmlFor={id} className={styles.label}>
           {label}
         </label>
@@ -58,10 +58,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           {...otherProps}
         />
 
-        {rightElement && <div className={styles.right}>{rightElement}</div>}
+        {!!rightElement && <div className={styles.right}>{rightElement}</div>}
       </div>
 
-      {help && <div className={styles.help}>{help}</div>}
+      {!!help && <div className={styles.help}>{help}</div>}
     </div>
   );
 });
