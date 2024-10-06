@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable react/jsx-no-bind */
 
 import { memo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

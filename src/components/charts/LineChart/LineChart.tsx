@@ -211,6 +211,7 @@ function LineChart(props: LineChartProps) {
               type="monotone"
               dataKey={line.name}
               stroke={line.color}
+              // eslint-disable-next-line react/no-array-index-key
               key={`${line.name}-${i}`}
               isAnimationActive={false}
               strokeWidth={line.strokeWidth}

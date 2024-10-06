@@ -78,6 +78,9 @@ export default tseslint.config(
   {
     files: ['src/**/*.test.tsx', 'src/**/*.test.ts'],
     extends: [jestDom.configs['flat/recommended']],
+    rules: {
+      'react/jsx-no-bind': 'off',
+    },
   },
 
   {
@@ -85,6 +88,7 @@ export default tseslint.config(
     rules: {
       'react/prop-types': 'off',
       'react/function-component-definition': 'off',
+      'react/jsx-no-bind': 'off',
     },
   },
 
@@ -99,16 +103,44 @@ export default tseslint.config(
 // -----------------------------------------------------------------------------
 
 /**
+ *
+ * @param {{
+ *  hasBooleanPropNamingRule?: boolean,
+ *  hasJSXHandlerNamesRule?: boolean
+ * } | undefined} options
+ *
  * @returns {import('typescript-eslint').ConfigWithExtends['rules']}
  */
-function getReactRules() {
+function getReactRules(options = {}) {
+  const { hasBooleanPropNamingRule, hasJSXHandlerNamesRule } = options;
+
   return {
-    // 'react/boolean-prop-naming': [
-    //   'error',
-    //   {
-    //     rule: '^(is|has|can|should)[A-Z]([A-Za-z0-9]?)+|open|disabled|checked|invalid',
-    //   },
-    // ],
+    'react/boolean-prop-naming': !hasBooleanPropNamingRule
+      ? 'off'
+      : [
+          'error',
+          {
+            rule: '^(is|has|can|should)[A-Z]([A-Za-z0-9]?)+|open|disabled|checked|invalid',
+          },
+        ],
+
+    'react/hook-use-state': [
+      'error',
+      {
+        allowDestructuredState: true,
+      },
+    ],
+
+    'react/button-has-type': 'error',
+    'react/forward-ref-uses-ref': 'error',
+    'react/function-component-definition': 'error',
+    'react/no-array-index-key': 'error',
+    'react/no-danger': 'error',
+    'react/no-invalid-html-attribute': 'error',
+    'react/no-object-type-as-default-prop': 'error',
+    'react/no-unstable-nested-components': 'error',
+    'react/self-closing-comp': 'error',
+    'react/void-dom-elements-no-children': 'error',
 
     'react/jsx-newline': [
       'error',
@@ -118,23 +150,22 @@ function getReactRules() {
       },
     ],
 
-    'react/button-has-type': 'error',
-    'react/forward-ref-uses-ref': 'error',
-    'react/function-component-definition': 'error',
-    // 'react/hook-use-state': 'error',
-    // 'react/no-array-index-key': 'error',
-    'react/no-danger': 'error',
-    'react/no-invalid-html-attribute': 'error',
-    'react/no-object-type-as-default-prop': 'error',
-    'react/no-unstable-nested-components': 'error',
-    'react/self-closing-comp': 'error',
-    'react/void-dom-elements-no-children': 'error',
+    'react/jsx-handler-names': !hasJSXHandlerNamesRule
+      ? 'off'
+      : [
+          'error',
+          {
+            eventHandlerPropPrefix: 'on',
+            eventHandlerPrefix: 'handle',
+            checkLocalVariables: true,
+            checkInlineFunction: true,
+          },
+        ],
 
     'react/jsx-boolean-value': 'error',
     'react/jsx-curly-brace-presence': 'error',
     'react/jsx-fragments': 'error',
-    // 'react/jsx-handler-names': 'error',
-    // 'react/jsx-no-bind': 'error',
+    'react/jsx-no-bind': 'error',
     'react/jsx-no-constructed-context-values': 'error',
     'react/jsx-no-leaked-render': 'error',
     'react/jsx-no-useless-fragment': 'error',

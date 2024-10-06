@@ -90,6 +90,7 @@ function Dropdown(props: DropdownProps) {
             if (item === 'separator') {
               return (
                 <Radix.Separator
+                  // eslint-disable-next-line react/no-array-index-key
                   key={`separator-${idx}`}
                   className={styles.separator}
                 />

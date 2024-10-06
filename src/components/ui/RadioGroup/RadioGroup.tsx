@@ -40,6 +40,7 @@ function RadioGroup(props: RadioGroupProps) {
         {items.map((item, idx) => (
           <RadioGroupItem
             {...item}
+            // eslint-disable-next-line react/no-array-index-key
             key={`${item.value}-${idx}`}
             id={idx === 0 ? firstItemId : item.id}
           />
