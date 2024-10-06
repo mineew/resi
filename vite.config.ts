@@ -24,6 +24,7 @@ export default defineConfig({
           return 'assets/js/[name]-[hash].js';
         },
 
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         assetFileNames: ({ name }) => {
           if (name?.endsWith('.css')) {
             return 'assets/css/[name]-[hash][extname]';
