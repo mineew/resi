@@ -24,13 +24,14 @@ export default defineConfig({
           return 'assets/js/[name]-[hash].js';
         },
 
-        // eslint-disable-next-line @typescript-eslint/no-deprecated
-        assetFileNames: ({ name }) => {
-          if (name?.endsWith('.css')) {
+        assetFileNames: ({ names = [] }) => {
+          const name = names[0] || '';
+
+          if (name.endsWith('.css')) {
             return 'assets/css/[name]-[hash][extname]';
           }
 
-          if (/\.(woff2?|ttf)$/.test(name ?? '')) {
+          if (/\.(woff2?|ttf)$/.test(name)) {
             return 'assets/fonts/[name]-[hash][extname]';
           }
 
