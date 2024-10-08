@@ -65,7 +65,6 @@ export default {
   argTypes: {
     files: { table: { disable: true } },
     appSettings: { table: { disable: true } },
-    isAddingFiles: { table: { disable: true } },
     isFetchingFiles: { table: { disable: true } },
     onAddFiles: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },

@@ -4,7 +4,6 @@ import { fn } from '@storybook/test';
 import RESIFileListEmpty from './RESIFileListEmpty';
 
 export const Default: StoryFn<typeof RESIFileListEmpty> = ({
-  isAddingFiles,
   isFetchingFiles,
   onAddFiles,
   onFetchExampleFiles,
@@ -20,7 +19,6 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({
       }}
     >
       <RESIFileListEmpty
-        isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
         onAddFiles={onAddFiles}
         onFetchExampleFiles={onFetchExampleFiles}
@@ -32,14 +30,13 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({
 export default {
   component: RESIFileListEmpty,
   title: 'Components/Service/RESI File List/RESIFileListEmpty',
-  argTypes: {
-    onAddFiles: { table: { disable: true } },
-    onFetchExampleFiles: { table: { disable: true } },
-  },
   args: {
-    isAddingFiles: false,
     isFetchingFiles: false,
     onAddFiles: fn(),
     onFetchExampleFiles: fn(),
+  },
+  argTypes: {
+    onAddFiles: { table: { disable: true } },
+    onFetchExampleFiles: { table: { disable: true } },
   },
 } as Meta<typeof RESIFileListEmpty>;

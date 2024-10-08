@@ -15,14 +15,12 @@ function RESIFileListPanel() {
   const toggleFile = useStore((state) => state.toggleFile);
   const deleteFile = useStore((state) => state.deleteFile);
 
-  const { addFiles, isAddingFiles, isFetchingFiles, fetchExampleFiles } =
-    useAddFiles();
+  const { addFiles, isFetchingFiles, fetchExampleFiles } = useAddFiles();
 
   return (
     <RESIFileListPanelView
       files={files}
       appSettings={<AppSettings />}
-      isAddingFiles={isAddingFiles}
       isFetchingFiles={isFetchingFiles}
       onAddFiles={addFiles}
       onDeleteFile={deleteFile}

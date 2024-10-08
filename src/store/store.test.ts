@@ -51,14 +51,6 @@ describe('@/store/store', () => {
     expect(result.current.files).toHaveLength(6);
   });
 
-  it('can toggle adding files status', async () => {
-    const { result } = renderHook(() => useStore());
-
-    expect(result.current.isAddingFiles).toBeFalsy();
-    await waitFor(() => result.current.setIsAddingFiles(true));
-    expect(result.current.isAddingFiles).toBeTruthy();
-  });
-
   it('can toggle fetching files status', async () => {
     const { result } = renderHook(() => useStore());
 

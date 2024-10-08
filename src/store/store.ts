@@ -28,11 +28,6 @@ const useStore = create<StoreState>()((set, get) => ({
     set({ files: newFiles });
   },
 
-  isAddingFiles: false,
-  setIsAddingFiles: (isAddingFiles) => {
-    set({ isAddingFiles });
-  },
-
   isFetchingFiles: false,
   setIsFetchingFiles: (isFetchingFiles) => {
     set({ isFetchingFiles });

@@ -7,26 +7,18 @@ import processFiles from '@/utils/resi-files/processFiles';
 
 function useAddFiles() {
   const addFiles = useStore((state) => state.addFiles);
-  const isAddingFiles = useStore((state) => state.isAddingFiles);
-  const setIsAddingFiles = useStore((state) => state.setIsAddingFiles);
   const isFetchingFiles = useStore((state) => state.isFetchingFiles);
   const setIsFetchingFiles = useStore((state) => state.setIsFetchingFiles);
 
   const handleAddFiles = useCallback(() => {
-    setIsAddingFiles(true);
-
     processFiles(openFiles)
       .then(addFiles)
       .catch(() => {
         // do nothing
-      })
-      .finally(() => {
-        setIsAddingFiles(false);
       });
-  }, [addFiles, setIsAddingFiles]);
+  }, [addFiles]);
 
   const handleFetchExampleFiles = useCallback(() => {
-    setIsAddingFiles(true);
     setIsFetchingFiles(true);
 
     processFiles(fetchExampleFiles)
@@ -35,16 +27,13 @@ function useAddFiles() {
         // do nothing
       })
       .finally(() => {
-        setIsAddingFiles(false);
         setIsFetchingFiles(false);
       });
-  }, [addFiles, setIsAddingFiles, setIsFetchingFiles]);
+  }, [addFiles, setIsFetchingFiles]);
 
   return {
-    isAddingFiles,
-    addFiles: handleAddFiles,
-
     isFetchingFiles,
+    addFiles: handleAddFiles,
     fetchExampleFiles: handleFetchExampleFiles,
   };
 }

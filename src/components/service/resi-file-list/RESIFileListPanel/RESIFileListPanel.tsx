@@ -25,7 +25,6 @@ interface RESIFileListPanelProps {
   onChangeFileChecked: (idx: number, checked: boolean) => void;
   onChangeFileStrokeWidth: (idx: number, width: number) => void;
   appSettings?: ReactNode;
-  isAddingFiles?: boolean;
   isFetchingFiles?: boolean;
 }
 
@@ -33,7 +32,6 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const {
     files,
     appSettings,
-    isAddingFiles,
     isFetchingFiles,
     onAddFiles,
     onDeleteFile,
@@ -92,7 +90,6 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   if (!files.length) {
     return (
       <RESIFileListEmpty
-        isAddingFiles={isAddingFiles}
         isFetchingFiles={isFetchingFiles}
         onAddFiles={onAddFiles}
         onFetchExampleFiles={onFetchExampleFiles}
@@ -104,8 +101,8 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     <div className={styles.wrapper} data-testid="resi-file-list-panel">
       <div className={styles.header}>
         <Button
+          disabled={isFetchingFiles}
           className={styles['add-files-button']}
-          disabled={isAddingFiles || isFetchingFiles}
           onClick={onAddFiles}
           center
         >

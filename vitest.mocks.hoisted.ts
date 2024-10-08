@@ -32,8 +32,6 @@ const commonMocks = vi.hoisted(() => ({
     ] as RESIFile[],
     setFiles: vi.fn(),
     addFiles: vi.fn(),
-    isAddingFiles: false,
-    setIsAddingFiles: vi.fn(),
     isFetchingFiles: false,
     setIsFetchingFiles: vi.fn(),
     deleteAllFiles: vi.fn(),
