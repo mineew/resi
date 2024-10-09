@@ -65,6 +65,7 @@
   },
 
   "THEME": {
+    "BUTTON_LABEL": "Color Scheme",
     "ENABLE_LIGHT_THEME": "Enable light theme",
     "ENABLE_DARK_THEME": "Enable dark theme"
   },

@@ -65,6 +65,7 @@
   },
 
   "THEME": {
+    "BUTTON_LABEL": "Цветовая схема",
     "ENABLE_LIGHT_THEME": "Включить светлую тему",
     "ENABLE_DARK_THEME": "Включить темную тему"
   },
