@@ -31,6 +31,8 @@
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
+    "test:e2e:codegen": "playwright codegen http://localhost:5173/resi/app",
+    "test:e2e:install": "playwright install --with-deps",
     "lint": "run-s lint:ts lint:eslint lint:css",
     "lint:ts": "tsc",
     "lint:eslint": "eslint . --cache",
