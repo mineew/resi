@@ -201,6 +201,7 @@ function getPerfectionistRules() {
           ['object'],
           ['unknown'],
         ],
+        sortSideEffects: true,
       },
     ],
 
