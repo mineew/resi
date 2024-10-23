@@ -24,6 +24,8 @@ export default mergeConfig(
           'pwa-assets.config.ts',
           'vite.pwa.config.ts',
           'vite.storybook.config.ts',
+          'vitest.mocks.hoisted.ts',
+          'postcss.config.cjs',
           'dev-dist',
           ...coverageConfigDefaults.exclude,
         ],
