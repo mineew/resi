@@ -13,6 +13,7 @@ import perfectionist from 'eslint-plugin-perfectionist';
 import prettier from 'eslint-plugin-prettier/recommended';
 import jestDom from 'eslint-plugin-jest-dom';
 import testingLibrary from 'eslint-plugin-testing-library';
+import storybook from 'eslint-plugin-storybook';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -89,6 +90,7 @@ export default tseslint.config(
 
   {
     files: ['src/**/*.stories.tsx'],
+    extends: [...storybook.configs['flat/recommended']],
     rules: {
       'react/prop-types': 'off',
       'react/function-component-definition': 'off',
