@@ -49,6 +49,7 @@ describe('@/components/service/resi-file-chart/RESIFileChart', () => {
       />,
     );
 
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const stepLine = container.querySelector('.step-line');
     expect(stepLine).toBeInTheDocument();
   });

@@ -12,6 +12,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import perfectionist from 'eslint-plugin-perfectionist';
 import prettier from 'eslint-plugin-prettier/recommended';
 import jestDom from 'eslint-plugin-jest-dom';
+import testingLibrary from 'eslint-plugin-testing-library';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -77,7 +78,10 @@ export default tseslint.config(
 
   {
     files: ['src/**/*.test.tsx', 'src/**/*.test.ts'],
-    extends: [jestDom.configs['flat/recommended']],
+    extends: [
+      jestDom.configs['flat/recommended'],
+      testingLibrary.configs['flat/react'],
+    ],
     rules: {
       'react/jsx-no-bind': 'off',
     },
