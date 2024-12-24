@@ -45,7 +45,7 @@ function Drawer(props: DrawerProps) {
           <Radix.Trigger asChild>{trigger}</Radix.Trigger>
         </Tooltip>
       ) : (
-        <Radix.Trigger className={triggerClassName} asChild>
+        <Radix.Trigger asChild className={triggerClassName}>
           {trigger}
         </Radix.Trigger>
       )}
@@ -55,8 +55,8 @@ function Drawer(props: DrawerProps) {
 
         <Radix.Content
           aria-describedby={undefined}
-          className={classNames(styles.content, className)}
           onCloseAutoFocus={handleCloseAutoFocus}
+          className={classNames(styles.content, className)}
         >
           <VisuallyHidden.Root asChild>
             <Radix.Title>{title}</Radix.Title>

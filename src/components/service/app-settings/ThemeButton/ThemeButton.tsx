@@ -20,18 +20,18 @@ const ThemeButton = memo((props: ThemeButtonProps) => {
 
   return (
     <Tooltip
+      className={styles.tooltip}
       title={
         theme === 'dark'
           ? t('THEME.ENABLE_LIGHT_THEME')
           : t('THEME.ENABLE_DARK_THEME')
       }
-      className={styles.tooltip}
     >
       <Button
-        aria-label={t('THEME.BUTTON_LABEL')}
-        onClick={onToggleTheme}
         icon
         outlined
+        onClick={onToggleTheme}
+        aria-label={t('THEME.BUTTON_LABEL')}
       >
         {theme === 'dark' ? <Moon /> : <Sun />}
       </Button>

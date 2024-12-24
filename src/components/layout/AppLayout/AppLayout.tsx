@@ -22,19 +22,19 @@ function AppLayout(props: AppLayoutProps) {
     <div className={styles.layout}>
       <div className={styles.header}>{appToolbar}</div>
 
-      <div className={styles.wrapper} data-testid="app-layout">
+      <div data-testid="app-layout" className={styles.wrapper}>
         <div className={styles['file-list']}>{fileList}</div>
 
         <AppLayoutCharts
+          filesInit={filesInit}
+          diffChart={diffChart}
+          growthChart={growthChart}
           fileChart={
             <>
               <div className={styles['app-toolbar']}>{appToolbar}</div>
               {fileChart}
             </>
           }
-          filesInit={filesInit}
-          diffChart={diffChart}
-          growthChart={growthChart}
         />
       </div>
 

@@ -29,9 +29,9 @@ const RESIFileList = memo((props: RESIFileListProps) => {
         <RESIFileListItem
           idx={idx}
           file={file}
+          onDelete={onDeleteFile}
           // eslint-disable-next-line react/no-array-index-key
           key={`${file.name}-${idx}`}
-          onDelete={onDeleteFile}
           onChangeColor={onChangeFileColor}
           onChangeChecked={onChangeFileChecked}
           onChangeStrokeWidth={onChangeFileStrokeWidth}

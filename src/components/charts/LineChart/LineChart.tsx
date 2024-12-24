@@ -39,9 +39,9 @@ interface LineChartProps {
   interactive?: boolean;
   exportFilename?: string;
   xConverter?: (x: number) => number;
-  tooltipFormatter?: (tooltipContent: number) => string;
   onChangeOffsetLeft?: (offset: number) => void;
   onChangeOffsetRight?: (offset: number) => void;
+  tooltipFormatter?: (tooltipContent: number) => string;
 }
 
 function LineChart(props: LineChartProps) {
@@ -59,16 +59,16 @@ function LineChart(props: LineChartProps) {
     yTickCount,
     interactive,
     tooltipFormatter,
+    onChangeOffsetLeft,
+    onChangeOffsetRight,
     offsetLeft: defaultOffsetLeft = 0,
     exportFilename = 'line-chart.png',
     offsetRight: defaultOffsetRight = 0,
-    onChangeOffsetLeft,
-    onChangeOffsetRight,
   } = props;
 
   const { t } = useTranslation();
 
-  const [chartWrapper, setChartWrapper] = useState<HTMLDivElement | null>(null);
+  const [chartWrapper, setChartWrapper] = useState<null | HTMLDivElement>(null);
 
   const [offsetLeft, setOffsetLeft] = useDebouncedState(
     defaultOffsetLeft,
@@ -123,14 +123,14 @@ function LineChart(props: LineChartProps) {
 
   return (
     <div
+      ref={setChartWrapper}
+      data-testid="line-chart-container"
       className={classNames(styles.wrapper, {
         [styles.interactive]: interactive,
         [styles['tooltip-visible']]: tooltipIsVisible,
         [styles['dragging-left']]: offsetDrag === 'left',
         [styles['dragging-right']]: offsetDrag === 'right',
       })}
-      ref={setChartWrapper}
-      data-testid="line-chart-container"
     >
       <h2 className={styles['chart-title']}>{title}</h2>
 
@@ -147,10 +147,10 @@ function LineChart(props: LineChartProps) {
       >
         <RechartsLineChart
           data={lines}
-          margin={{ top: 0, left: -25, right: 40, bottom: -10 }}
           onMouseUp={handleChartMouseUp}
           onMouseDown={handleChartMouseDown}
           onMouseMove={handleChartMouseMove}
+          margin={{ top: 0, left: -25, right: 40, bottom: -10 }}
         >
           <CartesianGrid className={styles.grid} />
 
@@ -193,6 +193,8 @@ function LineChart(props: LineChartProps) {
 
           {!!tooltipIsActive && (
             <Tooltip
+              cursor={false}
+              isAnimationActive={false}
               content={
                 <div className={styles.tooltip}>
                   {tooltipFormatter
@@ -200,8 +202,6 @@ function LineChart(props: LineChartProps) {
                     : tooltipContent}
                 </div>
               }
-              cursor={false}
-              isAnimationActive={false}
             />
           )}
 

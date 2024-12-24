@@ -33,11 +33,11 @@ const RESIFileListItemTitle = memo((props: RESIFileListItemTitleProps) => {
     >
       <button type="button" className={styles.title}>
         <div
+          className={styles['color-indicator']}
           style={{
             color: color,
             backgroundColor: color,
           }}
-          className={styles['color-indicator']}
         />
 
         <div className={styles['title-text']}>{name}</div>

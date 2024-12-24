@@ -11,13 +11,13 @@ interface RESIFileListEmptyProps {
 }
 
 const RESIFileListEmpty = memo((props: RESIFileListEmptyProps) => {
-  const { isFetchingFiles, onAddFiles, onFetchExampleFiles } = props;
+  const { onAddFiles, isFetchingFiles, onFetchExampleFiles } = props;
 
   return (
     <EmptyState icon={<Inbox />}>
       <RESIFilesInit
-        isFetchingFiles={isFetchingFiles}
         onAddFiles={onAddFiles}
+        isFetchingFiles={isFetchingFiles}
         onFetchExampleFiles={onFetchExampleFiles}
       />
     </EmptyState>

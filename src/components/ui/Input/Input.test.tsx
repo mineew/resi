@@ -34,7 +34,7 @@ describe('@/components/ui/Input', () => {
     const handleChange = vi.fn();
     const value = 'Hello World!';
 
-    render(<Input onChange={handleChange} disabled />);
+    render(<Input disabled onChange={handleChange} />);
 
     const input = screen.getByRole('textbox');
 

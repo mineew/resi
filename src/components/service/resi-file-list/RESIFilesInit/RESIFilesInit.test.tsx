@@ -27,9 +27,9 @@ describe('@/components/service/resi-file-list/RESIFilesInit', () => {
 
     render(
       <RESIFilesInit
+        isFetchingFiles
         onAddFiles={handleAddFiles}
         onFetchExampleFiles={handleFetchExampleFiles}
-        isFetchingFiles
       />,
     );
 

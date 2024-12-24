@@ -38,6 +38,7 @@ export const Default: StoryFn<typeof LineChart> = ({
       <LineChart
         step={0}
         data={data}
+        interactive
         title={title}
         offsetGap={1}
         xTickCount={8}
@@ -48,7 +49,6 @@ export const Default: StoryFn<typeof LineChart> = ({
         offsetRight={offsetRight}
         onChangeOffsetLeft={setOffsetLeft}
         onChangeOffsetRight={setOffsetRight}
-        interactive
       />
     </div>
   );

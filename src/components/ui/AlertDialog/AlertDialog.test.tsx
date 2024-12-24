@@ -18,11 +18,11 @@ describe('@/components/ui/AlertDialog', () => {
 
     render(
       <AlertDialog
+        open
         cancelLabel="No"
         actionLabel="Yes"
         onAction={handleAction}
         onOpenChange={handleOpenChange}
-        open
       />,
     );
 
@@ -41,11 +41,11 @@ describe('@/components/ui/AlertDialog', () => {
 
     render(
       <AlertDialog
+        open
         cancelLabel="No"
         actionLabel="Yes"
         onAction={handleAction}
         onOpenChange={handleOpenChange}
-        open
       />,
     );
 
@@ -64,9 +64,9 @@ describe('@/components/ui/AlertDialog', () => {
 
     render(
       <AlertDialog
+        open
         onAction={handleAction}
         onOpenChange={handleOpenChange}
-        open
       />,
     );
 
@@ -82,7 +82,7 @@ describe('@/components/ui/AlertDialog', () => {
     const handleChangeDontShowAgain = vi.fn();
 
     render(
-      <AlertDialog onChangeDontShowAgain={handleChangeDontShowAgain} open />,
+      <AlertDialog open onChangeDontShowAgain={handleChangeDontShowAgain} />,
     );
 
     const checkbox = screen.getByRole('checkbox');

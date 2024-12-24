@@ -20,7 +20,7 @@ interface DropdownItem {
 }
 
 interface DropdownProps {
-  items: (DropdownItem | 'separator')[];
+  items: ('separator' | DropdownItem)[];
   tooltip?: string;
   trigger?: JSX.Element;
   fullWidthContent?: boolean;
@@ -42,9 +42,9 @@ function Dropdown(props: DropdownProps) {
 
   const defaultTriggerButton = (
     <Button
-      className={classNames(styles.trigger, defaultTriggerClassName)}
       icon
       outlined
+      className={classNames(styles.trigger, defaultTriggerClassName)}
     >
       {defaultTriggerTitle}
       <ChevronDown className={styles['trigger-icon']} />
@@ -74,6 +74,10 @@ function Dropdown(props: DropdownProps) {
 
       <Radix.Portal>
         <Radix.Content
+          side="bottom"
+          align={align}
+          sideOffset={6}
+          onCloseAutoFocus={handleCloseAutoFocus}
           className={classNames(
             styles.content,
             {
@@ -81,10 +85,6 @@ function Dropdown(props: DropdownProps) {
             },
             'shadow',
           )}
-          side="bottom"
-          align={align}
-          sideOffset={6}
-          onCloseAutoFocus={handleCloseAutoFocus}
         >
           {items.map((item, idx) => {
             if (item === 'separator') {
@@ -99,13 +99,13 @@ function Dropdown(props: DropdownProps) {
 
             return (
               <Radix.Item
+                key={item.id}
+                onSelect={item.onClick}
+                disabled={item.disabled}
                 className={classNames(styles.item, {
                   [styles.danger]: item.danger,
                   [styles.selected]: item.selected,
                 })}
-                key={item.id}
-                disabled={item.disabled}
-                onSelect={item.onClick}
               >
                 {item.icon}
                 {item.label}

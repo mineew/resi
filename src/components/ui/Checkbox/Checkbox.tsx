@@ -19,9 +19,9 @@ function Checkbox(props: CheckboxProps) {
     label,
     checked,
     id: providedId,
+    onCheckedChange,
     size = 'default',
     hasBoldLabel = false,
-    onCheckedChange,
   } = props;
 
   const defaultId = useId();
@@ -35,16 +35,16 @@ function Checkbox(props: CheckboxProps) {
         className={styles.root}
         onCheckedChange={onCheckedChange}
       >
-        <Radix.Indicator className={styles.indicator} forceMount>
+        <Radix.Indicator forceMount className={styles.indicator}>
           <Check strokeWidth={3} className={styles.icon} />
         </Radix.Indicator>
       </Radix.Root>
 
       <label
+        htmlFor={id}
         className={classNames(styles.label, {
           [styles.bold]: hasBoldLabel,
         })}
-        htmlFor={id}
       >
         {label}
       </label>

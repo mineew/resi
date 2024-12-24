@@ -46,11 +46,11 @@ export const LongContent: StoryFn<typeof Dialog> = ({ size, title }) => {
   return (
     <div style={{ padding: 20 }}>
       <Dialog
+        scrollable
         size={size}
         title={title}
         footer={<p>Dialog Footer</p>}
         trigger={<Button>Dialog Trigger</Button>}
-        scrollable
       >
         <div style={{ padding: 20 }}>
           {getRandomArray(

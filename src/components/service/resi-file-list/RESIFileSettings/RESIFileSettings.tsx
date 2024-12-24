@@ -22,10 +22,10 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
   const {
     color,
     children,
-    strokeWidth: defaultStrokeWidth,
     onOpenChange,
     onChangeColor,
     onChangeStrokeWidth,
+    strokeWidth: defaultStrokeWidth,
   } = props;
 
   const { t } = useTranslation();
@@ -53,9 +53,9 @@ const RESIFileSettings = memo((props: RESIFileSettingsProps) => {
           min={1}
           size="small"
           value={strokeWidth}
+          onValueChange={setStrokeWidth}
           valueFormatter={strokeWidthFormatter}
           label={t('RESI_FILE_LIST.ITEM_STROKE_WIDTH')}
-          onValueChange={setStrokeWidth}
         />
       </div>
     </Popover>

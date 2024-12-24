@@ -7,46 +7,46 @@ import Button from '@/components/ui/Button/Button';
 
 import Dropdown, { type DropdownItem } from './Dropdown';
 
-const fileListExampleItems: (DropdownItem | 'separator')[] = [
+const fileListExampleItems: ('separator' | DropdownItem)[] = [
   {
     id: 'clear',
     danger: true,
+    onClick: fn(),
     label: 'Clear',
     icon: <Trash2 />,
-    onClick: fn(),
   },
   'separator',
   {
+    onClick: fn(),
     disabled: true,
     id: 'select-all',
     icon: <CopyCheck />,
     label: 'Select All',
-    onClick: fn(),
   },
   {
+    onClick: fn(),
     icon: <CopyX />,
     id: 'unselect-all',
     label: 'Reset All',
-    onClick: fn(),
   },
 ];
 
 const simpleListExampleItems: DropdownItem[] = [
   {
     id: 'item-1',
-    label: 'Item 1',
     onClick: fn(),
+    label: 'Item 1',
   },
   {
     id: 'item-2',
     danger: true,
-    label: 'Item 2',
     onClick: fn(),
+    label: 'Item 2',
   },
   {
     id: 'item-3',
-    label: 'Item 3',
     onClick: fn(),
+    label: 'Item 3',
   },
 ];
 

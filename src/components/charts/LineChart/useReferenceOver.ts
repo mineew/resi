@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 function useReferenceOver() {
-  const [offsetOver, setOffsetOver] = useState<'left' | 'right' | null>(null);
+  const [offsetOver, setOffsetOver] = useState<null | 'left' | 'right'>(null);
 
   const handleEnterOffsetLeft = useCallback(() => {
     setOffsetOver('left');

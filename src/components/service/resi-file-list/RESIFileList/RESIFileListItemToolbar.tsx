@@ -17,7 +17,7 @@ interface RESIFileListItemToolbarProps {
 }
 
 const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
-  const { checked: defaultChecked, onDelete, onChangeChecked } = props;
+  const { onDelete, onChangeChecked, checked: defaultChecked } = props;
   const { t } = useTranslation();
   const [alertDialogOpen, setAlertDialogOpen] = useState(false);
   const [dontShowAgainAlertDialog, setDontShowAgainAlertDialog] =
@@ -41,30 +41,30 @@ const RESIFileListItemToolbar = memo((props: RESIFileListItemToolbarProps) => {
       <Checkbox
         size="small"
         checked={checked}
-        label={t('RESI_FILE_LIST.ITEM_IS_ACTIVE')}
         onCheckedChange={setChecked}
+        label={t('RESI_FILE_LIST.ITEM_IS_ACTIVE')}
       />
 
       <Button
+        outlined
         size="small"
         tabIndex={-1}
         theme="danger"
-        className={styles['delete-button']}
         onClick={handleClickDeleteButton}
-        outlined
+        className={styles['delete-button']}
       >
         <Trash2 />
         {t('RESI_FILE_LIST.DELETE_ITEM')}
       </Button>
 
       <AlertDialog
+        onAction={onDelete}
         open={alertDialogOpen}
+        onOpenChange={setAlertDialogOpen}
         dontShowAgain={dontShowAgainAlertDialog}
         actionLabel={t('RESI_FILE_LIST.DELETE_ITEM_SURE')}
-        description={t('RESI_FILE_LIST.DELETE_ITEM_WARNING')}
-        onAction={onDelete}
-        onOpenChange={setAlertDialogOpen}
         onChangeDontShowAgain={setDontShowAgainAlertDialog}
+        description={t('RESI_FILE_LIST.DELETE_ITEM_WARNING')}
       />
     </div>
   );

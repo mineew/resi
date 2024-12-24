@@ -25,12 +25,12 @@ function Slider(props: SliderProps) {
     max = 10,
     step = 1,
     label = '',
+    onValueChange,
     id: providedId,
     size = 'default',
     hasBoldLabel = false,
     shouldDisplayValue = true,
     valueFormatter = (unformatted) => unformatted.toString(),
-    onValueChange,
   } = props;
 
   const defaultId = useId();
@@ -49,10 +49,10 @@ function Slider(props: SliderProps) {
 
   const labelElement = (
     <label
+      htmlFor={id}
       className={classNames(styles.label, {
         [styles.bold]: hasBoldLabel,
       })}
-      htmlFor={id}
     >
       {label}
     </label>

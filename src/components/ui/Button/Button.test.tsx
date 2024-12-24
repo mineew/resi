@@ -29,7 +29,7 @@ describe('@/components/ui/Button', () => {
     const handleClick = vi.fn();
 
     render(
-      <Button onClick={handleClick} disabled>
+      <Button disabled onClick={handleClick}>
         Disabled
       </Button>,
     );

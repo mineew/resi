@@ -17,7 +17,7 @@ interface AppSettingsProps {
 }
 
 const AppSettings = memo((props: AppSettingsProps) => {
-  const { children, values = {}, onChange } = props;
+  const { children, onChange, values = {} } = props;
   const { t } = useTranslation();
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -47,6 +47,13 @@ const AppSettings = memo((props: AppSettingsProps) => {
   return (
     <FormProvider {...methods}>
       <Dialog
+        size="400"
+        scrollable
+        open={dialogOpen}
+        trigger={children}
+        title={t('APP_SETTINGS.TITLE')}
+        onOpenChange={handleOpenChange}
+        tooltip={t('APP_SETTINGS.TOOLTIP')}
         footer={
           <div className={styles.footer}>
             <Button
@@ -62,13 +69,6 @@ const AppSettings = memo((props: AppSettingsProps) => {
             </div>
           </div>
         }
-        size="400"
-        open={dialogOpen}
-        trigger={children}
-        title={t('APP_SETTINGS.TITLE')}
-        tooltip={t('APP_SETTINGS.TOOLTIP')}
-        onOpenChange={handleOpenChange}
-        scrollable
       >
         <AppSettingsForm onSubmit={handleSubmit} />
       </Dialog>

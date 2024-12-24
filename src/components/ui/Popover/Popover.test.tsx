@@ -10,8 +10,8 @@ describe('@/components/ui/Popover', () => {
 
     render(
       <Popover
-        trigger={<button type="button">Popover Trigger</button>}
         onOpenChange={handleOpenChange}
+        trigger={<button type="button">Popover Trigger</button>}
       >
         <p>Popover Content</p>
       </Popover>,

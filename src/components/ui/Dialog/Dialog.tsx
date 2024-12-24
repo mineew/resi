@@ -29,8 +29,8 @@ function Dialog(props: DialogProps) {
     tooltip,
     children,
     size = '400',
-    scrollable = false,
     onOpenChange,
+    scrollable = false,
   } = props;
 
   const triggerElement = <Radix.Trigger asChild>{trigger}</Radix.Trigger>;
@@ -56,6 +56,8 @@ function Dialog(props: DialogProps) {
         <Radix.Overlay className="overlay" />
 
         <Radix.Content
+          aria-describedby={undefined}
+          onCloseAutoFocus={handleCloseAutoFocus}
           className={classNames(
             'dialog',
             'shadow',
@@ -63,8 +65,6 @@ function Dialog(props: DialogProps) {
             styles[`size-${size}`],
             { [styles.scrollable]: scrollable },
           )}
-          aria-describedby={undefined}
-          onCloseAutoFocus={handleCloseAutoFocus}
         >
           <div className={styles.header}>
             <Radix.Title className={styles.title}>{title}</Radix.Title>

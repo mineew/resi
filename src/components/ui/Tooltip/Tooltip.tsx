@@ -22,8 +22,8 @@ function Tooltip(props: TooltipProps) {
     >
       <Radix.Root>
         <Radix.Trigger
-          className={classNames(styles.trigger, triggerClassName)}
           asChild
+          className={classNames(styles.trigger, triggerClassName)}
         >
           <div>{children}</div>
         </Radix.Trigger>

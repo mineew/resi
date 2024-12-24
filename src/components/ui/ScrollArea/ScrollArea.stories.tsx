@@ -28,13 +28,13 @@ export const Default: StoryFn<typeof ScrollArea> = () => {
         >
           {items.map((item) => (
             <div
+              key={item}
               style={{
                 padding: 10,
                 width: '120%',
                 borderRadius: 10,
                 backgroundColor: 'var(--slate-3)',
               }}
-              key={item}
             >
               {item}
             </div>

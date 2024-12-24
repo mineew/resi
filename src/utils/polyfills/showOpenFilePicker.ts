@@ -1,4 +1,4 @@
-let globalInputElement: HTMLInputElement | undefined;
+let globalInputElement: undefined | HTMLInputElement;
 
 function getInputElement(options: ShowOpenFilePickerOptions) {
   const { types, multiple = false } = options;

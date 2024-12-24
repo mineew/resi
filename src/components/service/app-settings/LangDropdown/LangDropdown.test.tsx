@@ -10,12 +10,12 @@ describe('@/components/service/app-settings/LangDropdown', () => {
 
     render(
       <LangDropdown
+        selectedLang="en"
+        onChangeSelectedLang={handleChangeSelectedLang}
         langs={[
           { id: 'en', label: 'English' },
           { id: 'ru', label: 'Русский' },
         ]}
-        selectedLang="en"
-        onChangeSelectedLang={handleChangeSelectedLang}
       />,
     );
 
@@ -32,12 +32,12 @@ describe('@/components/service/app-settings/LangDropdown', () => {
 
     render(
       <LangDropdown
+        selectedLang="en"
+        onChangeSelectedLang={handleChangeSelectedLang}
         langs={[
           { id: 'en', label: 'English' },
           { id: 'ru', label: 'Русский' },
         ]}
-        selectedLang="en"
-        onChangeSelectedLang={handleChangeSelectedLang}
       />,
     );
 

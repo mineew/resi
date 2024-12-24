@@ -63,8 +63,8 @@ const RESIFileListItem = memo((props: RESIFileListItemProps) => {
       <RESIFileListItemTitle
         name={file.name}
         color={file.color}
-        strokeWidth={file.strokeWidth}
         onChangeActive={setActive}
+        strokeWidth={file.strokeWidth}
         onChangeColor={handleChangeColor}
         onChangeStrokeWidth={handleChangeStrokeWidth}
       />

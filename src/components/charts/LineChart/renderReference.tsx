@@ -27,20 +27,20 @@ function renderReference(options: RenderReferenceOptions) {
   return (
     <>
       <ReferenceArea
+        isFront
         y1={minY}
         ifOverflow="hidden"
         y2={maxY + referenceOverflow}
         className={styles['reference-area']}
         x1={side === 'left' ? minX : offset}
         x2={side === 'left' ? offset : maxX + referenceOverflow}
-        isFront
       />
 
       <ReferenceLine
         x={offset}
-        className={classNames(styles['resize-line'], styles[side])}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
+        className={classNames(styles['resize-line'], styles[side])}
       />
 
       <ReferenceLine

@@ -4,7 +4,7 @@ function convertChartData(
   datasets: LineChartDataset[],
   xConverter = (x: number) => x,
 ) {
-  const lines: Record<string, number | null>[] = [];
+  const lines: Record<string, null | number>[] = [];
 
   let maxX = 0;
   let maxY = 0;
@@ -14,7 +14,7 @@ function convertChartData(
 
   for (let i = 0; i < maxLength; i += 1) {
     const x = xConverter(i);
-    const dataItem: Record<string, number | null> = { x };
+    const dataItem: Record<string, null | number> = { x };
 
     if (x > maxX) {
       maxX = x;

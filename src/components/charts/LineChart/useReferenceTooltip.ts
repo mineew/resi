@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-let timeout: ReturnType<typeof setTimeout> | null = null;
+let timeout: null | ReturnType<typeof setTimeout> = null;
 
 function useReferenceTooltip(visibilityDelay = 100) {
   const [tooltipContent, setTooltipContent] = useState(0);

@@ -3,7 +3,7 @@ import { userEvent } from '@testing-library/user-event';
 
 import Dropdown, { type DropdownItem } from './Dropdown';
 
-const items: (DropdownItem | 'separator')[] = [
+const items: ('separator' | DropdownItem)[] = [
   {
     id: 'item-1',
     label: 'Item 1',
@@ -23,7 +23,7 @@ const items: (DropdownItem | 'separator')[] = [
 ];
 
 const isDropdownItem = (
-  item: DropdownItem | 'separator',
+  item: 'separator' | DropdownItem,
 ): item is DropdownItem => {
   return item !== 'separator';
 };

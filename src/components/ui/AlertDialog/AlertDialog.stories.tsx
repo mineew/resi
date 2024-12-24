@@ -8,10 +8,10 @@ import AlertDialog from './AlertDialog';
 
 export const Default: StoryFn<typeof AlertDialog> = ({
   title,
+  onAction,
   description,
   cancelLabel,
   actionLabel,
-  onAction,
 }) => {
   const [dontShowAgain, setDontShowAgain] = useState(false);
 
@@ -19,13 +19,13 @@ export const Default: StoryFn<typeof AlertDialog> = ({
     <div style={{ padding: 20 }}>
       <AlertDialog
         title={title}
+        onAction={onAction}
         description={description}
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
         dontShowAgain={dontShowAgain}
-        trigger={<Button>Alert Dialog Trigger</Button>}
-        onAction={onAction}
         onChangeDontShowAgain={setDontShowAgain}
+        trigger={<Button>Alert Dialog Trigger</Button>}
       />
     </div>
   );
@@ -33,10 +33,10 @@ export const Default: StoryFn<typeof AlertDialog> = ({
 
 export const Controlled: StoryFn<typeof AlertDialog> = ({
   title,
+  onAction,
   description,
   cancelLabel,
   actionLabel,
-  onAction,
 }) => {
   const [open, setOpen] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
@@ -54,12 +54,12 @@ export const Controlled: StoryFn<typeof AlertDialog> = ({
       <AlertDialog
         open={open}
         title={title}
+        onAction={onAction}
+        onOpenChange={setOpen}
         description={description}
         cancelLabel={cancelLabel}
         actionLabel={actionLabel}
         dontShowAgain={dontShowAgain}
-        onAction={onAction}
-        onOpenChange={setOpen}
         onChangeDontShowAgain={setDontShowAgain}
       />
     </div>
@@ -71,17 +71,17 @@ export default {
   title: 'Components/UI/AlertDialog',
   args: {
     title: '',
+    onAction: fn(),
     description: '',
     cancelLabel: '',
     actionLabel: '',
-    onAction: fn(),
   },
   argTypes: {
     open: { table: { disable: true } },
     trigger: { table: { disable: true } },
-    dontShowAgain: { table: { disable: true } },
     onAction: { table: { disable: true } },
     onOpenChange: { table: { disable: true } },
+    dontShowAgain: { table: { disable: true } },
     onChangeDontShowAgain: { table: { disable: true } },
   },
 } as Meta<typeof AlertDialog>;

@@ -42,139 +42,141 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <Controller
+        control={control}
+        name="zScoreThreshold"
         render={({ field }) => (
           <Slider
             min={1}
+            hasBoldLabel
+            onValueChange={field.onChange}
             label={t('APP_SETTINGS.Z_SCORE_THRESHOLD')}
             value={field.value || DEFAULT_SETTINGS.zScoreThreshold}
             valueFormatter={(value) => t('UTILS.NUMBER', { value }) + ' SD'}
-            onValueChange={field.onChange}
-            hasBoldLabel
           />
         )}
-        control={control}
-        name="zScoreThreshold"
       />
 
       <Controller
+        control={control}
+        name="zScoreMeanMethod"
         render={({ field }) => (
           <RadioGroup
             items={meanOptions}
+            onValueChange={field.onChange}
             label={t('APP_SETTINGS.Z_SCORE_CENTRAL_TENDENCY')}
             value={field.value || DEFAULT_SETTINGS.zScoreMeanMethod}
-            onValueChange={field.onChange}
           />
         )}
-        control={control}
-        name="zScoreMeanMethod"
       />
 
       <Controller
+        name="chunkSize"
+        control={control}
         render={({ field }) => (
           <Slider
-            valueFormatter={(value) => {
-              return t('COMMON.MM', { value: value / 100 });
-            }}
             min={100}
             max={3000}
             step={100}
+            hasBoldLabel
+            onValueChange={field.onChange}
             label={t('APP_SETTINGS.CHUNK_SIZE')}
             value={field.value || DEFAULT_SETTINGS.chunkSize}
-            onValueChange={field.onChange}
-            hasBoldLabel
+            valueFormatter={(value) => {
+              return t('COMMON.MM', { value: value / 100 });
+            }}
           />
         )}
-        name="chunkSize"
-        control={control}
       />
 
       <Controller
-        render={({ field }) => (
-          <RadioGroup
-            items={meanOptions}
-            label={t('APP_SETTINGS.CHUNK_CENTRAL_TENDENCY')}
-            value={field.value || DEFAULT_SETTINGS.chunkAggregateMethod}
-            onValueChange={field.onChange}
-          />
-        )}
         control={control}
         name="chunkAggregateMethod"
+        render={({ field }) => (
+          <RadioGroup
+            items={meanOptions}
+            onValueChange={field.onChange}
+            label={t('APP_SETTINGS.CHUNK_CENTRAL_TENDENCY')}
+            value={field.value || DEFAULT_SETTINGS.chunkAggregateMethod}
+          />
+        )}
       />
 
       <Controller
-        render={({ field }) => (
-          <Checkbox
-            label={t('APP_SETTINGS.CHUNK_SIZE_RENDER')}
-            checked={field.value ?? DEFAULT_SETTINGS.renderChunksOnChart}
-            onCheckedChange={field.onChange}
-            hasBoldLabel
-          />
-        )}
         control={control}
         name="renderChunksOnChart"
+        render={({ field }) => (
+          <Checkbox
+            hasBoldLabel
+            onCheckedChange={field.onChange}
+            label={t('APP_SETTINGS.CHUNK_SIZE_RENDER')}
+            checked={field.value ?? DEFAULT_SETTINGS.renderChunksOnChart}
+          />
+        )}
       />
 
       <Controller
-        render={({ field }) => (
-          <RadioGroup
-            items={meanOptions}
-            label={t('APP_SETTINGS.DIFF_CENTRAL_TENDENCY')}
-            value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
-            onValueChange={field.onChange}
-          />
-        )}
         control={control}
         name="differenceMeanMethod"
-      />
-
-      <Controller
-        render={({ field }) => (
-          <Checkbox
-            label={t('APP_SETTINGS.DIFF_TAKE_NEGATIVE')}
-            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeDiffs}
-            onCheckedChange={field.onChange}
-            hasBoldLabel
-          />
-        )}
-        control={control}
-        name="takeNegativeDiffs"
-      />
-
-      <Controller
         render={({ field }) => (
           <RadioGroup
             items={meanOptions}
-            label={t('APP_SETTINGS.GROWTH_CENTRAL_TENDENCY')}
-            value={field.value || DEFAULT_SETTINGS.growthMeanMethod}
             onValueChange={field.onChange}
+            label={t('APP_SETTINGS.DIFF_CENTRAL_TENDENCY')}
+            value={field.value || DEFAULT_SETTINGS.differenceMeanMethod}
           />
         )}
-        control={control}
-        name="growthMeanMethod"
       />
 
       <Controller
+        control={control}
+        name="takeNegativeDiffs"
         render={({ field }) => (
           <Checkbox
-            label={t('APP_SETTINGS.GROWTH_TAKE_NEGATIVE')}
-            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeGrowth}
-            onCheckedChange={field.onChange}
             hasBoldLabel
+            onCheckedChange={field.onChange}
+            label={t('APP_SETTINGS.DIFF_TAKE_NEGATIVE')}
+            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeDiffs}
           />
         )}
-        control={control}
-        name="takeNegativeGrowth"
       />
 
       <Controller
+        control={control}
+        name="growthMeanMethod"
+        render={({ field }) => (
+          <RadioGroup
+            items={meanOptions}
+            onValueChange={field.onChange}
+            label={t('APP_SETTINGS.GROWTH_CENTRAL_TENDENCY')}
+            value={field.value || DEFAULT_SETTINGS.growthMeanMethod}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="takeNegativeGrowth"
+        render={({ field }) => (
+          <Checkbox
+            hasBoldLabel
+            onCheckedChange={field.onChange}
+            label={t('APP_SETTINGS.GROWTH_TAKE_NEGATIVE')}
+            checked={field.value ?? DEFAULT_SETTINGS.takeNegativeGrowth}
+          />
+        )}
+      />
+
+      <Controller
+        control={control}
+        name="offsetLeft"
         render={({ field }) => (
           <InputNumber
             typedValue={field.value}
             rightElement={t('COMMON.MM')}
+            onValueChange={field.onChange}
             label={t('APP_SETTINGS.OFFSET_LEFT')}
             invalid={!!formState.errors.offsetLeft}
             help={formState.errors.offsetLeft?.message}
-            onValueChange={field.onChange}
           />
         )}
         rules={{
@@ -192,19 +194,19 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             return;
           },
         }}
-        control={control}
-        name="offsetLeft"
       />
 
       <Controller
+        control={control}
+        name="offsetRight"
         render={({ field }) => (
           <InputNumber
             typedValue={field.value}
             rightElement={t('COMMON.MM')}
+            onValueChange={field.onChange}
             label={t('APP_SETTINGS.OFFSET_RIGHT')}
             invalid={!!formState.errors.offsetRight}
             help={formState.errors.offsetRight?.message}
-            onValueChange={field.onChange}
           />
         )}
         rules={{
@@ -222,8 +224,6 @@ const AppSettingsForm = memo((props: AppSettingsFormProps) => {
             return;
           },
         }}
-        control={control}
-        name="offsetRight"
       />
     </form>
   );

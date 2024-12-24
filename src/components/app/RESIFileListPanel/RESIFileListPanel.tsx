@@ -20,12 +20,12 @@ function RESIFileListPanel() {
   return (
     <RESIFileListPanelView
       files={files}
-      appSettings={<AppSettings />}
-      isFetchingFiles={isFetchingFiles}
       onAddFiles={addFiles}
       onDeleteFile={deleteFile}
+      appSettings={<AppSettings />}
       onSelectAllFiles={checkAllFiles}
       onChangeFileChecked={toggleFile}
+      isFetchingFiles={isFetchingFiles}
       onDeleteAllFiles={deleteAllFiles}
       onChangeFileColor={changeFileColor}
       onUnselectAllFiles={uncheckAllFiles}

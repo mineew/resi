@@ -31,10 +31,10 @@ interface RESIFileListPanelProps {
 const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
   const {
     files,
-    appSettings,
-    isFetchingFiles,
     onAddFiles,
+    appSettings,
     onDeleteFile,
+    isFetchingFiles,
     onDeleteAllFiles,
     onSelectAllFiles,
     onChangeFileColor,
@@ -62,36 +62,36 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     }
   }, [dontShowAgainAlertDialog, onDeleteAllFiles]);
 
-  const dropdownItems: (DropdownItem | 'separator')[] = [
+  const dropdownItems: ('separator' | DropdownItem)[] = [
     {
       id: 'clear',
       danger: true,
       icon: <Trash2 />,
-      label: t('RESI_FILE_LIST.CLEAR_FILES'),
       onClick: handleClearFiles,
+      label: t('RESI_FILE_LIST.CLEAR_FILES'),
     },
     'separator',
     {
       id: 'select-all',
       icon: <CopyCheck />,
       disabled: allFilesChecked,
-      label: t('RESI_FILE_LIST.ENABLE_ALL_FILES'),
       onClick: onSelectAllFiles,
+      label: t('RESI_FILE_LIST.ENABLE_ALL_FILES'),
     },
     {
       icon: <CopyX />,
       id: 'unselect-all',
       disabled: allFilesUnchecked,
-      label: t('RESI_FILE_LIST.DISABLE_ALL_FILES'),
       onClick: onUnselectAllFiles,
+      label: t('RESI_FILE_LIST.DISABLE_ALL_FILES'),
     },
   ];
 
   if (!files.length) {
     return (
       <RESIFileListEmpty
-        isFetchingFiles={isFetchingFiles}
         onAddFiles={onAddFiles}
+        isFetchingFiles={isFetchingFiles}
         onFetchExampleFiles={onFetchExampleFiles}
       />
     );
@@ -101,10 +101,10 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
     <div className={styles.wrapper} data-testid="resi-file-list-panel">
       <div className={styles.header}>
         <Button
+          center
+          onClick={onAddFiles}
           disabled={isFetchingFiles}
           className={styles['add-files-button']}
-          onClick={onAddFiles}
-          center
         >
           <FilePlus2 />
           {t('RESI_FILE_LIST.ADD_FILES')}
@@ -117,12 +117,12 @@ const RESIFileListPanel = memo((props: RESIFileListPanelProps) => {
 
         <AlertDialog
           open={alertDialogOpen}
-          dontShowAgain={dontShowAgainAlertDialog}
-          actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
-          description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
           onAction={onDeleteAllFiles}
           onOpenChange={setAlertDialogOpen}
+          dontShowAgain={dontShowAgainAlertDialog}
+          actionLabel={t('RESI_FILE_LIST.CLEAR_FILES_SURE')}
           onChangeDontShowAgain={setDontShowAgainAlertDialog}
+          description={t('RESI_FILE_LIST.CLEAR_FILES_WARNING')}
         />
 
         {appSettings}

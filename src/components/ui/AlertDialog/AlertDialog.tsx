@@ -15,8 +15,8 @@ interface AlertDialogProps {
   cancelLabel?: string;
   actionLabel?: string;
   trigger?: JSX.Element;
-  dontShowAgain?: boolean;
   onAction?: () => void;
+  dontShowAgain?: boolean;
   onOpenChange?: (open: boolean) => void;
   onChangeDontShowAgain?: (dontShowAgain: boolean) => void;
 }
@@ -26,12 +26,12 @@ function AlertDialog(props: AlertDialogProps) {
     open,
     title,
     trigger,
+    onAction,
     description,
     cancelLabel,
     actionLabel,
-    dontShowAgain = false,
-    onAction,
     onOpenChange,
+    dontShowAgain = false,
     onChangeDontShowAgain,
   } = props;
 
@@ -56,8 +56,8 @@ function AlertDialog(props: AlertDialogProps) {
         <Radix.Overlay className="overlay" />
 
         <Radix.Content
-          className={classNames('dialog', 'shadow', styles.content)}
           onCloseAutoFocus={handleCloseAutofocus}
+          className={classNames('dialog', 'shadow', styles.content)}
         >
           <Radix.Title className={styles.title}>
             {title || t('UI.ALERT.TITLE')}

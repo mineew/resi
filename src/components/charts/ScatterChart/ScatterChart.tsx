@@ -43,7 +43,7 @@ function ScatterChart(props: ScatterChartProps) {
   const { t } = useTranslation();
   const { regression, regressionLine } =
     convertPointsToLinearRegression(points);
-  const [chartWrapper, setChartWrapper] = useState<HTMLDivElement | null>(null);
+  const [chartWrapper, setChartWrapper] = useState<null | HTMLDivElement>(null);
 
   const xLabelObject = !xLabel
     ? undefined

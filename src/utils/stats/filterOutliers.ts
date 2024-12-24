@@ -26,7 +26,7 @@ function filterZScores(scores: number[], threshold: number) {
   };
 }
 
-function filterNotNull(x: number | null): x is number {
+function filterNotNull(x: null | number): x is number {
   return x !== null;
 }
 

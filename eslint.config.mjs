@@ -53,6 +53,8 @@ export default tseslint.config(
 
       'react-compiler/react-compiler': 'warn',
 
+      'jsx-a11y/no-autofocus': 'off',
+
       ...reactHooks.configs.recommended.rules,
       ...getReactRules(),
       ...getPerfectionistRules(),
@@ -78,6 +80,21 @@ export default tseslint.config(
       react: {
         version: 'detect',
       },
+    },
+  },
+
+  {
+    files: ['src/**/forms/**/*.tsx'],
+    rules: {
+      '@typescript-eslint/no-misused-promises': 'off',
+    },
+  },
+
+  {
+    files: ['src/**/forms/**/controls/**/*.tsx'],
+    rules: {
+      '@typescript-eslint/no-restricted-imports': 'off',
+      'react/jsx-no-bind': 'off',
     },
   },
 
@@ -193,7 +210,8 @@ function getPerfectionistRules() {
     'perfectionist/sort-imports': [
       'error',
       {
-        internalPattern: ['~/**', '@/**'],
+        internalPattern: ['^~/.*', '^@/.*'],
+        sortSideEffects: true,
         groups: [
           ['builtin', 'builtin-type'],
           ['external', 'external-type'],
@@ -211,7 +229,6 @@ function getPerfectionistRules() {
           ['object'],
           ['unknown'],
         ],
-        sortSideEffects: true,
       },
     ],
 
@@ -242,8 +259,6 @@ function getPerfectionistRules() {
         type: 'line-length',
         groupKind: 'required-first',
         partitionByNewLine: true,
-        groups: ['unknown', 'multiline', 'callbacks'],
-        customGroups: { callbacks: ['on*'] },
       },
     ],
 
@@ -253,8 +268,6 @@ function getPerfectionistRules() {
         type: 'line-length',
         groupKind: 'required-first',
         partitionByNewLine: true,
-        groups: ['unknown', 'multiline', 'callbacks'],
-        customGroups: { callbacks: ['on*'] },
       },
     ],
 
@@ -263,7 +276,6 @@ function getPerfectionistRules() {
       {
         type: 'line-length',
         partitionByNewLine: true,
-        groups: ['unknown', 'literal', 'nullish'],
       },
     ],
 
@@ -280,8 +292,6 @@ function getPerfectionistRules() {
       'error',
       {
         type: 'line-length',
-        groups: ['multiline', 'unknown', 'data', 'callbacks', 'shorthand'],
-        customGroups: { callbacks: ['on*'], data: ['data-*'] },
       },
     ],
 
@@ -290,8 +300,6 @@ function getPerfectionistRules() {
       {
         type: 'line-length',
         partitionByNewLine: true,
-        groups: ['unknown', 'callbacks'],
-        customGroups: { callbacks: ['on*'] },
       },
     ],
 

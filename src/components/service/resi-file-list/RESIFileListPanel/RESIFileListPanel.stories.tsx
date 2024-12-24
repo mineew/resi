@@ -64,10 +64,10 @@ export default {
   },
   argTypes: {
     files: { table: { disable: true } },
-    appSettings: { table: { disable: true } },
-    isFetchingFiles: { table: { disable: true } },
     onAddFiles: { table: { disable: true } },
+    appSettings: { table: { disable: true } },
     onDeleteFile: { table: { disable: true } },
+    isFetchingFiles: { table: { disable: true } },
     onDeleteAllFiles: { table: { disable: true } },
     onSelectAllFiles: { table: { disable: true } },
     onChangeFileColor: { table: { disable: true } },

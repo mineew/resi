@@ -17,16 +17,16 @@ function AppLayoutDrawer(props: AppLayoutDrawerProps) {
 
   return (
     <Drawer
-      trigger={
-        <Button icon outlined>
-          <ChevronsRight />
-        </Button>
-      }
       className={styles.drawer}
       overlayClassName={styles.overlay}
       title={t('RESI_FILE_LIST.TITLE')}
       tooltip={t('RESI_FILE_LIST.OPEN_SIDEBAR')}
       triggerClassName={styles['toggle-button']}
+      trigger={
+        <Button icon outlined>
+          <ChevronsRight />
+        </Button>
+      }
     >
       {children}
     </Drawer>

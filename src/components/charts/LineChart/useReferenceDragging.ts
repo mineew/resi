@@ -21,8 +21,8 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
     gap = 1,
     offsetLeft,
     offsetRight,
-    interactive = false,
     onChangeOffsetLeft,
+    interactive = false,
     onChangeOffsetRight,
   } = options;
 
@@ -41,7 +41,7 @@ function useReferenceDragging(options: UseReferenceDraggingOptions) {
     handleEnterOffsetRight,
   } = useReferenceOver();
 
-  const [offsetDrag, setOffsetDrag] = useState<'left' | 'right' | null>(null);
+  const [offsetDrag, setOffsetDrag] = useState<null | 'left' | 'right'>(null);
 
   const handleChartMouseUp = useCallback(() => {
     setOffsetDrag(null);

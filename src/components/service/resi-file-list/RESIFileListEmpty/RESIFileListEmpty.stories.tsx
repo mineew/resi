@@ -4,8 +4,8 @@ import { fn } from '@storybook/test';
 import RESIFileListEmpty from './RESIFileListEmpty';
 
 export const Default: StoryFn<typeof RESIFileListEmpty> = ({
-  isFetchingFiles,
   onAddFiles,
+  isFetchingFiles,
   onFetchExampleFiles,
 }) => {
   return (
@@ -19,8 +19,8 @@ export const Default: StoryFn<typeof RESIFileListEmpty> = ({
       }}
     >
       <RESIFileListEmpty
-        isFetchingFiles={isFetchingFiles}
         onAddFiles={onAddFiles}
+        isFetchingFiles={isFetchingFiles}
         onFetchExampleFiles={onFetchExampleFiles}
       />
     </div>
@@ -31,8 +31,8 @@ export default {
   component: RESIFileListEmpty,
   title: 'Components/Service/RESI File List/RESIFileListEmpty',
   args: {
-    isFetchingFiles: false,
     onAddFiles: fn(),
+    isFetchingFiles: false,
     onFetchExampleFiles: fn(),
   },
   argTypes: {

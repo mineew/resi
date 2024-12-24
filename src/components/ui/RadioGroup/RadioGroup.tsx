@@ -15,7 +15,7 @@ interface RadioGroupProps {
 }
 
 function RadioGroup(props: RadioGroupProps) {
-  const { label, items, value, size = 'default', onValueChange } = props;
+  const { label, items, value, onValueChange, size = 'default' } = props;
 
   const firstItemProvidedId = items[0]?.id;
   const firstItemDefaultId = useId();

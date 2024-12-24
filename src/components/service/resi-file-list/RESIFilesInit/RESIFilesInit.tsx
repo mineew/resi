@@ -13,13 +13,13 @@ interface RESIFilesInitProps {
 }
 
 function RESIFilesInit(props: RESIFilesInitProps) {
-  const { isFetchingFiles, onAddFiles, onFetchExampleFiles } = props;
+  const { onAddFiles, isFetchingFiles, onFetchExampleFiles } = props;
   const { t } = useTranslation();
 
   return (
     <>
       <div className={styles.section}>
-        <Button disabled={isFetchingFiles} onClick={onAddFiles}>
+        <Button onClick={onAddFiles} disabled={isFetchingFiles}>
           <FolderOpen />
           {t('RESI_FILE_LIST.OPEN_FILES')}
         </Button>
@@ -31,9 +31,9 @@ function RESIFilesInit(props: RESIFilesInitProps) {
         <p>{t('RESI_FILE_LIST.FETCH_FILES_DESCRIPTION')}</p>
 
         <Button
+          outlined
           disabled={isFetchingFiles}
           onClick={onFetchExampleFiles}
-          outlined
         >
           {isFetchingFiles ? <Loader /> : <FolderDown />}
           {t('RESI_FILE_LIST.FETCH_FILES')}

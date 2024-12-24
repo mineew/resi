@@ -17,9 +17,9 @@ export const Default: StoryFn<typeof Slider> = ({
         size={size}
         label={label}
         value={value}
+        onValueChange={setValue}
         hasBoldLabel={hasBoldLabel}
         shouldDisplayValue={shouldDisplayValue}
-        onValueChange={setValue}
       />
     </div>
   );
@@ -40,7 +40,7 @@ export default {
     max: { table: { disable: true } },
     step: { table: { disable: true } },
     value: { table: { disable: true } },
-    valueFormatter: { table: { disable: true } },
     onValueChange: { table: { disable: true } },
+    valueFormatter: { table: { disable: true } },
   },
 } as Meta<typeof Slider>;

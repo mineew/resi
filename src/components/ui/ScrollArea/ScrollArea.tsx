@@ -10,7 +10,7 @@ function ScrollArea(props: ScrollAreaProps) {
   const { children, className, ...otherProps } = props;
 
   return (
-    <Radix.Root type="always" asChild>
+    <Radix.Root asChild type="always">
       <div className={classNames(className, styles.root)} {...otherProps}>
         <Radix.Viewport className={styles.viewport}>{children}</Radix.Viewport>
 

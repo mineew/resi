@@ -7,9 +7,9 @@ describe('@/components/ui/Dialog', () => {
   it('renders', () => {
     render(
       <Dialog
+        open
         title="Dialog Title"
         trigger={<button type="button">Open Dialog</button>}
-        open
       >
         <p>Dialog Content</p>
       </Dialog>,
@@ -25,10 +25,10 @@ describe('@/components/ui/Dialog', () => {
 
     render(
       <Dialog
-        title="Dialog Title"
-        trigger={<button type="button">Open Dialog</button>}
-        onOpenChange={handleOpenChange}
         open
+        title="Dialog Title"
+        onOpenChange={handleOpenChange}
+        trigger={<button type="button">Open Dialog</button>}
       >
         <p>Dialog Content</p>
       </Dialog>,
@@ -47,11 +47,11 @@ describe('@/components/ui/Dialog', () => {
 
     render(
       <Dialog
+        open
         title="Dialog Title"
+        onOpenChange={handleOpenChange}
         tooltip="Dialog Trigger Tooltip"
         trigger={<button type="button">Open Dialog</button>}
-        onOpenChange={handleOpenChange}
-        open
       >
         <p>Dialog Content</p>
       </Dialog>,
@@ -66,10 +66,10 @@ describe('@/components/ui/Dialog', () => {
   it('can display footer', () => {
     render(
       <Dialog
+        open
         title="Dialog Title"
         footer={<p>Footer Content</p>}
         trigger={<button type="button">Open Dialog</button>}
-        open
       >
         <p>Dialog Content</p>
       </Dialog>,

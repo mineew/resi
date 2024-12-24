@@ -1,6 +1,6 @@
 import parseFiles from './parseFiles';
 
-type GetFilesFunction = () => Promise<Record<string, string> | null>;
+type GetFilesFunction = () => Promise<null | Record<string, string>>;
 
 const processFiles = async (getFiles: GetFilesFunction) => {
   const files = await getFiles();

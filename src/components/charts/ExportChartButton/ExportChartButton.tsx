@@ -8,7 +8,7 @@ import styles from './ExportChartButton.module.css';
 
 interface ExportChartButtonProps {
   filename: string;
-  chartWrapper: HTMLDivElement | null;
+  chartWrapper: null | HTMLDivElement;
   className?: string;
 }
 
