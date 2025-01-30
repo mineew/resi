@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   left: 50%;
+  outline: none;
   background-color: #fff;
   border: 1px solid var(--slate-6);
   border-radius: 8px;
-  outline: none;
   transform: translate(-50%, 20px);
   animation: dialog 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }

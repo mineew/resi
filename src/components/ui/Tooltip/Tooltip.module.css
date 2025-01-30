@@ -14,9 +14,9 @@
   color: var(--slate-1);
   text-align: center;
   user-select: none;
+  outline: none;
   background-color: var(--slate-a11);
   border-radius: 8px;
-  outline: none;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;

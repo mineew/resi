@@ -22,9 +22,9 @@
   flex: 1;
   width: 0;
   padding: 4px 8px;
+  outline: none;
   background-color: transparent;
   border: none;
-  outline: none;
 }
 
 .input::placeholder {
@@ -55,8 +55,8 @@
 /* --- Invalid State -------------------------------------------------------- */
 
 .wrapper.invalid .input-wrapper {
-  border-color: var(--red-9);
   outline-color: var(--red-9);
+  border-color: var(--red-9);
 }
 
 .wrapper.invalid .input-wrapper:focus-within {

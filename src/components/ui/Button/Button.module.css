@@ -30,9 +30,9 @@
 .button:focus,
 .button[data-state='open'] {
   color: var(--color);
-  background-color: var(--background-color);
   outline: 1px solid var(--background-color);
   outline-offset: 2px;
+  background-color: var(--background-color);
 }
 
 .button:active {

@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: column;
   width: 300px;
+  outline: none;
   background-color: #fff;
   border-right: 1px solid var(--slate-6);
-  outline: none;
   animation: drawer 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

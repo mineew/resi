@@ -7,10 +7,10 @@
 .root {
   position: relative;
   cursor: pointer;
+  outline: none;
   background-color: transparent;
   border: 1px solid var(--slate-12);
   border-radius: 4px;
-  outline: none;
   transition: background-color 0.15s linear;
 }
 
@@ -34,10 +34,10 @@
   left: 50%;
   color: var(--slate-1);
   opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
   transition:
     opacity 0.15s,
     transform 0.15s;
-  transform: translate(-50%, -50%) scale(0);
   will-change: opacity, transform;
 }
 
